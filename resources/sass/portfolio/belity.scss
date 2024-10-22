@@ -1,0 +1,539 @@
+@import 'portfolioParts';
+@import "../bootstrap3";
+ 
+@font-face {
+    font-family: 'Calibri-Regular';
+    src: url('/fonts/portfolio/Calibri-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Bold';
+    src: url('/fonts/portfolio/Calibri-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Light';
+    src: url('/fonts/portfolio/Calibri-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Calibri-Italic';
+    src: url('/fonts/portfolio/Calibri-Italic.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FiraSansRegular';
+    src: url('/fonts/portfolio/FiraSansRegular.woff2') format('woff2'),
+        url('/fonts/portfolio/FiraSansRegular.woff') format('woff'),
+        url('/fonts/portfolio/FiraSansRegular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FiraSansSemibold';
+    src: url('/fonts/portfolio/FiraSansSemibold.woff2') format('woff2'),
+        url('/fonts/portfolio/FiraSansSemibold.woff') format('woff'),
+        url('/fonts/portfolio/FiraSansSemibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'FiraSansLight';
+    src: url('/fonts/portfolio/FiraSansLight.woff2') format('woff2'),
+        url('/fonts/portfolio/FiraSansLight.woff') format('woff'),
+        url('/fonts/portfolio/FiraSansLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyrBlack';
+    src: url('/fonts/portfolio/HelveticaNeueCyrBlack.eot');
+    src: url('/fonts/portfolio/HelveticaNeueCyrBlack.eot') format('embedded-opentype'),
+        url('/fonts/portfolio/HelveticaNeueCyrBlack.woff2') format('woff2'),
+        url('/fonts/portfolio/HelveticaNeueCyrBlack.woff') format('woff'),
+        url('/fonts/portfolio/HelveticaNeueCyrBlack.ttf') format('truetype'),
+        url('/fonts/portfolio/HelveticaNeueCyrBlack.svg#HelveticaNeueCyrBlack') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeueCyrLight';
+    src: url('/fonts/portfolio/HelveticaNeueCyrLight.eot');
+    src: url('/fonts/portfolio/HelveticaNeueCyrLight.eot') format('embedded-opentype'),
+        url('/fonts/portfolio/HelveticaNeueCyrLight.woff2') format('woff2'),
+        url('/fonts/portfolio/HelveticaNeueCyrLight.woff') format('woff'),
+        url('/fonts/portfolio/HelveticaNeueCyrLight.ttf') format('truetype'),
+        url('/fonts/portfolio/HelveticaNeueCyrLight.svg#HelveticaNeueCyrLight') format('svg');
+}
+
+main {
+    overflow-x: hidden;
+    background: url('/img/portfolio/belity/bg.png') no-repeat left 42%;
+    background-size: 100%;
+}
+
+.main_page_title {
+    font-size: 32px;
+    padding-top: 50px;
+    color: #fff;
+    text-align: right;
+}
+
+.belity .no-pad {
+    padding: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.rel {
+    position: relative;
+}
+
+p,
+h2,
+h3 {
+    margin: 0;
+}
+
+ul {
+    padding-left: 0;
+}
+
+.belity p.title {
+    color: #212121;
+    font-size: 40px;
+    line-height: 40px;
+    font-family: 'Calibri-Light';
+    text-transform: uppercase;
+    margin: 50px 0;
+}
+
+.belity p.title span {
+    font-family: 'Calibri-Bold';
+    background: #e6e6e6;
+    padding: 5px 10px;
+}
+
+/*SECTION .TOP*/
+.belity .top {
+    background: url('/img/portfolio/belity/bgTop.png') no-repeat center top;
+    background-size: cover;
+    height: 598px;
+}
+
+.belity .top img {
+    margin-top: 110px;
+}
+
+.belity .top p.name {
+    color: #fff;
+    font-size: 94px;
+    line-height: 94px;
+    font-family: "HelveticaNeueCyrBlack";
+    text-transform: uppercase;
+    text-align: right;
+    padding-right: 23px;
+    margin-top: 185px;
+    position: relative;
+    z-index: 1;
+}
+
+.belity .top p.name:before {
+    content: "";
+    display: block;
+    width: 170px;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    top: 40%;
+}
+
+.belity .top p.name:after {
+    content: "";
+    display: block;
+    width: 240px;
+    height: 240px;
+    background: #f5a813;
+    position: absolute;
+    top: -60px;
+    right: 0;
+    z-index: -1;
+}
+
+.belity .top p.name span {
+    opacity: 0.6;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    font-family: "HelveticaNeueCyrLight";
+    display: block;
+}
+
+/*END OF SECTION .TOP*/
+
+/*SECTION .GUIDELINES*/
+.belity .guidelines {
+    margin-bottom: 100px;
+}
+
+.belity .guidelines p.title {
+    text-align: right;
+}
+
+.belity .guidelines .block1,
+.belity .guidelines .block2,
+.belity .guidelines .block3 {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #c1c1c1;
+    padding: 40px 60px;
+    width: 90%;
+    margin: auto;
+}
+
+.belity .guidelines .block1 p,
+.belity .guidelines .block2 p,
+.belity .guidelines .block3 p {
+    color: #414141;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.belity .guidelines .block1 p {
+    font-family: "FiraSansSemibold";
+}
+
+.belity .guidelines .block2 p {
+    font-family: "FiraSansRegular";
+}
+
+.belity .guidelines .block3 p {
+    font-family: "FiraSansLight";
+}
+
+.belity .guidelines .colors {
+    margin-top: 50px;
+}
+
+.belity .guidelines .color1,
+.belity .guidelines .color2,
+.belity .guidelines .color3,
+.belity .guidelines .color4 {
+    width: 89px;
+    height: 89px;
+    border: 7px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+    position: relative;
+}
+
+.belity .guidelines .color4 {
+    border: 7px solid rgba(245, 245, 245, 0.55);
+}
+
+.belity .guidelines .color1 {
+    background: #000;
+}
+
+.belity .guidelines .color2 {
+    background: #ffa800;
+}
+
+.belity .guidelines .color3 {
+    background: #f5f5f5;
+}
+
+.belity .guidelines .color4 {
+    background: #fff;
+}
+
+.belity .guidelines .color1 span,
+.belity .guidelines .color2 span,
+.belity .guidelines .color3 span,
+.belity .guidelines .color4 span {
+    color: #000;
+    font-size: 15px;
+    line-height: 14px;
+    font-family: "Calibri-Regular";
+    position: absolute;
+    top: 40%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-align: center;
+}
+
+.belity .guidelines .color1 span {
+    color: #fff;
+}
+
+/*END OF SECTION .GUIDELINES*/
+
+/*SECTION .PAGES*/
+.belity .pages {
+    margin-top: 100px;
+}
+
+.belity .pages p.title {
+    text-align: right;
+}
+
+.belity .pages img {
+    margin: 0 auto;
+}
+
+/*END OF SECTION .PAGES*/
+
+/*SECTION .DEVELOPERS*/
+.belity .developers {
+    margin-top: 100px;
+}
+
+.belity .developers ul {
+    list-style: disc;
+    position: relative;
+    z-index: 1;
+}
+
+.belity .developers ul:after {
+    content: "";
+    display: block;
+    width: 285px;
+    height: 166px;
+    background: #ebebeb;
+    position: absolute;
+    top: -10px;
+    left: 65px;
+    z-index: -1;
+}
+
+.belity .developers ul li {
+    color: #383838;
+    font-size: 16px;
+    line-height: 30px;
+    font-family: 'Calibri-Light';
+    margin-left: 15px;
+}
+
+/*END OF SECTION .DEVELOPERS*/
+
+/*SECTION .ADAPTIVE*/
+.belity .adaptive {
+    margin-top: 100px;
+}
+
+.belity .adaptive p.title {
+    text-align: right;
+}
+
+.belity .adaptive .read-more {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'robotoregular_3';
+    color: #303030;
+    letter-spacing: 1px;
+    padding: 15px 100px 15px 44px;
+    border: 2px solid #303030;
+    text-transform: lowercase;
+    background: url('/img/portfolio/era/arrowBtnRight-hover.png') left center no-repeat;
+    background-position-x: 85%;
+    z-index: 1;
+    margin: 50px 0 80px 0;
+}
+
+.belity .adaptive .read-more:hover {
+    background: url('/img/portfolio/era/arrowBtnRight.png') left center no-repeat #ffa800;
+    background-position-x: 85%;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 100px 15px 44px;
+    border: 2px solid transparent;
+}
+
+/*END OF SECTION .ADAPTIVE*/
+
+@media screen and (max-width: 1550px) {
+    main {
+        overflow-x: hidden;
+        background: url('/img/portfolio/belity/bg.png') no-repeat left 56%;
+        background-size: 100%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    main {
+        overflow-x: hidden;
+        background: url('/img/portfolio/belity/bg.png') no-repeat left 58%;
+        background-size: 100%;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    main {
+        overflow-x: hidden;
+        background: url('/img/portfolio/belity/bg.png') no-repeat left 60%;
+        background-size: 100%;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    main {
+        overflow-x: hidden;
+        background: url('/img/portfolio/belity/bg.png') no-repeat left 48%;
+        background-size: 100%;
+    }
+
+    .belity .top {
+        height: 365px;
+    }
+
+    .belity .top img {
+        width: 100%;
+    }
+
+    .belity .top p.name {
+        font-size: 80px;
+        line-height: 80px;
+        margin-top: 110px;
+    }
+
+    .belity .top p.name:before {
+        width: 120px;
+    }
+
+    .belity p.title {
+        font-size: 34px;
+        line-height: 34px;
+    }
+
+    .belity .guidelines {
+        margin-bottom: 50px;
+    }
+
+    .belity .guidelines .block1,
+    .belity .guidelines .block2,
+    .belity .guidelines .block3 {
+        padding: 40px 25px;
+        width: 100%;
+    }
+
+    .belity .pages,
+    .belity .developers,
+    .belity .adaptive {
+        margin-top: 50px;
+    }
+
+    .belity .developers ul:after {
+        width: 235px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    main {
+        overflow-x: hidden;
+        background: url('/img/portfolio/belity/bg.png') no-repeat left 45%;
+        background-size: 100%;
+    }
+
+    .belity .top p.name {
+        font-size: 65px;
+        line-height: 65px;
+        margin-top: 110px;
+    }
+
+    .belity .top p.name:before {
+        width: 75px;
+    }
+
+    .belity .top p.name:after {
+        width: 230px;
+        height: 230px;
+        top: -80px;
+    }
+
+    .belity .guidelines .block1,
+    .belity .guidelines .block2,
+    .belity .guidelines .block3 {
+        padding: 40px 10px;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main {
+        overflow-x: hidden;
+        background: url('/img/portfolio/belity/bg.png') no-repeat left 49%;
+        background-size: 100%;
+    }
+
+    .belity .top {
+        height: 145px;
+    }
+
+    .belity .top .macbook {
+        display: none;
+    }
+
+    .belity .top p.name {
+        font-size: 50px;
+        line-height: 40px;
+        margin-top: 40px;
+    }
+
+    .belity .top p.name span {
+        font-size: 15px;
+    }
+
+    .belity .top p.name:after {
+        display: none;
+    }
+
+    .belity .top p.name:before {
+        display: none;
+    }
+
+    .belity p.title {
+        font-size: 18px;
+        line-height: 18px;
+        margin: 30px 0;
+    }
+
+    .belity .guidelines .block1,
+    .belity .guidelines .block2,
+    .belity .guidelines .block3 {
+        padding: 20px 10px;
+        margin-bottom: 10px;
+    }
+
+    .belity .guidelines .colors {
+        margin-top: 25px;
+    }
+
+    .belity .guidelines .color1,
+    .belity .guidelines .color2,
+    .belity .guidelines .color3,
+    .belity .guidelines .color4 {
+        margin-bottom: 10px;
+    }
+
+    .belity .guidelines {
+        margin-bottom: 25px;
+    }
+
+    .belity .developers ul:after {
+        width: 103px;
+        height: 144px;
+    }
+
+    .belity .developers img {
+        margin: 20px auto 0;
+    }
+
+    .main_page_title {
+        font-size: 32px;
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .main_page_title {
+        font-size: 24px;
+        padding-top: 50px;
+    }
+}

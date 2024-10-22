@@ -1,0 +1,761 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+@import 'portfolioParts';
+
+@font-face {
+    font-family: 'a_Concepto-Bold';
+    src: url('/fonts/portfolio/equis/AConceptoBold.eot');
+    src: url('/fonts/portfolio/equis/AConceptoBold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/portfolio/equis/AConceptoBold.woff2') format('woff2'),
+    url('/fonts/portfolio/equis/AConceptoBold.woff') format('woff'),
+    url('/fonts/portfolio/equis/AConceptoBold.ttf') format('truetype'),
+    url('/fonts/portfolio/equis/AConceptoBold.svg#AConceptoBold') format('svg');
+}
+
+@font-face {
+    font-family: 'Geometria-Bold';
+    src: url('/fonts/portfolio/equis/Geometria-Bold.eot');
+    src: url('/fonts/portfolio/equis/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/portfolio/equis/Geometria-Bold.woff2') format('woff2'),
+    url('/fonts/portfolio/equis/Geometria-Bold.woff') format('woff'),
+    url('/fonts/portfolio/equis/Geometria-Bold.ttf') format('truetype'),
+    url('/fonts/portfolio/equis/Geometria-Bold.svg#Arial-BoldMT') format('svg');
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Bold';
+    src: url('/fonts/portfolio/fonts/equis/IBMPlexSans-Bold.eot');
+    src: url('/fonts/portfolio/fonts/equis/IBMPlexSans-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/portfolio/equis/IBMPlexSans-Bold.woff2') format('woff2'),
+    url('/fonts/portfolio/equis/IBMPlexSans-Bold.woff') format('woff'),
+    url('/fonts/portfolio/equis/IBMPlexSans-Bold.ttf') format('truetype'),
+    url('/fonts/portfolio/equis/IBMPlexSans-Bold.svg#IBMPlexSans-Bold') format('svg');
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Regular';
+    src: url('/fonts/portfolio/equis/IBMPlexSans.eot');
+    src: url('/fonts/portfolio/equis/IBMPlexSans.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/portfolio/equis/IBMPlexSans.woff2') format('woff2'),
+    url('/fonts/portfolio/equis/IBMPlexSans.woff') format('woff'),
+    url('/fonts/portfolio/equis/IBMPlexSans.ttf') format('truetype'),
+    url('/fonts/portfolio/equis/IBMPlexSans.svg#IBMPlexSans') format('svg');
+}
+
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }@mixin classic-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    @mixin content-block-absolute {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+
+    @mixin line-bot {
+        @include content-block-absolute;
+        border-bottom: 4px solid #F6A947;
+        width: 65%;
+        left: 0;
+        bottom: 0;
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    @mixin home-page-bgc{
+        @include content-block-absolute;
+        background: url('/img/portfolio/equis/home-page-bg.png') no-repeat center / contain;
+        width: 100%;
+        height: 100%;
+        top: 24%;
+    }
+
+    @mixin sphere-vertical-border {
+        @include content-block-absolute;
+        border-left: 2px dashed #CACACA;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        height: 59px;
+    }
+
+    @mixin sphere-horizontal-border {
+        @include content-block-absolute;
+        border-bottom: 2px dashed #CACACA;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -30%);
+        width: 90%;
+        z-index: -1;
+    }
+
+    @function strip-unit($number) {
+        @if type-of($number) == 'number' and not unitless($number) {
+            @return $number / ($number * 0 + 1);
+        }
+
+        @return $number;
+    }
+
+    @function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+        $f-min: strip-unit($f-min);
+        $f-max: strip-unit($f-max);
+        $w-min: strip-unit($w-min);
+        $w-max: strip-unit($w-max);
+
+        $k: ($f-max - $f-min)/($w-max - $w-min);
+        $b: $f-min - $k * $w-min;
+
+        $b: $b + $units;
+
+        @return calc( #{$k} * 100vw + #{$b} );
+    }
+
+    @mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+
+        font-size: $f-min;
+
+        @media (min-width: $w-min) {
+            @if ($fallback) {
+                font-size: $fallback;
+            }
+            font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+        }
+        @media (min-width: $w-max) {
+            font-size: $f-max;
+        }
+    }
+    .title {
+        display: block;
+        text-transform: uppercase;
+        position: relative;
+        &__reverse {
+            position: absolute;
+            transform: rotate(-90deg);
+            top: 1500px;
+            right: -480px;
+            @media screen and (max-width: 1849px) {
+                display: none;
+            }
+        }
+        &__primary {
+            color: #222222;
+            max-width: 402px;
+            padding-bottom: 21px;
+            @include fluidFontSize (26px, 64px, 320px, 991px, 64px);
+            &::after {
+                @include line-bot;
+            }
+        }
+        &__secondary {
+            @include fluidFontSize (42px, 140px, 320px, 1099px, 140px);
+            color: rgba(0, 0, 0, 0.05);
+        }
+        &__subtitle {
+            font-family: 'Geometria';
+            @include fluidFontSize (24px, 64px, 320px, 991px, 120px);
+            color: #444444;
+            text-align: right;
+        }
+        &__bg {
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            @media screen and (max-width: 599px) {
+                transform: translate(-50%, 10%);
+            }
+        }
+        @media screen and (max-width: 991px) {
+            padding-bottom: 0;
+        }
+    }
+
+    .margin {
+        &_mr-140 {
+            margin-right: 140px;
+            @media screen and (max-width: 991px) {
+                margin-right: 0
+            }
+        }
+        &_mt-75 {
+            margin-top: 75px !important;
+            @media screen and (max-width: 991px) {
+                margin-top: 50px !important;;
+            }
+        }
+    }
+
+    html {
+        overflow-x: hidden;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    p,
+    h2,
+    h3{
+        line-height: 1;
+    }
+
+
+    .container {
+        max-width: 1780px;
+        padding: 0 15px;
+        margin: auto;
+        width: 100%;
+    }
+
+    //header
+    .header {
+        @include classic-flex;
+        align-items: center;
+        background: url('/img/portfolio/equis/header-bgc.jpg') no-repeat center / cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+        font-family: 'Geometria-Bold';
+        &__inner {
+            @include classic-flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            position: relative;
+            @media screen and (max-width: 991px) {
+                display: block;
+                margin: 50px auto;
+            }
+        }
+        &__description {
+            flex-basis: 45%;
+            margin-top: 186px;
+            @media screen and (max-width: 1499px) {
+                flex-basis: 40%;
+                margin-top: 405px;
+            }
+            @media screen and (max-width: 1199px) {
+                margin-top: 592px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-top: 100px;
+            }
+        }
+        &__logo {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            img{
+                max-width: 100%;
+            }
+        }
+        &__img {
+            position:absolute;
+            right: 0;
+            bottom: 0;
+            width: 64%;
+            img{
+                max-width: 100%;
+            }
+            @media screen and (min-width: 1920px) {
+                width: 1197px;
+            }
+            @media screen and (max-width: 991px) {
+                position: relative;
+                width: 100%;
+            }
+        }
+        &__txt {
+            @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+            text-align: center;
+            color: #5e5e5e;
+            max-width: 268px;
+            margin: 32px auto 66px auto;
+            @media screen and (max-width: 991px) {
+                margin-bottom: 35px;
+                margin-top: 25px;
+            }
+        }
+        &__icons {
+            @include classic-flex;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 184px;
+        }
+        &__img-area {
+            width: 36px;
+            height: 36px;
+        }
+        &__icon-img {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+            @media screen and (max-width: 991px) {
+                margin-bottom: 50px;
+            }
+        }
+        &__button {
+            display: block;
+            color: #555555;
+            text-transform: uppercase;
+            border: 2px solid#00b4db;
+            padding: 18px 18px;
+            text-align: center;
+            margin: 60px auto 0 auto;
+            @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+            transition-duration: 0.5s;
+            &:hover {
+                background-color: #00b4db;
+                color: #fff;
+            }
+            @media screen and (max-width: 991px) {
+                max-width: 195px;
+                padding: 14px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            height: 100%;
+        }
+    }
+    //end header
+
+    //main
+    .main {
+        font-family: 'a_Concepto-Bold';
+        &__container {
+            max-width: 1465px;
+            padding: 0 15px;
+            margin: auto;
+            position: relative;
+        }
+    }
+
+    .main-page {
+        position: relative;
+        &::before {
+            @include home-page-bgc;
+        }
+        &__inner {
+            @include classic-flex;
+            align-items: center;
+            margin-top: 27px;
+            @media screen and (max-width: 1199px) {
+                display: block;
+            }
+        }
+        &__inner-img-area {
+            position: relative;
+            max-width: 100%;
+        }
+        &__inner-img {
+            display: block;
+            box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.15);
+            margin-top: 37px;
+            max-width: 100%;
+        }
+        &__title {
+            @media screen and (max-width: 1199px) {
+                margin: 0 auto;
+                text-align: center;
+                &:first-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    .color {
+        position: relative;
+        padding: 100px 0px 570px 0;
+        @media screen and (max-width: 1656px) {
+            padding: 100px 0px 370px 0;
+        }
+        @media screen and (max-width: 1199px) {
+            padding: 100px 0px 100px 0;
+        }
+        &__img {
+            position: absolute;
+            transform: rotate(180deg);
+            right: 0;
+            top: 75px;
+            max-width: 290px;
+            @media screen and (max-width: 1656px) {
+                max-width: 170px;
+            }
+            @media screen and (max-width: 1399px) {
+                display: none;
+            }
+        }
+        &__title {
+            margin: 0 auto 100px auto;
+            text-align: center;
+            position: relative;
+            &::after {
+                //line-bot;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &__spheres {
+            @include classic-flex;
+            margin: 0 auto;
+            position: relative;
+            max-width: 1050px;
+            &::after {
+                @include sphere-horizontal-border;
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
+            }
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+        }
+        &__spheres-item {
+            @media screen and (max-width: 767px) {
+                &:not(:last-child) {
+                    margin-bottom: 35px;
+                }
+            }
+        }
+        &__sphere-outer {
+            position: relative;
+            width: 145px;
+            height: 145px;
+            background: url('/img/portfolio/equis/Ellipse.png') no-repeat center / cover;
+            background-color: #fff;
+            &_brd-color-ok {
+                border-color: #00A200;
+            }
+            &_brd-color-warning {
+                border-color: #F6A947;
+            }
+            &_brd-color-success {
+                border-color: #BAE6BA;
+            }
+            &_brd-color-gray {
+                border-color: #A4A4A4;
+            }
+            @media screen and (max-width: 767px) {
+                margin: 0 auto;
+            }
+        }
+        &__sphere-inner {
+            position: absolute;
+            border-radius: 50%;
+            width: 121px;
+            height: 121px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &_bgc-color-ok {
+                background-color: #00A200;
+            }
+            &_bgc-color-warning {
+                background-color: #F6A947;
+            }
+            &_bgc-color-success {
+                background-color: #BAE6BA;
+            }
+            &_bgc-color-gray {
+                background-color: #A4A4A4;
+            }
+        }
+        &__icon-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 100%;
+        }
+        &__sphere-txt{
+            position: relative;
+            font-family: 'IBM Plex Sans Bold';
+            display: block;
+            padding-top: 70px;
+            text-align: center;
+            &::after {
+                @include sphere-vertical-border;
+            }
+        }
+    }
+
+    .services {
+        &__bg {
+            background: url('/img/portfolio/equis/home-page-bg.png') no-repeat center / cover;
+        }
+        &__title {
+            position: relative;
+            margin-left: auto;
+            @media screen and (max-width: 991px) {
+                text-align: center;
+                margin-bottom: 50px;
+                max-width: 100%;
+            }
+        }
+        &__laptop-iphone {
+            @include classic-flex;
+            align-items: flex-end;
+            margin: 0 auto;
+            position: relative;
+            bottom: 600px;
+            left: -7%;
+            @media screen and (max-width: 1656px) {
+                bottom: 450px;
+            }
+            @media screen and (max-width: 1379px) {
+                bottom: 350px;
+            }
+            @media screen and (max-width: 1199px) {
+                bottom: 0;
+            }
+        }
+        &__img {
+            max-width: 100%;
+            height: auto;
+            @media screen and  (max-width: 1656px) {
+                max-width: 65%;
+                &:first-child {
+                    margin: 0 auto;
+                }
+            }
+            @media screen and (max-width: 1199px) {
+                max-width: 50%;
+                &:first-child {
+                    margin: 0 auto;
+                }
+                &:last-child {
+                    max-width: 20%;
+                    margin: 0 auto;
+                }
+            }
+        }
+        &__img-page {
+            max-width: 100%;
+            position: relative;
+            bottom: 515px;
+            box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.15);
+            @media screen and (max-width: 1656px) {
+                bottom: 385px;
+            }
+            @media screen and (max-width: 1379px) {
+                bottom: 285px;
+            }
+            @media screen and (max-width: 1199px) {
+                bottom: 0;
+                margin-top: 50px;
+            }
+        }
+        &__title-reverse {
+            top: -385px;
+            right: 0;
+            left: -1530px;
+        }
+    }
+
+    .typography {
+        position: relative;
+        margin-top: -300px;
+        &__title {
+            margin: 0 auto;
+            text-align: center;
+            color: #555555;
+            &::after {
+                //line-bot
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        &__subtitle-concepto {
+            @include fluidFontSize (18px, 36px, 320px, 991px, 36px);
+            margin-bottom: 22px;
+        }
+        &__txt-concepto-big {
+            @include fluidFontSize (14px, 20px, 320px, 991px, 20px);
+            display: block;
+            margin-bottom: 10px;
+        }
+        &__txt-concepto-small {
+            @include fluidFontSize (14px, 20px, 320px, 991px, 20px);
+            text-transform: none;
+        }
+        &__subtitle-plex {
+            @include fluidFontSize (18px, 36px, 320px, 991px, 36px);
+            font-family: 'IBM Plex Sans Bold';
+            margin-bottom: 22px;
+        }
+        &__txt-plex-big {
+            @include fluidFontSize (14px, 20px, 320px, 991px, 20px);
+            font-family: 'IBM Plex Sans Regular';
+            margin-bottom: 10px;
+        }
+        &__txt-plex-small {
+            @include fluidFontSize (14px, 20px, 320px, 991px, 20px);
+            font-family: 'IBM Plex Sans Regular';
+            text-transform: none;
+        }
+        &__img {
+            position: absolute;
+            width: 270px;
+            height: 50%;
+            left: 0;
+            top: 0;
+            @media screen and (max-width: 1349px) {
+                width: 140px;
+            }
+            @media screen and (max-width: 1199px) {
+                display: none;
+            }
+        }
+        &__bg-img {
+            position: relative;
+            width: 100%;
+            bottom: 100px;
+            z-index: -1;
+            @media screen and (max-width: 1299px) {
+                bottom: -10px;
+            }
+        }
+        @media screen and (max-width: 1656px) {
+            margin-top: -100px;
+        }
+        @media screen and (max-width: 1379px) {
+            margin-top: -150px;
+        }
+        @media screen and (max-width: 1199px) {
+            margin-top: 150px;
+        }
+        @media screen and (max-width: 767px) {
+            margin-top: 75px;
+        }
+    }
+    .other-pages {
+        &__inner {
+            padding-right: 140px;
+            @media screen and (max-width: 1199px) {
+                padding-right: 0;
+            }
+        }
+        &__img-page {
+            position: relative;
+            display: block;
+            bottom: 300px;
+            max-width: 100%;
+            box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.15);
+            @media screen and (max-width: 1599px) {
+                bottom: 200px;
+            }
+            @media screen and (max-width: 1499px) {
+                margin: 0 auto;
+            }
+            @media screen and (max-width: 1299px) {
+                bottom: 100px;
+            }
+            @media screen and (max-width: 991px) {
+                bottom: 50px;
+            }
+        }
+        &__img-page-2 {
+            display: block;
+            position: relative;
+            margin-top: -1000px;
+            max-width: 100%;
+            margin-left: 140px;
+            box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.15);
+            @media screen and (max-width: 1499px) {
+                margin: -670px 0 0 140px;
+            }
+            @media screen and (max-width: 1299px) {
+                margin: -470px 0 0 140px;
+            }
+            @media screen and (max-width: 1199px) {
+                margin: -25px auto 0;
+            }
+        }
+        &__title-reverse {
+            position: absolute;
+            transform: rotate(-90deg);
+            top: 653px;
+            right: -451px;
+            z-index: -1;
+            @media screen and (max-width: 1199px) {
+                display: none;
+            }
+        }
+        &__titles {
+            position: relative;
+            display: block;
+            text-transform: uppercase;
+            text-align: center;
+            color: #555555;
+            margin: 85px 0;
+            @include fluidFontSize (32px, 72px, 320px, 991px, 72px);
+            &_orange {
+                color: #F6A947;
+            }
+            @media screen and (max-width: 991px) {
+                margin: 25px 0;
+            }
+        }
+    }
+    //end main

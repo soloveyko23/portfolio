@@ -1,0 +1,41 @@
+.messangers{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: none !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  z-index: 999;
+  right: 0;
+
+  height: 126px;
+  ul{
+    background:url('/img/stuff.png'), #50A8D5;
+    align-items: center;
+
+    border-radius: 24px 0px 0px 24px;
+    padding: 14px 8px;
+    li {
+
+      a {
+        padding: 6px;
+        display: block;
+        svg {
+          transition: .3s;
+          fill:$color-white;
+        }
+        &:hover{
+          svg {
+            fill:$color-22;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width:768px) {
+    display: none;
+  }
+}

@@ -1,0 +1,241 @@
+@import "../fonts";
+@import '../var';
+
+.footer {
+  padding: 70px 0;
+  background-image: url(/img/services-item-bg.jpg); 
+  position: relative;
+  z-index: 100;
+  .row{
+    display: flex;
+    
+  }
+  .col-xs-12{
+    flex: 1 1 auto;
+  }
+  
+  .container{
+    width: 1520px;
+    max-width: 100%;
+    padding: 0 15px;
+    margin: auto;
+  }
+  
+  &__contact{
+    display: flex;
+    flex-direction: column;
+    .social{
+      margin-bottom: 28px;
+      a path{
+        fill: #5B5B5B;
+      }
+      a:hover path{
+        fill: #fff;
+      }
+    }
+    .button{
+      margin: 0;
+      margin-left: auto;
+      max-width: 90%;
+    }
+  }
+  &__phone {
+    
+    margin-left: auto;
+    margin-bottom: 20px;
+    display: block; 
+    position: relative;
+    
+    
+    font-family: Stolzl;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 132%;
+    text-align: right;
+    color: #FFFFFF; 
+    
+  }
+  
+  &__inner-txt {
+    display: block;
+    line-height: 34px;
+    //font-family: 'TTHoves';
+    font-display: swap;
+    font-weight: 500;
+    color: $color-main;
+    &:hover {
+      color: $color-copyright;
+    }
+  }
+  
+  &__button {
+    display: block; 
+    font-weight: bold;
+    width: 258px;
+    padding: 14px; 
+  }
+  &__menu{
+    
+    a{
+      font-family: 'Stolzl';
+      font-size: 18px;
+      line-height: 132%;
+      letter-spacing: 0.05em;
+      color: #FFFFFF;
+      margin: 6px 0;
+      white-space: nowrap;
+      display: inline-block;
+      
+      &:hover{
+        color: $color-fa;
+      }
+    }
+    li{
+      &:first-child a{
+        margin-top: 0;
+      }
+    }
+  }
+  &__copy{
+    margin-top: 48px;
+    font-family: Stolzl;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #888888;
+  }
+
+  &-brief{
+    width: 258px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 39px;
+    @media screen and (max-width:1200px) {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    p{
+      font-size: 14px;
+      line-height: 132%;
+      color: #FFFFFF;
+    }
+    ul{
+      display: flex;
+      align-items: center;
+      margin: 12px 0;
+      li{
+        flex: 1 1 33.3%;
+        padding: 5px 20px;
+        border-right: 1px solid rgba(255, 255, 255, 0.4);
+        &:last-child{
+          border-right: unset;
+        }
+        a{
+          text-align: center;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 132%;
+          color: #fff;
+          text-align: center;
+          display: block;
+          &.small{
+            font-size: 14px;
+            line-height: 110%;
+            
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width:1400px){
+    &__menu{
+      a{
+        font-size: 14px;
+      }
+    }
+    &__phone{
+      font-size: 21px;
+    }
+  }
+  @media screen and (max-width:1199px){
+    .row{
+      flex-wrap: wrap;
+    }
+   
+    &__phone{
+      font-size: 24px;
+    }
+    &__logo, &__contact{
+      flex: 1 1 50%;
+      margin-bottom: 50px;
+    }
+    &__menu{
+      order: 2;
+      text-align: center;
+      a{
+        white-space: unset;
+        font-size: 18px;
+      }
+      &:nth-child(3){
+        //text-align: right;
+      }
+      &:nth-child(4){
+        //text-align: right;
+      }
+    }
+    .logo-link,
+    .footer__copy,
+    .social,
+    .footer__phone,
+    .footer__contact .button
+    {
+      margin-left: auto;
+      margin-right:auto;
+      text-align: center;
+    }
+    .footer__contact .button{
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  @media screen and (max-width:768px){
+    text-align: center;
+    .logo-link{
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__logo{
+      margin-bottom: 30px;
+      
+    }
+    &__button{
+      padding: 12px;
+    }
+    &__phone,&__contact .social,&__contact .button{
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__menu{
+      text-align: center;
+      margin-bottom: 60px;
+      &:nth-child(3){
+        text-align: center;
+      }
+      &:nth-child(4){
+        text-align: center;
+        margin-bottom: 0;
+      }
+    }
+  }
+} 
+
+.social__inner-footer {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

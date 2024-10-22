@@ -1,0 +1,250 @@
+.contact_us{
+  background-color: #4C49EA;
+  background-image: url('../img/redesign/redesign-contact-us.png');
+  background-size: cover;
+  .btn{
+    margin-top: 10px;
+  }
+  &-brief{
+    display: flex;
+    align-items: center;
+    p{
+      font-family: 'Stolzl';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 132%;
+      color: #FFFFFF;
+      margin-right: 16px;
+    }
+    ul{
+      display: flex;
+
+      li {
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        padding: 0 15px;
+        height: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a{
+          font-family: Stolzl;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 132%;
+          display: block;
+          margin-top: -3px;
+          /* or 24px */
+
+
+          color: #FFFFFF;
+        }
+        &:first-child{
+          padding-left: 0;
+        }
+        &:last-child{
+          border-right: unset;
+          padding-right: 0;
+          a{
+            font-size: 14px;
+            line-height: 110%;
+            text-align: center;
+          }
+        }
+      }
+    }
+
+  }
+  &-text_container{
+    overflow: auto;
+    max-height: 500px;
+    padding-right: 5px;
+
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 5px;
+      width: 1px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #C3C8DB;
+      border-radius: 5px;
+      width: 5px;
+      margin-left: -4px;
+    }
+
+    &-section{
+      margin-bottom: 34px;
+    }
+    p,h2{
+      font-family: Stolzl;
+      font-size: 16px;
+      line-height: 132%;
+      color: #FFFFFF;
+      opacity: .7;
+      margin-bottom: 27px;
+
+      &.title{
+        font-weight: 500;
+        opacity: 1;
+        margin-bottom: 16px;
+        text-align: left;
+        text-transform: unset;
+      }
+    }
+    h2{
+      opacity: 1;
+    }
+    ul {
+
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      padding-inline-start: 20px;
+      color: #fff;
+      opacity: .7;
+
+
+      li p{
+        margin-bottom: 0;
+        opacity: 1;
+        margin-top: 3px;
+        margin-bottom: 3px;
+      }
+    }
+
+  }
+  &-title{
+    font-family: 'Stolzl';
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    white-space: nowrap;
+  }
+  &-form{
+    margin-top: 40px;
+    margin-bottom: 74px;
+    $pd:10px;
+    .row{
+      margin-left: -$pd;
+      margin-right: -$pd;
+      &>div{
+        padding-left: $pd;
+        padding-right: $pd;
+      }
+    }
+    .iti{
+      width: 100%;
+      margin: 10px 0;
+    }
+    .iti--allow-dropdown input{
+      padding-left: 78px;
+    }
+    .iti--allow-dropdown .iti__flag-container{
+      margin-left: 24px;
+    }
+    input{
+      font-family: 'Stolzl';
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.05em;
+
+      width: 100%;
+      min-width: 1px;
+      max-width: 100%;
+      margin: 10px 0;
+      padding:20px 24px;
+    }
+
+  }
+  @media screen and (max-width:1550px) {
+    &-title{
+      font-size: 43px;
+      white-space: normal;
+    }
+
+    .contact_us-form input {
+      font-size: 12px;
+    }
+
+    .contact_us-form .iti--allow-dropdown .iti__flag-container {
+        margin-left: 12px;
+    }
+
+    .contact_us-form .iti--allow-dropdown input {
+        padding-left: 60px;
+    }
+  }
+
+  @include hd_descktop {
+    padding-top: 48px;
+    padding-bottom: 50px;
+    &-title{
+      font-size: 26px;
+      text-align: center;
+    }
+
+    &-form{
+      margin-top: 26px;
+      margin-bottom: 40px;
+      .iti{
+        margin: 0;
+        margin-bottom: 12px;
+
+      }
+      .iti--allow-dropdown .iti__flag-container{
+        margin-left: 16px;
+      }
+      .iti--allow-dropdown input {
+        padding-left: 62px;
+      }
+      input {
+        font-size: 14px;
+        margin-top: 0;
+        margin-bottom: 12px;
+        padding: 16px 18px;
+      }
+      .btn{
+        width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 120%;
+        text-transform: uppercase;
+      }
+    }
+    &-brief{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+
+        margin-bottom: 70px;
+
+        p{
+          font-size: 14px;
+          line-height: 132%;
+          margin-bottom: 12px;
+        }
+        ul li a {
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 132%;
+          &.small{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 110%;
+          }
+        }
+    }
+  }
+}
+

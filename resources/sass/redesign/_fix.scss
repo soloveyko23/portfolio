@@ -1,0 +1,11 @@
+.mainHeader__inner-item{
+  min-width: 500px;
+}
+
+
+@include hd_descktop {
+  .mainHeader__inner-item{
+    min-width: 1px;
+    justify-content: flex-end;
+  }
+}

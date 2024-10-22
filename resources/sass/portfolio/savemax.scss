@@ -1,0 +1,2018 @@
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+@font-face {
+    font-family: 'ClearSansRegular';
+    src: url('/fonts/portfolio/savemax/ClearSansRegular.eot');
+    src: url('/fonts/portfolio/savemax/ClearSansRegular.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/savemax/ClearSansRegular.woff2') format('woff2'),
+    url('/fonts/portfolio/savemax/ClearSansRegular.woff') format('woff'),
+    url('/fonts/portfolio/savemax/ClearSansRegular.ttf') format('truetype'),
+    url('/fonts/portfolio/savemax/ClearSansRegular.svg#ClearSansRegular') format('svg');
+}
+@font-face {
+    font-family: 'ClearSansBold';
+    src: url('/fonts/portfolio/savemax/ClearSansBold.eot');
+    src: url('/fonts/portfolio/savemax/ClearSansBold.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/savemax/ClearSansBold.woff2') format('woff2'),
+    url('/fonts/portfolio/savemax/ClearSansBold.woff') format('woff'),
+    url('/fonts/portfolio/savemax/ClearSansBold.ttf') format('truetype'),
+    url('/fonts/portfolio/savemax/ClearSansBold.svg#ClearSansBold') format('svg');
+}
+p, h2, h3{
+    margin: 0;
+}
+ul{
+    padding-left: 0;
+}
+ul li{
+    list-style: none;
+}
+.center{
+    text-align: center;
+}
+
+.main_page_title {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+    position: relative;
+    z-index: 1;
+    font-weight: normal;
+    line-height: 1;
+    color: #fff;
+    font-family: 'Gotham Pro';
+    margin-bottom: 30px;
+}
+.savemax .read-more {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'robotoregular_3';
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 15px 100px 15px 45px;
+    text-transform: lowercase;
+    background: url(/img/portfolio/savemax/arrowBtnRight.png) left center no-repeat #c90005;
+    background-position-x: 85%;
+    border: 2px solid transparent;
+    z-index: 1;
+    margin: 15px 0;
+    z-index: 10;
+}
+.savemax .read-more:hover {
+    background: url(/img/portfolio/savemax/arrowBtnRight.png) left center no-repeat;
+    background-position-x: 85%;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    z-index: 10;
+}
+body.savemax {
+    overflow-x: hidden;
+}
+.savemax h3 {
+    margin: 36px 0 24px 0;
+}
+.savemax
+.header button.buttonRed,
+.specials button.buttonRed {
+    background-color: #c90005;
+}
+
+.savemax .header{
+    padding-top: 50px;
+}
+
+.savemax
+.header button.buttonRed span:first-child,
+.specials button.buttonRed span:first-child {
+    width: 230px;
+    height: 41px;
+    padding: 12px 0 0 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.savemax
+.header button.buttonRed span:last-child,
+.specials button.buttonRed span:last-child {
+    width: 41px;
+    height: 41px;
+    position: relative;
+}
+
+.savemax
+.header button.buttonRed span:last-child:after,
+.specials button.buttonRed span:last-child:after {
+    content: ">";
+    color: #fff;
+    font-size: 25px;
+    position: absolute;
+    top: 25%;
+    left: 45%;
+}
+
+.savemax .header {
+    background: url("/img/portfolio/savemax/bgHeader.jpg") no-repeat center;
+    background-size: cover;
+    height: 831px;
+    padding-top: 110px;
+    box-shadow: none;
+
+    position: relative;
+    width: auto;
+    z-index: 0;
+    transition-duration: 0;
+}
+
+.pt-20 {
+    padding-top: 20px;
+}
+
+.savemax .about {
+    background: url("/img/portfolio/savemax/bgWave.png") no-repeat 0 245px;
+    background-size: contain;
+    padding-top: 100px;
+}
+
+.savemax .about h3 {
+    color: #000;
+    font-family: 'Calibri', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.savemax .about h3.linesLeft:before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -25px;
+    background: #fe0002;
+    width: 1px;
+    height: 250px;
+}
+
+.savemax .about h3.linesLeft:after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: -50px;
+    background: #fe0002;
+    width: 250px;
+    height: 1px;
+}
+
+.savemax .about p {
+    color: #666;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 26px;
+}
+
+.savemax .about ul li {
+    color: #666;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 26px;
+}
+
+.savemax .about .whiteText {
+    color: #fff;
+}
+.savemax .about h3.whiteText {
+    margin: 0;
+}
+
+.savemax .about .artwork {
+    position: relative;
+}
+
+.savemax .about .top-artwork {
+    position: absolute;
+    top: 35px;
+    left: 7%;
+}
+
+.savemax .developer {
+    background: url("/img/portfolio/savemax/bgDeveloper.jpg") no-repeat;
+    background-size: cover;
+    height: 520px;
+    margin-top: 150px;
+    padding-top: 100px;
+}
+
+.savemax .developer h3 {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+.savemax .developer h3.linesRight:before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    right: -25px;
+    background: #fff;
+    width: 1px;
+    height: 250px;
+}
+
+.savemax .developer h3.linesRight:after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    right: -50px;
+    background: #fff;
+    width: 250px;
+    height: 1px;
+}
+
+
+.savemax .developer p {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    line-height: 26px;
+    font-size: 20px;
+    font-weight: 300;
+    text-align: right;
+}
+
+.savemax .developer p > span {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.savemax .developer img {
+    padding-top: 90px;
+}
+
+.savemax .icons {
+    background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat;
+    background-size: cover;
+    height: 665px;
+    padding-top: 100px;
+}
+
+.savemax .icons h3 {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.savemax .icons h3.linesLeft:before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -25px;
+    background: #fff;
+    width: 1px;
+    height: 250px;
+}
+
+.savemax .icons h3.linesLeft:after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: -50px;
+    background: #fff;
+    width: 250px;
+    height: 1px;
+}
+
+.savemax .icons p {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 26px;
+    width: 800px;
+}
+
+.savemax .tablet {
+    padding-top: 60px;
+}
+
+.savemax .tablet ul {
+    text-align: left;
+    padding-top: 100px;
+}
+
+.savemax .tablet ul li {
+    color: #000;
+    font-family: 'Calibri', sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+.savemax .tablet ul li:nth-child(1) {
+    background: url("/img/portfolio/savemax/icon1.png") no-repeat left center;
+    padding-left: 70px;
+}
+
+.savemax .tablet ul li:nth-child(2) {
+    background: url("/img/portfolio/savemax/icon2.png") no-repeat left center;
+    padding-left: 70px;
+}
+
+.savemax .tablet ul li:nth-child(3) {
+    background: url("/img/portfolio/savemax/icon3.png") no-repeat left center;
+    padding-left: 70px;
+}
+
+.savemax .tablet ul li p {
+    color: #666;
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+}
+
+.savemax .adaptive {
+    position: relative;
+    overflow: hidden;
+}
+
+.savemax .adaptive .row {
+    margin-bottom: 0;
+}
+
+.savemax .adaptive .leftBlock {
+    position: relative;
+    background-color: #3e3e3e;
+    transform: skew(45deg);
+    height: 450px;
+}
+
+.savemax .adaptive .rightBlock {
+    position: relative;
+    background-color: #bf1617;
+    transform: skew(45deg);
+    height: 450px;
+}
+
+.savemax .adaptive .leftBlock:before {
+    content: "";
+    display: block;
+    width: 250px;
+    height: 450px;
+    background-color: #3e3e3e;
+    transform: skew(-45deg);
+    position: absolute;
+    left: 0;
+    z-index: -1;
+}
+
+.savemax .adaptive .rightBlock:after {
+    content: "";
+    display: block;
+    width: 250px;
+    height: 450px;
+    background-color: #bf1617;
+    transform: skew(-45deg);
+    position: absolute;
+    right: 0;
+    z-index: -1;
+}
+
+.savemax .adaptive img {
+    position: absolute;
+    right: 470px;
+}
+
+.savemax .adaptive h3 {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transform: skew(-45deg);
+    margin-left: 440px;
+    margin-top: 100px;
+}
+
+.savemax .adaptive h3.linesLeft:before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -25px;
+    background: #fff;
+    width: 1px;
+    height: 250px;
+}
+
+.savemax .adaptive h3.linesLeft:after {
+    content: "";
+    position: absolute;
+    top: -25px;
+    left: -50px;
+    background: #fff;
+    width: 250px;
+    height: 1px;
+}
+
+.savemax .adaptive p {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 26px;
+    transform: skew(-45deg);
+    width: 500px;
+    margin-left: 310px;
+}
+
+.savemax .specials {
+    background-color: #afafaf;
+    margin-bottom: -20px;
+}
+
+.savemax .specials h3 {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.savemax .specials .blocks p {
+    color: #414141;
+    font-size: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.savemax
+.specials .block1,
+.specials .block2,
+.specials .block3 {
+    background-color: #fff;
+    opacity: 0.8;
+    border-left: 25px solid #afafaf;
+    border-right: 25px solid #afafaf;
+}
+
+.savemax .specials .block1 p {
+    color: #414141;
+    font-size: 20px;
+}
+
+.savemax .specials .block2 p {
+    color: #414141;
+    font-family: ClearSansBold;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.savemax .specials .block3 p {
+    color: #414141;
+    font-family: ClearSansRegular;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.savemax
+.specials .circle1,
+.specials .circle2,
+.specials .circle3,
+.specials .circle4 {
+    width: 82px;
+    height: 82px;
+    border: 1px solid #9a9a9a;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.savemax .specials .circles {
+    margin-top: 55px;
+}
+
+.savemax .specials .circles p {
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.savemax .specials .circles .circle1 {
+    background-color: #000;
+    margin: 0 10px 0 0;
+}
+
+.savemax .specials .circles .circle2 {
+    background-color: #cb0000;
+    margin: 0 10px 0 10px;
+}
+
+.savemax .specials .circles .circle3 {
+    background-color: #febb00;
+    margin: 0 10px 0 10px;
+}
+
+.savemax .specials .circles .circle4 {
+    background-color: #fff;
+    margin: 0 0 0 10px;
+}
+
+.savemax .specials button {
+    margin: 100px 0;
+}
+.savemax .specials p {
+    margin: 12px 0;
+}
+.savemax .specials {
+    padding-bottom: 70px;
+}
+section.footer {margin-top: 0px;}
+
+/* Media */
+
+@media screen and (max-width: 1550px) {
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: 300px;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-45deg);
+        margin-left: 180px;
+        margin-top: 100px;
+    }
+
+    .savemax .adaptive p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
+        transform: skew(-45deg);
+        width: 500px;
+        margin-left: 50px;
+    }
+
+    .savemax .tablet ul {
+        text-align: left;
+        padding-top: 80px;
+    }
+
+}
+
+@media screen and (max-width: 1366px) {
+
+    .savemax .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        position: relative;
+        overflow: visible;
+    }
+
+    .savemax .tablet ul {
+        text-align: left;
+        padding-top: 90px;
+        margin-left: 50px;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: 260px;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+    .savemax .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        position: relative;
+        overflow: visible;
+    }
+
+    .savemax .about .top-artwork {
+        position: absolute;
+        top: 35px;
+        left: 2%;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -110px;
+        background-size: cover;
+        height: 665px;
+        padding-top: 100px;
+    }
+
+    .savemax .tablet ul {
+        text-align: left;
+        padding-top: 75px;
+        margin-left: 100px;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: 210px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .savemax .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 85%;
+        position: relative;
+        overflow: visible;
+    }
+
+    .savemax .header h1 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 63px;
+        font-weight: 700;
+        line-height: 34px;
+        text-transform: uppercase;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+        margin-top: 115px;
+    }
+
+    .savemax .header h1 > span {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 27px;
+        line-height: 44px;
+        text-transform: lowercase;
+        text-decoration: overline;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+    }
+
+    .savemax .about .artwork img {
+        width: 90%;
+    }
+
+    .savemax .about .artwork .top-artwork img {
+        width: 120%;
+    }
+
+    .savemax .about .top-artwork {
+        position: absolute;
+        top: 35px;
+        left: 0%;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -250px;
+        background-size: cover;
+        height: 665px;
+        padding-top: 100px;
+    }
+
+    .savemax .tablet ul {
+        text-align: left;
+        padding-top: 0px;
+        margin-top: -15px;
+        margin-left: 0px;
+    }
+
+    .savemax .tablet img {
+        width: 100%;
+    }
+
+    .savemax .adaptive .rightBlock {
+        position: relative;
+        background-color: #bf1617;
+        transform: skew(40deg);
+        height: 450px;
+    }
+
+    .savemax .adaptive .rightBlock:after {
+        content: "";
+        display: block;
+        width: 250px;
+        height: 450px;
+        background-color: #bf1617;
+        transform: skew(-40deg);
+        position: absolute;
+        right: -40px;
+        z-index: -1;
+    }
+
+    .savemax .adaptive .leftBlock {
+        position: relative;
+        background-color: #3e3e3e;
+        transform: skew(40deg);
+        height: 450px;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-40deg);
+        margin-left: 160px;
+        margin-top: 100px;
+    }
+
+    .savemax .adaptive p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
+        transform: skew(-40deg);
+        width: 500px;
+        margin-left: 50px;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: -60px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .savemax .about {
+        background: url("/img/portfolio/savemax/bgWave.png") no-repeat 0 420px;
+        background-size: contain;
+        padding-top: 100px;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -415px;
+        background-size: cover;
+        height: 665px;
+        padding-top: 100px;
+    }
+
+    .savemax .icons p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
+        width: 700px;
+    }
+
+    .savemax .tablet ul li p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 12px;
+        font-weight: 300;
+        line-height: 12px;
+    }
+
+    .savemax .tablet ul li {
+        color: #000;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: -150px;
+    }
+
+    .savemax .adaptive .leftBlock {
+        position: relative;
+        background-color: #3e3e3e;
+        transform: skew(30deg);
+        height: 450px;
+    }
+
+    .savemax .adaptive .rightBlock {
+        position: relative;
+        background-color: #bf1617;
+        transform: skew(30deg);
+        height: 450px;
+        z-index: -1;
+    }
+
+    .savemax .adaptive .rightBlock:after {
+        content: "";
+        display: block;
+        width: 250px;
+        height: 450px;
+        background-color: #bf1617;
+        transform: skew(-30deg);
+        position: absolute;
+        right: -120px;
+        z-index: -1;
+    }
+
+    .savemax .adaptive .leftBlock:before {
+        content: "";
+        display: block;
+        width: 250px;
+        height: 450px;
+        background-color: #3e3e3e;
+        transform: skew(-30deg);
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+
+    .savemax .adaptive p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
+        transform: skew(-30deg);
+        width: 390px;
+        margin-left: 40px;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-30deg);
+        margin-left: 115px;
+        margin-top: 100px;
+    }
+
+    .savemax
+    .specials .block1,
+    .specials .block2,
+    .specials .block3 {
+        background-color: #fff;
+        opacity: 0.8;
+        border-left: 10px solid #afafaf;
+        border-right: 10px solid #afafaf;
+    }
+
+    .savemax .specials .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        position: relative;
+        overflow: visible;
+    }
+
+    .savemax .specials button {
+        margin: 60px 0 100px;
+    }
+
+}
+
+@media screen and (max-width: 736px) {
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: -200px;
+    }
+
+    .savemax
+    .specials .block1,
+    .specials .block2,
+    .specials .block3 {
+        background-color: #fff;
+        opacity: 0.8;
+        border-left: 5px solid #afafaf;
+        border-right: 5px solid #afafaf;
+    }
+
+}
+
+@media screen and (max-width: 667px) {
+
+    .savemax .about {
+        background: url("/img/portfolio/savemax/bgWave.png") no-repeat 0 445px;
+        background-size: contain;
+        padding-top: 70px;
+    }
+
+    .savemax .developer {
+        background: url("/img/portfolio/savemax/bgDeveloper.jpg") no-repeat;
+        background-size: cover;
+        height: 520px;
+        margin-top: 100px;
+        padding-top: 80px;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -415px;
+        background-size: cover;
+        height: 610px;
+        padding-top: 70px;
+    }
+
+    .savemax .icons p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
+        width: 600px;
+    }
+
+    .savemax .tablet ul {
+        text-align: left;
+        padding-top: 0px;
+        margin-top: -35px;
+        margin-left: 0px;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: -265px;
+    }
+
+    .savemax .specials .block1 p {
+        color: #414141;
+        font-family: AAvanteTitlerCpsUpCBold;
+        font-size: 18px;
+    }
+
+    .savemax .specials .block2 p {
+        color: #414141;
+        font-family: ClearSans;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    .savemax .specials .block3 p {
+        color: #414141;
+        font-family: ClearSans;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+}
+
+@media screen and (max-width: 568px) {
+
+    .savemax .header h1 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 53px;
+        font-weight: 700;
+        line-height: 24px;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+        margin-top: 115px;
+    }
+
+    .savemax .header h1 > span {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 23px;
+        line-height: 40px;
+        text-transform: lowercase;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+    }
+
+    .savemax .about {
+        background: url("/img/portfolio/savemax/bgWave.png") no-repeat 0 355px;
+        background-size: contain;
+        padding-top: 70px;
+    }
+
+    .savemax .developer {
+        background: url("/img/portfolio/savemax/bgDeveloper.jpg") no-repeat;
+        background-size: cover;
+        height: 455px;
+        margin-top: 100px;
+        padding-top: 80px;
+    }
+
+    .savemax .developer img {
+        padding-top: 90px;
+        width: 100%;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -341px;
+        background-size: cover;
+        height: 525px;
+        padding-top: 70px;
+    }
+
+    .savemax .icons p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
+        width: 465px;
+    }
+
+    .savemax .tablet {
+        padding-top: 0px;
+    }
+
+    .savemax .tablet ul {
+        text-align: left;
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .savemax .tablet ul li:nth-child(1) {
+        background: url("/img/portfolio/savemax/icon1.png") no-repeat left center;
+        padding-left: 70px;
+        padding-top: 5px;
+    }
+
+    .savemax .adaptive .leftBlock:before {
+        content: "";
+        display: block;
+        width: 200px;
+        height: 450px;
+        background-color: #3e3e3e;
+        transform: skew(-30deg);
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 32px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-30deg);
+        padding-left: 155px;
+        padding-top: 80px;
+    }
+
+    .savemax .adaptive h3.linesLeft:before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 110px;
+        background: #fff;
+        width: 1px;
+        height: 250px;
+    }
+
+    .savemax .adaptive h3.linesLeft:after {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 90px;
+        background: #fff;
+        width: 250px;
+        height: 1px;
+    }
+
+    .savemax .adaptive p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 26px;
+        transform: skew(-30deg);
+        width: 324px;
+        margin-left: 27px;
+        margin-top: 20px;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: -330px;
+    }
+
+    .savemax .specials h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 36px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-top: 15px;
+    }
+
+    .savemax
+    .specials .block1,
+    .specials .block2,
+    .specials .block3 {
+        background-color: #fff;
+        opacity: 0.8;
+        border-top: 5px solid #afafaf;
+        border-bottom: 5px solid #afafaf;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .savemax .about h3 {
+        color: #000;
+        font-family: 'Calibri', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .savemax .about p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 23px;
+    }
+
+    .savemax .about ul li {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 23px;
+    }
+
+    .savemax .about {
+        background: url("/img/portfolio/savemax/bgWave.png") no-repeat 0 330px;
+        background-size: contain;
+        padding-top: 70px;
+    }
+
+    .savemax .developer {
+        background: url("/img/portfolio/savemax/bgDeveloper.jpg") no-repeat;
+        background-size: cover;
+        height: 380px;
+        margin-top: 100px;
+        padding-top: 80px;
+    }
+
+    .savemax .developer h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: right;
+        letter-spacing: 1px;
+    }
+
+    .savemax .developer p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        line-height: 26px;
+        font-size: 17px;
+        font-weight: 300;
+        text-align: right;
+    }
+
+    .savemax .developer p > span {
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .savemax .developer img {
+        padding-top: 20px;
+        width: 100%;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -290px;
+        background-size: cover;
+        height: 480px;
+        padding-top: 70px;
+    }
+
+    .savemax .icons h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .savemax .icons p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 26px;
+        width: auto;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-30deg);
+        padding-left: 155px;
+        padding-top: 80px;
+    }
+
+    .savemax .adaptive p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 300;
+        line-height: 26px;
+        transform: skew(-30deg);
+        width: 324px;
+        margin-left: 45px;
+        margin-top: 20px;
+    }
+
+    .savemax .adaptive .leftBlock:before {
+        content: "";
+        display: block;
+        width: 140px;
+        height: 450px;
+        background-color: #3e3e3e;
+        transform: skew(-30deg);
+        position: absolute;
+        left: 0;
+        z-index: -1;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: -400px;
+    }
+
+    .savemax .specials h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-top: 15px;
+    }
+
+}
+
+@media screen and (max-width: 414px) {
+
+    .savemax .header {
+        background: url("/img/portfolio/savemax/bgHeader.jpg") no-repeat center;
+        background-size: cover;
+        height: 565px;
+    }
+
+    .savemax .header h1 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 43px;
+        font-weight: 700;
+        line-height: 14px;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+        margin-top: 115px;
+    }
+
+    .savemax .header h1 > span {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 18px;
+        line-height: 35px;
+        text-transform: lowercase;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+    }
+
+    .savemax .about {
+        background: url("/img/portfolio/savemax/bgWave.png") no-repeat -40px 315px;
+        background-size: 125%;
+        padding-top: 70px;
+    }
+
+    .savemax .about h3 {
+        color: #000;
+        font-family: 'Calibri', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .savemax .about h3.linesLeft:before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: 0px;
+        background: #fe0002;
+        width: 1px;
+        height: 250px;
+    }
+
+    .savemax .about h3.linesLeft:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -50px;
+        background: #fe0002;
+        width: 250px;
+        height: 1px;
+    }
+
+    .savemax .about p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 23px;
+    }
+
+    .savemax .about ul li {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 23px;
+    }
+
+    .savemax .developer h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: right;
+        letter-spacing: 1px;
+    }
+
+    .savemax .developer h3.linesRight:before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        right: 0px;
+        background: #fff;
+        width: 1px;
+        height: 250px;
+    }
+
+    .savemax .developer h3.linesRight:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        right: -50px;
+        background: #fff;
+        width: 250px;
+        height: 1px;
+    }
+
+    .savemax .developer p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        line-height: 26px;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: right;
+    }
+
+    .savemax .developer p > span {
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .savemax .icons h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .savemax .icons p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+        width: auto;
+    }
+
+    .savemax .icons h3.linesLeft:before {
+        content: "";
+        position: absolute;
+        top: -50px;
+        left: 0px;
+        background: #fff;
+        width: 1px;
+        height: 250px;
+    }
+
+    .savemax .icons h3.linesLeft:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -50px;
+        background: #fff;
+        width: 250px;
+        height: 1px;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -323px;
+        background-size: cover;
+        height: 480px;
+        padding-top: 70px;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-30deg);
+        padding-left: 145px;
+        padding-top: 80px;
+    }
+
+    .savemax .adaptive p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 26px;
+        transform: skew(-30deg);
+        width: 260px;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .savemax .adaptive h3.linesLeft:before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: 125px;
+        background: #fff;
+        width: 1px;
+        height: 250px;
+    }
+
+    .savemax .adaptive h3.linesLeft:after {
+        content: "";
+        position: absolute;
+        top: 60px;
+        left: 90px;
+        background: #fff;
+        width: 250px;
+        height: 1px;
+    }
+
+    .savemax .adaptive .leftBlock:before {
+        content: "";
+        display: block;
+        width: 140px;
+        height: 450px;
+        background-color: #3e3e3e;
+        transform: skew(0deg);
+        position: absolute;
+        left: -135px;
+        z-index: -1;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: -435px;
+    }
+
+    .savemax .specials h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-top: 15px;
+    }
+
+    .savemax .specials .circles {
+        margin-top: 40px;
+    }
+
+    .savemax
+    .specials .circle1,
+    .specials .circle2,
+    .specials .circle3,
+    .specials .circle4 {
+        width: 72px;
+        height: 72px;
+        border: 1px solid #9a9a9a;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .savemax .header h1 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 14px;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+        margin-top: 100px;
+    }
+
+    .savemax
+    .header button.buttonRed span:first-child,
+    .specials button.buttonRed span:first-child {
+        width: 225px;
+        height: 36px;
+        padding: 12px 0 0 0;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .savemax
+    .header button.buttonRed span:last-child,
+    .specials button.buttonRed span:last-child {
+        width: 41px;
+        height: 36px;
+        position: relative;
+    }
+
+    .savemax .header h1 > span {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 17px;
+        line-height: 35px;
+        text-transform: lowercase;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+    }
+
+    .savemax .about h3 {
+        color: #000;
+        font-family: 'Calibri', sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .savemax .about h3.linesLeft:before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 0px;
+        background: #fe0002;
+        width: 1px;
+        height: 100px;
+    }
+
+    .savemax .about h3.linesLeft:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        background: #fe0002;
+        width: 100px;
+        height: 1px;
+    }
+
+    .savemax .about {
+        background: url("/img/portfolio/savemax/bgWave.png") no-repeat -40px 343px;
+        background-size: 125%;
+        padding-top: 70px;
+    }
+
+    .savemax .developer h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: right;
+        letter-spacing: 1px;
+    }
+
+    .savemax .developer h3.linesRight:before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        right: 0px;
+        background: #fff;
+        width: 1px;
+        height: 100px;
+    }
+
+    .savemax .developer h3.linesRight:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        background: #fff;
+        width: 100px;
+        height: 1px;
+    }
+
+    .savemax .icons h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .savemax .icons h3.linesLeft:before {
+        content: "";
+        position: absolute;
+        top: -30px;
+        left: 0px;
+        background: #fff;
+        width: 1px;
+        height: 100px;
+    }
+
+    .savemax .icons h3.linesLeft:after {
+        content: "";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        background: #fff;
+        width: 100px;
+        height: 1px;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -346px;
+        background-size: cover;
+        height: 480px;
+        padding-top: 70px;
+    }
+
+    .savemax .tablet ul {
+        text-align: left;
+        padding-top: 0px;
+        margin-top: 0px;
+        margin-bottom: -50px;
+        margin-left: 0px;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 19px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-30deg);
+        padding-left: 145px;
+        padding-top: 80px;
+    }
+
+    .savemax .adaptive h3.linesLeft:before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 125px;
+        background: #fff;
+        width: 1px;
+        height: 100px;
+    }
+
+    .savemax .adaptive h3.linesLeft:after {
+        content: "";
+        position: absolute;
+        top: 65px;
+        left: 110px;
+        background: #fff;
+        width: 100px;
+        height: 1px;
+    }
+
+    .savemax .adaptive img {
+        position: absolute;
+        right: -420px;
+        top: -65px;
+    }
+
+    .savemax .specials h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 21px;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding-top: 15px;
+    }
+
+    .savemax
+    .specials .circle1,
+    .specials .circle2,
+    .specials .circle3,
+    .specials .circle4 {
+        width: 65px;
+        height: 65px;
+        border: 1px solid #9a9a9a;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .savemax .specials .circles p {
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 65px;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .savemax .header h1 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 12px;
+        text-transform: uppercase;
+        text-decoration: underline;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+        margin-top: 70px;
+    }
+
+    .savemax .header h1 > span {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        text-align: center;
+        font-size: 15px;
+        line-height: 30px;
+        text-transform: lowercase;
+        text-shadow: -0.7px 0.7px 1px rgba(70, 70, 70, 0.31);
+    }
+
+    .savemax
+    .header button.buttonRed span:first-child,
+    .specials button.buttonRed span:first-child {
+        width: 180px;
+        height: 36px;
+        padding: 12px 0 0 0;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .savemax
+    .header button.buttonRed span:last-child,
+    .specials button.buttonRed span:last-child {
+        width: 41px;
+        height: 36px;
+        position: relative;
+    }
+
+    .savemax .about {
+        background: url("/img/portfolio/savemax/bgWave.png") no-repeat -40px 390px;
+        background-size: 125%;
+        padding-top: 70px;
+    }
+
+    .savemax .about h3 {
+        color: #000;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .savemax .about p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 16px;
+    }
+
+    .savemax .about {
+        background: url("/img/portfolio/savemax/bgWave.png") no-repeat -55px 322px;
+        background-size: 135%;
+        padding-top: 70px;
+    }
+
+    .savemax .developer h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: right;
+        letter-spacing: 1px;
+    }
+
+    .savemax .developer p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        line-height: 16px;
+        font-size: 16px;
+        font-weight: 300;
+        text-align: right;
+    }
+
+    .savemax .developer p > span {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    .savemax .developer {
+        background: url("/img/portfolio/savemax/bgDeveloper.jpg") no-repeat;
+        background-size: cover;
+        height: 335px;
+        margin-top: 100px;
+        padding-top: 80px;
+    }
+
+    .savemax .icons {
+        background: url("/img/portfolio/savemax/bgIcons.jpg") no-repeat -307px;
+        background-size: cover;
+        height: 420px;
+        padding-top: 70px;
+    }
+
+    .savemax .icons h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .savemax .icons p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 16px;
+        width: auto;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-30deg);
+        padding-left: 145px;
+        padding-top: 80px;
+    }
+
+    .savemax .adaptive p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 16px;
+        transform: skew(-30deg);
+        width: 220px;
+        margin-left: 39px;
+        margin-top: 20px;
+    }
+
+    .savemax .adaptive .leftBlock {
+        position: relative;
+        background-color: #3e3e3e;
+        transform: skew(30deg);
+        height: 400px;
+    }
+
+    .savemax .adaptive .rightBlock {
+        position: relative;
+        background-color: #bf1617;
+        transform: skew(30deg);
+        height: 400px;
+        z-index: -1;
+    }
+
+    .savemax .adaptive h3.linesLeft:before {
+        content: "";
+        position: absolute;
+        top: 50px;
+        left: 100px;
+        background: #fff;
+        width: 1px;
+        height: 100px;
+    }
+
+    .savemax .adaptive h3.linesLeft:after {
+        content: "";
+        position: absolute;
+        top: 65px;
+        left: 85px;
+        background: #fff;
+        width: 100px;
+        height: 1px;
+    }
+
+    .savemax .adaptive h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transform: skew(-30deg);
+        padding-left: 0;
+        padding-top: 0;
+    }
+    .savemax .adaptive h3:before,
+    .savemax .adaptive h3:after{
+        display: none;
+    }
+
+    .savemax .adaptive p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 16px;
+        font-weight: 300;
+        line-height: 16px;
+        transform: skew(-30deg);
+        width: 230px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .savemax
+    .specials .circle1,
+    .specials .circle2,
+    .specials .circle3,
+    .specials .circle4 {
+        width: 50px;
+        height: 50px;
+        border: 1px solid #9a9a9a;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .savemax .specials .circles p {
+        text-transform: uppercase;
+        text-align: center;
+        padding-top: 50px;
+    }
+
+    .savemax .specials button {
+        margin: 40px 0 100px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    header .container {
+        width: 85%;
+    }
+    footer .container {
+        width: 85%;
+    }
+}

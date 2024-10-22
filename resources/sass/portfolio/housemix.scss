@@ -1,0 +1,2035 @@
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+.center {
+    text-align: center;
+}
+p,h1,h2,h3,h4,ol,ul{
+    padding: 0;
+    margin: 0;
+}
+
+.housemix .read-more {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'robotoregular_3';
+    color: #fff;
+    letter-spacing: 1px;
+    padding: 15px 100px 15px 45px;
+    text-transform: lowercase;
+    background: url(/img/portfolio/housemix/arrowBtnRight.png) left center no-repeat #ff9c00;
+    background-position-x: 85%;
+    border: 2px solid transparent;
+    z-index: 1;
+    margin: 15px 0;
+    z-index: 10;
+}
+.housemix .read-more:hover {
+    background: url(/img/portfolio/housemix/arrowBtnRight.png) left center no-repeat;
+    background-position-x: 85%;
+    border: 2px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    z-index: 10;
+}
+body.housemix {
+    overflow-x: hidden;
+}
+
+.housemix
+.header button.buttonRed,
+.specials button.buttonRed {
+    background-color: #ff5d2b;
+}
+.header h1{
+    color: #fff;
+}
+
+.housemix
+.header button.buttonRed span:first-child,
+.specials button.buttonRed span:first-child {
+    width: 230px;
+    height: 41px;
+    padding: 12px 0 0 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.housemix
+.header button.buttonRed span:last-child,
+.specials button.buttonRed span:last-child {
+    width: 41px;
+    height: 41px;
+    position: relative;
+}
+
+.housemix
+.header button.buttonRed span:last-child:after,
+.specials button.buttonRed span:last-child:after {
+    content: ">";
+    color: #fff;
+    font-size: 25px;
+    position: absolute;
+    top: 25%;
+    left: 45%;
+}
+
+.housemix .footer {
+    margin-top: -20px;
+}
+
+.housemix .header {
+    background: url("/img/portfolio/housemix/bgHeader.jpg") no-repeat center;
+    background-size: cover;
+    height: 809px;
+    padding-top: 190px;
+    box-shadow: none;
+
+    position: relative;
+    width: auto;
+    z-index: 0;
+    transition-duration: 0;
+} 
+.housemix .iphones img {
+    max-width: 100%;
+}
+.housemix h3 {
+    margin: 36px 0 24px 0;
+}
+.housemix h2 {
+    margin: 36px 0 24px 0;
+}
+.housemix .block2 {
+    text-align: right;
+}
+.housemix .about {
+    margin-bottom: 20px;
+}
+.housemix .header p {
+    color: #fff;
+    font-family: 'comfortaalight_0';
+    line-height: 54px;
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-shadow: 0 1px 1px rgba(74, 74, 74, 0.33);
+}
+
+.housemix .housemixSeparator {
+    background-color: #faa058;
+    padding: 0 0 25px 0;
+}
+
+.housemix .housemixSeparator h1 {
+    color: #fff;
+    font-size: 44px;
+    line-height: 54px;
+    font-family: 'Calibri', sans-serif;
+    display: inline-block;
+    position: relative;
+}
+
+.housemix .housemixSeparator h1:after {
+    content: "";
+    display: block;
+    width: 175px;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.housemix .housemixSeparator h1 span {
+    color: #fff;
+    font-size: 44px;
+    font-family: 'Calibri', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.housemix .housemixSeparator h2 {
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Calibri', sans-serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.housemix .about h3 {
+    color: #3b3b3b;
+    font-family: 'Calibri', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 54px;
+    display: inline-block;
+    position: relative;
+}
+
+.housemix .about .block1 h3:before {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 3px;
+    background: #3b3b3b;
+    position: absolute;
+    bottom: 0;
+}
+
+.housemix .about .block1 h3:after {
+    content: url("/img/portfolio/housemix/iconProject.png");
+    display: block;
+    position: absolute;
+    top: -15px;
+    right: -70px;
+}
+
+.housemix .about .block2 h3:before {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 3px;
+    background: #3b3b3b;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.housemix .about .block2 h3:after {
+    content: url("/img/portfolio/housemix/iconDevelopment.png");
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -70px;
+}
+
+.housemix .about p {
+    color: #666;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 400;
+    position: relative;
+}
+
+.housemix .about .block1 p:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #bfad9f;
+    box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+    border-radius: 50%;
+    position: absolute;
+    top: -66px;
+    left: -30px;
+}
+
+.housemix .about .block1 p:after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background: #bfad9f;
+    box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+    position: absolute;
+    top: -61px;
+    left: -437px;
+}
+
+.housemix .about .block2 p:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #bfad9f;
+    box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+    border-radius: 50%;
+    position: absolute;
+    top: -66px;
+    right: -30px;
+}
+
+.housemix .about .block2 p:after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 2px;
+    background: #bfad9f;
+    box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+    position: absolute;
+    top: -62px;
+    right: -437px;
+}
+
+.housemix .concept {
+    background-color: rgba(168, 164, 137, 0.7);
+    height: 1375px;
+    position: relative;
+    z-index: 1;
+}
+
+.housemix .concept:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 632px solid transparent;
+    border-right: 632px solid transparent;
+    border-top: 476px solid #f9f7ea;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+.housemix .concept h3 {
+    color: #3b3b3b;
+    font-family: 'Calibri', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 54px;
+    position: relative;
+}
+
+.housemix .concept h3:before {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 3px;
+    background-color: #3b3b3b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.housemix .concept p {
+    color: #666;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+}
+
+.housemix .concept .artwork {
+    position: relative;
+    top: 150px;
+}
+
+.housemix .concept .top-artwork {
+    position: absolute;
+    top: -100px;
+    left: 0;
+    right: 0;
+}
+
+.housemix .design {
+    background-color: rgba(191, 173, 159, 0.27);
+    height: 570px;
+    position: relative;
+}
+
+.housemix .design .row .col {
+    padding: 0;
+}
+
+.housemix .design .leftImg {
+    position: absolute;
+    top: -25px;
+    left: 0;
+    z-index: 1;
+}
+
+.housemix .design .rightImg {
+    position: absolute;
+    top: -77px;
+    right: 0;
+    z-index: 1;
+}
+
+.housemix .design p {
+    color: #d00202;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 26px;
+    width: 315px;
+    position: relative;
+    top: 150px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-bottom: 120px;
+    z-index: 2;
+}
+
+.housemix .design p.first:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #bfad9f;
+    box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    right: -25px;
+}
+
+.housemix .design p.first:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: #bfad9f;
+    box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+    position: absolute;
+    top: 24px;
+    right: -125px;
+}
+
+.housemix .design p.second:before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #bfad9f;
+    box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: -25px;
+}
+
+.housemix .design p.second:after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: #bfad9f;
+    box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+    position: absolute;
+    top: 24px;
+    left: -125px;
+}
+
+.housemix .development {
+    background: url("/img/portfolio/housemix/bgDevelopment.jpg") no-repeat center;
+    background-size: cover;
+    height: 554px;
+    margin-bottom: 250px;
+}
+
+.housemix .development h3 {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 54px;
+    position: relative;
+}
+
+.housemix .development h3:before {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.housemix .development p {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    line-height: 26px;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.housemix .development p span {
+    line-height: 26px;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.housemix .development img {
+    width: 70%;
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.housemix .features {
+    padding: 50px 0 25px;
+    background-color: #faa058;
+}
+.housemix .features p {
+    color: #fff;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 21px;
+    text-align: center;
+}
+
+.housemix .adaptive {
+    background: url("/img/portfolio/housemix/bgAdaptive.jpg") no-repeat center;
+    background-size: cover;
+    height: 762px;
+    position: relative;
+}
+
+.housemix .adaptive h3 {
+    color: #3b3b3b;
+    font-family: 'Calibri', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 54px;
+    position: relative;
+}
+
+.housemix .adaptive h3:before {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 3px;
+    background-color: #3b3b3b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.housemix .adaptive p {
+    color: #666;
+    font-family: 'Calibri', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+}
+
+.housemix .adaptive img.iphoneCenter {
+    display: block;
+    width: 32%;
+}
+
+.housemix .adaptive img.iphoneLeft {
+    display: block;
+    max-width: 100%;
+}
+
+.housemix .adaptive img.iphoneRight {
+    display: block;
+    max-width: 100%;
+}
+
+.housemix .specials {
+    background-color: #c2bfac;
+    border-top: 3px solid #9c9a8b;
+    position: relative;
+    z-index: 0;
+}
+.housemix .bottom {
+    margin-bottom: 70px;
+}
+
+.housemix .specials h3 {
+    color: #3b3b3b;
+    font-family: 'Calibri', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 54px;
+    position: relative;
+}
+
+.housemix .specials h3:before {
+    content: "";
+    display: block;
+    width: 96px;
+    height: 3px;
+    background-color: #3b3b3b;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.housemix .specials p {
+    color: #414141;
+    font-size: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.housemix
+.specials .block1,
+.specials .block2,
+.specials .block3 {
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-left: 25px solid #c2bfac;
+    border-right: 25px solid #c2bfac;
+    padding: 10px 0;
+}
+
+.housemix .specials .block1 p {
+    font-family: 'BloggerSans-Medium';
+}
+
+.housemix .specials .block2 p {
+    font-family: 'corbel';
+}
+
+.housemix .specials .block3 p {
+    font-family: ProximaNova Regular;
+}
+
+.housemix
+.specials .circle1,
+.specials .circle2,
+.specials .circle3 {
+    width: 82px;
+    height: 82px;
+    border: 1px solid #9a9a9a;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.housemix .specials .circles {
+    margin-top: 55px;
+}
+
+.housemix .specials .circles p {
+    color: #666;
+    font-family: Calibri, sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 15px;
+    text-transform: uppercase;
+    padding-top: 80px;
+}
+
+.housemix .specials .circles .circle1 {
+    background-color: #bfad9f;
+    margin: 0 10px 0 0;
+}
+
+.housemix .specials .circles .circle2 {
+    background-color: #dcdad9;
+    margin: 0 10px 0 10px;
+}
+
+.housemix .specials .circles .circle3 {
+    background-color: #fff;
+    margin: 0 0 0 10px;
+}
+
+.housemix .specials button {
+    margin: 100px 0 150px;
+}
+
+/* Media */
+
+@media screen and (max-width: 1550px) {
+
+    .housemix .design {
+        background-color: rgba(191, 173, 159, 0.27);
+        height: 461px;
+        position: relative;
+    }
+
+    .housemix .design .leftImg {
+        width: 40%;
+        position: absolute;
+        top: -27px;
+        left: 0;
+        z-index: 1;
+    }
+
+    .housemix .design .rightImg {
+        width: 40%;
+        position: absolute;
+        top: -81px;
+        right: 0;
+        z-index: 1;
+    }
+
+    .housemix .design p {
+        color: #d00202;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 26px;
+        width: 250px;
+        position: relative;
+        top: 150px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 120px;
+        z-index: 2;
+    }
+
+}
+
+@media screen and (max-width: 1366px) {
+
+    .housemix .design {
+        background-color: rgba(191, 173, 159, 0.27);
+        height: 439px;
+        position: relative;
+    }
+
+    .housemix .design p {
+        color: #d00202;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 26px;
+        width: 250px;
+        position: relative;
+        top: 102px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 60px;
+        z-index: 2;
+    }
+
+    .housemix .design .leftImg {
+        width: 40%;
+        position: absolute;
+        top: -25px;
+        left: 0;
+        z-index: 1;
+    }
+
+    .housemix .design .rightImg {
+        width: 40%;
+        position: absolute;
+        top: -76px;
+        right: 0;
+        z-index: 1;
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        position: relative;
+        overflow: visible;
+    }
+
+    .housemix .about .block1 p:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: -62px;
+        left: -395px;
+    }
+
+
+    .housemix .about .block2 p:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: -62px;
+        right: -395px;
+    }
+
+    .housemix .concept {
+        background-color: rgba(168, 164, 137, 0.7);
+        height: 1200px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .housemix .concept .artwork img {
+        width: 90%;
+    }
+
+    .housemix .concept .artwork .top-artwork img {
+        width: 60%;
+    }
+
+    .housemix .design {
+        background-color: rgba(191, 173, 159, 0.27);
+        height: 410px;
+        position: relative;
+    }
+
+    .housemix .design .rightImg {
+        width: 40%;
+        position: absolute;
+        top: -72px;
+        right: 0;
+        z-index: 1;
+    }
+
+    .housemix .design p {
+        color: #d00202;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 26px;
+        width: 250px;
+        position: relative;
+        top: 95px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 60px;
+        z-index: 2;
+    }
+
+    .housemix .adaptive {
+        background: url("/img/portfolio/housemix/bgAdaptive.jpg") no-repeat center;
+        background-size: cover;
+        height: 700px;
+        position: relative;
+    }
+
+
+}
+
+@media screen and (max-width: 1024px) {
+
+    .housemix .about .block1 p:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: -62px;
+        left: -319px;
+    }
+
+    .housemix .about .block2 p:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: -62px;
+        right: -319px;
+    }
+
+    .housemix .concept {
+        background-color: rgba(168, 164, 137, 0.7);
+        height: 1100px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .housemix .concept:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 500px solid transparent;
+        border-right: 500px solid transparent;
+        border-top: 440px solid #f9f7ea;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .housemix .design {
+        background-color: rgba(191, 173, 159, 0.27);
+        height: 323px;
+        position: relative;
+    }
+
+    .housemix .design p {
+        color: #d00202;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 26px;
+        width: 290px;
+        position: relative;
+        top: 53px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 60px;
+        z-index: 2;
+    }
+
+    .housemix .design .rightImg {
+        width: 40%;
+        position: absolute;
+        top: -63px;
+        right: -80px;
+        z-index: 1;
+    }
+
+    .housemix .design .leftImg {
+        width: 40%;
+        position: absolute;
+        top: -25px;
+        left: -80px;
+        z-index: 1;
+    }
+
+    .housemix .development {
+        background: url("/img/portfolio/housemix/bgDevelopment.jpg") no-repeat center;
+        background-size: cover;
+        height: 554px;
+        margin-bottom: 150px;
+    }
+
+    .housemix .adaptive {
+        background: url("/img/portfolio/housemix/bgAdaptive.jpg") no-repeat center;
+        background-size: cover;
+        height: 570px;
+        position: relative;
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .housemix .about .block1 p:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: -62px;
+        left: -358px;
+    }
+
+    .housemix .about .block2 p:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: -62px;
+        right: -358px;
+    }
+
+    .housemix .concept {
+        background-color: rgba(168, 164, 137, 0.7);
+        height: 850px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .housemix .concept:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 350px solid transparent;
+        border-right: 350px solid transparent;
+        border-top: 350px solid #f9f7ea;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .housemix .design {
+        background-color: rgba(191, 173, 159, 0.27);
+        height: 290px;
+        position: relative;
+    }
+
+    .housemix .design .leftImg {
+        width: 40%;
+        position: absolute;
+        top: 30px;
+        left: -80px;
+        z-index: 1;
+    }
+
+    .housemix .design .rightImg {
+        width: 40%;
+        position: absolute;
+        top: 0px;
+        right: -80px;
+        z-index: 1;
+    }
+
+    .housemix .design p {
+        color: #d00202;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 26px;
+        width: 250px;
+        position: relative;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 60px;
+        z-index: 2;
+    }
+
+    .housemix .development {
+        background: url("/img/portfolio/housemix/bgDevelopment.jpg") no-repeat center;
+        background-size: cover;
+        height: 554px;
+        margin-bottom: 0;
+    }
+
+    .housemix .development img {
+        width: 70%;
+        display: block;
+        position: relative;
+        top: 32px;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .housemix .adaptive {
+        background: url("/img/portfolio/housemix/bgAdaptive.jpg") no-repeat center;
+        background-size: cover;
+        height: 523px;
+        position: relative;
+    }
+
+    .housemix
+    .specials .block1,
+    .specials .block2,
+    .specials .block3 {
+        margin-top: 50px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-left: 5px solid #c2bfac;
+        border-right: 5px solid #c2bfac;
+        padding: 10px 0;
+    }
+
+    .housemix .specials p {
+        color: #414141;
+        font-size: 18px;
+        text-align: center;
+        line-height: 30px;
+    }
+
+    .housemix .specials button {
+        margin: 50px 0 100px;
+    }
+
+}
+
+@media screen and (max-width: 736px) {
+
+    .housemix .header {
+        background: url("/img/portfolio/housemix/bgHeader.jpg") no-repeat center;
+        background-size: cover;
+        height: 600px;
+        padding-top: 50px;
+    }
+
+    .housemix .header p {
+        color: #fff;
+        font-family: 'comfortaalight_0';
+        line-height: 40px;
+        text-transform: uppercase;
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        text-shadow: 0 1px 1px rgba(74, 74, 74, 0.33);
+    }
+
+    .housemix .about .block1 p:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: -62px;
+        left: -343px;
+    }
+
+    .housemix .about .block2 p:after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: -62px;
+        right: -343px;
+    }
+
+    .housemix .concept {
+        background-color: rgba(168, 164, 137, 0.7);
+        height: 730px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .housemix .concept .artwork {
+        position: relative;
+        top: 110px;
+    }
+
+    .housemix .design {
+        background-color: rgba(191, 173, 159, 0.27);
+        height: 280px;
+        position: relative;
+    }
+
+    .housemix .design p {
+        color: #d00202;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 26px;
+        width: 250px;
+        position: relative;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 50px;
+        z-index: 2;
+    }
+
+    .housemix .development {
+        background: url("/img/portfolio/housemix/bgDevelopment.jpg") no-repeat center;
+        background-size: cover;
+        height: 542px;
+        margin-bottom: 0;
+    }
+
+}
+
+@media screen and (max-width: 667px) {
+
+    .housemix .about .block1 p:after {
+        display: none;
+    }
+
+    .housemix .about .block1 p:before {
+        display: none;
+    }
+
+    .housemix .about .block2 p:after {
+        display: none;
+    }
+
+    .housemix .about .block2 p:before {
+        display: none;
+    }
+
+    .housemix .concept {
+        background-color: rgba(168, 164, 137, 0.7);
+        height: 700px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .housemix .concept:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 300px solid transparent;
+        border-right: 300px solid transparent;
+        border-top: 350px solid #f9f7ea;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .housemix .design {
+        background-color: rgba(191, 173, 159, 0.27);
+        height: 252px;
+        position: relative;
+    }
+
+    .housemix .design .leftImg {
+        width: 40%;
+        position: absolute;
+        top: 25px;
+        left: -80px;
+        z-index: 1;
+    }
+
+    .housemix .design p {
+        color: #d00202;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 26px;
+        width: 250px;
+        position: relative;
+        top: 30px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 30px;
+        z-index: 2;
+    }
+
+    .housemix .design p.first:after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: 24px;
+        right: -85px;
+    }
+
+    .housemix .design p.second:after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 2px;
+        background: #bfad9f;
+        box-shadow: 1.6px 1.2px 4px rgba(70, 70, 70, 0.31);
+        position: absolute;
+        top: 24px;
+        left: -85px;
+    }
+
+    .housemix .adaptive {
+        background: url("/img/portfolio/housemix/bgAdaptive.jpg") no-repeat center;
+        background-size: cover;
+        height: 465px;
+        position: relative;
+    }
+
+    .housemix
+    .specials .block1,
+    .specials .block2,
+    .specials .block3 {
+        margin-top: 15px;
+        background-color: rgba(255, 255, 255, 0.8);
+        border-left: 2px solid #c2bfac;
+        border-right: 2px solid #c2bfac;
+        padding: 10px 0;
+    }
+
+    .housemix .specials p {
+        color: #414141;
+        font-size: 16px;
+        text-align: center;
+        line-height: 20px;
+    }
+
+}
+
+@media screen and (max-width: 568px) {
+
+    .housemix .header {
+        background: url("/img/portfolio/housemix/bgHeader.jpg") no-repeat center;
+        background-size: cover;
+        height: 500px;
+        padding-top: 50px;
+    }
+
+    .housemix .header p {
+        color: #fff;
+        font-family: 'comfortaalight_0';
+        line-height: 30px;
+        text-transform: uppercase;
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-shadow: 0 1px 1px rgba(74, 74, 74, 0.33);
+    }
+
+    .housemix .housemixSeparator h1 {
+        color: #fff;
+        font-size: 35px;
+        line-height: 40px;
+        font-family: 'Calibri', sans-serif;
+        display: inline-block;
+        position: relative;
+    }
+
+    .housemix .housemixSeparator h1:after {
+        content: "";
+        display: block;
+        width: 138px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .housemix .housemixSeparator h1 span {
+        color: #fff;
+        font-size: 35px;
+        font-family: 'Calibri', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .housemix .about {
+        padding: 25px 0;
+    }
+
+    .housemix .about h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 40px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .housemix .about .block1 h3:before {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 2px;
+        background: #3b3b3b;
+        position: absolute;
+        bottom: 0;
+    }
+
+    .housemix .about .block2 h3:before {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 2px;
+        background: #3b3b3b;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    .housemix .concept {
+        background-color: rgba(168, 164, 137, 0.7);
+        height: 580px;
+        position: relative;
+        z-index: 1;
+        padding: 25px 0;
+    }
+
+    .housemix .concept:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 275px solid transparent;
+        border-right: 275px solid transparent;
+        border-top: 350px solid #f9f7ea;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .housemix .concept h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 40px;
+        position: relative;
+    }
+
+    .housemix .concept h3:before {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 2px;
+        background-color: #3b3b3b;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .housemix .concept p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .housemix .design {
+        background-color: rgba(191, 173, 159, 0.27);
+        height: 220px;
+        position: relative;
+    }
+
+    .housemix .design p {
+        color: #d00202;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-style: italic;
+        line-height: 20px;
+        width: 250px;
+        position: relative;
+        top: 40px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-bottom: 25px;
+        z-index: 2;
+    }
+
+    .housemix .development {
+        background: url("/img/portfolio/housemix/bgDevelopment.jpg") no-repeat center;
+        background-size: cover;
+        height: 465px;
+        margin-bottom: 0;
+        padding: 25px 0;
+    }
+
+    .housemix .development h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 40px;
+        position: relative;
+    }
+
+    .housemix .development h3:before {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .housemix .development img {
+        width: 70%;
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .housemix .features {
+        padding: 25px 0;
+        background-color: #faa058;
+    }
+
+    .housemix .features p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .housemix .adaptive {
+        background: url("/img/portfolio/housemix/bgAdaptive.jpg") no-repeat center;
+        background-size: cover;
+        height: 395px;
+        position: relative;
+        padding: 25px 0;
+    }
+
+    .housemix .adaptive h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 40px;
+        position: relative;
+    }
+
+    .housemix .adaptive h3:before {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 2px;
+        background-color: #3b3b3b;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .housemix .adaptive p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .housemix .specials {
+        background-color: #c2bfac;
+        border-top: 3px solid #9c9a8b;
+        position: relative;
+        z-index: 1;
+        padding: 25px 0 0;
+    }
+
+    .housemix .specials h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 35px;
+        font-weight: 700;
+        line-height: 40px;
+        position: relative;
+    }
+
+    .housemix .specials h3:before {
+        content: "";
+        display: block;
+        width: 90px;
+        height: 2px;
+        background-color: #3b3b3b;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+
+    .housemix .specials p {
+        color: #414141;
+        font-size: 18px;
+        text-align: center;
+        line-height: 20px;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+
+    .housemix .housemixSeparator h1 {
+        color: #fff;
+        font-size: 30px;
+        line-height: 35px;
+        font-family: 'Calibri', sans-serif;
+        display: inline-block;
+        position: relative;
+    }
+
+    .housemix .housemixSeparator h1:after {
+        content: "";
+        display: block;
+        width: 119px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    .housemix .housemixSeparator h1 span {
+        color: #fff;
+        font-size: 30px;
+        font-family: 'Calibri', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .housemix .about h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 35px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .housemix .concept h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 35px;
+        position: relative;
+    }
+
+    .housemix .development h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 35px;
+        position: relative;
+    }
+
+    .housemix .adaptive {
+        background: url("/img/portfolio/housemix/bgAdaptive.jpg") no-repeat center;
+        background-size: cover;
+        height: 375px;
+        position: relative;
+        padding: 25px 0;
+    }
+
+    .housemix .adaptive h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 35px;
+        position: relative;
+    }
+
+    .housemix .specials h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 35px;
+        position: relative;
+    }
+
+}
+
+@media screen and (max-width: 414px) {
+
+    .housemix .header p {
+        color: #fff;
+        font-family: 'comfortaalight_0';
+        line-height: 28px;
+        text-transform: uppercase;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        text-shadow: 0 1px 1px rgba(74, 74, 74, 0.33);
+    }
+
+    .housemix .housemixSeparator h1:after {
+        content: "";
+        display: block;
+        width: 119px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        right: 107px;
+        bottom: 0;
+    }
+
+    .housemix .housemixSeparator h2 {
+        color: #fff;
+        font-size: 18px;
+        font-family: 'Calibri', sans-serif;
+        font-style: italic;
+        text-align: center;
+    }
+
+    .housemix .about h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        display: inline-block;
+        position: relative;
+    }
+
+    .housemix .about p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 18px;
+        line-height: 20px;
+        font-weight: 400;
+        position: relative;
+    }
+
+    .housemix .concept {
+        background-color: rgba(168, 164, 137, 0.7);
+        height: 525px;
+        position: relative;
+        z-index: 1;
+        padding: 25px 0;
+    }
+
+    .housemix .concept:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 200px solid transparent;
+        border-right: 200px solid transparent;
+        border-top: 275px solid #f9f7ea;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .housemix .concept h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        position: relative;
+    }
+
+    .housemix .concept p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .housemix .development {
+        background: url("/img/portfolio/housemix/bgDevelopment.jpg") no-repeat center;
+        background-size: cover;
+        height: 400px;
+        margin-bottom: 0;
+        padding: 25px 0;
+    }
+
+    .housemix .development h3 {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        position: relative;
+    }
+
+    .housemix .development p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        line-height: 20px;
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    .housemix .features p {
+        color: #fff;
+        font-family: 'Calibri', sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .housemix .adaptive {
+        background: url("/img/portfolio/housemix/bgAdaptive.jpg") no-repeat center;
+        background-size: cover;
+        height: 335px;
+        position: relative;
+        padding: 25px 0;
+    }
+
+    .housemix .adaptive h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        position: relative;
+    }
+
+    .housemix .adaptive p {
+        color: #666;
+        font-family: 'Calibri', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .housemix .specials h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        position: relative;
+    }
+
+}
+
+@media screen and (max-width: 375px) {
+
+    .housemix .read-more{
+        padding: 15px 85px 15px 5px;
+    }
+
+    .housemix .header p {
+        color: #fff;
+        font-family: 'comfortaalight_0';
+        line-height: 28px;
+        text-transform: uppercase;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 0 1px 1px rgba(74, 74, 74, 0.33);
+    }
+
+    .housemix .housemixSeparator h1:after {
+        content: "";
+        display: block;
+        width: 119px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        right: 90px;
+        bottom: 0;
+    }
+
+    .housemix .about h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        display: inline-block;
+        position: relative;
+        width: 53%;
+    }
+
+    .housemix .about .block1 h3:after {
+        content: url("/img/portfolio/housemix/iconProject.png");
+        display: block;
+        position: absolute;
+        top: -15px;
+        right: -25px;
+    }
+
+    .housemix .about .block2 h3:after {
+        content: url("/img/portfolio/housemix/iconDevelopment.png");
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: -55px;
+    }
+
+    .housemix .concept {
+        background-color: rgba(168, 164, 137, 0.7);
+        height: 470px;
+        position: relative;
+        z-index: 1;
+        padding: 25px 0;
+    }
+
+    .housemix .concept:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 180px solid transparent;
+        border-right: 180px solid transparent;
+        border-top: 275px solid #f9f7ea;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .housemix .concept .artwork {
+        position: relative;
+        top: 50px;
+    }
+
+    .housemix .concept .top-artwork {
+        position: absolute;
+        top: -45px;
+        left: 0;
+        right: 0;
+    }
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .housemix .header {
+        background: url("/img/portfolio/housemix/bgHeader.jpg") no-repeat center;
+        background-size: cover;
+        height: 435px;
+        padding-top: 25px;
+    }
+
+    .housemix .header p {
+        color: #fff;
+        font-family: 'comfortaalight_0';
+        line-height: 25px;
+        text-transform: uppercase;
+        font-size: 22px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-shadow: 0 1px 1px rgba(74, 74, 74, 0.33);
+    }
+
+    .housemix
+    .header button.buttonRed span:first-child,
+    .specials button.buttonRed span:first-child {
+        width: 195px;
+        height: 41px;
+        padding: 12px 0 0 0;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .housemix .housemixSeparator h1:after {
+        content: "";
+        display: block;
+        width: 119px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        right: 65px;
+        bottom: 0;
+    }
+
+    .housemix .about h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 28px;
+        display: inline-block;
+        position: relative;
+        width: 65%;
+    }
+
+    .housemix .concept:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: 150px solid transparent;
+        border-right: 150px solid transparent;
+        border-top: 330px solid #f9f7ea;
+        position: absolute;
+        top: 1px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: -1;
+    }
+
+    .housemix .development {
+        background: url("/img/portfolio/housemix/bgDevelopment.jpg") no-repeat center;
+        background-size: cover;
+        height: 425px;
+        margin-bottom: 0;
+        padding: 25px 0;
+    }
+
+    .housemix .specials h3 {
+        color: #3b3b3b;
+        font-family: 'Calibri', sans-serif;
+        font-size: 27px;
+        font-weight: 700;
+        line-height: 28px;
+        position: relative;
+    }
+
+    .housemix .specials .circles {
+        margin-top: 25px;
+    }
+
+    .housemix
+    .specials .circle1,
+    .specials .circle2,
+    .specials .circle3 {
+        width: 65px;
+        height: 65px;
+        border: 1px solid #9a9a9a;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .housemix .specials .circles p {
+        color: #666;
+        font-family: Calibri, sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 15px;
+        text-transform: uppercase;
+        padding-top: 65px;
+    }
+
+    .housemix .specials button {
+        margin: 25px 0 100px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header .container {
+        width: 85%;
+    }
+    footer .container {
+        width: 85%;
+    }
+}

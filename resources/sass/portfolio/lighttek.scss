@@ -1,0 +1,819 @@
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+
+@font-face {
+  font-family: 'HelveticaNeueCyrBlack';
+  src: url('/fonts/portfolio/HelveticaNeueCyrBlack.eot');
+  src: url('/fonts/portfolio/HelveticaNeueCyrBlack.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/HelveticaNeueCyrBlack.woff2') format('woff2'),
+  url('/fonts/portfolio/HelveticaNeueCyrBlack.woff') format('woff'),
+  url('/fonts/portfolio/HelveticaNeueCyrBlack.ttf') format('truetype'),
+  url('/fonts/portfolio/HelveticaNeueCyrBlack.svg#HelveticaNeueCyrBlack') format('svg');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCyrBold';
+  src: url('/fonts/portfolio/HelveticaNeueCyrBold.eot');
+  src: url('/fonts/portfolio/HelveticaNeueCyrBold.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/HelveticaNeueCyrBold.woff2') format('woff2'),
+  url('/fonts/portfolio/HelveticaNeueCyrBold.woff') format('woff'),
+  url('/fonts/portfolio/HelveticaNeueCyrBold.ttf') format('truetype'),
+  url('/fonts/portfolio/HelveticaNeueCyrBold.svg#HelveticaNeueCyrBold') format('svg');
+}
+
+@font-face {
+  font-family: 'helveticaneuecyrroman';
+  src: url('/fonts/portfolio/helveticaneuecyrroman.eot');
+  src: url('/fonts/portfolio/helveticaneuecyrroman.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/helveticaneuecyrroman.woff2') format('woff2'),
+  url('/fonts/portfolio/helveticaneuecyrroman.woff') format('woff'),
+  url('/fonts/portfolio/helveticaneuecyrroman.ttf') format('truetype'),
+  url('/fonts/portfolio/helveticaneuecyrroman.svg#helveticaneuecyrroman') format('svg');
+}
+
+@font-face {
+  font-family: 'MyriadPro-Regular';
+  src: url('/fonts/portfolio/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/MyriadPro-Regular.otf') format('opentype'),
+  url('/fonts/portfolio/MyriadPro-Regular.woff') format('woff'),
+  url('/fonts/portfolio/MyriadPro-Regular.ttf') format('truetype'),
+  url('/fonts/portfolio/MyriadPro-Regular.svg#MyriadPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MyriadPro-Semibold';
+  src: url('/fonts/portfolio/MyriadPro-Semibold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/MyriadPro-Semibold.otf') format('opentype'),
+  url('/fonts/portfolio/MyriadPro-Semibold.woff') format('woff'),
+  url('/fonts/portfolio/MyriadPro-Semibold.ttf') format('truetype'),
+  url('/fonts/portfolio/MyriadPro-Semibold.svg#MyriadPro-Semibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibri-Regular';
+  src: url('/fonts/portfolio/Calibri-Regular.ttf') format('truetype');
+}
+
+// _responsive-txt.scss
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+  
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+  
+  $b: $b + $units;
+  
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  font-size: $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+//end _responsive-txt.scss
+
+// _var.scss
+@mixin classic-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+//end _var.scss
+
+a {
+  text-decoration: none !important;
+}
+.header {
+  @include classic-flex;
+  align-items: center;
+  background: url('/img/portfolio/lighttek/header-bg.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria-Bold';
+  &__container {
+    max-width: 1780px;
+    padding: 0 15px;
+    margin: auto;
+    width: 100%;
+  }
+  &__inner {
+    @include classic-flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      display: block;
+      margin: 50px auto;
+    }
+  }
+  &__description {
+    flex-basis: 45%;
+    margin-top: 186px;
+    @media screen and (max-width: 1499px) {
+      flex-basis: 40%;
+      margin-top: 405px;
+    }
+    @media screen and (max-width: 1199px) {
+      margin-top: 592px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 80px;
+    }
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__phone-laptop {
+    position:absolute;
+    right: 0;
+    bottom: 30px;
+    width: 64%;
+    @media screen and (min-width: 1920px) {
+      width: 1197px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 28px;
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__img-phone {
+    position: absolute;
+    width: 23%;
+    left: 50px;
+    bottom: -20px;
+    z-index: 1;
+    @media screen and (max-width: 1367px) {
+      left: 34px;
+    }
+    @media screen and (max-width: 575px) {
+      left: 18px;
+    }
+  }
+  &__img-laptop {
+    max-width: 100%;
+  }
+  &__txt {
+    @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+    text-align: center;
+    color: #5e5e5e;
+    max-width: 295px;
+    margin: 30px auto 55px auto;
+    @media screen and (max-width: 991px) {
+      margin-bottom: 35px;
+      margin-top: 25px;
+    }
+  }
+  &__icons {
+    @include classic-flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 184px;
+    margin-bottom: 50px;
+  }
+  &__img-area {
+    width: 36px;
+    height: 36px;
+  }
+  &__icon-img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+  &__button {
+    display: block;
+    color: #555555;
+    text-transform: uppercase;
+    border: 2px solid #00b4db;
+    padding: 17px 23px;
+    text-align: center;
+    max-width: 226px;
+    margin: 0 auto;
+    @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+    transition-duration: 0.5s;
+    &:hover {
+      background-color: #00b4db;
+      color: #fff;
+    }
+    @media screen and (max-width: 991px) {
+      padding: 14px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    height: 100%;
+  }
+}
+
+.lightek .no-pad {
+  padding: 0;
+}
+
+.rel {
+  position: relative;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+p{
+  margin: 0;
+}
+
+body {
+  /*overflow-x: hidden;*/
+}
+
+.title {
+  margin: 0;
+}
+
+/*SECTION .GUIDELINES*/
+.guidelines {
+  margin-top: 25px;
+  padding-top: 50px;
+  background: url('/img/portfolio/lighttek/bgGuidelines3.png') no-repeat center 115%;
+}
+
+.guidelines .imgTop img {
+  margin: 0 auto;
+  position: relative;
+  top: -130px;
+}
+
+.lightek .guidelines .fontsBlock p:nth-child(1) {
+  color: #2e2e2e;
+  font-size: 48px;
+  line-height: 48px;
+  font-family: "MyriadPro-Semibold";
+  text-transform: uppercase;
+  margin-bottom: 45px;
+}
+
+.lightek .guidelines .fontsBlock p:nth-child(2) {
+  color: #414141;
+  font-size: 18px;
+  line-height: 36px;
+  font-family: "MyriadPro-Regular";
+  letter-spacing: 8px;
+}
+
+.lightek .guidelines .fontsBlock p:nth-child(3) {
+  color: #2e2e2e;
+  font-size: 36px;
+  line-height: 36px;
+  font-family: "MyriadPro-Semibold";
+  text-transform: uppercase;
+  text-align: right;
+  margin: 30px 70px 30px 0;
+}
+
+.lightek .guidelines .fontsBlock p:nth-child(4) {
+  color: #2e2e2e;
+  font-size: 36px;
+  line-height: 36px;
+  font-family: "MyriadPro-Regular";
+  text-transform: uppercase;
+  text-align: right;
+  margin-right: 70px;
+}
+
+.lightek .guidelines .colorsBlock .colorWrap {
+  width: 99px;
+  height: 99px;
+  border: 1px solid #ededed;
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+}
+
+.lightek .guidelines .colorsBlock .color1,
+.lightek .guidelines .colorsBlock .color2,
+.lightek .guidelines .colorsBlock .color3,
+.lightek .guidelines .colorsBlock .color4,
+.lightek .guidelines .colorsBlock .color5 {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.lightek .guidelines .colorsBlock .color1 {
+  background: #000;
+}
+
+.lightek .guidelines .colorsBlock .color2 {
+  background: #efefef;
+  bottom: 0;
+}
+
+.lightek .guidelines .colorsBlock .color3 {
+  background: #ffeb01;
+}
+
+.lightek .guidelines .colorsBlock .color4 {
+  background: #fff;
+}
+
+.lightek .guidelines .colorsBlock .color5 {
+  background: #e4e4e4;
+}
+
+.lightek .guidelines .colorsBlock .bottom {
+  top: 200px;
+}
+
+.lightek .guidelines .colorsBlock .colorMini1,
+.lightek .guidelines .colorsBlock .colorMini2,
+.lightek .guidelines .colorsBlock .colorMini3,
+.lightek .guidelines .colorsBlock .colorMini4,
+.lightek .guidelines .colorsBlock .colorMini5 {
+  width: 7px;
+  height: 7px;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+.lightek .guidelines .colorsBlock .colorMini1 {
+  background-color: #000;
+}
+
+.lightek .guidelines .colorsBlock .colorMini2 {
+  background-color: #efefef;
+}
+
+.lightek .guidelines .colorsBlock .colorMini3 {
+  background-color: #ffeb01;
+}
+
+.lightek .guidelines .colorsBlock .colorMini4 {
+  background-color: #fff;
+}
+
+.lightek .guidelines .colorsBlock .colorMini5 {
+  background-color: #e4e4e4;
+}
+
+.lightek .guidelines .colorsBlock p {
+  color: #000;
+  font-size: 14px;
+  line-height: 36px;
+  font-family: "Calibri-Regular";
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/*END OF SECTION .GUIDELINES*/
+
+/*SECTION .ABOUT*/
+.lightek .about {
+  background: url('/img/portfolio/lighttek/bgAbout.png') no-repeat left center, url('/img/portfolio/lighttek/bgAbout2.png') no-repeat right center;
+  background-color: #f1f1f1;
+  margin-top: 50px;
+  padding: 85px 0;
+}
+
+.lightek .about .title {
+  color: #2e2e2e;
+  font-size: 36px;
+  line-height: 36px;
+  font-family: "HelveticaNeueCyrBlack";
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+
+.lightek .about .title:after {
+  content: "";
+  display: block;
+  width: 101px;
+  height: 1px;
+  background: #c3c3c3;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 45px auto;
+}
+
+.lightek .about p {
+  color: #2e2e2e;
+  font-size: 16px;
+  line-height: 30px;
+  font-family: "Calibri-Regular";
+}
+
+/*END OF SECTION .ABOUT*/
+
+/*SECTION .PROTOTYPE*/
+.lightek .prototype {
+  background: linear-gradient(to top, #fff 0%, rgba(202, 202, 202, 0.77) 100%), url('/img/portfolio/lighttek/bgPrototype.png') no-repeat center 200px;
+  padding: 85px 0 0 0;
+}
+
+.lightek .prototype .title {
+  color: #2e2e2e;
+  font-size: 36px;
+  line-height: 36px;
+  font-family: "HelveticaNeueCyrBlack";
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+
+.lightek .prototype .title:after {
+  content: "";
+  display: block;
+  width: 101px;
+  height: 1px;
+  background: #c3c3c3;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 45px auto;
+}
+
+.lightek .prototype p {
+  color: #2e2e2e;
+  font-size: 16px;
+  line-height: 27px;
+  font-family: "Calibri-Regular";
+}
+
+.lightek .prototype img {
+  margin-top: 60px;
+  height: 80%;
+}
+
+/*END OF SECTION .PROTOTYPE*/
+
+/*SECTION .DESIGN*/
+.lightek .design {
+  background: url('/img/portfolio/lighttek/bgDesign.png') no-repeat left top, url('/img/portfolio/lighttek/bgDesign.png') no-repeat right bottom;
+}
+
+.lightek .design .title {
+  color: #2e2e2e;
+  font-size: 36px;
+  line-height: 36px;
+  font-family: "HelveticaNeueCyrBlack";
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+
+.lightek .design .title:after {
+  content: "";
+  display: block;
+  width: 101px;
+  height: 1px;
+  background: #c3c3c3;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 45px auto;
+}
+
+.lightek .design p {
+  color: #2e2e2e;
+  font-size: 16px;
+  line-height: 27px;
+  font-family: "Calibri-Regular";
+}
+
+/*END OF SECTION .DESIGN*/
+
+/*SECTION .FINALS*/
+.lightek .finals {
+  background: url('/img/portfolio/lighttek/bgFinals.png') no-repeat center 150px;
+  padding: 85px 0;
+}
+
+.lightek .finals .title {
+  color: #2e2e2e;
+  font-size: 36px;
+  line-height: 36px;
+  font-family: "HelveticaNeueCyrBlack";
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+}
+
+.lightek .finals .title:after {
+  content: "";
+  display: block;
+  width: 101px;
+  height: 1px;
+  background: #c3c3c3;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 45px auto;
+}
+
+.lightek .finals p {
+  color: #2e2e2e;
+  font-size: 16px;
+  line-height: 27px;
+  font-family: "Calibri-Regular";
+}
+
+.lightek .finals img {
+  margin: 0 auto;
+}
+
+/*SECTION .ADAPTIVE*/
+.lightek .adaptive {
+  background: url('/img/portfolio/lighttek/bgAdaptive.png') no-repeat center 200px, url('/img/portfolio/lighttek/bgAdaptive2.png') no-repeat left bottom, url('/img/portfolio/lighttek/bgAdaptive3.png') no-repeat right bottom, linear-gradient(to top, #fff 0%, #fff 31%, #e2e2e2 100%);
+  padding: 85px 0;
+}
+
+.lightek .adaptive .leftBlock .title {
+  color: #2e2e2e;
+  font-size: 36px;
+  line-height: 36px;
+  font-family: "HelveticaNeueCyrBlack";
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  text-align: left;
+}
+
+.lightek .adaptive .leftBlock .title:after {
+  content: "";
+  display: block;
+  width: 101px;
+  height: 1px;
+  background: #c3c3c3;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 45px 0;
+  margin-left: 0;
+}
+
+.lightek .adaptive .leftBlock p {
+  color: #2e2e2e;
+  font-size: 16px;
+  line-height: 27px;
+  font-family: "Calibri-Regular";
+  text-align: left;
+}
+
+.lightek .adaptive .rightBlock .title {
+  color: #2e2e2e;
+  font-size: 36px;
+  line-height: 36px;
+  font-family: "HelveticaNeueCyrBlack";
+  text-transform: uppercase;
+  display: block;
+  position: relative;
+  text-align: right;
+}
+
+.lightek .adaptive .rightBlock .title:after {
+  content: "";
+  display: block;
+  width: 101px;
+  height: 1px;
+  background: #c3c3c3;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: 45px 0;
+  margin-left: auto;
+}
+
+.lightek .adaptive .rightBlock p {
+  color: #2e2e2e;
+  font-size: 16px;
+  line-height: 27px;
+  font-family: "Calibri-Regular";
+  text-align: right;
+}
+
+.lightek .adaptive img {
+  margin-top: 200px;
+}
+
+.lightek .adaptive .read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #000;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 44px;
+  border: 2px solid #000;
+  text-transform: lowercase;
+  background: url('/img/portfolio/era/arrowBtnRight-hover.png') left center no-repeat;
+  background-position-x: 85%;
+  z-index: 1;
+  margin: 50px 0 80px 0;
+}
+
+.lightek .adaptive .read-more:hover {
+  background: url('/img/portfolio/era/arrowBtnRight.png') left center no-repeat #ffeb01;
+  background-position-x: 85%;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 100px 15px 44px;
+  border: 2px solid transparent;
+}
+
+/*END OF SECTION .ADAPTIVE*/
+
+/*MEDIA*/
+@media screen and (max-width: 767px) {
+  .lightek .prototype p br,
+  .lightek .design p br,
+  .lightek .finals p br {
+    display: none;
+  }
+  
+  .lightek .top {
+    height: 550px;
+  }
+  
+  .lightek .top div.logoBlock {
+    border-right: none;
+    margin-top: 20px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  
+  .lightek .top p,
+  .lightek .top h1 {
+    font-size: 22px;
+    line-height: 22px;
+  }
+  
+  .lightek .top p.subHeader {
+    font-size: 18px;
+    line-height: 18px;
+  }
+  
+  .lightek .top p.subHeader2 {
+    font-size: 17px;
+    line-height: 19px;
+  }
+  
+  .lightek .guidelines {
+    background: none;
+  }
+  
+  .lightek .guidelines .fontsBlock p:nth-child(1) {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .lightek .guidelines .fontsBlock p:nth-child(3) {
+    text-align: center;
+    margin: 30px 0;
+  }
+  
+  .lightek .guidelines .fontsBlock p:nth-child(4) {
+    text-align: center;
+    margin-right: 0;
+  }
+  
+  .lightek .guidelines .colorsBlock p {
+    text-align: center;
+  }
+  
+  .lightek .guidelines .colorsBlock .bottom {
+    top: 0;
+  }
+  
+  .lightek .about {
+    background: #f1f1f1;
+    margin-top: 0;
+    padding: 50px 0;
+    @media screen and (max-width: 767px) {
+      margin-top: 50px;
+    }
+  }
+  
+  .lightek .about .title,
+  .lightek .prototype .title,
+  .lightek .design .title,
+  .lightek .finals .title,
+  .lightek .adaptive .leftBlock .title,
+  .lightek .adaptive .rightBlock .title {
+    font-size: 25px;
+    line-height: 25px;
+  }
+  
+  .lightek .about .title:after,
+  .lightek .prototype .title:after,
+  .lightek .design .title:after,
+  .lightek .finals .title:after,
+  .lightek .adaptive .leftBlock .title:after,
+  .lightek .adaptive .rightBlock .title:after {
+    margin: 25px auto;
+  }
+  
+  .lightek .about p {
+    text-align: left;
+  }
+  
+  .lightek .prototype,
+  .lightek .design,
+  .lightek .finals,
+  .lightek .adaptive {
+    padding: 50px 0;
+  }
+  
+  .lightek .design,
+  .lightek .adaptive {
+    background: none;
+  }
+  
+  .lightek .adaptive .leftBlock {
+    margin-bottom: 25px;
+  }
+  
+  .lightek .adaptive .leftBlock .title,
+  .lightek .adaptive .rightBlock .title {
+    text-align: center;
+  }
+  
+  .lightek .adaptive .leftBlock p,
+  .lightek .adaptive .rightBlock p {
+    text-align: center;
+  }
+  
+  .lightek .adaptive img {
+    margin-top: 0;
+  }
+}
+
+/*END OF MEDIA*/
+.main_page_title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  z-index: 1;
+  font-weight: normal;
+  line-height: 1;
+  font-family: 'Gotham Pro';
+}
+@media screen and (max-width: 767px) {
+  .main_page_title {
+    font-size: 32px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .main_page_title {
+    font-size: 24px;
+  }
+}

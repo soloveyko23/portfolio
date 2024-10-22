@@ -1,0 +1,95 @@
+/* Стрелки */
+
+
+// .slick-slide:focus {
+//     outline: none;
+// }
+
+/* Слайдер с точками */ 
+.slick-slider.slick-dotted {
+  
+}
+
+/* Ограничивающая оболочка */ 
+.slick-list {
+    overflow: hidden;
+} 
+/* Лента слайдов */ 
+.slick-track{
+    @include classic-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: relative;
+}
+.slick-slide{
+  float: left;
+}
+/* Точки (булиты) */ 
+
+
+/* Активная точка */
+.slick-dots li.slick-active {
+    //@include animation-pulse;
+    animation: pulse 1.5s infinite; 
+} 
+.slick-dots li.slick-active button{
+}
+
+/* Элемент точки */ 
+
+.slick-slide {padding: 0 25px 67px 25px;} 
+
+
+/* 
+
+====== Zoom effect ======
+
+*/
+
+.mfp-zoom-in {
+  
+  /* start state */
+  .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s ease-in-out; 
+    transform: scale(0.8); 
+  }
+  
+  &.mfp-bg {
+    opacity: 0;
+	  transition: all 0.3s ease-out;
+  }
+  
+  /* animate in */
+  &.mfp-ready {
+    .mfp-with-anim {
+      opacity: 1;
+      transform: scale(1); 
+    }
+    &.mfp-bg {
+      opacity: 0.8;
+    }
+  }
+  
+  /* animate out */
+  &.mfp-removing {
+    
+    .mfp-with-anim {
+      transform: scale(0.8); 
+      opacity: 0;
+    }
+    &.mfp-bg {
+      opacity: 0;
+    }
+    
+  } 
+}
+
+@media screen and (max-width: 991px) {
+  .slick-list {
+    margin: 0 -13px;
+  }
+  .slick-slide {
+    padding: 0 13px 68px 13px;
+  }
+}

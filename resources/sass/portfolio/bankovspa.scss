@@ -1,0 +1,470 @@
+@import 'portfolioParts';
+@import "../bootstrap3";
+
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+  
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+  
+  $b: $b + $units;
+  
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  font-size: $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+//end _responsive-txt.scss
+
+// _var.scss
+@mixin classic-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+//end _var.scss
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('/fonts/portfolio/GothamPro/GothamPro.eot');
+  src: url('/fonts/portfolio/GothamPro/GothamPro.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/GothamPro/GothamPro.woff') format('woff'),
+  url('/fonts/portfolio/GothamPro/GothamPro.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'HelveticaNeueCyrLight';
+  src: url('/fonts/portfolio/HelveticaNeueCyrLight.eot');
+  src: url('/fonts/portfolio/HelveticaNeueCyrLight.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/HelveticaNeueCyrLight.woff2') format('woff2'),
+  url('/fonts/portfolio/HelveticaNeueCyrLight.woff') format('woff'),
+  url('/fonts/portfolio/HelveticaNeueCyrLight.ttf') format('truetype'),
+  url('/fonts/portfolio/HelveticaNeueCyrLight.svg#HelveticaNeueCyrLight') format('svg');
+}
+@font-face {
+  font-family: 'HelveticaNeueCyrMedium';
+  src: url('/fonts/portfolio/HelveticaNeueCyrMedium.eot');
+  src: url('/fonts/portfolio/HelveticaNeueCyrMedium.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/HelveticaNeueCyrMedium.woff2') format('woff2'),
+  url('/fonts/portfolio/HelveticaNeueCyrMedium.woff') format('woff'),
+  url('/fonts/portfolio/HelveticaNeueCyrMedium.ttf') format('truetype'),
+  url('/fonts/portfolio/HelveticaNeueCyrMedium.svg#HelveticaNeueCyrMedium') format('svg');
+}
+.center{
+  text-align: center;
+}
+p{
+  margin: 0;
+}
+ul li{
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  @include classic-flex;
+  align-items: center;
+  background: url('/img/portfolio/bankovspa/header-bg.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria-Bold';
+  &__container {
+    max-width: 1780px;
+    padding: 0 15px;
+    margin: auto;
+    width: 100%;
+  }
+  &__inner {
+    @include classic-flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      display: block;
+      margin: 50px auto;
+    }
+  }
+  &__description {
+    flex-basis: 45%;
+    margin-top: 186px;
+    @media screen and (max-width: 1499px) {
+      flex-basis: 40%;
+      margin-top: 405px;
+    }
+    @media screen and (max-width: 1199px) {
+      margin-top: 592px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 80px;
+    }
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__phone-laptop {
+    position:absolute;
+    right: 0;
+    bottom: 30px;
+    width: 64%;
+    @media screen and (min-width: 1920px) {
+      width: 1197px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 28px;
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__img-phone {
+    position: absolute;
+    width: 23%;
+    left: 50px;
+    bottom: -20px;
+    z-index: 1;
+    @media screen and (max-width: 1367px) {
+      left: 34px;
+    }
+    @media screen and (max-width: 575px) {
+      left: 18px;
+    }
+  }
+  &__img-laptop {
+    max-width: 100%;
+  }
+  &__txt {
+    @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+    text-align: center;
+    color: #5e5e5e;
+    max-width: 425px;
+    margin: 35px auto 63px auto;
+    @media screen and (max-width: 991px) {
+      margin-bottom: 35px;
+      margin-top: 25px;
+    }
+  }
+  &__icons {
+    @include classic-flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 184px;
+    margin-bottom: 50px;
+  }
+  &__img-area {
+    width: 36px;
+    height: 36px;
+  }
+  &__icon-img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+  &__button {
+    display: block;
+    color: #555555;
+    text-transform: uppercase;
+    border: 2px solid #00b4db;
+    padding: 17px 23px;
+    text-align: center;
+    max-width: 226px;
+    margin: 0 auto;
+    @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+    transition-duration: 0.5s;
+    &:hover {
+      background-color: #00b4db;
+      color: #fff;
+    }
+    @media screen and (max-width: 991px) {
+      padding: 14px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    height: 100%;
+  }
+}
+
+.bankov-spa .text {
+  text-align: center;
+}
+
+.bankov-spa .name {
+  font: 160% 'HelveticaNeueCyrMedium';
+  line-height: 1.5em;
+}
+
+.bankov-spa .sub {
+  font: 100% 'HelveticaNeueCyrLight';
+  margin: 20px 0;
+  line-height: 1.5em;
+  letter-spacing: 2px;
+}
+
+.bankov-spa .main-name {
+  font: 260% 'HelveticaNeueCyrMedium';
+  line-height: 1em;
+}
+
+.bankov-spa .main-sub {
+  font: 150% 'HelveticaNeueCyrLight';
+  line-height: 1em;
+  letter-spacing: 2px;
+}
+.bankov-spa .white-text {
+  color: white;
+}
+
+.bankov-spa .grey_text {
+  color:#757575;
+}
+
+.bankov-spa #btn {
+  font: 110% 'helveticaneuecyrlight';
+  display: block;
+  margin: 40px auto;
+  background-color: #ff841e;
+  color: white;
+  max-width: 281px;
+  text-align: center;
+  padding: 17px 50px;
+  text-transform: uppercase;
+}
+.bankov-spa #btn:hover {
+  -webkit-box-shadow: -11px 10px 11px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: -11px 10px 11px -6px rgba(0,0,0,0.75);
+  box-shadow: -11px 10px 11px -6px rgba(0,0,0,0.75);
+}
+.bankov-spa blockquote {
+  font-size: 14px;
+  line-height: 17px;
+  position: relative;
+  font-style: normal;
+  padding: 34px 47px;
+  border: 2px solid #babbbc;
+  border-radius: 4px;
+  margin-top: 0;
+  min-height: 168px;
+  font-family: 'Gotham Pro';
+  font-weight: 500;
+}
+.bankov-spa blockquote:after {
+  content: '';
+  background: url(/img/portfolio/essa-toys/arrow1.png) no-repeat;
+  width: 9px;
+  height: 17px;
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  margin: -8px 0 0;
+}
+.bankov-spa .photo {
+  width: 168px;
+  height: 168px;
+  background-color: transparent;
+  border: 1px solid #c2c2c2;
+  padding: 20px;
+  border-radius: 84px;
+  margin: 0 auto;
+}
+.bankov-spa .parent {
+  margin-bottom: 10px;
+}
+.bankov-spa .middle-pic {
+  display: block;
+  margin: 0 auto;
+}
+.bankov-spa .no-margin {
+  margin: 0;
+}
+
+.bankov-spa .bankov_spa_develop {
+  background: #216c9f;
+  padding: 2%;
+}
+.bankov-spa .bankov_spa_develop ul li:before {
+  content: "\2714   "
+}
+.bankov-spa .bankov_spa_develop ul li {
+  margin: 15px 0;
+  text-align: left;
+  line-height: 1.2em;
+}
+.bankov-spa .tools {
+  width: 75%;
+}
+.bankov-spa .about {
+  text-align: left;
+  letter-spacing: 2px;
+}
+.bankov-spa .border_white {
+  border-bottom: 1px solid white;
+  width: 100%;
+}
+.bankov-spa .bankov_spa_individual {
+  background: url(/img/portfolio/bankovspa/slide5.png) 0 0 no-repeat;
+  background-size: cover;
+  height:500px;
+  padding-top: 25px;
+}
+.bankov-spa .for_admin {
+  background: url(/img/portfolio/bankovspa/slide7_03.png) center 125px no-repeat;
+  height: 640px;
+  background-size: 800px;
+  background-color: #fff;
+}
+.bankov-spa .mockup_uikit {
+  margin: 30px auto;
+  max-width: 100%;
+}
+
+.bankov-spa .parrent_icon {
+  float: none!important;
+  display: inline-block;
+  margin-left: -5px !important;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.bankov-spa .bankov-icon {
+  width: 62px;
+  margin-bottom: 20px;
+}
+.bankov-spa .bankov_spa_variants {
+  background: url(/img/portfolio/bankovspa/4_02.png) center;
+}
+
+.bankov-spa .page_bankov-spa {
+  -webkit-box-shadow: -11px 10px 11px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: -11px 10px 11px -6px rgba(0,0,0,0.75);
+  box-shadow: -11px 10px 11px -6px rgba(0,0,0,0.75);
+  margin-bottom: 30px;
+}
+
+.bankov-spa .big-page {
+  max-width: 1400px!important;
+  width:100%;
+}
+.bankov-spa .icons_bankov_spa {
+  background: #f5f5f5;
+}
+
+.bankov-spa .top {
+  margin-top: 5%;
+}
+.bankov-spa img {
+  max-width: 100%;
+}
+.bankov-spa .read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 45px;
+  text-transform: lowercase;
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat #ff9c00;
+  background-position-x: 85%;
+  border: 2px solid transparent;
+  z-index: 1;
+  margin: 15px 0;
+  z-index: 10;
+}
+.bankov-spa .read-more:hover {
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat;
+  background-position-x: 85%;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  z-index: 10;
+}
+.bankov-spa .btn-1.read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 45px;
+  text-transform: lowercase;
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat #ff9c00;
+  background-position-x: 85%;
+  border: 2px solid transparent;
+  z-index: 1;
+  margin: 15px 0;
+  z-index: 10;
+}
+.bankov-spa .btn-1.read-more:hover {
+  background: url(/img/portfolio/eva/arrowBtnRight-hover.png) left center no-repeat;
+  background-position-x: 85%;
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  z-index: 10;
+}
+.bankov-spa .bottom {
+  margin-bottom: 70px;
+}
+.bankov-spa .name {
+  font: 160% 'HelveticaNeueCyrMedium';
+  line-height: 1.5em;
+  margin: 20px 0;
+}
+.bankov-spa .white-text {
+  color: white;
+  margin: 10px 0;
+}
+.main_page_title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  z-index: 1;
+  font-weight: normal;
+  line-height: 1;
+  font-family: 'Gotham Pro';
+  margin-bottom: 30px;
+}
+@media screen and (max-width: 767px) {
+  .main_page_title {
+    font-size: 32px;
+    padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .main_page_title {
+    font-size: 24px;
+    padding-top: 50px;
+  }
+}

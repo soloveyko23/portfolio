@@ -1,0 +1,146 @@
+.body,
+html {
+    overflow-x: hidden !important;
+    width: 100%;
+    height: auto;
+    &.popupShow {
+        overflow: hidden!important;
+    }
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        color: $color-fa;
+        text-decoration: none;
+    }
+}
+
+button {
+    border: 0;
+    outline: none;
+}
+
+.margin {
+    &-left {
+        &-auto {
+            margin-left: auto;
+        }
+    }
+}
+
+.posr {
+    position: relative;
+}
+
+.container {
+    max-width: 1550px;
+    width: 100%;
+    padding: 0 15px;
+    margin: auto;
+    @media screen and (max-width: 1399px) {
+        max-width: 1140px;
+    }
+    @media screen and (max-width: 1199px) {
+        max-width: 960px;
+    }
+    @media screen and (max-width: 991px) {
+        max-width: 720px;
+    }
+    @media screen and (max-width: 767px) {
+        max-width: 540px;
+    }
+}
+
+.section-title {
+    text-align: center;
+    color: $color-22;
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 60px;
+    line-height: 100%;
+    text-align: center;
+    color: $color-22;
+    margin-bottom: 60px;
+    &-sub {
+        font-family: 'Stolzl', sans-serif;
+        font-size: 20px;
+        line-height: 24px;
+        text-align: center;
+        font-weight: normal;
+        margin-top: 16px;
+        color: $color-22;
+        display: block;
+        span {
+            display: block;
+        }
+    }
+    @media screen and (max-width:768px) {
+        font-size: 36px;
+        margin-bottom: 24px;
+        text-align: center;
+        &-sub {
+            font-size: 14px;
+            line-height: 17px;
+            span {
+                margin-top: 20px;
+                display: block;
+            }
+        }
+    }
+}
+
+.video-play-btn {
+    position: absolute;
+    width: 73px;
+    height: 73px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #272727;
+    box-shadow: 0 13px 59px rgba(0, 0, 0, 0.9);
+    &::before {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-35%, -50%);
+        width: 0;
+        height: 0;
+        border-left: 10px solid #fff;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+    }
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.darkBG {
+    background: url(/img/stuff.png), url(/img/noice.png), #222;
+    &,
+    .section-title {
+        color: #fff;
+    }
+}
+
+$breakpoints: ('esm': 500px, 'sm': 767px, 'md': 992px, 'lg': 1399px, 'elg': 1624px, 'max': 1800px) !default;
+@mixin respond-max-to($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}
+
+@include respond-max-to('md') {
+    .sm-hidden {
+        display: none;
+    }
+}

@@ -1,0 +1,628 @@
+
+// _scss files
+// _reset.scss
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+//end _reset.scss
+
+// _fonts.scss
+@font-face {
+  font-family: 'Geometria-ExtraBold';
+  src: url('/fonts/portfolio/prologue/Geometria-ExtraBold.eot');
+  src: url('/fonts/portfolio/prologue/Geometria-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/prologue/Geometria-ExtraBold.woff2') format('woff2'),
+  url('/fonts/portfolio/prologue/Geometria-ExtraBold.woff') format('woff'),
+  url('/fonts/portfolio/prologue/Geometria-ExtraBold.ttf') format('truetype'),
+  url('/fonts/portfolio/prologue/Geometria-ExtraBold.svg#Arial-BoldMT') format('svg');
+}
+
+@font-face {
+  font-family: 'Geometria-Regular';
+  src: url('/fonts/portfolio/prologue/Geometria-Regular.eot');
+  src: url('/fonts/portfolio/prologue/Geometria-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/prologue/Geometria-Regular.woff2') format('woff2'),
+  url('/fonts/portfolio/prologue/Geometria-Regular.woff') format('woff'),
+  url('/fonts/portfolio/prologue/Geometria-Regular.ttf') format('truetype'),
+  url('/fonts/portfolio/prologue/Geometria-Regular.svg#Akrobat-Black') format('svg');
+}
+//end _fonts.scss
+
+// _responsive-txt.scss
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+  
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+  
+  $b: $b + $units;
+  
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  font-size: $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+//end _responsive-txt.scss
+
+// _var.scss
+@mixin classic-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+//end _var.scss
+
+// _particles.scss
+.title {
+  display: block;
+  text-transform: uppercase;
+  position: relative;
+  max-width: 545px;
+  &__flex {
+    @include classic-flex;
+    align-items: center;
+    &_991-d-block {
+      @media screen and (max-width: 991px) {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+  &__name-top {
+    font-family: 'Geometria-Regular';
+    color: #222222;
+    @include fluidFontSize (24px, 48px, 320px, 1099px, 48px);
+  }
+  &__primary {
+    font-family: 'Geometria-ExtraBold';
+    text-align: left;
+    color: #8b52d1;
+    @include fluidFontSize (32px, 68px, 320px, 1399px, 68px);
+  }
+  &__secondary {
+    color: #eeeeee;
+    font-family: 'Geometria-ExtraBold';
+    @include fluidFontSize (64px, 160px, 320px, 1399px, 58px);
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+  &__bg {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    @media screen and (max-width: 599px) {
+      transform: translate(-50%, 10%);
+    }
+  }
+  @media screen and (max-width: 1199px) {
+    text-align: center !important;
+    margin: 0 auto;
+  }
+}
+//end _particles.scss
+//end _scss files
+
+*{
+  line-height: 1;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1780px;
+  padding: 0 15px;
+  margin: auto;
+  width: 100%;
+}
+
+.header {
+  @include classic-flex;
+  align-items: center;
+  background: url('/img/portfolio/usm/header-bgc.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria-Bold';
+  &__inner {
+    @include classic-flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      display: block;
+      margin: 50px auto;
+    }
+  }
+  &__description {
+    flex-basis: 45%;
+    margin-top: 186px;
+    @media screen and (max-width: 1499px) {
+      flex-basis: 40%;
+      margin-top: 405px;
+    }
+    @media screen and (max-width: 1199px) {
+      margin-top: 592px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 80px;
+    }
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__phone-laptop {
+    position:absolute;
+    right: 0;
+    bottom: 30px;
+    width: 64%;
+    @media screen and (min-width: 1920px) {
+      width: 1197px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 28px;
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__img-phone {
+    position: absolute;
+    width: 23%;
+    left: 50px;
+    bottom: -20px;
+    z-index: 1;
+    @media screen and (max-width: 1367px) {
+      left: 34px;
+    }
+    @media screen and (max-width: 575px) {
+      left: 18px;
+    }
+  }
+  &__img-laptop {
+    max-width: 100%;
+  }
+  &__txt {
+    @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+    text-align: center;
+    color: #5e5e5e;
+    max-width: 268px;
+    margin: 35px auto 63px auto;
+    @media screen and (max-width: 991px) {
+      margin-bottom: 35px;
+      margin-top: 25px;
+    }
+  }
+  &__icons {
+    @include classic-flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 184px;
+    margin-bottom: 50px;
+  }
+  &__img-area {
+    width: 36px;
+    height: 36px;
+  }
+  &__icon-img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+  &__button {
+    display: block;
+    color: #555555;
+    text-transform: uppercase;
+    border: 2px solid #00b4db;
+    padding: 17px 23px;
+    text-align: center;
+    max-width: 226px;
+    margin: 0 auto;
+    @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+    transition-duration: 0.5s;
+    &:hover {
+      background-color: #00b4db;
+      color: #fff;
+    }
+    @media screen and (max-width: 991px) {
+      padding: 14px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    height: 100%;
+  }
+}
+
+//main
+.main {
+  font-family: 'Geometria-Bold';
+  position: relative;
+  &__container {
+    max-width: 1155px;
+    padding: 0 15px;
+    margin: auto;
+    position: relative;
+  }
+}
+
+.home-page {
+  padding-top: 60px;
+  position: relative;
+  &__title {
+    @include classic-flex;
+  }
+  &__img-area {
+    position: relative;
+  }
+  &__img-bg-right {
+    position: absolute;
+    top: 600px;
+    right: 0;
+    z-index: -1;
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+  &__img-bg-left {
+    position: absolute;
+    top: 1500px;
+    left: 0;
+    z-index: -1;
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+  &__img-square {
+    position: absolute;
+    z-index: -1;
+    &_1 {
+      top: 850px;
+      left: -270px;
+    }
+    &_2 {
+      top: 1935px;
+      right: -270px;
+    }
+    &_3 {
+      top: 3600px;
+      left: -270px;
+    }
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+  &__img {
+    display: block;
+    max-width: 109%;
+    margin: 0px -51px;
+    position: relative;
+    @media screen and (max-width: 1199px) {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    padding-top: 50px;
+  }
+}
+
+.colors {
+  padding-top: 130px;
+  background-color: #f6f6f6;
+  margin-top: -90px;
+  &__title {
+    text-align: right;
+    margin-left: auto;
+  }
+  &__ellipse-flex {
+    @include classic-flex;
+    margin-top: 100px;
+    right: 0;
+    bottom: 0;
+  }
+  &__ellipse {
+    position: relative;
+    flex-basis: 49%;
+    width: 562px;
+    height: 30px;
+    margin-bottom: 40px;
+    &_purple {
+      border-radius: 25px 0 0 25px;
+      background: #8b52d1;
+    }
+    &_pink {
+      border-radius: 0 25px 25px 0;
+      background: #f20057;
+    }
+    @media screen and (max-width: 599px) {
+      width: 300px;
+    }
+  }
+  &__ellipse-txt {
+    @include content-block-absolute;
+    text-transform: uppercase;
+    font-family: 'Geometria-Regular';
+    bottom: -40px;
+    font-size: 18px;
+    &_left {
+      left: 0;
+    }
+    &_right {
+      right: 0;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    padding-top: 130px;
+  }
+}
+
+.font-solution {
+  padding-top: 175px;
+  padding-bottom: 120px;
+  background-color: #f6f6f6;
+  &__title {
+    margin: 33px 0;
+    &_big {
+      color: #f20057;
+      @include fluidFontSize (36px, 78px, 320px, 991px, 78px);
+      @media screen and (max-width: 991px) {
+        margin: 0 auto;
+      }
+    }
+    &_regular {
+      font-family: 'Geometria-Regular';
+    }
+    &_medium {
+      font-family: 'Geometria-Medium';
+    }
+    &_bold {
+      font-family: 'Geometria-Bold';
+    }
+    &_heavy {
+      font-family: 'Geometria-Heavy';
+    }
+  }
+  &__txt {
+    max-width: 360px;
+    margin: 0 auto !important;
+    font-family: 'Geometria-Regular';
+    text-align: center;
+    &_ttr-none {
+      text-transform: none;
+    }
+    &_pt-80 {
+      padding-top: 80px;
+    }
+  }
+  &__line {
+    display: block;
+    margin: 0 auto;
+  }
+  @media screen and (max-width: 991px) {
+    padding: 120px 0;
+  }
+}
+
+.adaptive-design {
+  position: relative;
+  background-color: #f6f6f6;
+  z-index: -2;
+  &__img-area {
+    flex-basis: 50%;
+    @media screen and (max-width: 767px) {
+      flex-basis: 100%;
+      transform: rotate(180deg);
+    }
+  }
+  &__bg {
+    width: 63%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    @media screen and (max-width: 767px) {
+      transform: rotate(180deg);
+    }
+  }
+  &__phone {
+    max-width: 100%;
+    position: relative;
+    left: -50px;
+    @media screen and (max-width: 767px) {
+      left: 0;
+      margin: 0 auto;
+    }
+  }
+  &__title {
+    flex-basis: 50%;
+    text-align: right;
+    margin-left: auto;
+    @media screen and (max-width: 767px) {
+      transform: rotate(180deg);
+    }
+  }
+  &__txt {
+    font-size: 18px;
+    text-transform: none;
+    margin-top: 80px;
+    @media screen and (max-width: 767px) {
+      margin: 40px 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    transform: rotate(180deg);
+  }
+}
+
+.other-page {
+  background-color: #f6f6f6;
+  padding: 50px 0 170px 0;
+  &__title-05 {
+    text-align: right;
+    max-width: 100%;
+  }
+  &__img {
+    position: relative;
+    max-width: 100%;
+    &:nth-child(3) {
+      top: -55px;
+    }
+    &:nth-child(4) {
+      top: -110px;
+    }
+    @media screen and (max-width: 1199px) {
+      &:nth-child(3), &:nth-child(4) {
+        top: 0px;
+      }
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  &__img-pages {
+    position: absolute;
+    width: 635px;
+    right: 0;
+    top: -100px;
+    z-index: 2;
+    @media screen and (max-width: 1199px) {
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__page {
+    max-width: 100%;
+    z-index: 1;
+    &_1 {
+      position: relative;
+      margin-top: 95px;
+      left: -50px;
+      @media screen and (max-width: 1199px) {
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        margin: 50px 0;
+      }
+    }
+  }
+  @media screen and (max-width: 1199px) {
+    padding-bottom: 0;
+  }
+}
+
+.ty {
+  position: relative;
+  background-color: #f6f6f6;
+  padding-bottom: 140px;
+  &__bg {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 75%;
+  }
+  &__title {
+    text-align: center;
+    margin: 0 auto;
+    @include fluidFontSize (42px, 90px, 320px, 1399px, 68px);
+  }
+  &__subtitle {
+    display: inline-block;
+    font-family: 'Geometria-Bold';
+    @include fluidFontSize (42px, 68px, 320px, 1399px, 68px);
+  }
+  @media screen and (max-width: 1199px) {
+    margin-top: 0;
+    padding: 70px 0;
+  }
+}
+//end main

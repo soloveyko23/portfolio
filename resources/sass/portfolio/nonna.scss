@@ -1,0 +1,836 @@
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+    li {
+        list-style-type: none; /* Убираем маркеры */
+    }
+
+    a:hover {
+        text-decoration: none !important;
+        &:hover {
+            color: $color-main;
+        }
+    }
+
+    .navigation__submenu-link {
+        &:hover {
+            color: $color-hover-but !important;
+        }
+    }
+
+    @font-face {
+        font-family: 'MagnoliaScript';
+        src: url('/fonts/portfolio/nonna/MagnoliaScript.eot');
+        src: url('/fonts/portfolio/nonna/MagnoliaScript.eot') format('embedded-opentype'),
+        url('/fonts/portfolio/nonna/MagnoliaScript.woff2') format('woff2'),
+        url('/fonts/portfolio/nonna/MagnoliaScript.woff') format('woff'),
+        url('/fonts/portfolio/nonna/MagnoliaScript.ttf') format('truetype'),
+        url('/fonts/portfolio/nonna/MagnoliaScript.svg#MagnoliaScript') format('svg');
+    }
+    @font-face {
+        font-family: 'Avante';
+        src: url('/fonts/portfolio/nonna/avante.eot');
+        src: url('/fonts/portfolio/nonna/avante.eot') format('embedded-opentype'),
+        url('/fonts/portfolio/nonna/avante.woff2') format('woff2'),
+        url('/fonts/portfolio/nonna/avante.woff') format('woff'),
+        url('/fonts/portfolio/nonna/avante.ttf') format('truetype'),
+        url('/fonts/portfolio/nonna/avante.svg#avante') format('svg');
+    }
+
+    // _responsive-txt.scss
+    @function strip-unit($number) {
+        @if type-of($number) == 'number' and not unitless($number) {
+            @return $number / ($number * 0 + 1);
+        }
+        @return $number;
+    }
+
+    @function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+        $f-min: strip-unit($f-min);
+        $f-max: strip-unit($f-max);
+        $w-min: strip-unit($w-min);
+        $w-max: strip-unit($w-max);
+
+        $k: ($f-max - $f-min)/($w-max - $w-min);
+        $b: $f-min - $k * $w-min;
+
+        $b: $b + $units;
+
+        @return calc( #{$k} * 100vw + #{$b} );
+    }
+
+    @mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+
+        font-size: $f-min;
+
+        @media (min-width: $w-min) {
+            @if ($fallback) {
+                font-size: $fallback;
+            }
+            font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+        }
+        @media (min-width: $w-max) {
+            font-size: $f-max;
+        }
+    }
+    //end _responsive-txt.scss
+
+    // _var.scss
+    @mixin classic-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    @mixin content-block-absolute {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+    //end _var.scss
+
+    a {
+        text-decoration: none !important;
+    }
+    
+    main .header {
+        @include classic-flex;
+        align-items: center;
+        background: url('/img/portfolio/nonna/header-bg.jpg') no-repeat center / cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+        font-family: 'Geometria';
+        font-weight: 700;
+        box-shadow: none;
+        &__container {
+            max-width: 1780px;
+            padding: 0 15px;
+            margin: auto;
+            width: 100%;
+        }
+        &__inner {
+            @include classic-flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            position: relative;
+            @media screen and (max-width: 991px) {
+                display: block;
+                margin: 50px auto;
+            }
+        }
+        &__description {
+            flex-basis: 45%;
+            margin-top: 186px;
+            @media screen and (max-width: 1499px) {
+                flex-basis: 40%;
+                margin-top: 405px;
+            }
+            @media screen and (max-width: 1199px) {
+                margin-top: 400px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-top: 140px;
+            }
+        }
+        &__logo {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+        &__phone-laptop {
+            position:absolute;
+            right: 0;
+            bottom: 30px;
+            width: 64%;
+            @media screen and (min-width: 1920px) {
+                width: 1197px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-top: 28px;
+                position: relative;
+                width: 100%;
+            }
+        }
+        &__img-phone {
+            position: absolute;
+            width: 23%;
+            left: 50px;
+            bottom: -20px;
+            z-index: 1;
+            @media screen and (max-width: 1367px) {
+                left: 34px;
+            }
+            @media screen and (max-width: 575px) {
+                left: 18px;
+            }
+        }
+        &__img-laptop {
+            max-width: 100%;
+        }
+        &__txt {
+            @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+            text-align: center;
+            color: #5e5e5e;
+            max-width: 295px;
+            margin: 40px auto 40px auto;
+            @media screen and (max-width: 991px) {
+                margin-bottom: 35px;
+                margin-top: 25px;
+            }
+        }
+        &__icons {
+            @include classic-flex;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 184px;
+            margin-bottom: 50px;
+        }
+        &__img-area {
+            width: 36px;
+            height: 36px;
+        }
+        &__icon-img {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+        &__button {
+            display: block;
+            color: #555555;
+            text-transform: uppercase;
+            border: 2px solid #00b4db;
+            padding: 17px 23px;
+            text-align: center;
+            max-width: 226px;
+            margin: 0 auto;
+            @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+            transition-duration: 0.5s;
+            font-family: 'Geometria';
+            font-weight: 700;
+            &:hover {
+                background-color: #00b4db;
+                color: #fff;
+            }
+            @media screen and (max-width: 991px) {
+                padding: 14px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            height: 100%;
+        }
+    }
+
+    .nonna .no-pad {
+        padding: 0;
+    }
+    .rel {
+        position: relative;
+    }
+    .center{
+        text-align: center;
+    }
+    body {
+        overflow-x: hidden;
+    }
+    p{
+        margin: 0;
+    }
+    
+    .nonna{
+        .main_page_title{
+            color: #fff;
+            font-size: 36px;
+            @media screen and (max-width: 1024px){
+                font-size: 20px;
+            }
+            @media screen and (max-width: 767px){
+                font-size: 18px;
+            }
+        }
+    }
+
+    
+    /*project*/
+
+    .nonna .project {
+        padding: 75px 0 100px 0;
+    }
+    .nonna .project .title-project {
+        font-family: Calibri, sans-serif;
+        font-size: 36px;
+        color: #313131;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+    .nonna .project .title-project:after {
+        position: absolute;
+        background-color: #e7e7e7;
+        content: '';
+        left: 0;
+        bottom: 35px;
+        width: 100px;
+        height: 1px;
+    }
+    .nonna .project .text-project {
+        color: #313131;
+        font-size: 16px;
+        font-family: Calibri, sans-serif;
+        padding-right: 120px;
+    }
+    .nonna .project .text-project span {
+        color: #313131;
+        font-size: 18px;
+        font-family: Calibri, sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    .nonna .img-project {
+        height: 250px;
+    }
+    .nonna .img-project img {
+        position: absolute;
+        max-width: 100%;
+        right: 0;
+        top: -130px;
+        z-index: 1;
+    }
+
+    /*project*/
+
+    /*develop*/
+
+    .nonna .develop {
+        background-color: #f3f3f3;
+        padding: 45px 0;
+    }
+    .nonna .develop:after {
+        position: absolute;
+        content: '';
+        left: 0;
+        background: url(/img/portfolio/nonna/pizza-1.png) left center no-repeat;
+        bottom: -285px;
+        width: 313px;
+        z-index: 1;
+        height: 565px;
+    }
+    .nonna .develop .title-develop {
+        font-family: Calibri, sans-serif;
+        font-size: 36px;
+        color: #313131;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+    .nonna .develop .title-develop:after {
+        position: absolute;
+        background-color: #e7e7e7;
+        content: '';
+        left: 0;
+        bottom: 35px;
+        width: 100px;
+        height: 1px;
+    }
+    .nonna .develop li {
+        color: #313131;
+        font-size: 16px;
+        font-family: "Calibri Light", sans-serif;
+        list-style-type: disc;
+        padding: 2px;
+    }
+    .nonna .white-block {
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        padding: 32px 44px;
+        margin-top: 70px;
+    }
+    .nonna .opencart:after {
+        position: absolute;
+        content: '';
+        right: -43px;
+        background: url(/img/portfolio/nonna/opencart.png) center no-repeat;
+        top: 22px;
+        width: 348px;
+        z-index: 1;
+        height: 117px;
+    }
+    .nonna .develop ul {
+        padding-left: 18px;
+    }
+    .nonna  .develop .text-block {
+        color: #313131;
+        font-family: Calibri, sans-serif;
+        font-size: 16px;
+    }
+    .nonna  .develop .text-block span {
+        color: #313131;
+        font-family: Calibri, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /*develop*/
+
+    /*design*/
+
+    .nonna .design {
+        padding: 15px 0;
+    }
+    .nonna .design:after {
+        position: absolute;
+        content: '';
+        right: 0;
+        background: url(/img/portfolio/nonna/pizza-2.png) right center no-repeat;
+        bottom: -285px;
+        width: 313px;
+        z-index: 1;
+        height: 565px;
+    }
+    .nonna .design .title-design {
+        font-family: Calibri, sans-serif;
+        font-size: 36px;
+        color: #313131;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 60px;
+        padding-top: 20px;
+    }
+    .nonna .design .title-design:after {
+        position: absolute;
+        background-color: #e7e7e7;
+        content: '';
+        left: 0;
+        bottom: 35px;
+        width: 100px;
+        height: 1px;
+    }
+    .nonna .text-design {
+        color: #313131;
+        font-family: Calibri, sans-serif;
+        font-size: 16px;
+    }
+
+    /*design*/
+
+    /*final*/
+
+    .nonna .final {
+        background-color: #f3f3f3;
+        padding: 50px 0;
+    }
+    .nonna .final img {
+        max-width: 100%;
+        padding-bottom: 23px;
+    }
+    .nonna .final .title-final {
+        font-family: Calibri, sans-serif;
+        font-size: 36px;
+        color: #313131;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 60px;
+        margin-left: 10px;
+    }
+    .nonna .final .title-final:after {
+        position: absolute;
+        background-color: #e7e7e7;
+        content: '';
+        left: 0;
+        bottom: 35px;
+        width: 100px;
+        height: 1px;
+    }
+    .nonna .name-page {
+        font-size: 18px;
+        font-family: Calibri, sans-serif;
+        color: #313131;
+        font-style: italic;
+        padding: 6px 0;
+    }
+    .nonna .olive:after {
+        position: absolute;
+        content: '';
+        width: 215px;
+        height: 200px;
+        right: -130px;
+        background: url(/img/portfolio/nonna/olive.png) center no-repeat;
+        bottom: -55px;
+    }
+    .nonna .tomatos:after {
+        position: absolute;
+        content: '';
+        width: 335px;
+        height: 265px;
+        left: -180px;
+        background: url(/img/portfolio/nonna/bacon.png) center no-repeat;
+        bottom: -140px;
+    }
+
+    /*final*/
+
+    /*guideline*/
+
+    .nonna .guideline {
+        padding: 40px 0 60px 0;
+    }
+    .nonna .icons-nonna {
+        display: inline-block;
+        padding: 25px 22px 40px 22px;
+    }
+    .nonna .guideline .title-guide {
+        font-family: Calibri, sans-serif;
+        font-size: 36px;
+        color: #313131;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 60px;
+        margin-left: 10px;
+    }
+    .nonna .guideline .title-guide:after {
+        position: absolute;
+        background-color: #e7e7e7;
+        content: '';
+        left: 0;
+        bottom: 35px;
+        width: 100px;
+        height: 1px;
+    }
+    .nonna .box {
+        background-color: #f3f3f3;
+        border-radius: 10px;
+        position: relative;
+        margin-bottom: 33px;
+    }
+    .nonna .box:after {
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: #fff;
+        content: '';
+        left: 0;
+        top: 74px;
+    }
+    .nonna .title-font {
+        color: #313131;
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        padding: 22px 0 12px 35px;
+        letter-spacing: 1px;
+    }
+    .nonna .title-icons {
+        color: #313131;
+        font-size: 30px;
+        font-family: Calibri, sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 22px 0 12px 0;
+        letter-spacing: 1px;
+    }
+    .nonna .MS {
+        color: #313131;
+        font-size: 18px;
+        font-family: MagnoliaScript, sans-serif;
+        padding: 20px 0 27px 35px;
+        letter-spacing: 1px;
+    }
+    .nonna .lato {
+        color: #313131;
+        font-size: 18px;
+        font-family: Lato, sans-serif;
+        padding: 20px 0 27px 35px;
+    }
+    .nonna .colors p {
+        width: 16.666%;
+        padding: 10px 0;
+        font-family: Calibri, sans-serif;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #fff;
+        box-sizing: border-box;
+        margin: 0;
+        float: left;
+    }
+    .nonna .colors p:nth-child(1) {
+        background-color: #EBD460;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .nonna .colors p:nth-child(2) {
+        background-color: #d3a976;
+    }
+    .nonna .colors p:nth-child(3) {
+        background-color: #f4b350;
+    }
+    .nonna .colors p:nth-child(4) {
+        background-color: #f6f5f1;
+        color: #313131;
+    }
+    .nonna .colors p:nth-child(5) {
+        background-color: #95c11f;
+    }
+    .nonna .colors p:nth-child(6) {
+        background-color: #f04502;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .nonna .colors {
+        text-align: center;
+    }
+
+    /*guideline*/
+
+    /*adaptive*/
+
+    .nonna .adaptive {
+        background: url("/img/portfolio/nonna/screen-bot.png") 78% center no-repeat #f3f3f3;
+        padding: 130px 0 180px 0;
+    }
+    .nonna .adaptive .title-adaptive {
+        font-family: Calibri, sans-serif;
+        font-size: 36px;
+        color: #313131;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding-bottom: 60px;
+    }
+    .nonna .adaptive .title-adaptive:after {
+        position: absolute;
+        background-color: #e7e7e7;
+        content: '';
+        left: 0;
+        bottom: 35px;
+        width: 100px;
+        height: 1px;
+    }
+    .nonna .adaptive a {
+        margin-top: 100px;
+        display: inline-block;
+        background: url(/img/portfolio/nonna/arrowBtnRight-hover.png) 92% center no-repeat;
+        font-family: 'robotoregular_3', sans-serif;
+        font-size: 18px;
+        padding: 20px 60px 20px 24px;
+        color: #313131;
+        letter-spacing: 1px;
+        background-size: 14%;
+        border: 1px solid #313131;
+        text-decoration: none;
+        line-height: 1;
+    }
+    
+    .nonna .adaptive a:hover {
+        background: url(/img/portfolio/nonna/arrowBtnRight.png) 92% center no-repeat #313131;
+        color: #fff;
+        border: 1px solid #313131;
+        background-size: 14%;
+        text-decoration: none;
+    }
+
+    /*adaptive*/
+
+    @media (max-width: 1550px) {
+        .nonna .develop:after {
+            display: none;
+        }
+        .nonna .design:after {
+            display: none;
+        }
+        .nonna .adaptive {
+            background: url(/img/portfolio/nonna/screen-bot.png) 100% center no-repeat #f3f3f3;
+        }
+    }
+    @media (max-width: 1366px) {
+        .nonna .olive:after {
+            display: none;
+        }
+        .nonna .adaptive {
+            background: url(/img/portfolio/nonna/screen-bot.png) 127% center no-repeat #f3f3f3;
+        }
+    }
+
+    @media (max-width: 1199px) {
+        .nonna .title img {
+            width: 77%;
+        }
+        .nonna .opencart:after {
+            right: -90px;
+            background-size: 62%;
+        }
+        .nonna .design img {
+            max-width: 100%;
+        }
+        .nonna .MS {
+            padding: 20px 8px 27px 35px;
+        }
+        .nonna .icons-nonna {
+            width: 25%;
+        }
+        .nonna .lato {
+            padding: 20px 11px 27px 35px;
+        }
+        .nonna .adaptive-block {
+            display: none;
+        }
+        .nonna .adaptive {
+            background: url(/img/portfolio/nonna/screen-bot.png) center no-repeat #f3f3f3;
+            background-size: cover;
+            height: 600px;
+            padding: 0;
+        }
+    }
+
+    @media (max-width: 991px) {
+        .nonna .img-project {
+            display: none;
+        }
+        .nonna .opencart:after {
+            right: 0;
+            background-size: 80%;
+        }
+        .nonna .tomatos:after {
+            display: none;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .nonna .banner {
+            height: 325px;
+        }
+        .nonna .banner .title {
+            margin-top: 80px;
+        }
+        .nonna .project {
+            padding: 20px 0;
+        }
+        .nonna .project .title-project {
+            font-size: 30px;
+            padding-bottom: 30px;
+        }
+        .nonna .project .title-project:after {
+            bottom: 25px;
+        }
+        .nonna .project .text-project {
+            padding-right: 0;
+        }
+        .nonna .opencart:after {
+            display: none;
+        }
+        .nonna .white-block {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 25px 15px;
+            margin-top: 35px;
+        }
+        .nonna .develop .title-develop {
+            font-size: 30px;
+            padding-bottom: 30px;
+        }
+        .nonna .develop .title-develop:after {
+            bottom: 25px;
+        }
+        .nonna .design .title-design {
+            font-size: 30px;
+            padding-bottom: 30px;
+        }
+        .nonna .design .title-design:after {
+            bottom: 25px;
+        }
+        .nonna .final .title-final {
+            font-size: 30px;
+            padding-bottom: 30px;
+        }
+        .nonna .final .title-final:after {
+            bottom: 25px;
+        }
+        .nonna .guideline .title-guide {
+            font-size: 30px;
+            padding-bottom: 30px;
+        }
+        .nonna .guideline .title-guide:after {
+            bottom: 25px;
+        }
+        .nonna .icons-nonna {
+            width: 100%;
+            padding: 25px 0 40px 0;
+        }
+        .nonna .colors p {
+            width: 33.333%;
+        }
+        .nonna .colors p:nth-child(3) {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .nonna .colors p:nth-child(4) {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+        .nonna .guideline {
+            padding: 20px 0 35px 0;
+        }
+        .nonna .adaptive {
+            height: 325px;
+        }
+        .nonna .final {
+            padding: 20px 0 0 0;
+        }
+        .nonna .title-font {
+            font-size: 24px;
+        }
+        .nonna .lato {
+            font-size: 15px;
+        }
+        .nonna .MS {
+            font-size: 15px;
+        }
+        .nonna .develop {
+            padding: 30px 0;
+        }
+        .nonna .name-page {
+            font-size: 23px;
+        }
+    }
+
+    .header .container {
+        max-width: 1505px !important;
+        padding: 0 15px;
+        margin: auto;
+    }
+
+    .footer .container {
+        max-width: 1505px;
+        padding: 0 15px;
+        margin: auto;
+    }
+
+    @media (min-width: 1200px) {
+        header .container {
+            width: 1505px;
+        }
+        footer .container {
+            width: 1505px;
+        }
+        .footer__phone {
+            line-height: 40px;
+            &::after {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .footer__email {
+            line-height: 40px;
+            &::before {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    @media screen and (max-width: 1737px) {
+        .nonna .develop:after {
+            left: -90px;
+        }
+    }

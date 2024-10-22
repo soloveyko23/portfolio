@@ -1,0 +1,269 @@
+@import 'bootstrap3';
+@import 'reset';
+@import 'var';
+@import 'fonts';
+@import 'particles';
+@import 'hamburger';
+@import 'partials/common';
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/breadcrumbs';
+@import 'partials/ask';
+@import 'partials/our-services';
+@import 'partials/steps';
+@import 'partials/popup';
+@import 'partials/intlTelInput';
+@import 'partials/contact-us';
+@import 'partials/whats-smm';
+@import 'partials/complex-desigin';
+@import 'partials/trust-us';
+$header-height:83px;
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.test {
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #f00;
+    box-shadow: 0 0 0 10px #000;
+    width: 100%;
+    height: 100%;
+}
+
+// h1,
+// .h1 {
+//     font-family: Stolzl;
+//     font-style: normal;
+//     font-weight: 900;
+//     font-size: 60px;
+//     line-height: 100%;
+//     color: #222222;
+//     margin-bottom: 60px;
+//     span {
+//         color: #FA8825;
+//     }
+//     @media screen and (max-width:768px) {
+//         font-size: 36px;
+//         line-height: 1;
+//         margin-bottom: 30px;
+//     }
+// }
+.banner {
+    position: relative;
+    padding: 0;
+    color: $color-white;
+    background: url('/img/stuff.png'), #242424;
+    .container {
+        height: 100%;
+    }
+    .button {
+        width: 382px;
+        max-width: 100%;
+        margin: 80px 0;
+        &:hover {
+            background-color: #667E20;
+            border-color: #667E20;
+        }
+    }
+    &__text {
+        margin-top: auto;
+        margin-bottom: auto;
+        //max-width: 100%;
+        // max-width: 100%;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+    &__wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding-top: $header-height;
+    }
+    &__top {
+        display: none;
+    }
+    &__cont {
+        margin: auto 0;
+    }
+    &__h1 {
+        font-family: 'Stolzl';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 70px;
+        line-height: 120%;
+        color: #FFFFFF;
+        margin-bottom: 16px;
+    }
+    &__p {
+        // font-family: Stolzl; // already in global
+        font-size: 20px;
+        line-height: 132%;
+        color: #FFFFFF;
+    }
+    &__list {
+        display: flex;
+        li {
+            flex: 0 0 auto;
+            text-align: center;
+            //padding: 27px 30px;
+            padding: 3.6% 4.1%;
+            border-left: 1px dashed rgba(255, 255, 255, 0.4);
+            &:first-child {
+                border-left: unset;
+                padding-left: 0;
+            }
+            P {
+                font-family: 'Stolzl';
+                font-weight: bold;
+                font-size: 16px;
+                line-height: 114.5%;
+                text-transform: uppercase;
+                color: #FFFFFF;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    @media screen and (max-width:768px) {}
+    @media screen and (min-width:768px) {
+        &__top {
+            display: block;
+        }
+        &__footer {
+            max-width: unset;
+            width: 100%;
+        }
+        &__feature-column {
+            margin-bottom: 0;
+            margin-top: 40px;
+        }
+    }
+    @media screen and (min-width:1200px) {}
+    @media screen and (max-width:1624px) {
+        &__h1 {
+            font-size: 66px;
+        }
+    }
+    @media screen and (max-width:1500px) {
+        &__h1 {
+            font-size: 62px;
+        }
+        &__text {
+            margin-left: unset;
+        }
+    }
+    @media screen and (max-width:1399px) {
+        &__h1 {
+            font-size: 50px;
+        }
+        .button {
+            margin: 40px 0;
+        }
+    }
+    @media screen and (max-width:992px) {
+        &__h1 {
+            font-size: 42px;
+        }
+        &__list {
+            flex-wrap: wrap;
+            li {
+                flex: 1 1 50%;
+                border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+                &:nth-child(3) {
+                    border-left: none;
+                }
+                &:nth-child(3),
+                &:nth-child(4) {
+                    border-bottom: unset;
+                }
+            }
+        }
+    }
+    @media screen and (max-width:768px) {
+        &__h1 {
+            font-size: 26px;
+            line-height: 120%;
+            margin-bottom: 14px;
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+        &__p {
+            font-size: 16px;
+            line-height: 120%;
+            text-align: center;
+        }
+        &__list {
+            li {
+                padding: 15px 0;
+                p {
+                    font-size: 14px;
+                    line-height: 114.5%;
+                    margin-bottom: 12px;
+                }
+            }
+        }
+    }
+}
+
+.smmScene {
+    padding-bottom: 100%;
+    position: relative;
+    &-before,
+    &-after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border-radius: 50%;
+        z-index: 0;
+    }
+    &-before {
+        background: rgba(128, 128, 128, 0.1);
+    }
+    &-after {
+        background: rgba(128, 128, 128, 0.2);
+        max-width: 77.5%;
+        max-height: 77.5%;
+    }
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        max-width: 100%;
+        max-height: 100%;
+        z-index: 2;
+        &.smmScene-oval {
+            top: unset;
+            left: unset;
+            z-index: 1;
+            right: -15%;
+            width: 73.7%;
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .col-smmScene {
+        padding: 40px;
+    }
+}
+
+.smm .contact-us {
+    padding-top: 150px;
+    @media screen and (max-width: 768px) {
+        padding-top: 36px;
+    }
+}

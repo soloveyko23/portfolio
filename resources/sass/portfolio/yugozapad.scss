@@ -1,0 +1,1654 @@
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+
+@font-face {
+  font-family: 'RobotoBold_3';
+  src: url('/fonts/portfolio/Roboto-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'RussoOneRegular';
+  src: url('/fonts/portfolio/RussoOneRegular.eot');
+  src: url('/fonts/portfolio/RussoOneRegular.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/RussoOneRegular.woff2') format('woff2'),
+  url('/fonts/portfolio/RussoOneRegular.woff') format('woff'),
+  url('/fonts/portfolio/RussoOneRegular.ttf') format('truetype'),
+  url('/fonts/portfolio/RussoOneRegular.svg#RussoOneRegular') format('svg');
+}
+@font-face {
+  font-family: 'DaysRegular';
+  src: url('/fonts/portfolio/DaysRegular.eot');
+  src: url('/fonts/portfolio/DaysRegular.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/DaysRegular.woff2') format('woff2'),
+  url('/fonts/portfolio/DaysRegular.woff') format('woff'),
+  url('/fonts/portfolio/DaysRegular.ttf') format('truetype'),
+  url('/fonts/portfolio/DaysRegular.svg#DaysRegular') format('svg');
+}
+
+.padding {
+  &_p-tb-25 {
+      padding-top: 25px !important;
+      padding-bottom: 25px !important;
+  }
+}
+
+// _responsive-txt.scss
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+
+  $b: $b + $units;
+
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+
+  font-size: $f-min;
+
+  @media (min-width: $w-min) {
+      @if ($fallback) {
+          font-size: $fallback;
+      }
+      font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+      font-size: $f-max;
+  }
+}
+//end _responsive-txt.scss
+
+// _var.scss
+@mixin classic-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+//end _var.scss
+
+a {
+  text-decoration: none !important;
+}
+
+.header {
+  @include classic-flex;
+  align-items: center;
+  background: url('/img/portfolio/yugo-zapad/header-bg.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria-Bold';
+  &__container {
+      max-width: 1780px;
+      padding: 0 15px;
+      margin: auto;
+      width: 100%;
+  }
+  &__inner {
+      @include classic-flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      position: relative;
+      @media screen and (max-width: 991px) {
+          display: block;
+          margin: 50px auto;
+      }
+  }
+  &__description {
+      flex-basis: 45%;
+      margin-top: 186px;
+      @media screen and (max-width: 1499px) {
+          flex-basis: 40%;
+          margin-top: 405px;
+      }
+      @media screen and (max-width: 1199px) {
+          margin-top: 592px;
+      }
+      @media screen and (max-width: 991px) {
+          margin-top: 0;
+      }
+  }
+  &__logo {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+  }
+  &__phone-laptop {
+      position:absolute;
+      right: 0;
+      bottom: 30px;
+      width: 64%;
+      @media screen and (min-width: 1920px) {
+          width: 1197px;
+      }
+      @media screen and (max-width: 991px) {
+          margin-top: 28px;
+          position: relative;
+          width: 100%;
+      }
+  }
+  &__img-phone {
+      position: absolute;
+      width: 23%;
+      left: 50px;
+      bottom: -20px;
+      z-index: 1;
+      @media screen and (max-width: 1367px) {
+          left: 34px;
+      }
+      @media screen and (max-width: 575px) {
+          left: 18px;
+      }
+  }
+  &__img-laptop {
+      max-width: 100%;
+  }
+  &__txt {
+      @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+      text-align: center;
+      color: #5e5e5e;
+      max-width: 295px;
+      margin: 40px auto 40px auto;
+      @media screen and (max-width: 991px) {
+          margin-bottom: 35px;
+          margin-top: 25px;
+      }
+  }
+  &__icons {
+      @include classic-flex;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 184px;
+      margin-bottom: 50px;
+  }
+  &__img-area {
+      width: 36px;
+      height: 36px;
+  }
+  &__icon-img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+  }
+  &__button {
+      display: block;
+      color: #555555;
+      text-transform: uppercase;
+      border: 2px solid #00b4db;
+      padding: 17px 23px;
+      text-align: center;
+      max-width: 226px;
+      margin: 0 auto;
+      @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+      transition-duration: 0.5s;
+      &:hover {
+          background-color: #00b4db;
+          color: #fff;
+      }
+      @media screen and (max-width: 991px) {
+          padding: 14px;
+      }
+  }
+  @media screen and (max-width: 991px) {
+      height: 100%;
+  }
+}
+
+p, h2, h3{
+  margin: 0;
+}
+.center{
+  text-align: center;
+}
+
+body.yugo-zapad {
+  overflow-x: hidden;
+}
+
+.yugo-zapad .divider {
+  display: block;
+  height: 10px;
+  background: #fff;
+}
+
+.yugo-zapad .divider:before {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 95px;
+  height: 5px;
+  background: #606060;
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: -3px;
+  margin: auto;
+  z-index: 1;
+}
+
+.yugo-zapad .divider:after {
+  content: "";
+  display: block;
+  width: 100%;
+  max-width: 169px;
+  height: 1px;
+  background: #c3c3c3;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.yugo-zapad .align-right {
+  text-align: right;
+}
+
+.yugo-zapad .about {
+  background: #fff url("/img/portfolio/yugo-zapad/bgAbout.png") no-repeat left bottom;
+}
+
+.yugo-zapad .about .row {
+  margin-bottom: 0;
+}
+
+.yugo-zapad .about h3 {
+  color: #414141;
+  font-family: DaysRegular;
+  font-size: 25px;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  height: 70px;
+  margin: 36px 0 24px 0;
+}
+
+.yugo-zapad .about p {
+  color: #414141;
+  font-family: Calibri, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.yugo-zapad .about img {
+  width: 100%;
+}
+
+.yugo-zapad .features {
+  background-color: #424242;
+  height: 100% !important;
+  padding: 25px 0 !important;
+}
+
+.yugo-zapad .features p {
+  color: #fff;
+  font-family: Calibri, sans-serif;
+  font-weight: 300;
+  font-size: 25px;
+  line-height: 25px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 230px;
+  margin: 30px auto 0;
+}
+
+.yugo-zapad .features p span {
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: lowercase;
+}
+
+.yugo-zapad .adaptive {
+  background: url("/img/portfolio/yugo-zapad/bgAdaptive.jpg") no-repeat center;
+  background-size: cover;
+  height: 683px;
+  padding-top: 130px;
+}
+
+.yugo-zapad .adaptive h3 {
+  color: #fff;
+  font-family: RobotoBold_3;
+  font-size: 25px;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  height: 70px;
+  margin: 36px 0 24px 0;
+}
+
+.yugo-zapad .adaptive .divider {
+  background: transparent;
+}
+
+.yugo-zapad .adaptive .divider:before {
+  background: #fff;
+}
+
+.yugo-zapad .adaptive .divider:after {
+  background: #fff;
+}
+
+.yugo-zapad .adaptive p {
+  color: #fff;
+  font-family: Calibri, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: center;
+}
+
+.yugo-zapad .adaptive img {
+  width: 100%;
+}
+
+.yugo-zapad .search {
+  background: #fff url("/img/portfolio/yugo-zapad/bgSearch.png") no-repeat;
+  background-size: contain;
+  height: 100%;
+}
+
+.yugo-zapad .search img.cloud {
+  position: relative;
+  bottom: 90px;
+  right: -90px;
+}
+
+.yugo-zapad .search img.iphone {
+  position: relative;
+  bottom: -41px;
+  left: 65px;
+  z-index: 1;
+}
+
+.yugo-zapad .search img.screenMenu {
+  position: relative;
+  bottom: -54px;
+  left: 40px;
+}
+
+.yugo-zapad .search .textOnCloud {
+  width: 275px;
+  position: relative;
+  top: 185px;
+  left: 306px;
+  z-index: 1;
+}
+
+.yugo-zapad .search h3 {
+  color: #fff;
+  margin: 36px 0 24px 0;
+  font-family: RobotoBold_3;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.yugo-zapad .search p {
+  color: #fff;
+  font-family: Calibri, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: center;
+}
+
+.yugo-zapad .search .divider {
+  background: transparent;
+}
+
+.yugo-zapad .search .divider:before {
+  background: #fff;
+}
+
+.yugo-zapad .search .divider:after {
+  background: #fff;
+}
+
+.yugo-zapad .crm {
+  background-color: #efefef;
+}
+
+.yugo-zapad .crm img {
+  width: 100%;
+}
+
+.yugo-zapad .crm h3 {
+  color: #414141;
+  font-family: RobotoBold_3;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 50px;
+  margin: 36px 0 24px 0;
+}
+
+.yugo-zapad .crm p {
+  color: #414141;
+  font-family: Calibri, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: center;
+}
+
+.yugo-zapad .crm .divider {
+  background: transparent;
+}
+
+.yugo-zapad .pages h3 {
+  color: #414141;
+  font-family: DaysRegular;
+  font-size: 25px;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin: 36px 0 24px 0;
+}
+
+.yugo-zapad .pages h3 span {
+  color: #414141;
+  font-family: DaysRegular;
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.yugo-zapad .pages p {
+  color: #414141;
+  font-family: Calibri, sans-serif;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 300;
+  margin: 20px;
+}
+
+.yugo-zapad .pages img {
+  width: 100%;
+}
+
+.yugo-zapad .specials {
+  background: #f6f6f6 url("/img/portfolio/yugo-zapad/bgSpecials.png") no-repeat left bottom;
+}
+
+.yugo-zapad .specials h3 {
+  color: #414141;
+  font-family: DaysRegular;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 40px;
+  text-transform: uppercase;
+  margin: 36px 0 24px 0;
+}
+
+.yugo-zapad .specials .divider {
+  background: transparent;
+}
+
+.yugo-zapad
+.specials .block1,
+.specials .block2,
+.specials .block3 {
+  margin-top: 30px;
+  border: 2px solid #414141;
+}
+
+.yugo-zapad .specials .block1 p {
+  color: #414141;
+  font-family: RussoOneRegular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+}
+
+.yugo-zapad .specials .block2 p {
+  color: #414141;
+  font-family: DaysRegular;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+}
+
+.yugo-zapad .specials .block3 p {
+  color: #414141;
+  font-family: "Myriad Pro";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+}
+.yugo-zapad
+.specials .circle1,
+.specials .circle2,
+.specials .circle3,
+.specials .circle4 {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.yugo-zapad .specials .circles {
+  margin-top: 55px;
+}
+
+.yugo-zapad .specials .circles p {
+  color: #414141;
+  font-family: Calibri, sans-serif;
+  font-size: 15px;
+  line-height: 17px;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 80px;
+  margin-top: 20px;
+}
+
+.yugo-zapad .specials .circles .circle1 {
+  background-color: #212121;
+  margin: 0 10px 0 0;
+}
+
+.yugo-zapad .specials .circles .circle2 {
+  background-color: #e0e0e0;
+  margin: 0 10px 0 10px;
+}
+
+.yugo-zapad .specials .circles .circle3 {
+  background-color: #bf360c;
+  margin: 0 10px 0 10px;
+}
+
+.yugo-zapad .specials .circles .circle4 {
+  background-color: #df4c2e;
+  margin: 0 0 0 10px;
+}
+
+.yugo-zapad .specials button {
+  margin: 100px 0;
+}
+
+.yugo-zapad .specials .row {
+  margin-bottom: 0;
+}
+
+.yugo-zapad .footer {
+  margin-top: 0;
+}
+.yugo-zapad .read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 45px;
+  text-transform: lowercase;
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat #df4c2e;
+  background-position-x: 85%;
+  border: 2px solid transparent;
+  z-index: 1;
+  margin: 15px 0;
+  z-index: 10;
+}
+.yugo-zapad .read-more:hover {
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat;
+  background-position-x: 85%;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  z-index: 10;
+}
+.yugo-zapad .button .read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 45px;
+  text-transform: lowercase;
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat #df4c2e;
+  background-position-x: 85%;
+  border: 2px solid transparent;
+  z-index: 1;
+  margin: 15px 0;
+  z-index: 10;
+}
+.yugo-zapad .button .read-more:hover {
+  background: url(/img/portfolio/eva/arrowBtnRight-hover.png) left center no-repeat;
+  background-position-x: 85%;
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  z-index: 10;
+}
+.yugo-zapad .button {
+  margin: 80px 0;
+}
+/* Media */
+
+@media screen and (max-width: 1280px) {
+
+  .yugo-zapad .container {
+      margin-left: auto;
+      margin-right: auto;
+      width: 95%;
+      position: relative;
+      overflow: visible;
+  }
+
+  .yugo-zapad .search {
+      background: #fff url("/img/portfolio/yugo-zapad/bgSearch.png") no-repeat -350px;
+      background-size: cover;
+      height: 630px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 275px;
+      position: relative;
+      top: 195px;
+      left: 320px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.iphone {
+      position: relative;
+      bottom: -90px;
+      left: 65px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.screenMenu {
+      position: relative;
+      bottom: -90px;
+      left: 40px;
+  }
+
+  .yugo-zapad .crm img {
+      width: 100%;
+      margin: 20px 0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+
+  .yugo-zapad .about h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 20px;
+      line-height: 35px;
+      text-transform: uppercase;
+      text-align: center;
+      height: 70px;
+  }
+
+  .yugo-zapad .about p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 23px;
+      text-align: center;
+  }
+
+  .yugo-zapad .features p {
+      color: #fff;
+      font-family: DaysRegular;
+      font-weight: 300;
+      font-size: 23px;
+      line-height: 23px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 230px;
+      margin: 30px auto 0;
+  }
+
+  .yugo-zapad .adaptive h3 {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 35px;
+      text-transform: uppercase;
+      text-align: center
+  }
+
+  .yugo-zapad .adaptive p {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 23px;
+      text-align: center;
+  }
+
+  .yugo-zapad .adaptive {
+      background: url("/img/portfolio/yugo-zapad/bgAdaptive.jpg") no-repeat center;
+      background-size: cover;
+      height: 450px;
+      padding-top: 0px;
+  }
+
+  .yugo-zapad .adaptive img {
+      padding-top: 50px;
+      width: 100%;
+  }
+
+  .yugo-zapad .search {
+      background: #fff url("/img/portfolio/yugo-zapad/bgSearch.png") no-repeat -255px;
+      background-size: cover;
+      height: 510px;
+  }
+
+  .yugo-zapad .search h3 {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 35px;
+      text-transform: uppercase;
+      text-align: center;
+  }
+
+  .yugo-zapad .search p {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 23px;
+      text-align: center;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 70%;
+      position: relative;
+      bottom: 110px;
+      right: -40px;
+  }
+
+  .yugo-zapad .search img.iphone {
+      width: 45%;
+      position: relative;
+      bottom: -105px;
+      left: 15px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.screenMenu {
+      width: 42%;
+      position: relative;
+      bottom: -104px;
+      left: -3px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 275px;
+      position: relative;
+      top: 125px;
+      left: 195px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .crm h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 35px;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 20px;
+  }
+
+  .yugo-zapad .crm p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 23px;
+      text-align: center;
+  }
+
+  .yugo-zapad .crm img {
+      width: 100%;
+      margin: 20px 0;
+  }
+
+  .yugo-zapad .pages h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 20px;
+      line-height: 35px;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .pages h3 span {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 20px;
+      line-height: 25px;
+      font-weight: 300;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .pages p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      line-height: 23px;
+      font-weight: 300;
+  }
+
+  .yugo-zapad .specials h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 35px;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .specials .block1 p {
+      color: #414141;
+      font-family: RussoOneRegular;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+  }
+
+  .yugo-zapad .specials .block2 p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+  }
+
+  .yugo-zapad .specials .block3 p {
+      color: #414141;
+      font-family: "Myriad Pro";
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  .yugo-zapad .about h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      line-height: 30px;
+      text-transform: uppercase;
+      text-align: center;
+      height: 50px;
+  }
+
+  .yugo-zapad .about p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 20px;
+      text-align: center;
+  }
+
+  .yugo-zapad .features p {
+      color: #fff;
+      font-family: DaysRegular;
+      font-weight: 300;
+      font-size: 20px;
+      line-height: 20px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 210px;
+      margin: 30px auto 0;
+  }
+
+  .yugo-zapad .adaptive h3 {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      text-transform: uppercase;
+      text-align: center;
+  }
+
+  .yugo-zapad .adaptive p {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 20px;
+      text-align: center;
+  }
+
+  .yugo-zapad .adaptive img {
+      padding-top: 102px;
+      width: 100%;
+  }
+
+  .yugo-zapad .search {
+      background: #fff url("/img/portfolio/yugo-zapad/bgSearch.png") no-repeat -220px;
+      background-size: cover;
+      height: 451px;
+  }
+
+  .yugo-zapad .search h3 {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      text-transform: uppercase;
+      text-align: center;
+  }
+
+  .yugo-zapad .search p {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 20px;
+      text-align: center;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 80%;
+      position: relative;
+      bottom: 85px;
+      right: -30px;
+  }
+
+  .yugo-zapad .search img.iphone {
+      width: 45%;
+      position: relative;
+      bottom: -147px;
+      left: 15px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.screenMenu {
+      width: 42%;
+      position: relative;
+      bottom: -146px;
+      left: 0px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 275px;
+      position: relative;
+      top: 125px;
+      left: 90px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .crm h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 0;
+  }
+
+  .yugo-zapad .crm p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 20px;
+      text-align: center;
+  }
+
+  .yugo-zapad .crm img {
+      width: 100%;
+      margin: 20px 0;
+      padding: 35px 0;
+  }
+
+  .yugo-zapad .pages h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      line-height: 30px;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .pages h3 span {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      line-height: 20px;
+      font-weight: 300;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .pages p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 300;
+  }
+
+  .yugo-zapad .specials h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .specials .block1 p {
+      color: #414141;
+      font-family: RussoOneRegular;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+  }
+
+  .yugo-zapad .specials .block2 p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+  }
+
+  .yugo-zapad .specials .block3 p {
+      color: #414141;
+      font-family: "Myriad Pro";
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 736px) {
+
+  .yugo-zapad .about h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-align: center;
+      height: 50px;
+  }
+
+  .yugo-zapad .adaptive h3 {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-align: center;
+  }
+
+  .yugo-zapad .search h3 {
+      color: #fff;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-align: center;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 85%;
+      position: relative;
+      bottom: 85px;
+      right: -30px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 275px;
+      position: relative;
+      top: 125px;
+      left: 75px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.iphone {
+      width: 50%;
+      position: relative;
+      bottom: -130px;
+      left: 10px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.screenMenu {
+      width: 47%;
+      position: relative;
+      bottom: -130px;
+      left: -6px;
+  }
+
+  .yugo-zapad .crm h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 0;
+  }
+
+  .yugo-zapad .crm img {
+      width: 100%;
+      margin: 20px 0;
+      padding: 20px 0;
+  }
+
+  .yugo-zapad .pages h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      line-height: 26px;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .pages h3 span {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      line-height: 20px;
+      font-weight: 300;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .specials h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 26px;
+      text-transform: uppercase;
+  }
+
+  .yugo-zapad .specials .block1 p {
+      color: #414141;
+      font-family: RussoOneRegular;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+  }
+
+  .yugo-zapad .specials .block2 p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+  }
+
+  .yugo-zapad .specials .block3 p {
+      color: #414141;
+      font-family: MyriadProRegular_7;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+  }
+
+}
+
+@media screen and (max-width: 667px) {
+
+  .yugo-zapad .adaptive {
+      background: url("/img/portfolio/yugo-zapad/bgAdaptive.jpg") no-repeat center;
+      background-size: cover;
+      height: 495px;
+      padding-top: 0px;
+  }
+
+  .yugo-zapad .adaptive img {
+      padding-top: 135px;
+      width: 100%;
+  }
+
+  .yugo-zapad .search {
+      background: #fff url("/img/portfolio/yugo-zapad/bgSearch.png") no-repeat -183px;
+      background-size: cover;
+      height: 434px;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 90%;
+      position: relative;
+      bottom: 85px;
+      right: -30px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 275px;
+      position: relative;
+      top: 117px;
+      left: 49px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.iphone {
+      width: 50%;
+      position: relative;
+      bottom: -146px;
+      left: 10px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.screenMenu {
+      width: 47%;
+      position: relative;
+      bottom: -145px;
+      left: -6px;
+  }
+
+  .yugo-zapad .crm img {
+      width: 100%;
+      margin: 20px 0;
+      padding: 50px 0;
+  }
+
+  .yugo-zapad .specials .block2 p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+  }
+  .yugo-zapad .read-more {
+      display: inline-block;
+      font-size: 16px;
+      font-family: 'robotoregular_3';
+      color: #fff;
+      letter-spacing: 1px;
+      padding: 15px 100px 15px 45px;
+      text-transform: lowercase;
+      background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat #df4c2e;
+      background-position-x: 85%;
+      border: 2px solid transparent;
+      z-index: 1;
+      margin: 15px 0;
+      z-index: 10;
+  }
+}
+
+@media screen and (max-width: 568px) {
+
+  .yugo-zapad
+  .header button.buttonRed span:first-child,
+  .specials button.buttonRed span:first-child {
+      width: 185px;
+      height: 41px;
+      padding: 12px 0 0 0;
+      font-size: 18px;
+      text-align: center;
+  }
+
+  .yugo-zapad .about {
+      background: #fff url("/img/portfolio/yugo-zapad/bgAbout.png") no-repeat left bottom;
+      padding-top: 20px;
+  }
+
+  .yugo-zapad .about h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-align: center;
+      height: 25px;
+  }
+
+  .yugo-zapad .features {
+      background-color: #424242;
+      height: 460px;
+      padding-top: 0px;
+  }
+
+  .yugo-zapad .features .col {
+      margin-top: 20px;
+  }
+
+  .yugo-zapad .adaptive {
+      background: url("/img/portfolio/yugo-zapad/bgAdaptive.jpg") no-repeat center;
+      background-size: cover;
+      height: 635px;
+      padding-top: 20px;
+  }
+
+  .yugo-zapad .adaptive img {
+      padding-top: 0px;
+      width: 100%;
+  }
+
+  .yugo-zapad .search {
+      background: #fff url("/img/portfolio/yugo-zapad/bgSearch.png") no-repeat -250px;
+      background-size: cover;
+      height: 434px;
+  }
+
+  .yugo-zapad .search img.iphone {
+      width: 75%;
+      position: relative;
+      bottom: -71px;
+      left: 63px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 110%;
+      position: relative;
+      bottom: 85px;
+      right: -57px;
+  }
+
+  .yugo-zapad .crm img {
+      width: 100%;
+      margin: 0px 0;
+      padding: 20px 0;
+  }
+
+}
+
+@media screen and (max-width: 480px) {
+
+  .yugo-zapad
+  .header button.buttonRed span:first-child,
+  .specials button.buttonRed span:first-child {
+      width: 150px;
+      height: 30px;
+      padding: 8px 0 0 0;
+      font-size: 14px;
+      text-align: center;
+  }
+
+  .yugo-zapad
+  .header button.buttonRed span:last-child,
+  .specials button.buttonRed span:last-child {
+      width: 30px;
+      height: 30px;
+      position: relative;
+  }
+
+  .yugo-zapad .specials button {
+      margin: 50px 0 100px;
+  }
+
+  .yugo-zapad .about h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-align: center;
+      height: 35px;
+  }
+
+  .yugo-zapad .search {
+      background: #fff url("/img/portfolio/yugo-zapad/bgSearch.png") no-repeat -250px;
+      background-size: cover;
+      height: 370px;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 130%;
+      position: relative;
+      bottom: 85px;
+      right: -23px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 275px;
+      position: relative;
+      top: 113px;
+      left: 13px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .specials {
+      background: #f6f6f6 url("/img/portfolio/yugo-zapad/bgSpecials.png") no-repeat left bottom;
+      padding-top: 20px;
+  }
+
+}
+
+@media screen and (max-width: 414px) {
+
+  .yugo-zapad .search img.iphone {
+      width: 75%;
+      position: relative;
+      bottom: -116px;
+      left: 63px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 130%;
+      position: relative;
+      bottom: 110px;
+      right: -30px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 177px;
+      position: relative;
+      top: 103px;
+      left: 49px;
+      z-index: 1;
+  }
+
+  .yugo-zapad
+  .specials .circle1,
+  .specials .circle2,
+  .specials .circle3,
+  .specials .circle4 {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      display: inline-block;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+
+  .yugo-zapad .search img.iphone {
+      width: 75%;
+      position: relative;
+      bottom: -144px;
+      left: 63px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 144%;
+      position: relative;
+      bottom: 110px;
+      right: -15px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 177px;
+      position: relative;
+      top: 103px;
+      left: 33px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .crm img {
+      width: 100%;
+      margin: 0px 0;
+      padding: 0px 0;
+  }
+
+  .yugo-zapad
+  .specials .circle1,
+  .specials .circle2,
+  .specials .circle3,
+  .specials .circle4 {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: inline-block;
+  }
+
+  .yugo-zapad .specials .circles p {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 12px;
+      line-height: 17px;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-align: center;
+      padding-top: 60px;
+  }
+
+}
+
+@media screen and (max-width: 320px) {
+
+  .yugo-zapad .about h3 {
+      color: #414141;
+      font-family: DaysRegular;
+      font-size: 16px;
+      line-height: 26px;
+      text-transform: uppercase;
+      text-align: center;
+      height: 50px;
+  }
+
+  .yugo-zapad .adaptive {
+      background: url("/img/portfolio/yugo-zapad/bgAdaptive.jpg") no-repeat center;
+      background-size: cover;
+      height: 665px;
+      padding-top: 20px;
+  }
+
+  .yugo-zapad .search img.iphone {
+      width: 75%;
+      position: relative;
+      bottom: -183px;
+      left: 50px;
+      z-index: 1;
+  }
+
+  .yugo-zapad .search img.cloud {
+      width: 171%;
+      position: relative;
+      bottom: 167px;
+      right: -15px;
+  }
+
+  .yugo-zapad .search .textOnCloud {
+      width: 177px;
+      position: relative;
+      top: 45px;
+      left: 31px;
+      z-index: 1;
+  }
+
+  .yugo-zapad
+  .specials .circle1,
+  .specials .circle2,
+  .specials .circle3,
+  .specials .circle4 {
+      width: 49px;
+      height: 49px;
+      border-radius: 50%;
+      display: inline-block;
+  }
+
+  .yugo-zapad .specials .circles .circle1 {
+      background-color: #212121;
+      margin: 0 5px 0 0;
+  }
+
+  .yugo-zapad .specials .circles .circle2 {
+      background-color: #e0e0e0;
+      margin: 0 5px 0 5px;
+  }
+
+  .yugo-zapad .specials .circles .circle3 {
+      background-color: #bf360c;
+      margin: 0 5px 0 5px;
+  }
+
+  .yugo-zapad .specials .circles .circle4 {
+      background-color: #df4c2e;
+      margin: 0 0 0 5px;
+  }
+
+}
+/* Media */
+
+.main_page_title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  z-index: 1;
+  font-weight: normal;
+  line-height: 1;
+  font-family: 'Gotham Pro';
+  /*padding-top: 0;*/
+}
+@media screen and (max-width: 767px) {
+  .main_page_title {
+      font-size: 32px;
+      padding-top: 50px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .main_page_title {
+      font-size: 24px;
+      padding-top: 50px;
+  }
+}

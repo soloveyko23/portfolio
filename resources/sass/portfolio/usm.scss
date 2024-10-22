@@ -1,0 +1,827 @@
+@import 'portfolioParts';
+// _scss files
+// _reset.scss
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+//end _reset.scss
+
+// _fonts.scss
+@font-face {
+  font-family: 'Geometria-Bold';
+  src: url('/fonts/portfolio/usm/Geometria-Bold.eot');
+  src: url('/fonts/portfolio/usm/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/usm/Geometria-Bold.woff2') format('woff2'),
+  url('/fonts/portfolio/usm/Geometria-Bold.woff') format('woff'),
+  url('/fonts/portfolio/usm/Geometria-Bold.ttf') format('truetype'),
+  url('/fonts/portfolio/usm/Geometria-Bold.svg#Arial-BoldMT') format('svg');
+}
+
+@font-face {
+  font-family: 'Akrobat-Black';
+  src: url('/fonts/portfolio/usm/Akrobat-Black.eot');
+  src: url('/fonts/portfolio/usm/Akrobat-Black.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/usm/Akrobat-Black.woff2') format('woff2'),
+  url('/fonts/portfolio/usm/Akrobat-Black.woff') format('woff'),
+  url('/fonts/portfolio/usm/Akrobat-Black.ttf') format('truetype'),
+  url('/fonts/portfolio/usm/Akrobat-Black.svg#Akrobat-Black') format('svg');
+}
+
+@font-face {
+  font-family: 'Akrobat-Bold';
+  src: url('/fonts/portfolio/usm/Akrobat-Bold.eot');
+  src: url('/fonts/portfolio/usm/Akrobat-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/usm/Akrobat-Bold.woff2') format('woff2'),
+  url('/fonts/portfolio/usm/Akrobat-Bold.woff') format('woff'),
+  url('/fonts/portfolio/usm/Akrobat-Bold.ttf') format('truetype'),
+  url('/fonts/portfolio/usm/Akrobat-Bold.svg#Akrobat-Black') format('svg');
+}
+//end _fonts.scss
+
+// _responsive-txt.scss
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+  
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+  
+  $b: $b + $units;
+  
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  font-size: $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+//end _responsive-txt.scss
+
+// _var.scss
+@mixin classic-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+@mixin vertical-border-title {
+  @include content-block-absolute;
+  background: url('/img/portfolio/usm/border-title.png') no-repeat center / contain;
+  width: 4px;
+  height: 162px;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+@mixin border-main-page {
+  @include content-block-absolute;
+  border-left: 2px solid #0042a3;
+  border-bottom: 2px solid #0042a3;
+  height: 1448px;
+  width: 70px;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+@mixin border-about-company {
+  @include content-block-absolute;
+  border-top: 2px solid #0042a3;
+  border-right: 2px solid #0042a3;
+  border-bottom: 2px solid #0042a3;
+  height: 1350px;
+  width: 70px;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+@mixin border-product-page {
+  @include content-block-absolute;
+  border-top: 2px solid #0042a3;
+  border-left: 2px solid #0042a3;
+  border-bottom: 2px solid #0042a3;
+  height: 575px;
+  width: 70px;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+//end _var.scss
+
+// _particles.scss
+.title {
+  display: block;
+  text-transform: uppercase;
+  position: relative;
+  &__primary {
+    color: #464646;
+    @include fluidFontSize (32px, 58px, 320px, 1099px, 64px);
+  }
+  &__bg {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    @media screen and (max-width: 599px) {
+      transform: translate(-50%, 10%);
+    }
+  }
+}
+//end _particles.scss
+//end _scss files
+
+*{
+  line-height: 1;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1780px;
+  padding: 0 15px;
+  margin: auto;
+  width: 100%;
+}
+
+.header {
+  @include classic-flex;
+  align-items: center;
+  background: url('/img/portfolio/usm/header-bgc.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria-Bold';
+  &__inner {
+    @include classic-flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      display: block;
+      margin: 50px auto;
+    }
+  }
+  &__description {
+    flex-basis: 45%;
+    margin-top: 186px;
+    @media screen and (max-width: 1499px) {
+      flex-basis: 40%;
+      margin-top: 405px;
+    }
+    @media screen and (max-width: 1199px) {
+      margin-top: 592px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 80px;
+    }
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__phone-laptop {
+    position:absolute;
+    right: 0;
+    bottom: 30px;
+    width: 64%;
+    @media screen and (min-width: 1920px) {
+      width: 1197px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 28px;
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__img-phone {
+    position: absolute;
+    width: 23%;
+    left: 50px;
+    bottom: -20px;
+    z-index: 1;
+    @media screen and (max-width: 1367px) {
+      left: 34px;
+    }
+    @media screen and (max-width: 575px) {
+      left: 18px;
+    }
+  }
+  &__img-laptop {
+    max-width: 100%;
+  }
+  &__txt {
+    @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+    text-align: center;
+    color: #5e5e5e;
+    max-width: 268px;
+    margin: 41px auto 63px auto;
+    @media screen and (max-width: 991px) {
+      margin-bottom: 35px;
+      margin-top: 25px;
+    }
+  }
+  &__icons {
+    @include classic-flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 184px;
+    margin-bottom: 50px;
+  }
+  &__img-area {
+    width: 36px;
+    height: 36px;
+  }
+  &__icon-img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+  &__button {
+    display: block;
+    color: #555555;
+    text-transform: uppercase;
+    border: 2px solid #00b4db;
+    padding: 17px 23px;
+    text-align: center;
+    max-width: 226px;
+    margin: 0 auto;
+    @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+    transition-duration: 0.5s;
+    &:hover {
+      background-color: #00b4db;
+      color: #fff;
+    }
+    @media screen and (max-width: 991px) {
+      padding: 14px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    height: 100%;
+  }
+}
+
+//main
+.main {
+  font-family: 'Akrobat-Black';
+  position: relative;
+  &__container {
+    max-width: 1155px;
+    padding: 0 15px;
+    margin: auto;
+    position: relative;
+  }
+}
+
+.home-page {
+  padding-top: 105px;
+  position: relative;
+  &__title {
+    padding: 24px 35px 24px 0;
+    text-align: right;
+    margin: 0 0 130px auto;
+    max-width: 448px;
+    &::after {
+      @include vertical-border-title;
+      right: 0;
+      top: 0;
+    }
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+      margin-bottom: 25px;
+      margin-right: 0;
+    }
+  }
+  &__img-area {
+    position: relative;
+    padding-left: 105px;
+    &::before {
+      @include border-main-page;
+      left: 33px;
+      top: -560px;
+      @media screen and (max-width: 1199px) {
+        top: -700px;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      padding-left: 0;
+    }
+  }
+  &__img-txt {
+    position: absolute;
+    top: 57%;
+    left: 35px;
+    @media screen and (max-width: 991px) {
+      top: 35%;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  &__image {
+    display: block;
+    max-width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.15);
+  }
+  @media screen and (max-width: 991px) {
+    padding-top: 50px;
+  }
+}
+
+
+.colors {
+  padding: 130px 0;
+  &__title {
+    padding: 24px 35px 24px 0;
+    text-align: right;
+    max-width: 370px;
+    &::after {
+      @include vertical-border-title;
+      right: 0;
+      bottom: 0;
+    }
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+      margin: 0 auto 50px auto;
+    }
+  }
+  &__inner{
+    @include classic-flex;
+    position: relative;
+    align-items: center;
+    @media screen and (max-width: 991px) {
+      display: block;
+    }
+  }
+  &__inner-item {
+    position: relative;
+    transform: rotate(-45deg);
+    &:last-child {
+      margin-right: 210px;
+    }
+    @media screen and (max-width: 991px) {
+      &:last-child {
+        margin-right: 0;
+        margin-top: 80px;
+      }
+      left: 50%;
+      transform: translateX(-50%) rotate(-45deg);
+    }
+  }
+  &__square {
+    width: 100px;
+    height: 100px;
+    -webkit-box-shadow: 20px 18px 0px 0px rgba(237,237,237,1);
+    -moz-box-shadow: 20px 18px 0px 0px rgba(237,237,237,1);
+    box-shadow: 20px 18px 0px 0px rgba(237,237,237,1);
+    &_color-blue {
+      background: #0042a3;
+    }
+    &_color-yellow {
+      background: #ffd80b;
+    }
+    @media screen and (max-width: 991px) {
+      margin: 0 auto;
+    }
+  }
+  &__square-txt{
+    font-family: 'Akrobat-Bold';
+    transform: rotate(45deg);
+    position: absolute;
+    left: 60px;
+    bottom: -80px;
+    display: block;
+    text-align: center;
+    max-width: 100%;
+    text-transform: uppercase;
+    color: #222222;
+    @include fluidFontSize (16px, 24px, 320px, 1099px, 24px);
+    @media screen and (max-width: 1199px) {
+      left: 30px;
+      bottom: -60px;
+    }
+    @media screen and (max-width: 991px) {
+      left: 45%;
+      bottom: 0px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    padding: 100px 0;
+  }
+}
+
+.font-solution {
+  &__inner {
+    @include classic-flex;
+    align-items: center;
+    @media screen and (max-width: 991px) {
+      display: block;
+      transform: rotate(180deg);
+    }
+  }
+  &__title {
+    padding: 24px 0 24px 35px;
+    text-align: left;
+    max-width: 360px;
+    &::after {
+      @include vertical-border-title;
+      left: 0;
+      top: 0;
+    }
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+      margin-bottom: 25px;
+      margin-right: 0;
+      transform: rotate(-180deg);
+    }
+  }
+  &__big-letter {
+    position: relative;
+    flex-basis: 13%;
+    @media screen and (max-width: 991px) {
+      margin: 0 auto;
+      max-width: 100%;
+      transform: rotate(-180deg);
+    }
+  }
+  &__title-A {
+    @include fluidFontSize (155px, 255px, 320px, 1099px, 64px);
+    color: #464646;
+    @media screen and (max-width: 991px) {
+      text-align: center;
+    }
+  }
+  &__img-A {
+    display: block;
+    position: absolute;
+    max-width: 100%;
+    left: 18px;
+    bottom: 15px;
+    z-index: -1;
+    @media screen and (max-width: 991px) {
+      left: 45%;
+      width: 14%;
+    }
+    @media screen and (max-width: 767px) {
+      bottom: 10px;
+      left: 45%;
+      width: 17%;
+    }
+    @media screen and (max-width: 499px) {
+      bottom: 10px;
+      left: 44%;
+      width: 25%;
+    }
+  }
+  &__subtitle {
+    flex-basis: 19%;
+    margin-left: 50px;
+    margin-right: auto;
+    font-family: 'Akrobat-Bold';
+    color: #464646;
+    text-transform: uppercase;
+    @include fluidFontSize (24px, 36px, 320px, 1099px, 36px);
+    @media screen and (max-width: 1199px) {
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+    @media screen and (max-width: 991px) {
+      transform: rotate(-180deg);
+    }
+  }
+  &__txt {
+    display: block;
+    font-size: 14px;
+    text-transform: none;
+    margin: 30px 0 0 0;
+    @include fluidFontSize (14px, 18px, 320px, 1099px, 36px);
+    &_plex-sans-regular {
+      font-family: 'IBM Plex Sans Regular';
+    }
+    @media screen and (max-width: 1199px) {
+      margin: 15px auto 0 auto;
+      max-width: 200px;
+    }
+  }
+}
+
+.about-company {
+  position: relative;
+  padding: 150px 0 120px 0;
+  &__container {
+    position: relative;
+    &::after {
+      @include border-about-company;
+      right: -50px;
+      top: -1230px;
+      z-index: -1;
+      @media screen and (max-width: 1399px) {
+        right: 0;
+      }
+      @media screen and (max-width: 1199px) {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    position: relative;
+    max-width: 390px;
+    margin: 0 auto 100px auto;
+    text-align: center;
+    padding-bottom: 30px;
+    &::after {
+      @include vertical-border-title;
+      top: 62px;
+      left: 50%;
+      transform: translateX(-50%) rotate(90deg) scale(-1, 1);
+    }
+    @media screen and (max-width: 991px) {
+      margin: 0 auto;
+    }
+  }
+  &__img-area {
+    position: relative;
+    padding-left: 105px;
+    @media screen and (max-width: 767px) {
+      padding-left: 0;
+    }
+  }
+  &__img-page {
+    display: block;
+    max-width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.15);
+  }
+  &__img-txt {
+    position: absolute;
+    top: 12%;
+    left: 35px;
+    @media screen and (max-width: 1199px) {
+      width: 8%;
+      left: 46px;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  &__img-transport {
+    position: absolute;
+    z-index: 1;
+    top: -56px;
+    right: -110px;
+    @media screen and (max-width: 1450px) {
+      width: 66%;
+      top: -56px;
+      right: -30px;
+    }
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    padding: 80px 0;
+  }
+}
+
+.product-page {
+  &__title {
+    text-align: right;
+    max-width: 265px;
+    margin-left: auto;
+    padding-bottom: 33px;
+    margin-bottom: 70px;
+    &::after {
+      @include vertical-border-title;
+      top: 62px;
+      right: 80px;
+      transform: rotate(90deg) scale(-1, 1);
+      @media screen and (max-width: 991px) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 991px) {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 0;
+    }
+  }
+  &__img-area {
+    padding-left: 105px;
+    position: relative;
+    &::after {
+      @include border-product-page;
+      left: 33px;
+      top: -450px;
+      z-index: -1;
+    }
+    @media screen and (max-width: 767px) {
+      padding-left: 0;
+    }
+  }
+  &__img-page {
+    max-width: 100%;
+    box-shadow: 0px 0px 64px rgba(0, 0, 0, 0.15);
+  }
+  &__img-txt {
+    position: absolute;
+    top: 27%;
+    left: 35px;
+    z-index: -1;
+    @media screen and (max-width: 1199px) {
+      width: 8%;
+      left: 40px;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
+
+.contact-page {
+  padding: 125px 0 0 0;
+  &__container {
+    position: relative;
+    &::after {
+      @include border-about-company;
+      right: -52px;
+      top: -765px;
+      z-index: -1;
+      @media screen and (max-width: 1349px) {
+        right: 0;
+      }
+      @media screen and (max-width: 1199px) {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    text-align: left;
+    max-width: 265px;
+    margin: 0 auto 55px 90px;
+    padding-bottom: 33px;
+    &::after {
+      @include vertical-border-title;
+      top: 62px;
+      left: 80px;
+      transform: rotate(90deg) scale(-1, 1);
+      @media screen and (max-width: 991px) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 991px) {
+      max-width: 100%;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+  &__img-area {
+    padding-left: 105px;
+    position: relative;
+    @media screen and (max-width: 767px) {
+      padding-left: 0;
+    }
+  }
+  &__img-page {
+    max-width: 100%;
+  }
+  &__img-txt {
+    position: absolute;
+    top: 27%;
+    left: 35px;
+    z-index: -1;
+    @media screen and (max-width: 991px) {
+      width: 8%;
+      left: 46px;
+    }
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    padding: 80px 0 0 0;
+  }
+}
+
+.ty {
+  padding: 340px 0 120px 0;
+  background: url('/img/portfolio/usm/ty-img-bg.jpg') no-repeat right top / cover;
+  background-size: 45% 100%;
+  margin-top: -199px;
+  @media screen and (max-width: 1199px) {
+    background: none;
+  }
+  &__title {
+    color: #464646;
+    margin-left: 90px;
+    font-size: 104px;
+    text-align: left;
+    max-width: 424px;
+    line-height: 0.6;
+    @media screen and (max-width: 1199px) {
+      text-align: center;
+      margin: 0 auto;
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 64px;
+      max-width: 275px;
+    }
+  }
+  &__subtitle {
+    font-size: 58px;
+    @media screen and (max-width: 767px) {
+      font-size: 32px;
+    }
+  }
+  @media screen and (max-width: 1199px) {
+    margin-top: 0;
+    padding: 50px 0;
+  }
+}
+//end main

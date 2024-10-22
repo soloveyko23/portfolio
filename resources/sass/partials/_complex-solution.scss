@@ -1,0 +1,101 @@
+.complex-solution {
+    padding: 80px 0 120px 0;
+    &__subtitle {
+        margin: 34px 0 15px 0;
+    }
+    &__cards {
+        @include classic-flex;
+    }
+    &__card {
+        padding: 40px 0 40px 3%;
+        flex-basis: 20%;
+        -webkit-box-shadow: 0px 7px 82px -58px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 7px 82px -58px rgba(0,0,0,0.75);
+        box-shadow: 0px 16px 64px rgba(0, 0, 0, 0.2);
+        margin: 10px;
+        border-radius: 10px;
+        &_blue-1 {
+            background: url('../img/complex-solution_import-products.png') no-repeat center / cover;
+        }
+        &_purple {
+            background: url('../img/complex-solution_connection.png') no-repeat center / cover;
+        }
+        &_yellow{
+            background: url('../img/complex-solution_internet-marketing.png') no-repeat center / cover;
+        }
+        &_green {
+            background: url('../img/complex-solution_SEO-optimization.png') no-repeat center / cover;
+        }
+        &_pink {
+            background: url('../img/complex-solution_contextual-advertising.png') no-repeat center / cover;
+        }
+        &_orange {
+            background: url('../img/complex-solution_SMM.png') no-repeat center / cover;
+        }
+        &_red {
+            background: url('../img/complex-solution_YouTube.png') no-repeat center / cover;
+        }
+        &_blue-2 {
+            background: url('../img/complex-solution_IOS-Android.png') no-repeat center / cover;
+        }
+    }
+    &__desc {
+        font-family: "TTHoves";
+        font-weight: 400;
+    }
+    &__section-title {
+        font-family: "TTHoves";
+        font-weight: 900;
+    }
+    &__img-field {
+        border-radius: 10px;
+        width: 80px;
+        height: 80px;
+        &_blue {
+            background-color: #017FDD;
+        }
+        &_purple {
+            background-color: #9E37A9;
+        }
+        &_yellow{
+            background-color: #ECAF01;
+        }
+        &_green {
+            background-color: #40D674;
+        }
+        &_pink {
+            background-color: #E63E98;
+        }
+        &_orange {
+            background-color: #E9882F;
+        }
+        &_red {
+            background-color: #F64538;
+        }
+    }
+    &__img {
+        width: 56px;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    .complex-solution__cards {
+        justify-content: space-around;
+    }
+    .complex-solution__card {
+        flex-basis: 33.3%;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 991px) { 
+    .complex-solution {
+        padding: 0 0 50px 0;
+    }
+}

@@ -1,0 +1,1015 @@
+@import 'portfolioParts';
+@import "../bootstrap3";
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+//end _reset.scss
+
+// _fonts.scss
+@font-face {
+    font-family: 'Geometria-Bold';
+    src: url('/fonts/portfolio/planeta-kolgot/Geometria-Bold.eot');
+    src: url('/fonts/portfolio/planeta-kolgot/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/portfolio/planeta-kolgot/Geometria-Bold.woff2') format('woff2'),
+    url('/fonts/portfolio/planeta-kolgot/Geometria-Bold.woff') format('woff'),
+    url('/fonts/portfolio/planeta-kolgot/Geometria-Bold.ttf') format('truetype'),
+    url('/fonts/portfolio/planeta-kolgot/Geometria-Bold.svg#Arial-BoldMT') format('svg');
+}
+@font-face {
+    font-family: 'Geometria-ExtraBold';
+    src: url('/fonts/portfolio/planeta-kolgot/Geometria-ExtraBold.eot');
+    src: url('/fonts/portfolio/planeta-kolgot/Geometria-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/portfolio/planeta-kolgot/Geometria-ExtraBold.woff2') format('woff2'),
+    url('/fonts/portfolio/planeta-kolgot/Geometria-ExtraBold.woff') format('woff'),
+    url('/fonts/portfolio/planeta-kolgot/Geometria-ExtraBold.ttf') format('truetype'),
+    url('/fonts/portfolio/planeta-kolgot/Geometria-ExtraBold.svg#Arial-BoldMT') format('svg');
+}
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('/fonts/portfolio/planeta-kolgot/NotoSans.eot');
+    src: url('/fonts/portfolio/planeta-kolgot/NotoSans.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/portfolio/planeta-kolgot/NotoSans.woff2') format('woff2'),
+    url('/fonts/portfolio/planeta-kolgot/NotoSans.woff') format('woff'),
+    url('/fonts/portfolio/planeta-kolgot/NotoSans.ttf') format('truetype'),
+    url('/fonts/portfolio/planeta-kolgot/NotoSans.svg#NotoSans') format('svg');
+}
+@font-face {
+    font-family: 'Noto Sans ExtBd';
+    src: url('/fonts/portfolio/planeta-kolgot/NotoSans-ExtraBold.eot');
+    src: url('/fonts/portfolio/planeta-kolgot/NotoSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/portfolio/planeta-kolgot/NotoSans-ExtraBold.woff2') format('woff2'),
+    url('/fonts/portfolio/planeta-kolgot/NotoSans-ExtraBold.woff') format('woff'),
+    url('/fonts/portfolio/planeta-kolgot/NotoSans-ExtraBold.ttf') format('truetype'),
+    url('/fonts/portfolio/planeta-kolgot/NotoSans-ExtraBold.svg#NotoSans-ExtraBold') format('svg');
+}
+//end _fonts.scss
+
+// _responsive-txt.scss
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    
+    @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+    $f-min: strip-unit($f-min);
+    $f-max: strip-unit($f-max);
+    $w-min: strip-unit($w-min);
+    $w-max: strip-unit($w-max);
+    
+    $k: ($f-max - $f-min)/($w-max - $w-min);
+    $b: $f-min - $k * $w-min;
+    
+    $b: $b + $units;
+    
+    @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+    
+    font-size: $f-min;
+    
+    @media (min-width: $w-min) {
+        @if ($fallback) {
+            font-size: $fallback;
+        }
+        font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+    }
+    @media (min-width: $w-max) {
+        font-size: $f-max;
+    }
+}
+//end _responsive-txt.scss
+
+// _var.scss
+@mixin classic-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+@mixin center {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin border-title {
+    @include content-block-absolute;
+    width: 121px;
+    height: 8px;
+    background: #9FCFCC;
+    @media screen and (max-width: 991px) {
+        display: none;
+    }
+}
+
+//end _var.scss
+
+// _particles.scss
+.title {
+    display: block;
+    text-transform: uppercase;
+    position: relative;
+    max-width: 457px;
+    &__primary {
+        &::after {
+            @include border-title;
+            left: 0;
+            bottom: 0;
+            @media screen and (max-width: 1199px) {
+                display: none;
+            }
+        }
+        &::before {
+            background: none;
+        }
+        font-family: 'Geometria-ExtraBold';
+        text-align: left;
+        color: #555555;
+        padding: 0 0 20px 0;
+        margin: 0 auto 100px 0;
+        max-width: 448px;
+        @include fluidFontSize (32px, 72px, 320px, 1399px, 72px);
+    }
+    @media screen and (max-width: 1199px) {
+        text-align: center !important;
+        margin: 0 auto;
+    }
+}
+.spheres-area {
+    width: 821px;
+    height: 821px;
+    position: absolute;
+    z-index: -1;
+    &_ty {
+        left: -477px;
+        top: -386px;
+        z-index: 0;
+    }
+    &_font-solution {
+        right: 131px;
+        top: -250px;                
+        z-index: 1;
+        @media screen and (max-width: 1399px) {
+            right: 70px;
+            top: -100px;
+            width: 421px;
+            height: 421px;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    &_cataloge {
+        left: -200px;
+        top: 1935px;
+        @media screen and (max-width: 1499px) {
+            top: 1700px;
+        }
+        @media screen and (max-width: 1399px) {
+            top: 1400px;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    &_home-page-1 {
+        right: -60px;
+        top: 37px;
+    }
+    &_home-page-2 {
+        right: -72px;
+        top: 3607px;                
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1299px) {
+        width: 421px;
+        height: 421px;
+    }
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+}
+.sphere {
+    border-radius: 50%;
+    position: absolute;
+    z-index: -1;
+    &__sphere-outer {
+        width: 100%;
+        height: 100%;
+        background: #FBFBFB;
+    }
+    &__sphere-inner-1 {
+        @include center;
+        width: 78%;
+        height: 78%;
+        background: #F0F0F0;
+    }
+    &__sphere-inner-2 {
+        @include center;
+        width: 65%;
+        height: 65%;
+        background: #EBEAEA;
+    }
+}
+
+//end _particles.scss
+//end _scss files
+
+*{
+    line-height: 1;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1780px;
+    padding: 0 15px;
+    margin: auto;
+    width: 100%;
+}
+
+main .header {
+    @include classic-flex;
+    align-items: center;
+    background: url('/img/portfolio/planeta-kolgot/header-bg.jpg') no-repeat center / cover;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+    font-family: 'Geometria-Bold';
+    box-shadow: none;
+    &__inner {
+        @include classic-flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+        position: relative;
+        @media screen and (max-width: 991px) {
+            display: block;
+            margin: 50px auto;
+        }
+    }
+    &__description {
+        flex-basis: 45%;
+        margin-top: 186px;
+        @media screen and (max-width: 1499px) {
+            flex-basis: 40%;
+            margin-top: 405px;
+        }
+        @media screen and (max-width: 1199px) {
+            margin-top: 300px;
+        }
+        @media screen and (max-width: 991px) {
+            margin-top: 120px;
+        }
+    }
+    &__logo {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    &__phone-laptop {
+        position:absolute;
+        right: 0;
+        bottom: 30px;
+        width: 64%;
+        @media screen and (min-width: 1920px) {
+            width: 1197px;
+        }
+        @media screen and (max-width: 991px) {
+            margin-top: 28px;
+            position: relative;
+            width: 100%;
+        }
+    }
+    &__img-phone {
+        position: absolute;
+        width: 23%;
+        left: 50px;
+        bottom: -20px;
+        z-index: 1;
+        @media screen and (max-width: 1367px) {
+            left: 34px;
+        }
+        @media screen and (max-width: 575px) {
+            left: 18px;
+        }
+    }
+    &__img-laptop {
+        max-width: 100%;
+    }
+    &__txt {
+        @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+        text-align: center;
+        color: #5e5e5e;
+        max-width: 268px;
+        margin: 41px auto 63px auto;
+        @media screen and (max-width: 991px) {
+            margin-bottom: 35px;
+            margin-top: 25px;
+        }
+    }
+    &__icons {
+        @include classic-flex;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 184px;
+        margin-bottom: 50px;
+    }
+    &__img-area {
+        width: 36px;
+        height: 36px;
+    }
+    &__icon-img {
+        display: inline-block;
+        max-width: 100%;
+        height: auto;
+    }
+    &__button {
+        display: block;
+        color: #555555;
+        text-transform: uppercase;
+        border: 2px solid #00b4db;
+        padding: 17px 23px;
+        text-align: center;
+        max-width: 226px;
+        margin: 0 auto;
+        @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+        transition-duration: 0.5s;
+        &:hover {
+            background-color: #00b4db;
+            color: #fff;
+        }
+        @media screen and (max-width: 991px) {
+            padding: 14px;
+        }
+    }
+    @media screen and (max-width: 991px) {
+        height: 100%;
+    }
+}
+
+//main
+.main {
+    font-family: 'Akrobat-Black';
+    position: relative;
+    &__container {
+        max-width: 1463px;
+        padding: 0 15px;
+        margin: auto;
+        position: relative;
+    }
+}
+
+.home-page {
+    padding-top: 105px;
+    position: relative;
+    &__img-area {
+        position: relative;
+        @media screen and (max-width: 767px) {
+            padding-left: 0;
+        }
+    }
+    &__img-txt {
+        position: absolute;
+        top: 57%;
+        left: 35px;
+        @media screen and (max-width: 991px) {
+            top: 35%;
+        }
+        @media screen and (max-width: 767px) {
+            display: none;
+        }
+    }
+    &__img-arrow {
+        position: absolute;
+        top: 59px;
+        right: -95px;
+        z-index: 3;
+        width: 11%;
+        height: 3%;
+        @media screen and (max-width: 1770px) {
+            width: 8%;
+            right: -50px;
+        }
+        @media screen and (max-width: 1677px) {
+            width: 6%;
+            right: 0;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    &__img {
+        display: block;
+        max-width: 100%;
+        position: relative;
+        z-index: 1;
+        &_header {
+            position: relative;
+            display: block;
+            width: 106%;
+            left: -34px;
+            bottom: 20px;
+            @media screen and (max-width: 1199px) {
+                display: none;
+            }
+        }
+        &_phone {
+            position: absolute;
+            display: block;
+            width: 50%;
+            right: -120px;
+            bottom: 12%;
+            z-index: 2;
+            @media screen and (max-width: 1784px) {
+                right: 0;
+            }
+        }
+    }
+    @media screen and (max-width: 991px) {
+        padding-top: 50px;
+    }
+}
+
+.colors {
+    position: relative;
+    background: url('/img/portfolio/planeta-kolgot/colors-bg.jpg') no-repeat left / cover;
+    background-size: 60% 100%;
+    padding: 309px 0 190px 0;
+    margin-top: -307px;
+    &__img-area {
+        position: absolute;
+    }
+    &__flex {
+        @include classic-flex;
+        align-items: center;
+        max-width: 400px;
+        margin: 100px 0 100px auto;
+        @media screen and (max-width: 1199px) {
+            margin: 50px auto;
+        }
+    }
+    &__inner {
+        @include classic-flex;
+        align-items: center;
+        @media screen and (max-width: 1199px) {
+            display: block;
+        }
+    }
+    &__solution {
+        margin: 0 0 0 auto;
+        flex-basis: 45%;
+        @media screen and (max-width: 1399px) {
+            flex-basis: 30%;
+        }
+    }
+    &__title {
+        font-family: 'Noto Sans ExtBd';
+        margin: 0 auto;
+        &::after {
+            background: #fff;
+        }
+        color: #fff !important;
+        margin-bottom: 0;
+        @media screen and (max-width: 1699px) {
+            @include fluidFontSize (32px, 42px, 320px, 1399px, 72px);
+            max-width: 300px;
+        }
+        @media screen and (max-width: 1199px) {
+            @include fluidFontSize (32px, 72px, 320px, 1399px, 72px);
+            margin-top: 100px;
+            color: #555555 !important;
+        }
+    }
+    &__line {
+        width: 113px;
+        height: 1px;
+        background: #EDEDED;
+        @media screen and (max-width: 399px) {
+            display: none;
+        }
+    }
+    &__sphere-area {
+        width: 120px;
+        height: 120px;
+        position: relative;
+    }
+    &__spheres-txt {
+        flex-basis: 30%;
+        padding-right: 50px;
+        @media screen and (max-width: 1399px) {
+            flex-basis: 35%;
+            padding-right: 0;
+        }
+    }
+    &__sphere-outer {
+        @include center;
+        position: absolute;
+        border-radius: 50%;
+        background: #F0F0F0;
+        width: 100%;
+        height: 100%;
+    }
+    &__sphere-inner {
+        @include center;
+        position: absolute;
+        border-radius: 50%;
+        width: 55%;
+        height: 55%;
+        &_green {
+            background: #9FCFCC;
+        }
+        &_red {
+            background: #F3B1A2
+        }
+        &_gray {
+            background: #6C6C6C;
+        }
+    }
+    &__txt {
+        color: #555555;
+        font-family: 'Noto Sans';
+        font-size: 20px;
+        font-weight: 800;
+    }
+    &__img-bg {
+        position: absolute;
+        left: 0;
+        top: -242px;
+        width: 56%;
+        z-index: -1;
+    }
+    &__img-girl {
+        position: absolute;
+        left: 115px;
+        top: 192px;
+        width: 415px;
+        z-index: 2;
+        @media screen and (max-width: 1699px) {
+            left: 50px;
+            width: 400px;
+        }
+        @media screen and (max-width: 1340px) {
+            top: 454px;
+            width: 300px;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1199px) {
+        background: none;
+        padding-bottom: 0;
+    }
+}
+
+.font-solution {
+    position: relative;
+    background: url('/img/portfolio/planeta-kolgot/font-solution-bg.png') no-repeat right / cover;
+    background-size: 58% 100%;
+    padding: 1000px 0 400px 0;
+    z-index: 2;
+    &__inner {
+        @include classic-flex;
+        align-items: center;
+    }
+    &__title {
+        font-family: 'Noto Sans ExtBd';
+        margin: 0 320px 0 auto;
+        max-width: 490px;
+        &::after {
+            background: #fff;
+        }
+        color: #fff !important;
+        margin-bottom: 0;
+        @media screen and (max-width: 1599px) {
+            margin: 0 200px 0 auto;
+        }
+        @media screen and (max-width: 1399px) {
+            margin: 0 70px 0 auto;
+        }
+        @media screen and (max-width: 1199px) {
+            margin: 0 auto 50px auto;
+            color: #555555 !important;
+        }
+    }
+    &__txt {
+        position: absolute;
+        max-width: 590px;
+        left: 170px;
+        bottom: 210px;
+        text-align: center;
+        @media screen and (max-width: 1850px) {
+            left: 20px;
+        }
+        @media screen and (max-width: 1440px) {
+            max-width: 440px;
+        }
+        @media screen and (max-width: 1199px) {
+            max-width: 100%;
+            bottom: 0;
+            position: relative;
+            margin: 0 auto;
+        }
+    }
+    &__noto-n {
+        text-transform: uppercase;
+        color: #6C6C6C;
+        max-width: 3250px;
+        margin-bottom: 56px;
+    }
+    &__N {
+        display: block;
+        margin: 0 auto;
+    }
+    &__bold {
+        font-family: 'Noto Sans';
+        text-transform: uppercase;
+        font-size: 24px;
+        color: #9FCFCC;
+        text-align: center;
+        margin: 0 auto;
+    }
+    &__txt-big {
+        margin-top: 22px;
+        max-width: 100%;
+        font-family: "Noto Sans ExtBd";
+        text-transform: uppercase;
+        font-size: 16px;
+        color: #555555;
+    }
+    &__txt-small {
+        display: block;
+        max-width: 100%;
+        margin-top: 12px;
+        font-family: "Noto Sans ExtBd";
+        color: #555555;
+        font-size: 16px;
+        text-align: center;
+    }
+    &__noto-sans {
+        display: block;
+        font-family: 'Noto Sans ExtBd';
+        font-size: 36px;
+        text-align: center;
+    }
+    &__animation {
+        position: absolute;
+        right: 365px;
+        top: 130px;
+        z-index: 2;
+        font-family: 'Noto Sans';
+        font-weight: bold;
+        font-size: 36px;
+        text-transform: uppercase;
+        color: #A5A5A5;
+        transform: rotate(-90deg);
+        @media screen and (min-width: 2048px) {
+            right: 220px;
+        }
+        @media screen and (max-width: 1399px) {
+            top: 100px;
+            right: 175px;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    &__img {
+        position: absolute;
+        top: -115px;
+        left: 80px;
+        z-index: 3;
+        @media screen and (min-width: 2048px) {
+            max-width: 1500px;
+        }
+        @media screen and (min-width: 1999px) {
+            width: 80%;
+        }
+        @media screen and (max-width: 1919px) {
+            width: 1300px;
+        }
+        @media screen and (max-width: 1799px) {
+            width: 1100px;
+        }
+        @media screen and (max-width: 1599px) {
+            width: 900px;
+        }
+        @media screen and (max-width: 1399px) {
+            width: 750px;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    &__img-2 {
+        position: absolute;
+        right: 0;
+        top: 752px;
+        width: 33%;
+        @media screen and (max-width: 1850px) {
+            width: 28%;
+            top: 800px;
+        }
+        @media screen and (max-width: 1399px) {
+            width: 28%;
+            top: 600px;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1850px) {
+        padding: 900px 0 400px 0;
+    }
+    @media screen and (max-width: 1599px) {
+        padding: 700px 0 400px 0;
+    }
+    @media screen and (max-width: 1399px) {
+        padding: 500px 0 400px 0;
+    }
+    @media screen and (max-width: 1199px) {
+        padding: 100px 0;
+        background: none;
+    }
+}
+
+.cataloge {
+    padding-top: 140px;
+    position: relative;
+    z-index: 2;
+    &__img-area {
+        position: relative;
+        padding-left: 200px;
+        @media screen and (max-width: 1199px) {
+            padding-left: 0;
+        }
+    }
+    &__img {
+        max-width: 100%;
+    }
+    &__img-phone {
+        position: absolute;
+        width: 480px;
+        left: -195px;
+        bottom: 700px;
+        @media screen and (max-width: 1840px) {
+            left: 0;
+        }
+        @media screen and (max-width: 1299px) {
+            width: 320px;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    &__txt {
+        position: absolute;
+        left: -260px;
+        top: 600px;
+        font-family: 'Noto Sans ExtBd';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 140px;
+        line-height: 191px;
+        /* identical to box height */
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.1);
+        transform: rotate(-90deg);
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1199px) {
+        padding-top: 0;
+    }
+}
+
+.product-page {
+    position: relative;
+    background: url('/img/portfolio/planeta-kolgot/product-page-bg.jpg') no-repeat center / cover;
+    padding: 1100px 0 315px 0;
+    margin-top: -1000px;
+    &__title {
+        margin: 0 0 0 auto;
+        text-align: right;
+        &::after {
+            left: 320px;
+        }
+        @media screen and (max-width: 1199px) {
+            margin: 0 auto;
+        }
+    }
+    &__girl {
+        position: absolute;
+        width: 965px;
+        left: -155px;
+        top: -670px;
+        z-index: 3;
+        @media screen and (max-width: 1899px) {
+            left: 0;
+        }
+        @media screen and (max-width: 1499px) {
+            width: 700px;
+        }
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1499px) {
+        padding-bottom: 250px;
+    }
+    @media screen and (max-width: 767px) {
+        padding: 600px 0 180px 0;
+        margin-top: -500px;
+    }
+}
+.img-section {
+    &__page-image {
+        max-width: 100%;
+        margin-top: -160px;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.ty {
+    background: url('/img/portfolio/planeta-kolgot/ty-bg.jpg') no-repeat center / cover;
+    padding: 333px 0 131px 0;
+    margin-top: -234px;
+    position: relative;
+    &__title {
+        margin-left: auto;
+        margin-right: 0;
+        text-transform: uppercase;
+        max-width: 728px;
+        font-family: 'Noto Sans ExtBd';
+        text-align: right;
+        font-size: 144px;
+        line-height: 72px;
+        color: #fff;
+        z-index: 1;
+        @media screen and (max-width: 1399px) {
+            line-height: 0.7;
+            font-size: 64px;
+            max-width: 314px;
+        }
+        @media screen and (max-width: 991px) {
+            line-height: 1;
+            margin: 0 auto;
+            font-size: 44px;
+            text-align: center;
+        }
+    }
+    &__subtitle {
+        font-family: 'Noto Sans';
+        font-size: 64px;
+        text-transform: none;
+        @media screen and (max-width: 1399px) {
+            font-size: 32px;
+        }
+        @media screen and (max-width: 991px) {
+            display: block;
+            text-align: center;
+            font-size: 28px;
+        }
+    }
+    &__girl {
+        position: absolute;
+        left: -75px;
+        top: -796px;
+        z-index: 2;
+        @media screen and (max-width: 1750px) {
+            width: 280px;
+            left: 0;
+            top: -532px;
+        }
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+    &__sphere {
+        position: absolute;
+        left: -513px;
+        top: -434px;
+        z-index: 0;
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+    @media screen and (max-width: 1399px) {
+        padding-bottom: 218px;
+    }
+    @media screen and (max-width: 991px) {
+        padding-bottom: 120px;
+    }
+}
+//end main
+
+.hedaer .container {
+    .header .container {
+        max-width: 1505px;
+        padding: 0 15px;
+        margin: auto;
+    }
+    
+    .footer .container {
+        max-width: 1505px;
+        padding: 0 15px;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .navigation__mobile-menu {
+        display: none;
+    }
+}
+
+@media (min-width: 1200px) {
+    header .container {
+        max-width: 1505px;
+    }
+    footer .container {
+        max-width: 1505px;
+    }
+    .footer__phone {
+        line-height: 40px;
+        &::after {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .footer__email {
+        line-height: 40px;
+        &::before {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    .footer__button {
+        position: relative;
+        right: 30px;
+    }
+}

@@ -1,0 +1,1411 @@
+@import 'portfolioparts';
+// @import "~bootstrap/scss/bootstrap";
+@import "../bootstrap3";
+/*****************Montserrat******************/
+
+@font-face {
+    font-family: 'Geometria';
+    src: url(/fonts/portfolio/Geometria/Geometria-Bold.woff) format("woff"),
+    url(/fonts/portfolio/Geometria/Geometria-Bold.woff2) format("woff2");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/portfolio/Montserrat/Montserrat-Regular.ttf') format('truetype'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Regular.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Regular.svg') format('svg'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Regular.woff') format('woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/portfolio/Montserrat/Montserrat-Bold.ttf') format('truetype'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Bold.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Bold.svg') format('svg'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Bold.woff') format('woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/portfolio/Montserrat/Montserrat-ExtraBold.ttf') format('truetype'),
+    url('/fonts/portfolio/Montserrat/Montserrat-ExtraBold.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/Montserrat/Montserrat-ExtraBold.svg') format('svg'),
+    url('/fonts/portfolio/Montserrat/Montserrat-ExtraBold.woff') format('woff');
+    font-weight: 800;
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/portfolio/Montserrat/Montserrat-Black.ttf') format('truetype'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Black.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Black.svg') format('svg'),
+    url('/fonts/portfolio/Montserrat/Montserrat-Black.woff') format('woff');
+    font-weight: 900;
+}
+
+$Geometria-stack: 'Geometria', sans-serif;
+$Montserrat-stack: 'Montserrat', sans-serif;
+$primary-color: #151549;
+$secondary-color: #E74645;
+$extra-color: #3778D3;
+
+main {
+    font-family: $Montserrat-stack;
+    font-weight: 900;
+    font-size: 72px;
+    color: $primary-color;
+}
+
+section {
+    width: 100%;
+}
+
+.container {
+    @media (min-width: 1400px) {
+        width: 1300px;
+    }
+    @media (min-width: 1600px) {
+        width: 1500px;
+    }
+    @media (min-width: 1850px) {
+        width: 1780px;
+    }
+}
+
+.section {
+    position: relative;
+}
+
+.section-heading {
+    line-height: 72px;
+    display: block;
+    &_bottom {
+        color: $secondary-color;
+        text-align: right;
+        @media screen and (max-width: 410px) {
+            padding-left: 25px;
+        }
+        @media screen and (max-width: 410px) {
+            text-align: left;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        font-size: 52px;
+        line-height: 52px;
+    }
+    @media screen and (max-width: 768px) {
+        font-size: 36px;
+        line-height: 36px;
+    }
+    
+}
+
+
+
+.big-vert-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: #3778D3;
+    font-size: 144px;
+    line-height: 100px;
+    text-align: center;
+    @media screen and (max-width: 1600px) {
+        font-size: 114px;
+    }
+}
+
+.img-wrapper img {
+    width: 100%;
+}
+
+.curve {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 1335px;
+    background: center/contain no-repeat;
+    &_down-to-up {
+        background-image: url('/img/portfolio/hellasdental/background-curves/curve-down-to-up.png');
+    }
+    &_up-to-down {
+        background-image: url('/img/portfolio/hellasdental/background-curves/curve-up-to-down.png');
+    }
+    @media screen and (max-width: 567px) {
+        display: none;
+    }
+}
+
+.tracery {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    width: 100%;
+    height: 2500px;
+    background: center/cover no-repeat;
+    &_top {
+        background-image: url('/img/portfolio/hellasdental/background-tracery/tracery-top.png');
+    }
+    &_bottom {
+        background-image: url('/img/portfolio/hellasdental/background-tracery/tracery-bottom.png');
+    }
+}
+
+.background-circle {
+    background: #F5F5F5;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    @media (max-width: 1200px) {
+        display: none;
+    }
+    &_1 {
+        height: 78px;
+        width: 78px;
+        top: 140px;
+        right: 6%;
+        @media (max-width: 1400px) {
+            top: 230px;
+        }
+    }
+    &_2 {
+        height: 78px;
+        width: 78px;
+        top: 620px;
+        left: 3%;
+    }
+    &_3 {
+        height: 43px;
+        width: 43px;
+        top: 840px;
+        left: 7%;
+    }
+    &_4 {
+        height: 78px;
+        width: 78px;
+        top: 1540px;
+        right: 3%;
+    }
+    &_5 {
+        height: 43px;
+        width: 43px;
+        top: 2240px;
+        left: 0%;
+    }
+    &_6 {
+        height: 43px;
+        width: 43px;
+        bottom: 1150px;
+        right: 7%;
+    }
+    &_7 {
+        height: 199px;
+        width: 199px;
+        bottom: 850px;
+        right: -2%;
+    }
+    &_8 {
+        height: 104px;
+        width: 104px;
+        top: 260px;
+        left: 10%;
+    }
+    &_9 {
+        height: 78px;
+        width: 78px;
+        top: 570px;
+        right: 5%;
+    }
+    &_10 {
+        height: 43px;
+        width: 43px;
+        top: -7%;
+        left: 50%;
+        transform: translateX(-280%);
+        @media (max-width: 1400px) {
+            top: -4%;
+        }
+    }
+    &_11 {
+        height: 104px;
+        width: 104px;
+        top: -80px;
+        left: 37%;
+    }
+    &_12 {
+        height: 78px;
+        width: 78px;
+        top: 1170px;
+        right: 0;
+    }
+    &_13 {
+        height: 38px;
+        width: 38px;
+        top: 2120px;
+        left: 2%;
+    }
+    &_14 {
+        height: 78px;
+        width: 78px;
+        bottom: 200px;
+        left: 4%;
+        @media (max-width: 1850px) {
+            bottom: 100px;
+        }
+    }
+}
+
+.banner {
+    &__inner-wrapper {
+        background: url('/img/portfolio/hellasdental/banner-background.png') no-repeat center/cover;
+        padding: 190px 0 10px;
+        position: relative;
+    }
+    &__image {
+        width: 100%;
+    }
+    &__inner {
+        display: flex;
+        max-width: 1780px;
+        margin: 0 auto;
+    }
+    &__left {
+        flex-basis: 30.6%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &__left-content {
+        transform: translate(-22%, -15%);
+    }
+    &__right {
+        margin-left: auto;
+    }
+    &__site-logo {
+        width: 147px;
+        height: 80px;
+        background: url('/img/portfolio/hellasdental/site-logo.png') no-repeat center/contain;
+        margin: 0 auto;
+    }
+    &__label {
+        font-family: $Geometria-stack;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 0.9;
+        color: #555555;
+        margin: 50px 0 65px;
+    }
+    &__icons {
+        display: flex;
+        justify-content: center;
+    }
+    &__icon {
+        width: 36px;
+        height: 36px;
+        //background: no-repeat center/contain;
+        margin: 0 15px;
+        img {
+            width: 100%;
+            vertical-align: super;
+        }
+        &_laptop {
+            //background-image: url('../img/banner-icon-laptop.png');
+        }
+        &_smartphone {
+            //background-image: url('../img/banner-icon-smartphone.png');
+        }
+        &_tablet {
+            //background-image: url('../img/tablet.png');
+        }
+    }
+    &__visit-site {
+        display: block;
+        text-align: center;
+        font-family: $Geometria-stack;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: #555555;
+        border: 2px solid #00B4DB;
+        padding: 16px 0;
+        max-width: 226px;
+        margin: 60px auto 0;
+        transition: all .5s;
+        &:hover {
+            text-decoration: none;
+            color: white;
+            background: #00B4DB;
+        }
+    }
+}
+/***********MAIN-PAGE**********/
+
+.main-page {
+    position: relative;
+    padding: 100px 0 80px 0;
+    &__heading {
+        padding-left: 100px;
+        margin-bottom: 85px;
+        display: flex;
+        align-items: center;
+    }
+    &__section-heading-wrapper {
+        display: block;
+        flex-basis: 20%;
+        position: relative;
+        padding-right: 45px;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: block;
+            width: 4px;
+            height: 100%;
+            background: $secondary-color;
+            border-radius: 2px;
+        }
+    }
+    &__site-info-wrapper {
+        display: block;
+        padding-left: 45px;
+        font-weight: 700;
+        font-size: 36px;
+        color: #222222;
+    }
+    &__site-info {
+        display: block;
+        &_top {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 270px;
+                display: block;
+                height: 2px;
+                width: 30px;
+                background: #222222;
+            }
+        }
+        &_bottom {
+            font-size: 28px;
+            font-weight: 400;
+        }
+    }
+    &__inner {
+        display: flex;
+    }
+    &__big-vert-label-wrapper {
+        display: flex;
+        margin-left: 80px;
+    }
+    &__curve-down-to-up {
+        top: 880px;
+    }
+    &__curve-up-to-down {
+        bottom: 280px;
+    }
+    &__tracery-top {
+        top: 0;
+        z-index: -2;
+    }
+}
+
+/***********COLORS************/
+
+.colors {
+    padding-bottom: 230px;
+    &__inner {
+        display: flex;
+    }
+    &__section-heading-wrapper {
+        text-align: center;
+        margin-bottom: 105px;
+    }
+    &__items {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__img-wrapper {
+        margin: 0 auto;
+    }
+    &__decor-dot-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__decor-dot {
+        border-radius: 50%;
+        display: block;
+        width: 57px;
+        height: 57px;
+        background: $primary-color;
+    }
+}
+
+/***********SERVICE-PAGE*********/
+
+.service-page {
+    position: relative;
+    z-index: 1;
+    &__section-heading-wrapper {
+        position: relative;
+        width: 390px;
+        padding-right: 40px;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 10px;
+            right: 0;
+            background: $secondary-color;
+            width: 4px;
+            height: 48px;
+            border-radius: 2px;
+        }
+    }
+    &__inner {
+        display: flex;
+        padding-left: 100px;
+    }
+    &__left {
+        margin-right: 60px;
+    }
+    &__big-vert-label-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin: 350px 60px 0;
+    }
+}
+
+/***********TYPOGRAPHY*********/
+
+.typography {
+    position: relative;
+    margin-top: -220px;
+    padding: 365px 0 0;
+    background: url('/img/portfolio/hellasdental/typography-background.png') center/cover no-repeat;
+    color: white;
+    &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: #F5F5F5;
+        border-radius: 50%;
+    }
+    &:before {
+        top: -63px;
+        left: 270px;
+        width: 127px;
+        height: 127px;
+        
+    }
+    &:after {
+        bottom: -125px;
+        right: 97px;
+        width: 200px;
+        height: 200px;
+    }
+    &__inner {
+        margin: 70px 0;
+        padding-left: 100px;
+        display: flex;
+        justify-content: center;
+    }
+    &__section-heading {
+        padding-left: 100px;
+        display: block;
+    }
+    &__letter {
+        font-size: 300px;
+        color: transparent;
+        -webkit-text-stroke: 8px white;
+    }
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 82px;
+    }
+    &__text-heading {
+        font-weight: bold;
+        font-size: 36px;
+        margin-bottom: 37px;
+    }
+    &__text-content {
+        padding-left: 60px;
+        display: block;
+        font-size: 20px;
+        font-weight: 400;
+        &_top {
+            text-transform: uppercase;
+        }
+    }
+    &__tracery-bottom {
+        bottom: -349px;
+    }
+}
+
+/************ANIMATION-ICON*********/
+
+.animation-icon {
+    padding: 220px 0 200px;
+    &__section-heading-wrapper {
+        position: relative;
+        height: 469px;
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+        padding-left: 45px;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 4px;
+            height: 156px;
+            background: $secondary-color;
+            border-radius: 2px;
+            bottom: 5px;
+            left: 0;
+        }
+    }
+    &__inner {
+        padding: 0 100px 0 140px;
+        display: flex;
+    }
+    &__items {
+        margin-left: 72px;
+    }
+    &__item {
+        position: relative;
+        &_1 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-1.png');
+        }
+        &_2 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-2.png');
+        }
+        &_3 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-3.png');
+        }
+        &_4 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-4.png');
+        }
+        &_5 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-5.png');
+        }
+        &_6 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-6.png');
+        }
+        &_7 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-7.png');
+        }
+        &_8 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-8.png');
+        }
+        &_9 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-9.png');
+        }
+        &_10 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-10.png');
+        }
+        &_11 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-11.png');
+        }
+        &_12 .animation-icon__item-icon{
+            background-image: url('/img/portfolio/hellasdental/animation-icon/icon-12.png');
+        }
+        &:after {
+            content: unset;
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            display: block;
+            background: $secondary-color;
+            bottom: -4px;
+            right: -4px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        &:not(&_4):not(&_8):not(&_12) {
+            border-right: 2px solid #F5F3F3;
+        }
+        &:not(&_9):not(&_10):not(&_11):not(&_12) {
+            border-bottom: 2px solid #F5F3F3;
+        }
+        &:not(&_4):not(&_8):not(&_9):not(&_10):not(&_11):not(&_12):after {
+            content: '';
+        }
+    }
+    &__item-icon {
+        display: block;
+        height: 120px;
+        width: 120px;
+        background: center/cover no-repeat;
+        margin: 40px auto;
+    }
+}
+
+/************OTHER-PAGES***********/
+
+.other-pages {
+    position: relative;
+    padding-bottom: 135px;
+    &__inner {
+        padding: 0 100px;
+    }
+    &__right &__thanks-wrapper {
+        display: none;
+    }
+    &__section-heading-wrapper {
+        width: 390px;
+        position: relative;
+        padding-right: 46px;
+        margin-bottom: 160px;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 4px;
+            height: 48px;
+            border-radius: 2px;
+            background: $secondary-color;
+            bottom: 12px;
+            right: 0;
+        }
+    }
+    &__img-wrapper {
+        margin-bottom: 30px;
+    }
+    &__thanks-wrapper {
+        margin-top: 80px;
+        padding-right: 80px;
+        width: 100%;
+    }
+    &__thanks {
+        line-height: 84px;
+        display: block;
+        &_bottom {
+            font-weight: 900;
+            font-size: 96px;
+            color: $secondary-color;
+            text-align: right;
+        }
+    }
+    &__curve-down-to-up {
+        top: -390px;
+    }
+    &__curve-up-to-down {
+        bottom: 350px;
+    }
+}
+
+/************ADAPTIVE**************/
+
+@media screen and (max-width: 1920px) {
+    .banner {
+        &__inner-wrapper {
+            margin: 0;
+            max-width: unset;
+        }
+    }
+}
+
+@media screen and (max-width: 1850px) {
+    .main-page {
+        &__section-heading-wrapper {
+            flex-basis: 23%;
+        }
+    }
+    
+    .service-page {
+        &__big-vert-label-wrapper {
+            margin-top: 250px;
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    .banner {
+        &__left-content {
+            transform: none;
+        }
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .main-page {
+        &__section-heading-wrapper {
+            flex-basis: 25%;
+        }
+        &__curve-down-to-up {
+            top: 650px;
+        }
+    }
+    
+    .service-page {
+        &__section-heading-wrapper {
+            width: 350px;
+        }
+        &__big-vert-label-wrapper {
+            margin-top: 150px;
+        }
+    }
+    
+    .other-pages {
+        &__thanks-wrapper {
+            padding-right: 0;
+        }
+        &__thanks_bottom {
+            font-size: 84px;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .banner {
+        &__inner-wrapper {
+            padding-top: 100px;
+        }
+        &__left {
+            flex-basis: 40%;
+        }
+        &__label {
+            margin: 40px 0 50px;
+        }
+        &__visit-site {
+            margin-top: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .main-page {
+        &__section-heading-wrapper {
+            flex-basis: 30%;
+        }
+        &__big-vert-label-wrapper {
+            display: none;
+        }
+    }
+    
+    .colors {
+        padding-bottom: 120px
+    }
+    
+    .service-page {
+        &__inner {
+            display: block;
+            padding-left: 0;
+        }
+        &__section-heading-wrapper {
+            padding: 0 0 30px 0;
+            width: unset;
+            margin: 0 0 50px 100px;
+            &:after {
+                height: 4px;
+                width: 40%;
+                left: 0;
+                bottom: 0;
+            }
+            .section-heading_bottom {
+                text-align: left;
+                padding-left: 135px;
+            }
+        }
+        &__big-vert-label-wrapper {
+            display: none;
+        }
+    }
+    
+    .typography {
+        padding: 320px 0 60px;
+        &:before {
+            content: unset;
+        }
+        &__inner {
+            padding-left: 0;
+        }
+        &__text-content {
+            padding-left: 0;
+        }
+        &__letter {
+            line-height: 300px;
+        }
+    }
+    
+    .animation-icon {
+        &__item-icon {
+            margin: 20px auto;
+        }
+    }
+    
+    .other-pages {
+        &__thanks {
+            font-size: 58px;
+            line-height: 68px;
+            &_bottom {
+                font-size: 68px;
+            }
+        }
+        &__curve-up-to-down {
+            bottom: 150px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .banner {
+        &__left {
+            flex-basis: 45%;
+        }
+        &__right {
+            flex-basis: 100%;
+        }
+    }
+    
+    .main-page {
+        padding: 80px 0 60px;
+        &__heading {
+            margin-bottom: 65px;
+        }
+        &__site-info {
+            font-size: 30px;
+            &_top:after {
+                left: 230px;
+            }
+            &_bottom {
+                font-size: 24px;
+            }
+        }
+    }
+    
+    .colors {
+        padding-bottom: 100px;
+        &__section-heading-wrapper {
+            margin-bottom: 60px;
+        }
+        &__decor-dot {
+            width: 35px;
+            height: 35px;
+        }
+    }
+    
+    .typography {
+        padding-top: 280px;
+        &__letter {
+            font-size: 250px;
+            line-height: 250px;
+        }
+        &__text {
+            padding-left: 35px;
+        }
+        &__text-heading {
+            margin-bottom: 15px;
+        }
+        &__text-content {
+            font-size: 18px;
+        }
+        &__section-heading {
+            font-size: 52px;
+        }
+    }
+    
+    .animation-icon {
+        padding: 160px 0 120px;
+        &__inner {
+            padding: 0;
+        }
+        &__section-heading-wrapper {
+            height: 360px;
+        }
+    }
+    
+    .other-pages {
+        &__inner {
+            padding: 0;
+        }
+        &__section-heading-wrapper {
+            width: unset;
+            margin-right: 170px;
+            margin-bottom: 90px;
+            padding-right: 0;
+            .section-heading_bottom {
+                text-align: left;
+                padding-left: 65px;
+            }
+        }
+        &__thanks {
+            font-size: 48px;
+            line-height: 48px;
+            &_bottom {
+                font-size: 58px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .banner {
+        &__innner-wrapper {
+            padding-top: 75px;
+        }
+        &__site-logo {
+            width: 110px;
+            height: 60px;
+        }
+        &__label {
+            font-size: 18px;
+            text-align: center;
+            margin: 30px 0 40px;
+        }
+        &__visit-site {
+            margin-top: 30px;
+            font-size: 16px;
+            max-width: 190px;
+        }
+    }
+    
+    .main-page {
+        &__heading {
+            padding-left: 0;
+        }
+        &__site-info {
+            font-size: 26px;
+            &_top:after {
+                left: 200px;
+            }
+            &_bottom {
+                font-size: 20px;
+            }
+        }
+        &__curve-up-to-down {
+            bottom: 0;
+        }
+    }
+    
+    .colors {
+        padding-bottom: 80px;
+        &__section-heading-wrapper {
+            margin-bottom: 40px;
+        }
+    }
+    
+    .service-page {
+        &__section-heading-wrapper {
+            margin-left: 0;
+            &:after {
+                width: 50%;
+            }
+        }
+    }
+    
+    .typography {
+        padding-top: 265px;
+        &:after {
+            height: 130px;
+            width: 130px;
+            bottom: -85px;
+        }
+        &__letter {
+            font-size: 150px;
+            line-height: 150px;
+            -webkit-text-stroke: 5px white;
+        }
+        &__inner {
+            margin: 35px 0;
+        }
+        &__text {
+            padding-left: 25px;
+        }
+        &__text-heading {
+            font-size: 28px;
+        }
+        &__text-content {
+            font-size: 14px;
+        }
+    }
+    
+    .animation-icon {
+        padding: 120px 0 80px;
+        &__items {
+            margin-left: 40px;
+        }
+        &__item-icon {
+            height: 90px;
+            width: 90px;
+        }
+    }
+    
+    .other-pages {
+        padding-bottom: 90px;
+        &__section-heading-wrapper {
+            margin-right: 50px;
+            margin-bottom: 60px;
+        }
+        &__thanks-wrapper {
+            margin-top: 40px;
+        }
+        &__thanks {
+            font-size: 38px;
+            &_bottom {
+                font-size: 48px;
+            }
+        }
+        &__curve-down-to-up {
+            top: -530px;
+        }
+        &__curve-up-to-down {
+            bottom: -90px;
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .banner {
+        &__inner-wrapper {
+            padding-top: 60px;
+        }
+        &__label {
+            font-size: 16px;
+            margin: 25px 0 25px;
+            text-align: center;
+        }
+        &__visit-site {
+            font-size: 13px;
+            max-width: 160px;
+            padding: 14px 0;
+        }
+        &__right {
+            flex-basis: 70%;
+            display: flex;
+            align-items: center;
+        }
+    }
+    
+    .main-page {
+        padding: 60px 0 40px;
+        &__heading {
+            margin-bottom: 45px;
+        }
+        &__section-heading-wrapper {
+            padding-right: 20px;
+            flex-basis: 35%;
+        }
+        &__site-info-wrapper {
+            padding-left: 20px;
+        }
+        &__site-info {
+            font-size: 24px;
+            &_top:after {
+                left: 200px;
+            }
+            &_bottom {
+                font-size: 14px;
+            }
+        }
+        &__curve-down-to-up {
+            top: 50px;
+        }
+    }
+    
+    .colors {
+        padding-bottom: 60px;
+        &__section-heading-wrapper {
+            margin-bottom: 20px;
+        }
+        &__decor-dot {
+            width: 15px;
+            height: 15px;
+        }
+    }
+    
+    .service-page {
+        &__section-heading-wrapper {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            .section-heading_bottom {
+                padding-left: 70px;
+            }
+            &:after {
+                width: 45%;
+            }
+        }
+    }
+    
+    .typography {
+        padding: 250px 0 30px;
+        &:after {
+            height: 100px;
+            width: 100px;
+            bottom: -65px;
+        }
+        &__inner {
+            margin: 20px 0;
+        }
+        &__section-heading {
+            font-size: 36px;
+            padding-left: 0;
+            text-align: center;
+        }
+        &__text-heading {
+            font-size: 18px;
+        }
+        &__text-content {
+            font-size: 12px;
+            &_top {
+                margin-bottom: 10px;
+            }
+        }
+    }
+    
+    .animation-icon {
+        padding: 100px 0 50px;
+        &__inner {
+            display: block;
+        }
+        &__section-heading-wrapper {
+            writing-mode: unset;
+            transform: unset;
+            height: unset;
+            padding: 0 0 10px;
+            margin-bottom: 15px;
+            .section-heading_bottom {
+                text-align: left;
+                padding-left: 160px;
+            }
+            &:after {
+                height: 4px;
+                width: 70%;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        &__items {
+            margin-left: 0;
+        }
+    }
+    
+    .other-pages {
+        padding-bottom: 60px;
+        &__section-heading-wrapper {
+            margin-right: 30px;
+            margin-bottom: 30px;
+        }
+        &__thanks-wrapper {
+            margin-top: 30px;
+        }
+        &__thanks {
+            font-size: 24px;
+            line-height: 36px;
+            &_bottom {
+                font-size: 36px;
+            }
+        }
+        &__curve-up-to-down {
+            bottom: -320px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .banner {
+        &__inner-wrapper {
+            padding-top: 40px;
+        }
+        &__inner {
+            display: block;
+        }
+        &__left {
+            justify-content: center;
+        }
+        &__label {
+            margin: 15px 0;
+        }
+        &__icon {
+            width: 25px;
+            height: 25px;
+        }
+        &__visit-site {
+            margin-top: 20px;
+            padding: 8px 0;
+        }
+        &__right {
+            margin-top: 20px;
+        }
+    }
+    
+    .main-page {
+        padding: 30px 0;
+        &__heading {
+            margin-bottom: 25px;
+        }
+        &__site-info {
+            font-size: 18px;
+            &_top:after {
+                left: 140px;
+            }
+            &_bottom {
+                font-size: 14px;
+            }
+        }
+    }
+    
+    .colors {
+        padding-bottom: 30px;
+        .row {
+            margin: 0;
+            padding: 0;
+        }
+        &__decor-dot-wrapper {
+            display: none !important;
+        }
+        &__items {
+            width: 100%;
+        }
+    }
+    
+    .service-page {
+        &__section-heading-wrapper:after {
+            width: 90%;
+        }
+    }
+    
+    .typography {
+        &:after {
+            content: unset;
+        }
+        &__section-heading {
+            margin-bottom: 20px;
+        }
+        &__letter {
+            display: none;
+        }
+        &__text {
+            padding-left: 0;
+        }
+    }
+    
+    .animation-icon {
+        padding: 30px 0;
+        &__items {
+            margin-left: -15px;
+        }
+        &__item {
+            width: 33.33%;
+            &:not(&_3):not(&_6):not(&_9):not(&_12) {
+                border-right: 2px solid #F5F3F3 !important;
+            }
+            &:not(&_10):not(&_11):not(&_12) {
+                border-bottom: 2px solid #F5F3F3 !important;
+            }
+            &:after {
+                content: unset !important;
+            }
+            &:not(&_3):not(&_6):not(&_9):not(&_12):not(&_10):not(&_11):after {
+                content: '' !important;
+            }
+        }
+    }
+    
+    .other-pages {
+        padding-bottom: 30px;
+        &__section-heading-wrapper {
+            padding-bottom: 15px;
+            margin-bottom: 15px;
+            margin-right: 0;
+            &:after {
+                height: 4px;
+                width: 100%;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        &__thanks-wrapper {
+            margin-top: 15px;
+        }
+        &__left, &__right {
+            width: 100%;
+        }
+        &__left &__thanks-wrapper {
+            display: none;
+        }
+        
+        &__right &__thanks-wrapper {
+            display: block;
+        }
+        &__thanks {
+            &_bottom {
+                text-align: left;
+                padding-left: 35px;
+            }
+        }
+        &__img-wrapper {
+            margin-bottom: 15px;
+        }
+        &__curve-down-to-up {
+            display: none;
+        }
+        &__curve-up-to-down {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .typography {
+        &__text-content {
+            font-size: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .main-page {
+        &__heading {
+            display: block;
+        }
+        &__section-heading-wrapper {
+            padding-bottom: 10px;
+        }
+        &__section-heading-wrapper:after {
+            height: 4px;
+            width: 60%;
+            top: unset;
+            left: 0;
+            bottom: 0;
+        }
+        &__site-info-wrapper {
+            padding-left: 0;
+            margin-top: 10px;
+        }
+    }
+    
+    .colors {
+        padding-bottom: 0;
+        &__section-heading-wrapper {
+            margin-bottom: 0;
+        }
+    }
+    
+    .animation-icon {
+        &__section-heading-wrapper:after {
+            width: 90%;
+        }
+        &__item-icon {
+            height: 70px;
+            width: 70px;
+        }
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .typography {
+        &__text-content {
+            font-size: 8px;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.breadcrumbs{
+
+  width: 100%;
+  margin-top: 20px;
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    display: flex;
+    &::after{
+      content: '|';
+      text-decoration: unset;
+      margin-left: 0.5em;
+      margin-right: 0.5em;
+      opacity: .6;
+      display: inline-block;
+    }
+    &:last-child::after{
+      display: none;
+    }
+    flex: 0 0 auto;
+    a,span,&:after{
+      flex: 0 0 auto;
+      font-family: 'Stolzl';
+      font-size: 14px;
+      line-height: 17px;
+
+      color: #FFFFFF;
+    }
+    a{
+      text-decoration: underline;
+    }
+    .breadcrumbs-current-page{
+      text-decoration: unset;
+      opacity: .6;
+    }
+  }
+}

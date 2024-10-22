@@ -1,0 +1,104 @@
+@import 'var';
+@import '../fonts';
+
+.analytical-part {
+    background-color: $color-dark;
+    padding: 120px 0 70px 0;
+    &__cards {
+        @include classic-flex;
+        justify-content: flex-start;
+    }
+    &__section-title {
+        //font-family: 'TTHoves';
+        font-weight: 900;
+    }
+    &__card {
+        flex-basis: 25%;
+        margin-bottom: 40px;
+        margin-left: 70px;
+        &:nth-child(1) {
+            margin-left: 0;
+        }
+        &:nth-child(4) {
+            margin-right: 4%;
+            margin-left: 0;
+        }
+    }
+    &__img-field {
+        width: 54px;
+        height: 54px;
+    }
+    &__card-title-field {
+        padding: 19px 31px;
+        background-color: $color-dark-2;
+        border-radius: 10px;
+        @include classic-flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: nowrap;
+        margin-bottom: 22px;
+    }
+    &__card-title {
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        color: $color-main;
+        display: inline-block;
+        margin-left: 25px;
+        font-size: 20px;
+    }
+    &__description {
+        position: relative;
+        display: block;
+        //font-family: 'TTHoves';
+        color: $color-filter;
+        padding-left: 50px;
+        padding-right: 57px;
+        margin-bottom: 12px;
+        line-height: 20px;
+        font-size: 16px;
+        &_pr-0 {
+            padding-right: 0;
+        }
+        &::before {
+            @include bread-circle;
+            left: 35px;
+            top: 10px;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+// @media screen and (min-width: 1280px) {
+//     .analytical-part__card {
+//         margin-right: 70px;
+//     } 
+// }
+
+@media screen and (max-width: 991px) {
+    .analytical-part {
+        padding-top: 50px;
+    }
+    .analytical-part__cards {
+        flex-direction: column;
+    }
+    .analytical-part__card {
+        width: 90%;
+        margin: 0 auto 30px auto;
+    }
+    .analytical-part__card-title {
+        font-size: 16px;
+    }
+    .analytical-part__description {
+        font-size: 13px;   
+    }
+    .analytical-part .title__primary {
+        text-align: center;
+        &::before {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .analytical-part__card {
+        width: 96%;
+    }
+}

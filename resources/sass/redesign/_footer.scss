@@ -1,0 +1,213 @@
+.footer-redesign{
+  background-color: $c-main;
+  background-image: unset;
+  font-family: 'Stolzl';
+  .btn{
+    font-weight: bold;
+    margin-top: 54px;
+    margin-bottom: 46px;
+  }
+  .social {
+    margin-top: 34px;
+    li{
+      flex: 0 0 auto;
+    }
+    a:hover path{
+      fill: #fff;
+    }
+    a{
+      margin: 6px 0;
+
+      &:first-child{
+        margin: 6px 0;
+      }
+    }
+  }
+  .copy{
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 120%;
+    text-align: center;
+    color: #919191;
+    margin-top: 31px;
+  }
+  .address_item{
+    display: flex;
+    margin-left: -6px;
+    margin-bottom: 23px;
+    p{
+      font-family: 'Stolzl';
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 20px;
+      color: #FFFFFF;
+    }
+    .icon{
+      margin-right: 6px;
+    }
+  }
+  .footer__phone{
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: normal!important;
+    font-size: 18px!important;
+    line-height: 22px!important;
+    color: #FFFFFF;
+  }
+  .footer{
+    &-brief{
+      width: 100%;
+      align-items: unset;
+      margin-top: 0;
+      p{
+        text-align: left;
+
+      }
+      ul{
+        li{
+          &:first-child{
+            padding-left: 0;
+          }
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+    &__menu{
+      &-title{
+        font-family: 'Stolzl';
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 28px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+      }
+      &-services{
+        ul {
+          margin-left: -20%;
+        }
+      }
+      li a{
+        font-family: 'Stolzl';
+        font-size: 14px;
+        line-height: 132%;
+        color: #FFFFFF;
+      }
+
+    }
+    @include hd_descktop{
+      padding-top: 36px;
+      padding-bottom: 18px;
+      .logo-link{
+        width: 160px;
+        margin-bottom: 30px;
+      }
+      &-brief{
+        justify-content: center;
+        align-items: center;
+      }
+      &__menu-services{
+        margin-bottom: 0;
+        ul{
+          margin-left: 0;
+        }
+
+      }
+      &-title{
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 20px;
+        margin-top: 0;
+      }
+      &__menu {
+        margin-bottom: 50px;
+        a{
+          font-size: 16px;
+          line-height: 19px;
+          margin-bottom: 15px;
+        }
+        &:nth-child(4) {
+          text-align: center;
+          margin-bottom: 50px;
+        }
+      }
+
+
+
+    }
+
+  }
+  @include hd_descktop{
+    .social{
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn{
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 46px;
+    }
+    .pl-20prec{
+      padding-left: 0;
+    }
+    .footer__menu-services + .footer__menu ul li{
+        &:first-child{
+          display: none;
+      }
+    }
+    .footer__menu-services + .footer__menu + .footer__menu{
+      margin-bottom: 30px;
+    }
+    .footer__menu-address{
+      margin-bottom: 30px;
+      ul li:first-child{
+        display: none;
+      }
+    }
+    .copy{
+      margin-top: 0;
+    }
+    .address_item{
+      max-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      .icon{
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+  @media screen and (max-width:1400px) {
+    .footer{
+      &-brief{
+       margin-bottom: 40px;
+      }
+    }
+    .row{
+      flex-wrap: wrap;
+    }
+    .col-xs-12{
+      flex: 1 1 auto;
+      min-width: 290px;
+    }
+  }
+  @media screen and (max-width:1200px) {
+    .pl-20prec {
+      padding-left: 0;
+    }
+    .social{
+      justify-content: center;
+    }
+  }
+
+}

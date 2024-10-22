@@ -1,0 +1,187 @@
+
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+@font-face {
+  font-family: comfortaalight_0;
+  src: url('/fonts/portfolio/Comfortaa-Light.ttf') format('truetype');
+}
+
+.main_page_title{
+  font-size: 24px;
+}
+
+.center{
+  text-align: center;
+}
+.emf .fixed-action-btn {
+  position: fixed;
+  right: 23px;
+  bottom: 23px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 998;
+}
+.emf .onk-project .container {
+  /*background: #fff url(/img/portfolio/emf/bg1.png);*/
+}
+.emf .table-cell {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+}
+.emf .gutter {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin: 15px 0;
+}
+.emf ._bg-5 {
+  background: #de514d;
+}
+.emf .onk-project a {
+  outline: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.emf ._bg-5:after {
+  position: absolute;
+  right: -10px;
+  bottom: 86px;
+  z-index: 14;
+  content: url(/img/portfolio/emf/ico-arr-red.png);
+  width: 10px;
+  height: 13px;
+}
+.emf .case-2_delim {
+  background: url(/img/portfolio/emf/line-title.gif) no-repeat left bottom;
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+}
+.emf .case-2_link {
+  font-family: 'rrobotoregular_3', Arial, 'sans-serif';
+  letter-spacing: 1px;
+  font-size: 0.83333333333333em;
+  color: #fff;
+  text-transform: uppercase;
+}
+.emf .case-2__type-1 {
+  line-height: 24px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+.emf .r-buttom {
+  float: right;
+  margin-bottom: 10px;
+}
+.emf .clear {
+  clear: both;
+}
+.emf .onk-project p {
+  font-size: 13px;
+}
+.emf img.responsive-img, video.responsive-video {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+.emf .portfolio-page-2.rosatom .slide_5 {
+  text-align: center;
+  color: #000;
+  background: #fff !important;
+}
+.emf h2 {
+  font-size: 3.56rem;
+  line-height: 3.916rem;
+  margin: 1.78rem 0 1.424rem 0;
+  font-family: comfortaalight_0;
+  font-weight: 400;
+}
+.emf h3 {
+  font-size: 2.92rem;
+  line-height: 3.212rem;
+  margin: 1.46rem 0 1.168rem 0;
+  font-family: comfortaalight_0;
+}
+.emf .onk-project .col-50 {
+  float: left;
+  width: 50%;
+}
+.emf .portfolio-page-2.rosatom .slide_5 img {
+  width: auto;
+  margin-bottom: 35px;
+}
+.emf .onk-project .col-33 {
+  float: left;
+  width: 33%;
+}
+.text-align-center {
+  text-align: center;
+}
+.emf .onk-project img {
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+.emf .onk-project p {
+  font-size: 13px;
+  font-family: robotoregular_3;
+}
+.emf  .read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 45px;
+  text-transform: lowercase;
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat #ef5350;
+  background-position-x: 85%;
+  border: 2px solid transparent;
+  z-index: 1;
+  margin: 15px 0;
+  z-index: 10;
+}
+.emf .read-more:hover {
+  background: url(/img/portfolio/eva/arrowBtnRight-hover.png) left center no-repeat;
+  background-position-x: 85%;
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  z-index: 10;
+}
+.emf .right {
+  text-align: right;
+}
+.emf .onk-project-page {
+  margin-bottom: 70px;
+}
+.emf .bottom {
+  margin-bottom: 70px;
+}
+
+@media screen and (max-width: 767px) {
+  .main_page_title {
+      font-size: 32px;
+      padding-top: 50px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .main_page_title {
+      font-size: 24px;
+      padding-top: 50px;
+  }
+  .emf .table-cell{
+      display: block;
+  }
+}

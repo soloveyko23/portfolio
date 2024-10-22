@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2019 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="smartphone" unicode="&#xe801;" d="M581 850h-518c-35 0-63-28-63-63v-874c0-34 28-63 63-63h518c35 0 63 29 63 63v874c0 35-28 63-63 63z m-549-159h581v-661h-581v661z m31 127h518c17 0 31-14 31-31v-75h-580v75c0 17 14 31 31 31z m518-936h-518c-17 0-31 14-31 31v95h581v-95c0-17-15-31-32-31z m-259 112c-28 0-52-23-52-52s23-52 52-52c29 0 52 23 52 52s-23 52-52 52z m0-83c-17 0-31 14-31 31 0 17 14 31 31 31 17 0 31-13 31-31 0-17-14-31-31-31z m-72 838h144c6 0 11 5 11 11s-5 11-11 11h-144c-6 0-10-5-10-11s4-11 10-11z m-38 0c3 0 6 1 8 4 1 1 3 4 3 7s-1 5-3 7c-2 2-5 4-8 4-3 0-5-2-7-4-2-2-3-4-3-7s1-6 3-7c2-3 4-4 7-4z" horiz-adv-x="644" />
+
+<glyph glyph-name="tablet" unicode="&#xe802;" d="M0 776l0-852c0-41 33-74 74-74l1106 0c41 0 75 33 75 74v852c-1 41-34 74-75 74l-1106 0c-41 0-74-33-74-74z m1180 32c18 0 32-15 32-32v-852c0-18-14-32-32-32l-1106 0c-17 0-32 14-32 32v852c0 17 15 32 32 32h1106z m-1045-43v-830c0-8 7-14 14-14h956c8 0 14 6 14 14v830c0 8-6 14-14 14h-956c-7 0-14-6-14-14l0 0z m956-14v-802h-927v802h927z m57-401c0-6 3-11 7-15 4-4 9-6 15-6s11 2 15 6c3 4 6 9 6 15 0 6-3 11-6 15-4 4-10 6-15 6s-11-2-15-6c-4-4-7-9-7-15z m-1043 0c0 4-1 7-4 10s-6 4-10 4-7-1-10-4c-2-3-4-6-4-10 0-4 1-7 4-10 3-2 6-4 10-4 4 0 7 1 10 4 3 3 4 6 4 10z" horiz-adv-x="1254" />
+
+<glyph glyph-name="laptop" unicode="&#xe805;" d="M1175 193v657h-984v-657l-191-343h1366l-191 343z m-941 614h898v-598h-898v598z m-9-641h916l152-273h-1220l152 273z m66-66h794v-43h-794z m303-89h188v-43h-188z" horiz-adv-x="1366" />
+</font>
+</defs>
+</svg>

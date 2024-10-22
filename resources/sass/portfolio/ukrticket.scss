@@ -1,0 +1,1251 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+@import 'portfolioParts';
+
+
+// @import "~bootstrap/scss/bootstrap";
+@import "../bootstrap3";
+
+    main{
+        overflow: visible !important;
+    }
+
+    @font-face {
+        font-family: 'Geometria-Bold';
+        src: url('/fonts/portfolio/ukrticket/Geometria-Bold.eot');
+        src: url('/fonts/portfolio/ukrticket/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/portfolio/ukrticket/Geometria-Bold.woff2') format('woff2'),
+        url('/fonts/portfolio/ukrticket/Geometria-Bold.woff') format('woff'),
+        url('/fonts/portfolio/ukrticket/Geometria-Bold.ttf') format('truetype'),
+        url('/fonts/portfolio/ukrticket/Geometria-Bold.svg#Arial-BoldMT') format('svg');
+    }
+
+    @font-face {
+        font-family: MPB;
+        src: url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Bold.eot);
+        src: url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Bold.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Bold.woff2) format("woff2"),
+        url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Bold.woff) format("woff"),
+        url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Bold.svg#MyriadPro-Bold) format("svg")
+    }
+
+    @font-face {
+        font-family: MPR;
+        src: url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Regular.eot);
+        src: url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Regular.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Regular.woff2) format("woff2"),
+        url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Regular.woff) format("woff"),
+        url(/fonts/portfolio/ukrticket/Myriad-pro/MyriadPro-Regular.svg#MyriadPro-Regular) format("svg")
+    }
+
+    @font-face {
+        font-family: HKGB;
+        src: url(/fonts/portfolio/ukrticket/HK/HKGrotesk-Bold.eot);
+        src: url(/fonts/portfolio/ukrticket/HK/HKGrotesk-Bold.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/ukrticket/HK/HKGrotesk-Bold.woff2) format("woff2"),
+        url(/fonts/portfolio/ukrticket/HK/HKGrotesk-Bold.woff) format("woff"),
+        url(/fonts/portfolio/ukrticket/HK/HKGrotesk-Bold.svg#HKGrotesk-Bold) format("svg")
+    }
+
+    @font-face {
+        font-family: SUIR;
+        src: url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUI.eot);
+        src: url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUI.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUI.woff2) format("woff2"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUI.woff) format("woff"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUI.svg#SegoeUI) format("svg")
+    }
+
+    @font-face {
+        font-family: SUIB;
+        src: url(/fonts/portfolio/ukrticket/Segoe-UI/SEGOEUIB.eot);
+        src: url(/fonts/portfolio/ukrticket/Segoe-UI/SEGOEUIB.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SEGOEUIB.woff2) format("woff2"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SEGOEUIB.woff) format("woff"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SEGOEUIB.svg#SEGOEUIB) format("svg")
+    }
+
+    @font-face {
+        font-family: SUIBlack;
+        src: url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUIBlack.eot);
+        src: url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUIBlack.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUIBlack.woff2) format("woff2"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUIBlack.woff) format("woff"),
+        url(/fonts/portfolio/ukrticket/Segoe-UI/SegoeUIBlack.svg#SegoeUIBlack) format("svg")
+    }
+
+    // _responsive-txt.scss
+    @function strip-unit($number) {
+        @if type-of($number) == 'number' and not unitless($number) {
+            @return $number / ($number * 0 + 1);
+        }
+        @return $number;
+    }
+
+    @function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+        $f-min: strip-unit($f-min);
+        $f-max: strip-unit($f-max);
+        $w-min: strip-unit($w-min);
+        $w-max: strip-unit($w-max);
+
+        $k: ($f-max - $f-min)/($w-max - $w-min);
+        $b: $f-min - $k * $w-min;
+
+        $b: $b + $units;
+
+        @return calc( #{$k} * 100vw + #{$b} );
+    }
+
+    @mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+
+        font-size: $f-min;
+
+        @media (min-width: $w-min) {
+            @if ($fallback) {
+                font-size: $fallback;
+            }
+            font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+        }
+        @media (min-width: $w-max) {
+            font-size: $f-max;
+        }
+    }
+    //end _responsive-txt.scss
+
+    // _var.scss
+    @mixin classic-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    @mixin content-block-absolute {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+    //end _var.scss
+
+    a:focus, a:hover {
+        text-decoration: none !important;
+        &:hover {
+            color: $color-main;
+        }
+    }
+    
+
+    .navigation__submenu-link {
+        &:hover {
+            color: $color-hover-but !important;
+        }
+    }
+    
+    main .header {
+        @include classic-flex;
+        align-items: center;
+        background: url('/img/portfolio/ukrticket/header-bg.jpg') no-repeat center / cover;
+        height: 100vh;
+        position: relative;
+        box-shadow: none !important;
+        z-index: 1;
+        font-family: 'Geometria-Bold';
+        &__container {
+            max-width: 1780px;
+            padding: 0 15px;
+            margin: auto;
+            width: 100%;
+        }
+        &__inner {
+            @include classic-flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            position: relative;
+            @media screen and (max-width: 991px) {
+                display: block;
+                margin: 50px auto;
+            }
+        }
+        &__description {
+            flex-basis: 45%;
+            margin-top: 186px;
+            @media screen and (max-width: 1499px) {
+                flex-basis: 40%;
+                margin-top: 405px;
+            }
+            @media screen and (max-width: 1199px) {
+                margin-top: 380px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-top: 120px;
+            }
+        }
+        &__logo {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+        &__logo-img {
+            @media screen and (max-width: 499px) {
+                width: 50%;
+            }
+        }
+        &__phone-laptop {
+            position:absolute;
+            right: 0;
+            bottom: 30px;
+            width: 64%;
+            @media screen and (min-width: 1920px) {
+                width: 1197px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-top: 28px;
+                position: relative;
+                width: 100%;
+            }
+        }
+        &__img-phone {
+            position: absolute;
+            width: 23%;
+            left: 50px;
+            bottom: -20px;
+            z-index: 1;
+            @media screen and (max-width: 1367px) {
+                left: 34px;
+            }
+            @media screen and (max-width: 575px) {
+                left: 18px;
+            }
+        }
+        &__img-laptop {
+            max-width: 100%;
+        }
+        &__txt {
+            @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+            text-align: center;
+            color: #5e5e5e;
+            max-width: 275px;
+            margin: 40px auto 55px auto;
+            line-height: 1;
+            @media screen and (max-width: 991px) {
+                margin-bottom: 35px;
+                margin-top: 25px;
+            }
+        }
+        &__icons {
+            @include classic-flex;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 184px;
+            margin-bottom: 50px;
+        }
+        &__img-area {
+            width: 36px;
+            height: 36px;
+        }
+        &__icon-img {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+        }
+        &__button {
+            font-family: 'Geometria-Bold';
+            display: block;
+            color: #555555;
+            text-transform: uppercase;
+            border: 2px solid #00b4db;
+            padding: 17px 23px;
+            text-align: center;
+            max-width: 226px;
+            margin: 0 auto;
+            @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+            transition-duration: 0.5s;
+            &:hover {
+                background-color: #00b4db;
+                color: #fff;
+            }
+            @media screen and (max-width: 991px) {
+                padding: 14px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            height: 100%;
+        }
+    }
+
+    .ukrticket__banner {
+        background: url(/img/portfolio/ukrticket/ukr-banner.jpg) center/cover no-repeat;
+        padding-top: 80px;
+        position: relative
+    }
+
+    .ukrticket__banner_logo {
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .ukrticket__banner_subheader {
+        width: 100%;
+        max-width: 378px;
+        font-size: 16px;
+        color: #0f0f0f;
+        margin: 37px auto;
+        text-align: center;
+        font-family: MPB
+    }
+
+    .ukrticket__banner_sitelink-wrap {
+        text-align: center;
+        margin-bottom: 52px
+    }
+
+    .ukrticket__banner_sitelink-wrap_last {
+        margin-bottom: 0;
+        margin-top: -70px;
+        padding-bottom: 100px
+    }
+
+    .ukrticket__banner_sitelink {
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -moz-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 279px;
+        height: 72px;
+        background-color: #951417;
+        font-family: HKGB;
+        font-size: 22px;
+        letter-spacing: 1.1px;
+        text-transform: uppercase;
+        color: #fff;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        transition: all .3s ease
+    }
+
+    .ukrticket__banner_sitelink:hover {
+        color: #951417
+    }
+
+    .ukrticket__banner_sitelink:hover::before {
+        height: 250px
+    }
+
+    .ukrticket__banner_sitelink::before {
+        -webkit-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        transition: all .3s ease;
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        height: 0;
+        width: 100%;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        background: #e8e8e8;
+        z-index: -1
+    }
+
+    .ukrticket__banner_sitelink_last {
+        border: 1px solid #951417
+    }
+
+    .ukrticket__banner_mockup {
+        margin-bottom: -10px;
+        position: relative;
+        z-index: 1
+    }
+
+    .ukrticket__double-circle {
+        width: 450px;
+        height: 450px;
+        background: rgba(149, 20, 23, .37);
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        position: absolute;
+        left: 69px;
+        bottom: -157px
+    }
+
+    .ukrticket__double-circle::after {
+        content: '';
+        display: block;
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 75px;
+        top: 75px;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        -webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, .16);
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, .16);
+        background-color: #951417
+    }
+
+    .ukrticket__double-circle_main {
+        left: 363px;
+        bottom: 233px
+    }
+
+    .ukrticket__second {
+        background: url(/img/portfolio/ukrticket/ukr-pattern1.png), -webkit-gradient(linear, left top, left bottom, color-stop(50%, #ededed), color-stop(50%, #e2f1e1));
+        background: url(/img/portfolio/ukrticket/ukr-pattern1.png), -webkit-linear-gradient(#ededed 50%, #e2f1e1 50%);
+        background: url(/img/portfolio/ukrticket/ukr-pattern1.png), -moz-linear-gradient(#ededed 50%, #e2f1e1 50%);
+        background: url(/img/portfolio/ukrticket/ukr-pattern1.png), -o-linear-gradient(#ededed 50%, #e2f1e1 50%);
+        background: url(/img/portfolio/ukrticket/ukr-pattern1.png), linear-gradient(#ededed 50%, #e2f1e1 50%)
+    }
+
+    .ukrticket__aim_wrap {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+    }
+
+    .ukrticket__aim_marg {
+        padding-top: 111px;
+        justify-content: space-between;
+    }
+
+    .ukrticket__aim_name {
+        color: #951417;
+        font-size: 36px;
+        font-family: SUIB;
+        line-height: 60px;
+        text-transform: uppercase;
+        letter-spacing: 2.7px;
+        position: relative;
+        margin: 0;
+    }
+
+    .ukrticket__aim_name::after, .ukrticket__aim_name::before {
+        content: '';
+        display: block;
+        position: absolute
+    }
+
+    .ukrticket__aim_name::before {
+        width: 1px;
+        left: 30px;
+        height: 150px;
+        background: #d6d6d6;
+        top: 49px
+    }
+
+    .ukrticket__aim_name::after {
+        width: 56px;
+        height: 56px;
+        left: 0;
+        background: url(/img/portfolio/ukrticket/ukr-bef.png);
+        bottom: -187px
+    }
+
+    .ukrticket__aim_name-dev {
+        margin-top: 76px
+    }
+
+    .ukrticket__aim_name-white {
+        color: #fff
+    }
+
+    .ukrticket__aim_name-white::before {
+        background-color: #fff
+    }
+
+    .ukrticket__aim_name_before::after, .ukrticket__aim_name_before::before {
+        content: '';
+        background-color: #951417;
+        display: block
+    }
+
+    .ukrticket__aim_name-white::after {
+        background-image: url(/img/portfolio/ukrticket/ukr-bef-white.png);
+        width: 57px;
+        height: 57px
+    }
+
+    .ukrticket__aim_name-white-left {
+        text-align: right
+    }
+
+    .ukrticket__aim_name-white-left::before {
+        left: initial;
+        right: 30px;
+        top: 64px
+    }
+
+    .ukrticket__aim_name-white-left::after {
+        top: 205px;
+        right: 3px;
+        left: initial
+    }
+
+    .ukrticket__aim_name_before {
+        position: relative
+    }
+
+    .ukrticket__aim_name_before::before {
+        width: 264px;
+        height: 62px;
+        position: absolute;
+        left: 290px
+    }
+
+    .ukrticket__aim_name_before::after {
+        width: 1077px;
+        height: 2px;
+        position: absolute;
+        top: 50%;
+        right: -490px
+    }
+
+    .ukrticket__aim_name_before-right::before {
+        left: 0;
+        top: 9px
+    }
+
+    .ukrticket__aim_name_before-right::after {
+        top: 43%;
+        right: 475px
+    }
+
+    .ukrticket__aim_name-instr {
+        position: absolute;
+        right: 15px
+    }
+
+    .ukrticket__aim_name-instr::before {
+        left: initial;
+        right: 10%
+    }
+
+    .ukrticket__aim_name-instr::after {
+        left: initial;
+        right: 0
+    }
+
+    .ukrticket__aim_number {
+        opacity: .09;
+        color: #000;
+        font-family: SUIBlack;
+        font-size: 106px;
+        text-transform: uppercase;
+        display: block;
+        margin-top: 41px;
+        margin-bottom: 25px
+    }
+
+    .ukrticket__main_circle, .ukrticket__main_numwrap {
+        -webkit-border-radius: 50%;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -moz-inline-box
+    }
+
+    .ukrticket__aim_number-right {
+        text-align: right
+    }
+
+    .ukrticket__aim_descr {
+        color: #000;
+        font-family: MPR;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 1.35px;
+        margin: 0
+    }
+
+    .ukrticket__aim_descr-right {
+        text-align: right
+    }
+
+    .ukrticket__aim_descr_laravel {
+        text-align: right;
+        margin-top: 20px
+    }
+
+    .ukrticket__aim_descr_wrap {
+        -webkit-box-ordinal-group: 0;
+        -webkit-order: -1;
+        -moz-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+        order: -1;
+        padding-left: 45px
+    }
+
+    .ukrticket__main {
+        position: relative
+    }
+
+    .ukrticket__main_circle {
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        width: 412px;
+        height: 412px;
+        background: rgba(149, 20, 23, .04);
+        border-radius: 50%;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        margin-left: -206px;
+        top: -110px
+    }
+
+    .ukrticket__main_circle::after, .ukrticket__main_circle::before {
+        content: '';
+        height: 2px;
+        background-color: #951417;
+        position: absolute;
+        display: block
+    }
+
+    .ukrticket__main_circle::before {
+        width: 928px;
+        top: 161px;
+        left: -765px
+    }
+
+    .ukrticket__main_circle::after {
+        width: 920px;
+        top: 277px;
+        left: 240px
+    }
+
+    .ukrticket__main_full {
+        margin-top: 62px;
+        /*margin-top: 0;*/
+    }
+
+    .ukrticket__main_full_wrap {
+        position: relative;
+    }
+
+    .ukrticket__main_full_wrap-another::after, .ukrticket__main_full_wrap::before {
+        opacity: .15;
+        font-size: 106px;
+        letter-spacing: 7.95px;
+        position: absolute;
+        font-family: SUIBlack;
+        text-transform: uppercase;
+        line-height: 60px
+    }
+
+    .ukrticket__main_full_wrap::before {
+        content: 'HOME PAGE';
+        display: block;
+        -webkit-writing-mode: tb;
+        -ms-writing-mode: tb;
+        writing-mode: tb;
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+        color: #000;
+        left: 0;
+        top: 210px
+    }
+
+    .ukrticket__main_full_wrap-another::before {
+        content: 'CATALOG Page';
+        top: 320px
+    }
+
+    .ukrticket__main_full_wrap-another::after {
+        content: 'event PAGE';
+        display: block;
+        -webkit-writing-mode: tb;
+        -ms-writing-mode: tb;
+        writing-mode: tb;
+        -webkit-transform: rotate(-180deg);
+        -moz-transform: rotate(-180deg);
+        -ms-transform: rotate(-180deg);
+        -o-transform: rotate(-180deg);
+        transform: rotate(-180deg);
+        color: #000;
+        right: 0;
+        top: 635px
+    }
+
+    .ukrticket__main_num, .ukrticket__main_txt {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1.05px
+    }
+
+    .ukrticket__main_img {
+        position: relative;
+        z-index: 1
+    }
+
+    .ukrticket__main_descriptions {
+        -webkit-box-shadow: 2px 5px 9px 1px rgba(81, 81, 81, .45);
+        box-shadow: 2px 5px 9px 1px rgba(81, 81, 81, .45);
+        background: rgba(158, 23, 26, .9);
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding: 20px 50px 10px 30px;
+        position: absolute;
+        top: 330px;
+        left: 0;
+        z-index: 1
+    }
+
+    .ukrticket__main_descriptions-another {
+        top: 365px
+    }
+
+    .ukrticket__main_descriptions-sec {
+        top: 715px
+    }
+
+    .ukrticket__main_txt {
+        color: #fff;
+        font-family: MPR
+    }
+
+    .ukrticket__main_txt-another::before {
+        content: '';
+        display: block;
+        width: 203px;
+        height: 31px;
+        background: url(/img/portfolio/ukrticket/ukr-desc-bef.png);
+        margin-bottom: 15px
+    }
+
+    .ukrticket__main_numwrap {
+        width: 42px;
+        height: 42px;
+        -webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, .16);
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, .16);
+        background-color: #9e171a;
+        border-radius: 50%;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+        top: 10px;
+        right: 10px
+    }
+
+    .ukrticket__main_numinner {
+        width: 28px;
+        height: 28px;
+        background-color: #fff;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -moz-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .ukrticket__main_num {
+        color: #0f0f0f;
+        font-family: MPB
+    }
+
+    .ukrticket__another {
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(54%, #2CBEC4), color-stop(54%, #1884A8));
+        background: -webkit-linear-gradient(#2CBEC4 54%, #1884A8 54%);
+        background: -moz-linear-gradient(#2CBEC4 54%, #1884A8 54%);
+        background: -o-linear-gradient(#2CBEC4 54%, #1884A8 54%);
+        background: linear-gradient(#2CBEC4 54%, #1884A8 54%);
+        padding-top: 115px;
+        position: relative;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url(/img/portfolio/ukrticket/ukr-pattern1.png);
+            opacity: 0.5;
+        }
+    }
+
+    .ukrticket__another_color {
+        position: relative
+    }
+
+    .ukrticket__another_color_inner {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 713px;
+        margin: 122px auto 140px
+    }
+
+    .ukrticket__another_color_example {
+        width: 130px;
+        height: 130px;
+        background: rgba(149, 20, 23, .37);
+        -webkit-border-radius: 50%;
+        border-radius: 50%
+    }
+
+    .ukrticket__another_color_example-gray {
+        background: rgba(232, 232, 232, .37)
+    }
+
+    .ukrticket__another_color_example-black {
+        background: rgba(46, 46, 46, .37)
+    }
+
+    .ukrticket__another_color_example-white {
+        background: rgba(255, 255, 255, .37)
+    }
+
+    .ukrticket__another_color_example_inner {
+        width: 91px;
+        height: 91px;
+        -webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, .16);
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, .16);
+        background-color: #951417;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        margin: 19px;
+        display: -webkit-inline-box;
+        display: -webkit-inline-flex;
+        display: -moz-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center
+    }
+
+    .ukrticket__another_color_example_inner-gray {
+        background-color: #e8e8e8
+    }
+
+    .ukrticket__another_color_example_inner-black {
+        background-color: #2e2e2e
+    }
+
+    .ukrticket__another_color_example_inner-white {
+        background-color: #fff
+    }
+
+    .ukrticket__another_color_example_txt {
+        color: #fff;
+        font-family: MPR;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: 1.35px
+    }
+
+    .ukrticket__another_color_example_txt-black {
+        color: #0f0f0f
+    }
+
+    .ukrticket__another_boldtxt {
+        display: block;
+        opacity: .12;
+        color: #000;
+        font-family: SUIBlack;
+        font-size: 76px;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 5.7px;
+        position: absolute;
+        top: 60px;
+        right: 0
+    }
+
+    .ukrticket__another_boldtxt-typography {
+        right: initial;
+        left: 0
+    }
+
+    .ukrticket__another_typotxt {
+        color: #951417;
+        font-size: 33px;
+        line-height: 60px;
+        letter-spacing: .65px
+    }
+
+    .ukrticket__another_typotxt-HKG {
+        font-family: HKGB
+    }
+
+    .ukrticket__another_typotxt-SUI {
+        font-family: SUIB
+    }
+
+    .ukrticket__another_typotxt-MP {
+        font-family: MPB
+    }
+
+    .ukrticket__another_typowrap {
+        width: 100%;
+        max-width: 755px;
+        margin: 0 auto;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        padding-top: 125px;
+        padding-bottom: 155px
+    }
+
+    .ukrticket__another_typoinner {
+        width: 185px
+    }
+
+    .ukrticket__another_typoinner-example {
+        color: #000;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 18px;
+        letter-spacing: .28px;
+        position: relative;
+        padding-left: 30px
+    }
+
+    .ukrticket__another_typoinner-example::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 49px;
+        background-color: #951417;
+        position: absolute;
+        left: 3px;
+        top: 0
+    }
+
+    .ukrticket__another_typoinner-example-HKG {
+        font-family: HKGB;
+        display: block;
+    }
+
+    .ukrticket__another_typoinner-example-SUI {
+        font-family: SUIR;
+        font-weight: 600;
+        display: block;
+    }
+
+    .ukrticket__another_typoinner-example-MP {
+        font-family: MPR;
+        font-weight: 600;
+        display: block;
+    }
+
+    .ukrticket__another_pages {
+        position: relative
+    }
+
+    .ukrticket__another_pages_head {
+        margin-bottom: 37px
+    }
+
+    .ukrticket__another_pages_poster {
+        -webkit-box-shadow: 1px 1px 9px 1px rgba(81, 81, 81, .33);
+        box-shadow: 1px 1px 9px 1px rgba(81, 81, 81, .33);
+        width: 100%;
+        max-width: 681px
+    }
+
+    .ukrticket__another_pages_imginner {
+        position: static
+    }
+
+    .ukrticket__another_pages_imgwrap {
+        position: absolute;
+        top: 640px
+    }
+
+    .ukrticket__last {
+        padding-top: 160px;
+        background: url(/img/portfolio/ukrticket/ukr-pattern1.png), #ededed
+    }
+
+    .ukrticket__last img {
+        margin: 0 auto
+    }
+
+    /*************************************/
+    a:hover {
+        text-decoration: none;
+        color: inherit
+    }
+
+    @media screen and (max-width: 1199px) {
+        .ukrticket__aim_name-white::after, .ukrticket__aim_name-white::before, .ukrticket__aim_name_before::after {
+            display: none
+        }
+        .ukrticket__double-circle {
+            width: 350px;
+            height: 350px
+        }
+        .ukrticket__double-circle::after {
+            width: 200px;
+            height: 200px
+        }
+        .ukrticket__aim_name-instr::before {
+            right: 0
+        }
+        .ukrticket__aim_name-instr::after {
+            right: -30px
+        }
+        .ukrticket__another_pages_imgwrap {
+            top: 450px
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        
+        .ukrticket__double-circle {
+            left: 200px
+        }
+        .ukrticket__aim_descr_wrap {
+            -webkit-box-ordinal-group: initial;
+            -webkit-order: initial;
+            -moz-box-ordinal-group: initial;
+            -ms-flex-order: initial;
+            order: initial;
+            margin-right: 60px
+        }
+        .ukrticket__aim_descr-right {
+            text-align: left
+        }
+        .ukrticket__aim_name-instr {
+            right: 40px
+        }
+        .ukrticket__aim_descr_laravel, .ukrticket__aim_name-dev::after, .ukrticket__aim_name-dev::before, .ukrticket__main_full_wrap-another::after, .ukrticket__main_full_wrap::before {
+            display: none
+        }
+        .ukrticket__aim_name_before-right::before {
+            left: initial;
+            right: 0
+        }
+        .ukrticket__another_pages_imgwrap {
+            position: static;
+            margin: 30px 0
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .ukrticket__another_typowrap {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal
+        }
+        .ukrticket__main_descriptions {
+            margin: 0 15px
+        }
+        .ukrticket__double-circle {
+            display: none
+        }
+        .ukrticket__aim_marg {
+            margin-top: 20px
+        }
+        .ukrticket__another_typowrap {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 105px;
+            padding-bottom: 15px
+        }
+        .ukrticket__another_typowrap > * {
+            margin-bottom: 20px
+        }
+        .ukrticket__another_color_inner {
+            margin: 100px auto 20px
+        }
+        .ukrticket__banner_sitelink-wrap_last {
+            margin: 0
+        }
+        .ukrticket__last {
+            padding-top: 80px
+        }
+    }
+
+    @media screen and (max-width: 560px) {
+        .ukrticket__another_color_inner {
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -moz-box-orient: vertical;
+            -moz-box-direction: normal
+        }
+        .ukrticket__banner_sitelink {
+            font-size: 18px;
+            width: 230px;
+            height: 50px
+        }
+        .ukrticket__aim_descr_wrap {
+            padding-left: 0
+        }
+        .ukrticket__another_color_inner {
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -moz-box-align: center;
+            -ms-flex-align: center;
+            align-items: center
+        }
+        .ukrticket__another_color_inner > * {
+            margin-bottom: 20px
+        }
+    }
+
+    @media screen and (max-width: 450px) {
+        .ukrticket__main_descriptions {
+            position: relative;
+            top: initial;
+            margin: 0 20px 20px
+        }
+        .ukrticket__aim_name {
+            text-align: center;
+            font-size: 30px
+        }
+        .ukrticket__aim_name_before::before {
+            left: 90px
+        }
+    }
+    .main_page_title {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 40px;
+        position: relative;
+        z-index: 1;
+        font-weight: normal;
+        line-height: 1;
+        font-family: 'Gotham Pro';
+    }
+    @media screen and (max-width: 767px) {
+        .main_page_title {
+            font-size: 32px;
+        }
+    }
+    @media screen and (max-width: 430px) {
+        .main_page_title {
+            font-size: 24px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        header .container {
+            width: 1505px;
+        }
+        footer .container {
+            width: 1505px;
+        }
+        .footer__phone {
+            line-height: 40px;
+            &::after {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        .footer__email {
+            line-height: 40px;
+            &::before {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }

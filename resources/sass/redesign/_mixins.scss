@@ -1,0 +1,23 @@
+@mixin posa {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: auto;
+}
+
+@mixin simple-pseudo{
+  content: '';
+  display: inline-block;
+}
+
+
+
+
+
+@mixin hd_descktop {
+  @media (max-width: 1024px){
+      @content;
+  }
+}

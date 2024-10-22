@@ -1,0 +1,524 @@
+@import 'portfolioParts';
+@import "../bootstrap3";
+$red: #ED174D;
+.red {
+    color: $red;
+}
+
+.bg-red {
+    background: $red;
+}
+
+body {
+    background: #141620;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/portfolio/gilroy/Gilroy-Regular.woff) format("woff"), url(/fonts/portfolio/gilroy/Gilroy-Regular.ttf) format("ttf");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/portfolio/gilroy/Gilroy-Medium.woff) format("woff"), url(/fonts/portfolio/gilroy/Gilroy-Medium.ttf) format("ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url(/fonts/portfolio/gilroy/Gilroy-ExtraBold.woff) format("woff"), url(/fonts/portfolio/gilroy/Gilroy-ExtraBold.ttf) format("ttf");
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: "Bebas Neue";
+    src: url(/fonts/portfolio/BebasNeue/BebasNeue.eot);
+    src: url(/fonts/portfolio/BebasNeue/BebasNeue.eot) format("embedded-opentype"), url(/fonts/portfolio/BebasNeue/BebasNeue.woff) format("woff"), url(/fonts/portfolio/BebasNeue/BebasNeue.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Geometria;
+    src: url(/fonts/portfolio/baybay/Geometria-Bold.eot);
+    src: url(/fonts/portfolio/baybay/Geometria-Bold.eot) format("embedded-opentype"), url(/fonts/portfolio/baybay/Geometria-Bold.woff) format("woff"), url(/fonts/portfolio/baybay/Geometria-Bold.ttf) format("truetype");
+    font-weight: 700
+}
+
+.container {
+    @media screen and (min-width: 1800px) {
+        width: 1780px;
+        max-width: 100%;
+    }
+}
+
+.bradius {
+    border-radius: 20px;
+    overflow: hidden;
+    @include respond-max-to('sm') {
+        margin-top: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.h1 {
+    font-family: Geometria;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #AAAAAA;
+    font-weight: 700;
+    @include respond-max-to('lg') {
+        font-size: 21px;
+    }
+}
+
+.h1_decor {
+    font-family: "Bebas Neue";
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 46px;
+    /* identical to box height, or 77% */
+    text-transform: uppercase;
+    color: #ffffff;
+    display: flex;
+    margin-bottom: 100px;
+    width: 100%;
+    span {
+        color: $red;
+        &:first-child {
+            margin-right: 103px;
+        }
+        &:last-child {
+            margin-left: auto;
+        }
+    }
+    &.inverse {
+        span {
+            color: #000;
+        }
+    }
+    @include respond-max-to('md') {
+        font-size: 38px;
+        margin-bottom: 50px;
+    }
+    @include respond-max-to('sm') {
+        font-size: 30px;
+        flex-wrap: wrap;
+        span {
+            color: $red;
+            &:first-child {
+                margin-right: 20px;
+            }
+            &:last-child {
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+section {
+    padding: 140px 0;
+    @include respond-max-to('md') {
+        padding: 30px 0;
+    }
+}
+
+.portfolio main .button {
+    $btnColor: #B2D550;
+    $hoverBtnColor: transparent;
+    $color: #222222;
+    font-family: Stolzl;
+    line-height: 1;
+    font-size: 18px;
+    color: $color;
+    background: $btnColor;
+    border-color: $btnColor;
+    text-decoration: none!important;
+    &:hover {
+        background-color: #667E20;
+        border-color: #667E20;
+        color: #fff;
+    }
+}
+
+img {
+    max-width: 100%;
+    &.shadow {
+        border-radius: 60px;
+    }
+    @include respond-max-to('md') {
+        &.shadow {
+            border-radius: 30px;
+        }
+    }
+}
+
+.imggorder {
+    position: relative;
+    z-index: 1;
+    img {
+        border-radius: 60px;
+    }
+    &::after {
+        content: '';
+        background: linear-gradient(115.21deg, #6E6C74 0%, #292F31 33.62%, #555E63 78.75%, #393E43 100%);
+        position: absolute;
+        top: -4px;
+        bottom: -4px;
+        left: -4px;
+        right: -4px;
+        margin: auto;
+        border-radius: 60px;
+        z-index: -1;
+    }
+    @include respond-max-to('md') {
+        &::after,
+        img {
+            border-radius: 30px;
+        }
+    }
+}
+
+.posr {
+    position: relative;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.header {
+    //min-height: 100vh;
+    margin-top: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    //background: url(/img/portfolio/bravetattoo/header-bg.jpg) no-repeat top / cover;
+    //background-color: #141620;
+    padding-top: 15.6%;
+    padding-bottom: 30px;
+    position: relative;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        background: url(/img/portfolio/bravetattoo/header-bg-2.jpg) no-repeat top/cover;
+        padding-bottom: 92.5%;
+        z-index: 0;
+    }
+    &__logo {
+        margin-bottom: 50px;
+    }
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        @media screen and (max-width: 991px) {
+            display: block;
+            margin: 50px auto;
+        }
+    }
+    &__descr {
+        flex: 0 0 45%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        //margin-top: 186px;
+        @media screen and (max-width: 1499px) {
+            flex-basis: 40%;
+            // margin-top: 405px;
+        }
+        @media screen and (max-width: 1199px) {
+            // margin-top: 400px;
+        }
+        @media screen and (max-width: 991px) {
+            // margin-top: 140px;
+        }
+    }
+    &__img {
+        position: relative;
+        margin-right: -70px;
+        margin-left: -56px;
+        @media screen and (max-width: 768px) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 100%;
+        }
+        &-phone {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &__icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 auto;
+        width: 184px;
+        margin-bottom: 50px;
+        max-width: 100%;
+        margin: 40px 0;
+        &-icon {
+            width: 36px;
+            height: 36px;
+            img {
+                display: inline-block;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &__button {
+        margin-top: 18px;
+    }
+    &__lamp {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-bottom: 10px;
+        bottom: 100%;
+    }
+}
+
+.mainpage {
+    background-image: url(/img/portfolio/bravetattoo/main_bottom.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100% auto;
+    padding-bottom: 140px;
+    &-phones {
+        margin-top: 96px;
+    }
+    @include respond-max-to('md') {
+        padding-bottom: 30px 0;
+    }
+    @include respond-max-to('sm') {
+        padding-bottom: 30px;
+    }
+}
+
+.menu {
+    background-color: $red;
+    position: relative;
+    z-index: 1;
+    padding-top: 140px;
+    .bradius {
+        margin-top: 32.7%;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 27%;
+    }
+    &_decor {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 54.9%;
+        z-index: -1;
+    }
+    @include respond-max-to('md') {
+        padding-top: 30px 0;
+    }
+    @include respond-max-to('sm') {
+        padding-top: 30px;
+        .bradius {
+            margin-top: 50px;
+        }
+    }
+}
+
+.services {
+    padding-bottom: 0;
+}
+
+.face {
+    padding: 0;
+    img {
+        margin-top: -5.3%;
+    }
+}
+
+.fonts {
+    position: relative;
+    &_text {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 117%;
+        color: #fff;
+        margin-bottom: 30px;
+        &.shad {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+                box-shadow: inset 0px -80px 220px -60px #141620;
+            }
+        }
+    }
+    &_name {
+        font-family: Bebas Neue;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 115%;
+        text-transform: uppercase;
+        color: #ffffff;
+        opacity: .6;
+    }
+    &_fname {
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 115%;
+        text-transform: uppercase;
+        color: #ED174D;
+        margin-bottom: 30px;
+    }
+    .BebasNeue {
+        font-family: "Bebas Neue";
+    }
+    .Gilroy {
+        font-family: Gilroy;
+    }
+    &_example {
+        font-weight: bold;
+        font-size: 60px;
+        line-height: 1;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-bottom: 15.2%;
+    }
+    @include respond-max-to('md') {
+        &_example {
+            font-size: 27px;
+        }
+        &_text {
+            font-size: 14px;
+        }
+    }
+}
+
+.cercle_decor {
+    position: relative;
+    &::before {
+        content: '';
+        display: block;
+        width: 302px;
+        height: 302px;
+        border-radius: 50%;
+        background: rgba(237, 23, 77, 0.8);
+        //filter: blur(246px);
+        filter: blur(66px);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    @include respond-max-to('md') {
+        &:before {
+            width: 100px;
+            height: 100px;
+            filter: blur(26px);
+        }
+    }
+}
+
+.ourteam {
+    padding: 0;
+    .bg-red {
+        padding: 140px 0;
+        padding-bottom: 12.1%;
+    }
+    &-footer {
+        margin-top: -5%;
+        padding-bottom: 140px;
+        .cercle_decor {
+            &::after {
+                left: auto;
+            }
+        }
+        .bradius {
+            margin-top: -34%;
+        }
+    }
+    @include respond-max-to('md') {
+        .bg-red {
+            padding: 30px 0;
+        }
+    }
+    &-footer {
+        margin-top: 10px;
+        padding-bottom: 30px;
+    }
+    @include respond-max-to('sm') {
+        &-footer {
+            .bradius {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+.thanks {
+    font-family: Gilroy;
+    font-weight: 800;
+    font-size: 200px;
+    line-height: 90%;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    padding-top: 70px;
+    padding-bottom: 0;
+    p {
+        padding-bottom: 140px;
+        span {
+            text-shadow: 0 0 12px #141620;
+        }
+    }
+    &_decor {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        bottom: 0;
+        width: 43.1%;
+    }
+    @include respond-max-to('elg') {
+        font-size: 100px;
+    }
+    @include respond-max-to('sm') {
+        font-size: 50px;
+    }
+}

@@ -1,0 +1,56 @@
+.mainHeader-redesign{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #222222;
+  box-shadow: 0px 0px 0px 1px #383838;
+  z-index: 102;
+  .logo-link svg path{
+    fill: #fff!important;
+  }
+
+  a.navigation__link,.navigation__list-link,.phone{
+    color: #fff;
+    text-decoration: none;
+    &:hover{
+      color: #fff;
+    }
+  }
+  .phone{
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: normal;
+  }
+
+  .navigation__list{
+      &-link{
+        padding-right: 0;
+
+        &-toggle{
+          svg path {fill: unset;}
+        }
+        &::after{
+          height: 3px;
+          background-color: #fff;
+        }
+      }
+    }
+  @include hd_descktop{
+     .phone{
+       margin-right: 15px;
+     }
+  }
+  @media screen and (max-width:992px) {
+    .mainHeader__inner .hamburger{
+      margin-right: -15px;
+    }
+    .mainHeader-redesign .navigation{
+      padding-top: 0;
+    }
+  }
+
+}
+
+

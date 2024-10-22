@@ -1,0 +1,65 @@
+.tick-flip {
+	font-family: Stolzl;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 50px;
+	// distance from other possible flippers
+	margin-left:.0625em;
+	margin-right:.0625em;
+	
+	// prevents width changes when animating between empty space and characters
+	min-width:1.125em;
+	
+	// sets default border radius
+	//border-radius:.125em;
+	
+	// default spacing
+	letter-spacing: .25em;
+	text-indent: .25em;
+}
+
+.tick-label{
+	font-family: Stolzl;
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+	color: #A0A0A0;
+}
+
+// default colors
+.tick-flip-panel {
+	color:$color-white;
+	background-color:$color-fa;
+	width: 42px;
+}
+
+// default shadow
+.tick-flip-shadow {
+		box-shadow:0 .125em .3125em rgba(0, 0, 0, .25), 0 .02125em .06125em rgba(0, 0, 0, .25);
+}
+
+.tick {
+	padding-bottom: 1em; 
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+.tick-label {
+	font-size:.375em;
+	text-align:center;
+}
+
+.tick-group {
+	margin:0 .25em;
+	text-align:center;
+	float:left;
+}
+
+
+.tick-flip-card{
+	&:nth-child(2){
+		
+		.tick-flip-panel { 
+			color: $color-ffd;
+		}
+	}
+}

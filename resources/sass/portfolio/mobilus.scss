@@ -1,0 +1,760 @@
+@import 'portfolioParts';
+$bold:700;
+$extraBold:800;
+$Medium:500;
+$Regular: 400;
+$Bold: $bold;
+
+.overflow{
+  overflow: hidden;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/fonts/portfolio/kare/Montserrat/Montserrat-Medium.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-Medium.woff) format("woff"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-Medium.ttf) format("truetype");
+  font-weight: $Medium;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/fonts/portfolio/kare/Montserrat/Montserrat-Bold.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-Bold.woff) format("woff"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-Bold.ttf) format("truetype");
+  font-weight: $bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/fonts/portfolio/kare/Montserrat/Montserrat-italic.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-italic.woff) format("woff"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-italic.ttf) format("truetype");
+  font-style: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/fonts/portfolio/kare/Montserrat/Montserrat-Regular.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-Regular.woff) format("woff"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Geometria;
+  src: url(/fonts/portfolio/baybay/Geometria-Bold.eot);
+  src: url(/fonts/portfolio/baybay/Geometria-Bold.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/baybay/Geometria-Bold.woff) format("woff"),
+        url(/fonts/portfolio/baybay/Geometria-Bold.ttf) format("truetype");
+  font-weight: 700;
+}
+@font-face {
+  font-family: Oswald;
+  src: url(/fonts/portfolio/bereket/Oswaldbold.eot);
+  src: url(/fonts/portfolio/bereket/Oswaldbold.eot) format("embedded-opentype"), url(/fonts/portfolio/bereket/Oswaldbold.woff) format("woff"), url(/fonts/portfolio/bereket/Oswaldbold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url(/fonts/portfolio/unique-ua/Oswald-Regular.woff) format("woff"),
+      url(/fonts/portfolio/unique-ua/Oswald-Regular.woff2) format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Oswald;
+  src: url(/fonts/portfolio/unique-ua/Oswald-Regular.woff) format("woff"),
+      url(/fonts/portfolio/unique-ua/Oswald-Regular.woff2) format("woff2");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/fonts/portfolio/kare/Montserrat/Montserrat-Regular.eot) format("embedded-opentype"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-Regular.woff) format("woff"),
+        url(/fonts/portfolio/kare/Montserrat/Montserrat-Regular.ttf) format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+img{
+  max-width: 100%;
+  width: 100%;
+  vertical-align: top;
+}
+
+.header {
+  @include classic-flex;
+  box-shadow: none !important;
+  align-items: center;
+  background: url('/img/portfolio/mobilus/header.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria-Bold';
+  overflow: hidden;
+  padding-top: 84px;
+  &__container {
+    max-width: 1780px;
+    padding: 0 15px;
+    margin: auto;
+    width: 100%;
+  }
+  &__inner {
+    @include classic-flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      display: block;
+      margin: 50px auto;
+    }
+  }
+  &__description {
+    flex-basis: 45%;
+
+    @media screen and (max-width: 1499px) {
+      flex-basis: 40%;
+    }
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    .logo{
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: $bold;
+      font-size: 48px;
+      line-height: 25px;
+      text-align: center;
+      letter-spacing: 1px;
+      color: #222222;
+      margin-bottom: 60px;
+    }
+  }
+  &__phone-laptop {
+    position:absolute;
+    right: 0;
+    bottom: 30px;
+    width: 64%;
+    @media screen and (min-width: 1920px) {
+      width: 1197px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 28px;
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__img-phone {
+    position: absolute;
+    width: 23%;
+    left: 50px;
+    bottom: -20px;
+    z-index: 1;
+    @media screen and (max-width: 1367px) {
+      left: 34px;
+    }
+    @media screen and (max-width: 575px) {
+      left: 18px;
+    }
+  }
+  &__img-laptop {
+    max-width: 100%;
+  }
+  &__txt {
+    @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+    margin: 35px auto 34px auto;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: $bold;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #555555;
+
+    @media screen and (max-width: 991px) {
+      margin-bottom: 35px;
+      margin-top: 25px;
+    }
+  }
+  &__icons {
+    @include classic-flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 184px;
+    margin-bottom: 58px;
+  }
+  &__img-area {
+    width: 36px;
+    height: 36px;
+  }
+  &__icon-img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+  }
+  &__button {
+    display: block;
+    color: #555555;
+    text-transform: uppercase;
+    border: 2px solid #E6A320;
+    padding: 17px 0px;
+    text-align: center;
+    width: 226px;
+    max-width: 100%;
+    margin: 0 auto;
+    font-family: 'Geometria';
+    font-style: normal;
+    font-weight: $bold;
+    letter-spacing: 1px;
+    @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+    transition-duration: 0.5s;
+    &:hover {
+      background-color: #E6A320;
+      color: #fff;
+    }
+    @media screen and (max-width: 991px) {
+      padding: 14px;
+    }
+  }
+
+  @media screen and (max-width: 991px) {
+    height: 100%;
+  }
+}
+
+.container
+
+.section{
+  padding: 120px 0;
+  &-title{
+
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 110%;
+    /* or 70px */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #1D1D1D;
+    margin-bottom: 100px;
+
+    @media screen and (max-width:992px) {
+      font-size: 54px;
+    }
+    @media screen and (max-width:768px) {
+      font-size: 44px;
+      margin-bottom: 50px;
+    }
+    @media screen and (max-width:636px) {
+      font-size: 34px;
+    }
+    @media screen and (max-width:500px) {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    &::before,&::after{
+      content: '';
+      display: inline-block;
+      width: 5.4%;
+      height: 7px;
+      min-width: 5.4%;
+      flex: 0 0 5.4%;
+      background: #F7941D;
+      margin: 0 20px;
+      transform: skewX(-15deg);
+      @media screen and (max-width:500px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.main{
+  position: relative;
+  overflow: hidden;
+  &-poster{
+    margin: 100px 0;
+    box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+    @media screen and (max-width:768px) {
+      margin: 50px 0px;
+    }
+    @media screen and (max-width:500px) {
+      margin: 20px 0px;
+    }
+    &-text{
+      position: absolute;
+      bottom: 54%;
+      transform: rotate(-180deg);
+      right: 100%;
+      writing-mode: vertical-rl;
+
+      color: transparent;
+      -webkit-text-stroke:2px #EDEDED;
+
+      font-family: Oswald;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 120px;
+      line-height: 178px;
+      /* identical to box height */
+
+      text-transform: uppercase;
+
+    }
+    &::before{
+      content: '';
+      display: inline-block;
+      position: absolute;
+      margin-left: -1000%;
+      margin-right: -1000%;
+      left: 0;
+      right: 0;
+      background-color: #F8F8F8;
+      height: 8.6%;
+      z-index: -1;
+      top: 19.3%;
+    }
+  }
+  &-footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+      &-svg{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+      img{
+        width: 100%;
+      }
+  }
+}
+
+.color{
+  &-list{
+    display: flex;
+    max-width: 1482px;
+    width: 100%;
+    flex-wrap: wrap;
+
+    li{
+      width: 20%;
+      flex: 1 1 20%;
+      min-width: 188px;
+      padding-bottom: 20%;
+      position: relative;
+      box-shadow: 0px 4px 64px rgba(0, 0, 0, 0.15);
+      span{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-family: Oswald;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 110%;
+        /* identical to box height, or 40px */
+
+        text-align: center;
+
+        color: #E9E9E9;
+      }
+    }
+  }
+  &-item_1D{
+    background-color: #1D1D1D;
+  }
+  &-item_F7{
+    background-color: #F7941D;
+  }
+  &-item_F8{
+    background-color: #F8F8F8;
+  }
+  &-item_9F{
+    background-color: #9FCFCC;
+  }
+  &-item_00{
+    background-color: #00A99D;
+  }
+}
+
+.fonts{
+  &-win{
+    padding: 60px;
+    background-color: #F8F8F8;
+    box-shadow: 0px 4px 64px rgba(103, 103, 103, 0.2);
+    position: relative;
+    @media screen and (max-width:600px) {
+      padding: 30px;
+    }
+    &::before{
+      position: absolute;
+      content: '';
+      display: inline-block;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      margin-top: -50px;
+      margin-bottom: -50px;
+      margin-left: -220px;
+      margin-right: -220px;
+
+      background-image: url("/img/portfolio/mobilus/fonts-decor.jpg");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: -1;
+    }
+    &-row{
+      margin-bottom: 83px;
+      &:nth-child(2){
+        margin-bottom: 0;
+      }
+    }
+  }
+  &-name{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 44px;
+    line-height: 110%;
+    color: #000000;
+    margin-bottom: 25px;
+
+    @media screen and (max-width:500px) {
+      font-size: 30px;
+    }
+
+
+  }
+  &-chars{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    li{
+      font-family: Oswald;
+      font-weight: 400;
+      font-size: 28px;
+      line-height: 110%;
+    }
+    @media screen and (max-width:1200px) {
+      li{
+        flex: 0 0 20%;
+        margin: 20px 0;
+      }
+    }
+    @media screen and (max-width:500px) {
+      li{
+        flex: 0 0 33.3%;
+        margin: 20px 0;
+        min-width: 85px;
+      }
+    }
+
+
+  }
+  .Montserrat &-name,.Montserrat &-chars li{
+    font-family: Montserrat;
+  }
+  .Montserrat &-chars li{
+    font-size: 25px;
+  }
+}
+
+
+.site_menu{
+  &-title{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 110%;
+    color: #1D1D1D;
+    display: inline-block;
+    position: relative;
+    margin-top: -30%;
+    &::after{
+      content: '';
+
+      display: inline-block;
+      position: absolute;
+      bottom: -7px;
+      right: -87px;
+
+      width: 175px;
+      height: 7px;
+      background: #F7941D;
+
+
+    transform: skewX(-15deg);
+
+    }
+    span{
+      font-family: Oswald;
+      font-size: 24px;
+      line-height: 15px;
+      font-weight: normal;
+      text-align: center;
+      text-transform: uppercase;
+      color: #EDEDED;
+      display: block;
+      text-align: left;
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width:992px) {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+  &-row
+  {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &-col{
+    &-4,&-6{
+      min-width: 300px;
+    }
+    &-4{
+      flex: 1 1 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-6{
+      flex: 1 1 60%;
+      display: flex;
+      img{
+        margin: auto;
+        width: auto;
+        @media screen and (max-width:992px) {
+          width: 100%;
+          max-width: 90%;
+         }
+      }
+    }
+  }
+  &-p{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 110%;
+    color: #1D1D1D;
+    margin-top: -57px;
+    margin-bottom: 57px;
+    @media screen and (max-width:992px) {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  }
+  &-ellements{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    li{
+      padding: 0 15px;
+
+    }
+    @media screen and (max-width:636px) {
+      flex-wrap: wrap;
+      li{
+        flex: 1 1 50%;
+        min-width: 100px;
+        margin-top: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        &:nth-child(3){
+          flex: 1 1 100%;
+        }
+        &:nth-child(4){
+          flex: 1 1 50.7%;
+        }
+        &:nth-child(5){
+          flex: 1 1 20%;
+        }
+      }
+    }
+    img{
+      vertical-align: top;
+      box-shadow: 0px 11.3874px 45.5495px rgba(0, 0, 0, 0.1), 0px 2.84685px 22.7748px rgba(0, 0, 0, 0.08);
+      border-radius: 5px;
+
+    }
+  }
+}
+
+.elsePage{
+  position: relative;
+  &-container{
+    display: flex;
+    flex-direction: column;
+  }
+  &-poster{
+    border: 1px solid #E8E8E8;
+    box-sizing: border-box;
+
+    border-radius: 5px;
+    width: 80%;
+    position: relative;
+    z-index: 1;
+
+    img{
+      width: 100%;
+      box-shadow: 0px 4px 60px rgba(0, 0, 0, 0.15);
+    }
+    &_text{
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      left: 100%;
+
+      transform: rotate(-180deg);
+      writing-mode: vertical-rl;
+      color: transparent;
+      -webkit-text-stroke: 2px #EDEDED;
+      font-family: Oswald;
+      font-weight: bold;
+      font-size: 120px;
+      line-height: 178px;
+      text-align: center;
+    }
+
+    &--top{
+      &::before{
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 23.6%;
+        left: 0;
+        right: 0;
+        display: block;
+        margin-left: -1000%;
+        margin-right: -1000%;
+        background-color: #F8F8F8;
+        height: 11.4%;
+      }
+    }
+
+    &--poster2,&--poster4{
+      margin-left: auto;
+    }
+    &--poster2,&--poster3{
+      margin-top: -20%;
+    }
+    &--poster4{
+      margin-top: -90%;
+    }
+    @media screen and (max-width:768px) {
+      &_text{
+        display: none;
+      }
+      margin-left: auto;
+      margin-right: auto;
+      &--poster2{
+        max-width: 70%;
+      }
+      &--poster3{
+        margin-top: -10%;
+        max-width: 60%;
+      }
+      &--poster4{
+        margin-top: -10%;
+        max-width: 50%;
+      }
+
+    }
+
+
+  }
+  &-cercle{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    &_2{
+      position: absolute;
+      top: 100%;
+      right: 0;
+    }
+  }
+}
+
+.thanks{
+  position: relative;
+  z-index: 2;
+  &-container {
+    display: flex;
+    flex-direction: column;
+    img{
+      margin-left: auto;
+      margin-right: auto;
+      display: inline-block;
+      width: auto;
+    }
+  }
+  &-p{
+    font-family: Oswald;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 120px;
+    line-height: 178px;
+    text-transform: uppercase;
+    color: #000;
+    text-align: center;
+    span{
+      color: #F7941D;
+    }
+    @media screen and (max-width:1550px) {
+      font-size: 110px;
+    }
+    @media screen and (max-width:1200px) {
+      font-size: 90px;
+    }
+    @media screen and (max-width:768px) {
+      font-size: 70px;
+    }
+    @media screen and (max-width:636px) {
+      font-size: 50px;
+    }
+    @media screen and (max-width:496px) {
+      font-size: 40px;
+      line-height: 1;
+    }
+  }
+}

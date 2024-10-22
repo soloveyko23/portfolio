@@ -1,0 +1,33 @@
+// .social {
+//     position: absolute;
+//     bottom: 30px;
+//     left: 0;
+//     &__inner-header {
+//         display: block;
+//     }
+//     &__inner-footer {
+//         @include classic-flex;
+//         max-width: 110px;
+//     }
+//     &__img-field {
+//         display: block;
+//         max-width: 41px;
+//         margin-bottom: 20px;
+//     }
+//     &__img {
+//         line-height: 0;
+//         max-width: 100%;
+//         height: auto;
+//     }
+//     &_footer{
+//         position: relative;
+//     }
+// }
+
+// @media screen and (max-width: 991px) {
+//     .social__inner-header  {
+//         @include classic-flex;
+//         max-width: 100px;
+//         margin: 15px auto 0 auto;
+//     }
+// }

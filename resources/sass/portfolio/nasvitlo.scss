@@ -1,0 +1,633 @@
+@import 'portfolioParts';
+@import "../bootstrap3";
+@font-face {
+    font-family: Geometria;
+    src: url(/fonts/portfolio/baybay/Geometria-Bold.eot);
+    src: url(/fonts/portfolio/baybay/Geometria-Bold.eot) format("embedded-opentype"), url(/fonts/portfolio/baybay/Geometria-Bold.woff) format("woff"), url(/fonts/portfolio/baybay/Geometria-Bold.ttf) format("truetype");
+    font-weight: 700
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/portfolio/bereket/Montserrat-Bold.eot);
+    src: url(/fonts/portfolio/bereket/Montserrat-Bold.eot) format("embedded-opentype"), url(/fonts/portfolio/bereket/Montserrat-Bold.woff) format("woff"), url(/fonts/portfolio/bereket/Montserrat-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/portfolio/bereket/Montserrat-Regular.eot);
+    src: url(/fonts/portfolio/bereket/Montserrat-Regular.eot) format("embedded-opentype"), url(/fonts/portfolio/bereket/Montserrat-Regular.woff) format("woff"), url(/fonts/portfolio/bereket/Montserrat-Regular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/portfolio/bereket/Montserrat-Medium.eot);
+    src: url(/fonts/portfolio/bereket/Montserrat-Medium.eot) format("embedded-opentype"), url(/fonts/portfolio/bereket/Montserrat-Medium.woff) format("woff"), url(/fonts/portfolio/bereket/Montserrat-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/portfolio/bereket/Montserrat-Bold.eot);
+    src: url(/fonts/portfolio/bereket/Montserrat-Bold.eot) format("embedded-opentype"), url(/fonts/portfolio/bereket/Montserrat-Bold.woff) format("woff"), url(/fonts/portfolio/bereket/Montserrat-Bold.ttf) format("truetype");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url(/fonts/portfolio/bereket/Montserrat-Black.eot);
+    src: url(/fonts/portfolio/bereket/Montserrat-Black.eot) format("embedded-opentype"), url(/fonts/portfolio/bereket/Montserrat-Black.woff) format("woff"), url(/fonts/portfolio/bereket/Montserrat-Black.ttf) format("truetype");
+    font-weight: 900;
+    font-style: normal
+}
+
+.container {
+    @media screen and (min-width: 1800px) {
+        width: 1780px;
+        max-width: 100%;
+    }
+}
+
+.h1 {
+    font-family: Geometria;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #555555;
+    font-weight: 700;
+    @media screen and (max-width: 1200px) {
+        font-size: 21px;
+    }
+}
+
+.h1_decor {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 1.2;
+    /* identical to box height */
+    letter-spacing: 0.215em;
+    color: #000000;
+    margin-bottom: 14px;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 102px;
+    &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-right: -122px;
+        height: 4px;
+        background: #FE5948;
+    }
+    &-right {
+        &::before {
+            margin-right: unset;
+            margin-left: -122px;
+        }
+    }
+    @media screen and (max-width:1200px) {
+        font-size: 28px;
+    }
+    @media screen and (max-width:500px) {
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+}
+
+section {
+    padding: 0;
+}
+
+.portfolio main .button {
+    $btnColor: #B2D550;
+    $hoverBtnColor: transparent;
+    $color: #222222;
+    font-family: Stolzl;
+    line-height: 1;
+    font-size: 19px;
+    color: $color;
+    background: $btnColor;
+    border-color: $btnColor;
+    text-decoration: none!important;
+    &:hover {
+        background-color: #667E20;
+        border-color: #667E20;
+        color: #fff;
+    }
+}
+
+img {
+    max-width: 100%;
+    &.shadow {
+        box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.posr {
+    position: relative;
+}
+
+.d-flex {
+    display: flex;
+    font-weight: wrap;
+}
+
+.row.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header {
+    //min-height: 100vh;
+    margin-top: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/img/portfolio/nasvitlo/header-bg.jpg') no-repeat center / cover;
+    padding-top: 296px;
+    padding-bottom: 30px;
+    &__logo {
+        margin-bottom: 50px;
+    }
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        @media screen and (max-width: 991px) {
+            display: block;
+            margin: 50px auto;
+        }
+    }
+    &__descr {
+        flex: 0 0 45%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        //margin-top: 186px;
+        @media screen and (max-width: 1499px) {
+            flex-basis: 40%;
+            // margin-top: 405px;
+        }
+        @media screen and (max-width: 1199px) {
+            // margin-top: 400px;
+        }
+        @media screen and (max-width: 991px) {
+            // margin-top: 140px;
+        }
+    }
+    &__img {
+        position: relative;
+        margin-right: -70px;
+        margin-left: -56px;
+        @media screen and (max-width: 768px) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 100%;
+        }
+        &-phone {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &__icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 auto;
+        width: 184px;
+        margin-bottom: 50px;
+        max-width: 100%;
+        margin: 40px 0;
+        &-icon {
+            width: 36px;
+            height: 36px;
+            img {
+                display: inline-block;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &__button {
+        margin-top: 18px;
+    }
+    &__lamp {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-bottom: 10px;
+        bottom: 100%;
+    }
+}
+
+.posr {
+    position: relative;
+}
+
+.section_main {
+    padding-top: 106px;
+    padding-bottom: 0px;
+    @media screen and (max-width: 500px) {
+        padding-top: 50px;
+    }
+}
+
+.main {
+    overflow: hidden;
+    &,
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+    &_decor {
+        position: absolute;
+        top: -106px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        img {
+            margin-bottom: 13%;
+            width: 100%;
+        }
+    }
+    &_img {
+        box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.15);
+    }
+    &_footer {
+        position: relative;
+        z-index: 0;
+        top: -103px;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 18%;
+            background-color: #c00;
+            width: 70%;
+            background: url('/img/portfolio/nasvitlo/redpattern.jpg');
+        }
+    }
+    @media screen and (max-width:500px) {
+        &_footer {
+            top: -43px;
+        }
+    }
+}
+
+.mt-220 {
+    margin-top: 220px;
+    @media screen and (max-width: 500px) {
+        margin-top: 50px;
+    }
+}
+
+.section2 {
+    padding-bottom: 91px;
+    margin-bottom: 120px;
+    .lamp {
+        margin-top: auto;
+    }
+    .colorspage {
+        margin-left: auto;
+    }
+    @media screen and (max-width:500px) {
+        padding-bottom: 0;
+        margin-bottom: 50px;
+        .lamp {
+            display: none;
+        }
+    }
+}
+
+.typography {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    &__decor {
+        position: absolute;
+        top: 0;
+        bottom: -91px;
+        left: -60px;
+        right: 0;
+        /*  : #c00; */
+        z-index: -1;
+        overflow: hidden;
+        margin-right: -1000%;
+        &::before {
+            content: "";
+            display: block;
+            background: #E9F4F6;
+            position: absolute;
+            top: -70px;
+            bottom: -100px;
+            left: 120px;
+            z-index: 2;
+            width: 250px;
+            transform: rotate(25deg);
+        }
+        &::after {
+            position: absolute;
+            top: 0;
+            content: '';
+            display: block;
+            bottom: 0;
+            right: 10px;
+            left: 230px;
+            background: #E9F4F6;
+        }
+    }
+    &__cell {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 50%;
+        margin: auto;
+        p {
+            font-family: Montserrat;
+        }
+        .Regular {
+            font-weight: 400;
+        }
+        .Medium {
+            font-weight: 500;
+        }
+        .Bold {
+            font-weight: 700;
+        }
+        .Black {
+            font-weight: 900;
+        }
+    }
+    &__list {
+        p {
+            font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 22px;
+            line-height: 1.2;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+        li:last-child p {
+            margin-bottom: 0;
+        }
+    }
+    &__large {
+        align-items: center;
+        justify-content: center;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 140px;
+        line-height: 171px;
+        color: #000000;
+        text-align: center;
+        text-shadow: 50px -50px 1px rgb(0 0 0 / 10%);
+    }
+    &__name {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 50px;
+        line-height: 61px;
+        text-transform: uppercase;
+        color: #000000;
+        margin-bottom: 20px;
+    }
+    @media screen and (max-width:1200px) {
+        &__name {
+            font-size: 25px;
+        }
+        &__list {
+            p {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+        }
+        &__large {
+            font-size: 90px;
+        }
+    }
+    @media screen and (max-width:500px) {
+        flex-wrap: wrap;
+        &__cell {
+            min-width: 300px;
+        }
+        &__name {
+            font-size: 25px;
+        }
+        &__list {
+            p {
+                font-size: 12px;
+                margin-bottom: 10px;
+            }
+        }
+        &__name,
+        &__list {
+            width: 320px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+.catalog {
+    margin-bottom: 140px;
+    position: relative;
+    &__img {
+        margin-left: auto;
+    }
+    &__mobile {
+        position: absolute;
+        right: 100%;
+        bottom: 0;
+        margin-bottom: 43%;
+        margin-right: -8%;
+        width: 30.3%;
+    }
+    &__decor {
+        position: absolute;
+        top: 21%;
+        right: 0;
+        width: 100%;
+        img {
+            float: right;
+        }
+    }
+    &__footer {
+        position: absolute;
+        top: 100%;
+        z-index: -1;
+        width: 100%;
+        &__decor {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: -200px;
+            bottom: -530px;
+            background: url('/img/portfolio/nasvitlo/redpattern.jpg');
+            margin-left: -1000%;
+        }
+    }
+    @media screen and (max-width:500px) {
+        margin-bottom: 0;
+        &__mobile {
+            position: static;
+            width: 320px;
+            max-width: 100%;
+            margin: 20px auto;
+            display: block;
+        }
+    }
+}
+
+.product {
+    margin-bottom: 140px;
+    @media screen and (max-width: 500px) {
+        margin-bottom: 20px;
+    }
+}
+
+.adaptive {
+    padding-bottom: 127px;
+    position: relative;
+    &::after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 40%;
+        background: url('/img/portfolio/nasvitlo/bluepattern.jpg');
+    }
+    .h1_decor {
+        margin-bottom: 301px;
+    }
+    &__item {
+        img {
+            position: relative;
+            transition: .3s;
+            top: 0;
+            margin: auto;
+        }
+        &:hover {
+            img {
+                top: -200px
+            }
+        }
+    }
+    @media screen and (max-width:1200px) {
+        .h1_decor {
+            margin-bottom: 102px;
+        }
+        &__item:hover img {
+            top: 0;
+        }
+    }
+    @media screen and (max-width:768px) {
+        &__item {
+            width: 320px;
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    @media screen and (max-width:500px) {
+        .h1_decor {
+            margin-bottom: 50px;
+        }
+    }
+}
+
+.thanks {
+    position: relative;
+    padding-bottom: 188px;
+    display: flex;
+    background: url('/img/portfolio/nasvitlo/thanks__footer.jpg');
+    &_img {
+        margin-left: auto;
+        flex: 0 0 auto;
+        position: relative;
+        right: -22%;
+    }
+    &__p {
+        margin-top: auto;
+        margin-bottom: auto;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 74px;
+        line-height: 133.4%;
+        letter-spacing: 0.215em;
+        color: #000000;
+        position: relative;
+        &::after {
+            content: '';
+            height: 8px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            background-color: #FE5948;
+            margin-right: -202px;
+            bottom: -34px;
+            display: block;
+        }
+        b {
+            font-size: 165px;
+            font-weight: 800;
+        }
+    }
+    @media screen and (max-width:1200px) {
+        &__p {
+            font-size: 37px;
+            b {
+                font-size: 85px;
+            }
+        }
+    }
+    @media screen and (max-width:500px) {
+        padding-bottom: 50px;
+        .row.d-flex {
+            .d-flex {
+                order: 2;
+            }
+        }
+        &__p {
+            font-size: 17px;
+            b {
+                font-size: 45px;
+            }
+        }
+    }
+}
+
+.ml-auto {
+    margin-left: auto;
+}

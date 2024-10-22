@@ -1,0 +1,111 @@
+.wedo {
+    border-bottom: 1px solid #EEEEEE;
+    padding-bottom: 24px;
+    .section-title {
+        margin-bottom: 0;
+    }
+    &_item {
+        $bcolor: $color-B2;
+        $itemleftmargen: 17px;
+        position: relative;
+        padding: 55px 0;
+        &-top {
+            display: flex;
+            align-items: center;
+            position: relative;
+            margin-top: 43px;
+            margin-bottom: 20px;
+            &:before {
+                display: inline-block;
+                content: '';
+                width: 3px;
+                height: 64px;
+                background-color: $bcolor;
+                margin: 0 $itemleftmargen;
+            }
+            &:after {
+                color: $bcolor;
+                position: absolute;
+                left: 0;
+                bottom: 100%;
+                font-family: "Stolzl";
+                font-weight: bold;
+                font-size: 28px;
+                line-height: 106%;
+                text-transform: uppercase;
+                margin-bottom: 14px;
+            }
+        }
+        &-name {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 120%;
+            color: $color-22;
+            padding-left: 13px;
+        }
+        &-descr {
+            font-family: Stolzl;
+            font-size: 18px;
+            line-height: 132%;
+            letter-spacing: 0.05em;
+            padding-left: $itemleftmargen;
+            color: $color-22;
+        }
+    }
+    .row div {
+        @for $i from 1 through 6 {
+            &:nth-child(#{$i}) .wedo_item-top:after {
+                content: '0#{$i}';
+            }
+        }
+    }
+    @include respond-max-to(lg) {
+        &_item {
+            &-name {
+                font-size: 15px;
+            }
+            &-descr {
+                font-size: 14px;
+            }
+        }
+    }
+    @include respond-max-to(md) {
+        &_item {
+            &-name {
+                font-size: 18px;
+            }
+            &-descr {
+                font-size: 14px;
+            }
+        }
+    }
+    @include respond-max-to(sm) {
+        &_item {
+            padding: 15px 0;
+            &-top {
+                width: 100%;
+                margin-top: 25px;
+                margin-bottom: 12px;
+                &:after {
+                    font-size: 20px;
+                    margin-bottom: 6px;
+                }
+                &:before {
+                    max-height: 41px;
+                    margin-left: 12px;
+                    margin-right: 12px;
+                    width: 1px;
+                }
+            }
+            &-name {
+                font-size: 16px;
+                padding-left: 0;
+            }
+            &-descr {
+                padding-left: 12px;
+                font-size: 14px;
+            }
+        }
+    }
+}

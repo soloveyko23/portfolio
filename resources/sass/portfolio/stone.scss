@@ -1,0 +1,363 @@
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+
+.margin {
+  &_mt-50 {
+      margin-top: 25px !important;
+  }
+}
+// _responsive-txt.scss
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+
+  $b: $b + $units;
+
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+
+  font-size: $f-min;
+
+  @media (min-width: $w-min) {
+      @if ($fallback) {
+          font-size: $fallback;
+      }
+      font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+      font-size: $f-max;
+  }
+}
+//end _responsive-txt.scss
+
+// _var.scss
+@mixin classic-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+//end _var.scss
+
+a {
+  text-decoration: none;
+}
+.header {
+  @include classic-flex;
+  align-items: center;
+  background: url('/img/portfolio/stone/header-bg.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria-Bold';
+  &__container {
+      max-width: 1780px;
+      padding: 0 15px;
+      margin: auto;
+      width: 100%;
+  }
+  &__inner {
+      @include classic-flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      position: relative;
+      @media screen and (max-width: 991px) {
+          display: block;
+          margin: 50px auto;
+      }
+  }
+  &__description {
+      flex-basis: 45%;
+      margin-top: 186px;
+      @media screen and (max-width: 1499px) {
+          flex-basis: 40%;
+          margin-top: 405px;
+      }
+      @media screen and (max-width: 1199px) {
+          margin-top: 592px;
+      }
+      @media screen and (max-width: 991px) {
+          margin-top: 80px;
+      }
+  }
+  &__logo {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+  }
+  &__phone-laptop {
+      position:absolute;
+      right: 0;
+      bottom: 30px;
+      width: 64%;
+      @media screen and (min-width: 1920px) {
+          width: 1197px;
+      }
+      @media screen and (max-width: 991px) {
+          margin-top: 28px;
+          position: relative;
+          width: 100%;
+      }
+  }
+  &__img-phone {
+      position: absolute;
+      width: 23%;
+      left: 50px;
+      bottom: -20px;
+      z-index: 1;
+      @media screen and (max-width: 1367px) {
+          left: 34px;
+      }
+      @media screen and (max-width: 575px) {
+          left: 18px;
+      }
+  }
+  &__img-laptop {
+      max-width: 100%;
+  }
+  &__txt {
+      @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+      text-align: center;
+      color: #5e5e5e;
+      max-width: 295px;
+      margin: 20px auto 35px auto;
+      @media screen and (max-width: 991px) {
+          margin-bottom: 35px;
+          margin-top: 25px;
+      }
+  }
+  &__icons {
+      @include classic-flex;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 184px;
+      margin-bottom: 50px;
+  }
+  &__img-area {
+      width: 36px;
+      height: 36px;
+  }
+  &__icon-img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+  }
+  &__button {
+      display: block;
+      color: #555555;
+      text-transform: uppercase;
+      border: 2px solid #00b4db;
+      padding: 17px 23px;
+      text-align: center;
+      max-width: 226px;
+      margin: 0 auto;
+      @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+      transition-duration: 0.5s;
+      &:hover {
+          background-color: #00b4db;
+          color: #fff;
+      }
+      @media screen and (max-width: 991px) {
+          padding: 14px;
+      }
+  }
+  @media screen and (max-width: 991px) {
+      height: 100%;
+  }
+}
+
+.main_page_title{
+  font-size: 20px;
+}
+.center{
+  text-align: center;
+}
+.stone-bridge .fixed-action-btn {
+  position: fixed;
+  right: 23px;
+  bottom: 23px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 998;
+}
+.stone-bridge .onk-project .container {
+  /*background: #fff url(/img/portfolio/stone/bg1.png);*/
+}
+.stone-bridge .table-cell {
+  display: table-cell;
+  float: none;
+  vertical-align: middle;
+}
+.stone-bridge .gutter {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin: 15px 0;
+  min-height: 200px;
+}
+.stone-bridge ._bg-5 {
+  background: #de514d;
+}
+.stone-bridge .onk-project a {
+  outline: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+.stone-bridge ._bg-5:after {
+  position: absolute;
+  right: -10px;
+  bottom: 86px;
+  z-index: 14;
+  content: url(/img/portfolio/stone/ico-arr-red.png);
+  width: 10px;
+  height: 13px;
+}
+.stone-bridge .case-2_delim {
+  background: url(/img/portfolio/stone/line-title.gif) no-repeat left bottom;
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+}
+.stone-bridge .case-2_link {
+  font-family: 'rrobotoregular_3', Arial, 'sans-serif';
+  letter-spacing: 1px;
+  font-size: 0.83333333333333em;
+  color: #fff;
+  text-transform: uppercase;
+}
+.stone-bridge .case-2__type-1 {
+  line-height: 24px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+.stone-bridge .r-buttom {
+  float: right;
+  margin-bottom: 10px;
+}
+.stone-bridge .clear {
+  clear: both;
+}
+.stone-bridge .onk-project p {
+  font-size: 13px;
+}
+.stone-bridge img.responsive-img, video.responsive-video {
+  max-width: 100%;
+  height: auto;
+  margin: 23px 0;
+}
+.stone-bridge .portfolio-page-2.rosatom .slide_5 {
+  text-align: center;
+  color: #000;
+  background: #fff !important;
+}
+.stone-bridge h2 {
+  text-align: center;
+}
+.stone-bridge h2 {
+  font-size: 3.56rem;
+  line-height: 3.916rem;
+  margin: 1.78rem 0 1.424rem 0;
+  font-family: comfortaalight_0;
+  font-weight: 400;
+}
+.stone-bridge h3 {
+  font-size: 2.92rem;
+  line-height: 3.212rem;
+  margin: 1.46rem 0 1.168rem 0;
+  font-family: comfortaalight_0;
+  font-weight: 400;
+}
+.stone-bridge .item-title {
+  margin-top: 105px;
+}
+.stone-bridge .onk-project .col-50 {
+  float: left;
+  width: 50%;
+}
+.stone-bridge .portfolio-page-2.rosatom .slide_5 img {
+  width: auto;
+  margin-bottom: 35px;
+}
+.stone-bridge .onk-project .col-33 {
+  float: left;
+  width: 33%;
+}
+.text-align-center {
+  text-align: center;
+}
+.stone-bridge .onk-project img {
+  width: auto;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+.stone-bridge .onk-project p {
+  font-size: 13px;
+  font-family: robotoregular_3;
+}
+.stone-bridge  .read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 45px;
+  text-transform: lowercase;
+  background: url(/img/portfolio/stone/arrowBtnRight.png) left center no-repeat #ef5350;
+  background-position-x: 85%;
+  border: 2px solid transparent;
+  z-index: 1;
+  margin: 15px 0;
+  z-index: 10;
+}
+.stone-bridge .read-more:hover {
+  background: url(/img/portfolio/stone/arrowBtnRight-hover.png) left center no-repeat;
+  background-position-x: 85%;
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  z-index: 10;
+}
+.stone-bridge .right {
+  text-align: right;
+}
+.stone-bridge .onk-project-page {
+  margin-bottom: 70px;
+}
+.stone-bridge .bottom {
+  margin-bottom: 70px;
+}
+@media (max-width: 520px) {
+  .stone-bridge .table-cell{
+      display: block;
+  }
+}

@@ -1,0 +1,300 @@
+.about-us{
+  // background-image: url('../img/about-bg.jpg');
+  // background-size: cover;
+  // background-position: center;
+  position: relative;
+  color: $color-b7;
+  //padding-bottom: 0;
+  .section-title{
+    color: white;
+    text-align: left;
+  }
+  &__video{
+    z-index: -1;
+    background-image:url('/img/aboutus_bg.jpg');
+    background-size: contain;
+
+    &:before{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      width: 100%;
+      height: 100%;
+      background:  url('../img/noice.png'),url('/img/stuff.png'), linear-gradient(0deg, rgba(34, 34, 34, 0.8), rgba(34, 34, 34, 0.8));
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      content: '';
+      display: block;
+    }
+
+
+    video{
+      position: relative;
+      z-index: -1;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  &__container{
+    display: flex;
+
+  }
+  &__descr,&__form{
+    width: 50%;
+  }
+  &__items{
+    display: flex;
+    flex-wrap: wrap;
+    width: 680px;
+    max-width: 100%;
+    .item{
+      flex: 0 0 auto;
+      margin-right: auto;
+      text-align: center;
+      margin-bottom: 68px;
+      width: 206px;
+
+      &__digit{
+        @supports (-webkit-hyphens:none){
+          // fix for safari
+          padding-top: 10px;
+        }
+        margin-bottom: 11px;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        border-radius: 12px;
+
+        text-align: center;
+        font-family: 'Stolzl';
+        font-weight: 900;
+        font-size: 40px;
+
+        line-height: 132%;
+        color: $color-white;
+
+        width: 168px;
+        height: 60px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 20px;
+
+        &:before{
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+          background-color: $color-22;
+          opacity: .7;
+          content: '';
+          z-index: -1;
+        }
+      }
+      &__text{
+        color: $color-white;
+        text-align: center;
+        line-height: 24px;
+        font-weight: 300;
+        font-size: 16px;
+        margin-right: 20px;
+        strong{
+          display: block;
+          font-size: 20px;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+  &__h3{
+    padding: 6px 0;
+    font-family: 'Stolzl';
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 120%;
+    color: $color-white;
+    margin-bottom: 16px;
+  }
+  &__p{
+    font-family: Stolzl;
+    font-size: 18px;
+    line-height: 22px;
+    color: $color-white;
+  }
+  &__form{
+    width: 41.66667%;
+    margin-left: auto;
+    .form{
+      margin-top: 50px;
+    }
+  }
+  .social{
+    a{
+      opacity: .4;
+      transition: .3s;
+      path{
+        fill: $color-white;
+      }
+      &:hover{
+        opacity: 1;
+        path{
+          fill: $color-white;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width:768px) and (max-width:1200px) {
+    &__descr,
+    &__form {
+      //width: 100%;
+      min-width: 350px;
+      flex: 1 1 50%;
+      text-align: center;
+    }
+    &__items{
+      max-width: 745px;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      .item{
+        &:last-child,
+        &:nth-child(2n){
+          margin-right: 0;
+        }
+      }
+    }
+    &__form{
+      .form{
+        max-width: 620px;
+        margin-left: auto;
+        margin-right: auto;
+        &__footer{
+          .social{
+            margin-left: auto;
+            margin-right: auto;
+          }
+          .recaptcha{
+            display: inline-block;
+          }
+          button{
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
+      }
+    }
+    &__container {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width:768px) {
+    background-image: url(../img/noice.png), url(/img/stuff.png) ;
+    &__container {
+      flex-wrap: wrap;
+    }
+    &__descr,
+    &__form {
+      width: 100%;
+    }
+    .section-title{
+      text-align: center;
+    }
+    padding-top: 0;
+    &__h3{
+      font-size: 36px;
+      line-height: 100%;
+      text-align: center;
+      color: $color-22;
+      margin-left: -15px;
+      margin-right: -15px;
+      width: auto;
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    &__p{
+      font-size: 14px;
+      line-height: 17px;
+      color: $color-22;
+      margin-bottom: 3px;
+    }
+    &__video{
+      left: -15px;
+      right: -15px;
+      width: auto;
+    }
+    &__descr{
+      position: relative;
+      padding-top: 40px;
+      padding-bottom: 50px;
+    }
+    &__items{
+      margin-left: -15px;
+      margin-right: -15px;
+      width: auto;
+      max-width: unset;
+      .item{
+        min-width: 1px;
+        width: 50%;
+        margin: 0;
+        margin-bottom: 0;
+        padding: 16px;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+        &:nth-child(2n){
+          border-left: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        &:last-child,
+        &:nth-last-child(2){
+          border-bottom: unset;
+        }
+        &__text{
+          margin: 0;
+          font-size: 12px;
+          line-height: 140%;
+          font-weight: 300;
+          strong{
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+        &__digit{
+          padding: 0;
+          font-size: 28px;
+          line-height: 132%;
+          text-align: center;
+
+          width: 100%;
+          height: auto;
+          margin: 0;
+
+          &:before{
+            display: none;
+          }
+        }
+      }
+    }
+    .social{
+
+      a  {
+        path { fill: rgba(34, 34, 34, 0.4); }
+        &:hover path{
+          fill: $color-22;
+        }
+      }
+    }
+    &__form{
+      .form__footer .button .button__yellow-solid:hover{
+        color: $color-22;
+      }
+    }
+  }
+  @media screen and (max-width:600px) {
+
+  }
+}

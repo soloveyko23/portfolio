@@ -1,0 +1,311 @@
+@import 'portfolioParts';
+@import "../bootstrap3";
+
+@font-face {
+  font-family: 'HelveticaNeueCyrLight';
+  src: url('/fonts/portfolio/HelveticaNeueCyrLight.eot');
+  src: url('/fonts/portfolio/HelveticaNeueCyrLight.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/HelveticaNeueCyrLight.woff2') format('woff2'),
+  url('/fonts/portfolio/HelveticaNeueCyrLight.woff') format('woff'),
+  url('/fonts/portfolio/HelveticaNeueCyrLight.ttf') format('truetype'),
+  url('/fonts/portfolio/HelveticaNeueCyrLight.svg#HelveticaNeueCyrLight') format('svg');
+}
+
+@font-face {
+  font-family: 'HelveticaNeueCyrMedium';
+  src: url('/fonts/portfolio/HelveticaNeueCyrMedium.eot');
+  src: url('/fonts/portfolio/HelveticaNeueCyrMedium.eot') format('embedded-opentype'),
+  url('/fonts/portfolio/HelveticaNeueCyrMedium.woff2') format('woff2'),
+  url('/fonts/portfolio/HelveticaNeueCyrMedium.woff') format('woff'),
+  url('/fonts/portfolio/HelveticaNeueCyrMedium.ttf') format('truetype'),
+  url('/fonts/portfolio/HelveticaNeueCyrMedium.svg#HelveticaNeueCyrMedium') format('svg');
+}
+
+.main_page_title{
+  color: #fff;
+  @media screen and (max-width: 1024px){
+    font-size: 18px;
+  }
+}
+.text {
+  text-align: center;
+  letter-spacing: 1px;
+}
+.center{
+  text-align: center;
+}
+
+.name {
+  font: 160% 'HelveticaNeueCyrLight';
+  line-height: 1.5em;
+}
+
+.sub {
+  font: 100% 'HelveticaNeueCyrLight';
+  margin: 20px 0;
+  line-height: 1.5em;
+}
+
+.white-text {
+  color: white;
+}
+
+.grey_text {
+  color: #757575;
+}
+
+img {
+  max-width: 100%;
+}
+
+.bottom {
+  margin-bottom: 70px;
+}
+
+.read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 45px;
+  text-transform: lowercase;
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat #f5d046;
+  background-position-x: 85%;
+  border: 2px solid transparent;
+  z-index: 1;
+  margin: 15px 0;
+  z-index: 10;
+}
+
+.read-more:hover {
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat;
+  background-position-x: 85%;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.btn-1.read-more {
+  display: inline-block;
+  font-size: 18px;
+  font-family: 'robotoregular_3';
+  color: #fff;
+  letter-spacing: 1px;
+  padding: 15px 100px 15px 45px;
+  text-transform: lowercase;
+  background: url(/img/portfolio/eva/arrowBtnRight.png) left center no-repeat #f5d046;
+  background-position-x: 85%;
+  border: 2px solid transparent;
+  z-index: 1;
+  margin: 15px 0;
+  z-index: 10;
+}
+
+.btn-1.read-more:hover {
+  background: url(/img/portfolio/eva/arrowBtnRight-hover.png) left center no-repeat;
+  background-position-x: 85%;
+  border: 2px solid #000;
+  color: #000;
+  text-decoration: none;
+  z-index: 10;
+}
+
+blockquote {
+  font-size: 14px;
+  line-height: 17px;
+  position: relative;
+  font-style: normal;
+  padding: 34px 47px;
+  border: 2px solid #babbbc;
+  border-radius: 4px;
+  margin-top: 0;
+  min-height: 168px;
+}
+
+blockquote:after {
+  content: '';
+  background: url(/img/portfolio/masterskaya/arrow1.png) no-repeat;
+  width: 9px;
+  height: 17px;
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  margin: -8px 0 0;
+}
+
+.photo {
+  width: 168px;
+  height: 168px;
+  background-color: transparent;
+  border: 1px solid #c2c2c2;
+  padding: 20px;
+  border-radius: 84px;
+  margin: 0 auto;
+  
+}
+
+.parent {
+  margin-bottom: 10px;
+}
+
+.middle-pic {
+  display: block;
+  margin: 0 auto;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.main_mir {
+  background: url(/img/portfolio/masterskaya/bg_02.png) no-repeat center;
+  background-size: cover;
+}
+
+#mir_logo {
+  margin-top: 20px;
+  width: 260px;
+}
+
+.mir_border {
+  border-bottom: 1px solid black;
+  width: 200px;
+  margin: 20px auto;
+}
+
+.mir_border_white {
+  border-bottom: 2px solid white;
+  width: 200px;
+  margin: 20px auto;
+  
+}
+
+.mir_border_grey {
+  border-bottom: 2px solid lightgrey;
+  width: 200px;
+  margin: 20px auto;
+  
+}
+
+.about_back_color {
+  position: relative;
+  background: #b7b2d0;
+  min-height: 444px;
+  padding-top: 5% !important;
+}
+
+.about_back_color:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 25px 25px 25px 0;
+  border-color: transparent #b7b2d0 transparent transparent;
+  top: 40%;
+  right: 100%;
+  
+}
+
+.about_back_photo {
+  background: black url(/img/portfolio/masterskaya/skandinavskiy_stil_6.jpg) no-repeat center;
+  background-size: cover;
+  height: 444px;;
+  padding: 15px;
+}
+
+.about_back_color ul li {
+  margin: 15px 0;
+}
+
+.about_back_color ul li:before {
+  content: '\2714      ';
+  
+}
+
+.icons_mir {
+  background: url(/img/portfolio/masterskaya/bg.jpg);
+  background-size: 50%;
+  padding: 30px 0;
+}
+
+.parrent_icon {
+  float: none !important;
+  display: inline-block;
+  margin-left: -4px !important;
+  vertical-align: top;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.mir_icon {
+  width: 100px;
+}
+
+.firm_style_mir {
+  background: url(/img/portfolio/masterskaya/pic.png) no-repeat 0 0,
+  url(/img/portfolio/masterskaya/pic_1.png) no-repeat 100% 0;
+  background-size: 90px;
+  padding: 40px 0;
+  
+}
+
+.fs_page {
+  margin: 30px auto;
+}
+
+.mir-logo {
+  width: 265px;
+}
+
+.black_back_1 {
+  background: #1b130f;
+}
+
+.black_back_2 {
+  background-color: #0a0b0d;
+}
+
+.var {
+  width: 680px;
+  margin-bottom: 50px;
+}
+
+.mir_final {
+  max-width: 1400px !important;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.mir_page {
+  -webkit-box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  margin-bottom: 30px;
+}
+
+.about_back_color ul {
+  text-align: left;
+}
+
+@media only screen and (max-width: 782px) {
+  .about_back_photo {
+    display: none;
+  }
+  
+  .about_back_color {
+    width: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 1166px) {
+  .about_back_photo {
+    height: 555px;
+  }
+  
+  .about_back_color {
+    min-height: 555px;
+  }
+}

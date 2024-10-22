@@ -1,0 +1,738 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-size: 100%;
+    box-sizing: border-box; }
+
+*::after, *::before {
+    box-sizing: border-box; }
+
+body {
+    font-family: sans-serif; }
+
+@import 'portfolioParts';
+
+
+@import "../bootstrap3";
+
+a {
+    &:hover {
+        text-decoration: none; /* Отменяем подчеркивание у ссылки */
+    }
+}
+
+main .header {
+    height: 100vh;
+    background: url("/img/portfolio/cappi/header-background.jpg") no-repeat center/cover;
+    position: relative;
+    box-shadow: none;
+    z-index: 1;}
+main .header .header__container {
+    max-width: 1750px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px; }
+main .header .header__inner {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    height: 100%;
+    flex-wrap: nowrap; }
+main .header .header__logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center; }
+main .header .header__title {
+    color: #5e5e5e;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: 0.96px;
+    margin: 27px auto 0;
+    text-align: center;
+    font-family: 'Geometria Regular';
+    max-width: 265px; }
+main .header .header__button {
+    padding: 17px 20px;
+    border: 2px solid #00b4db;
+    color: #555555;
+    font-family: 'Geometria Regular';
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.36px;
+    display: block;
+    margin: 0 auto;
+    text-align: center; }
+main .header .header__icons {
+    margin: 35px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+main .header .header__icon {
+    display: inline-block; }
+main .header .header__icon-laptop {
+    margin-left: 80px; }
+main .header .header__icon-laptop:first-child {
+    margin-left: 0; }
+main .header .header__icon-smartphone {
+    margin-left: 42px; }
+main .header .header__icon-tablet {
+    margin-left: 46px; }
+main .header .header__button-container {
+    margin: 60px auto 0;
+    max-width: 250px; }
+main .header .header__description {
+    flex-basis: 30%;
+    padding: 200px 0; }
+main .header .header__button:hover {
+    transition: all .3s ease;
+    background: #00b4db;
+    text-decoration: none;
+    color: #ffffff; }
+main .header .header__img {
+    position: absolute;
+    width: 70%;
+    bottom: 0;
+    right: 0; }
+main .header .header__img img{
+    max-width: 100%;
+}
+
+@media screen and (max-width: 1400px) {
+    main .header .header__description {
+        padding: 150px 0; }
+    main .header .header__button-container {
+        margin: 30px auto 0; } }
+
+@media screen and (max-width: 1200px) {
+    main .header .header__description {
+        padding: 80px 0; } }
+
+@media screen and (max-width: 1024px) {
+    main .header {
+        height: auto; }
+    main .header .header__container {
+        height: auto; }
+    main .header .header__inner {
+        display: block;
+        height: auto; }
+    main .header .header__img {
+        max-width: 100%;
+        position: static;
+        display: block;
+        margin: 0 auto; } }
+
+@media screen and (max-width: 768px) {
+    main .header .header__img {
+        width: 80%; } }
+
+@media screen and (max-width: 495px) {
+    main .header .header__description {
+        padding: 30px 0; }
+    main .header .header__img {
+        margin-top: 50px;
+        width: 90%; } }
+
+@media screen and (max-width: 320px) {
+    main .header .header__img {
+        width: 100%; }
+    main .header .header__logo img {
+        width: 60%; } }
+
+@font-face {
+    font-family: 'RotondaBold';
+    src: url("/fonts/portfolio/cappi/RotondaBold.eot");
+    src: url("/fonts/portfolio/cappi/RotondaBold.eot?#iefix") format("embedded-opentype"), url("/fonts/portfolio/cappi/RotondaBold.woff") format("woff"), url("/fonts/portfolio/cappi/RotondaBold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'Geometria Regular';
+    src: url("/fonts/portfolio/cappi/Geometria.eot");
+    src: url("/fonts/portfolio/cappi/Geometria.eot?#iefix") format("embedded-opentype"), url("/fonts/portfolio/cappi/Geometria.woff") format("woff"), url("/fonts/portfolio/cappi/Geometria.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'Rotonda C';
+    src: url("/fonts/portfolio/cappi/rotondac.eot");
+    src: url("/fonts/portfolio/cappi/rotondac.eot?#iefix") format("embedded-opentype"), url("/fonts/portfolio/cappi/rotondac.woff") format("woff"), url("/fonts/portfolio/cappi/rotondac.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; }
+
+@font-face {
+    font-family: 'Geometria Heavy';
+    src: url("/fonts/portfolio/cappi/Geometria-Heavy.eot");
+    src: url("/fonts/portfolio/cappi/Geometria-Heavy.eot?#iefix") format("embedded-opentype"), url("/fonts/portfolio/cappi/Geometria-Heavy.woff") format("woff"), url("/fonts/portfolio/cappi/Geometria-Heavy.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal; }
+
+.home-page {
+    margin-top: 105px; }
+.home-page .home-page__title {
+    text-align: left;
+    position: relative;
+    padding: 25px 150px;
+    margin-bottom: 70px; }
+.home-page .home-page__title::before {
+    content: "";
+    display: block;
+    width: 151px;
+    height: 100px;
+    left: 55px;
+    top: 0;
+    background: url("/img/portfolio/cappi/numeration-01.png") no-repeat center/contain;
+    position: absolute; }
+
+@media screen and (max-width: 888px) {
+    .home-page {
+        margin-top: 50px; }
+    .home-page .home-page__title {
+        font-size: 36px;
+        margin-bottom: 50px; } }
+
+@media screen and (max-width: 495px) {
+    .home-page .home-page__title {
+        padding: 25px 35px;
+        font-size: 30px; }
+    .home-page .home-page__title::before {
+        top: 0;
+        left: 60px; } }
+
+.typography {
+    margin: 50px 0 200px;
+    position: relative; }
+.typography .typography__inner {
+    position: relative; }
+.typography .typography__inner::before {
+    content: "";
+    display: block;
+    width: 161px;
+    height: 135px;
+    left: -40px;
+    top: 55px;
+    background: url("/img/portfolio/cappi/typography-left(img).png") no-repeat center/contain;
+    position: absolute; }
+.typography .typography__colors {
+    position: relative; }
+.typography .typography__colors::after {
+    content: "";
+    display: block;
+    width: 81px;
+    height: 84px;
+    right: -65px;
+    bottom: 0;
+    background: url("/img/portfolio/cappi/typography-right(img).png") no-repeat center/contain;
+    position: absolute;
+    @media screen and (max-width: 1287px) {
+        right: 0;
+    } }
+.typography .typography__title-inner {
+    text-align: center;
+    margin-bottom: 70px;
+    width: 100%;
+    padding: 40px 0;
+    position: relative; }
+.typography .typography__title-inner::after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    right: 82px;
+    top: 17px;
+    border: 2px solid #eeeeee; }
+.typography .typography__colors-title {
+    padding: 32px 0;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto; }
+.typography .typography__colors-title::before {
+    content: "";
+    display: block;
+    width: 151px;
+    height: 100px;
+    left: 50%;
+    top: 9px;
+    background: url("/img/portfolio/cappi/numeration-02.png") no-repeat center/contain;
+    position: absolute;
+    transform: translateX(-50%); }
+.typography .typography__colors-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    max-width: 945px;
+    margin: 0 auto 125px; }
+.typography .typography__colors-inner::before {
+    content: "";
+    display: block;
+    width: 234px;
+    height: 12px;
+    left: 17%;
+    top: 50%;
+    background: url("/img/portfolio/cappi/line.png") no-repeat center/contain;
+    position: absolute;
+    transform: translateY(-50%); }
+.typography .typography__colors-inner::after {
+    content: "";
+    display: block;
+    width: 234px;
+    height: 12px;
+    right: 17%;
+    top: 50%;
+    background: url("/img/portfolio/cappi/line.png") no-repeat center/contain;
+    position: absolute;
+    transform: translateY(-50%); }
+.typography .typography__circle {
+    width: 157px;
+    height: 157px;
+    border-radius: 50%;
+    border: 23px solid #eeeeee; }
+.typography .typography__circle_circle1 {
+    background: #2fa37a;
+    position: relative; }
+.typography .typography__circle::before {
+    content: "#2FA37A";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute; }
+.typography .typography__circle_circle2 {
+    background: #f4b143; }
+.typography .typography__circle_circle3 {
+    background: #dc4343; }
+.typography .typography__color-name {
+    color: #ffffff;
+    font-family: 'Geometria Regular';
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.35px;
+    padding: 75px 50px; }
+.typography .typography__color-name {
+    position: relative;
+    z-index: 2; }
+.typography .typography__color-name::before {
+    border: 23px solid #eeeeee;
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    display: block;
+    width: 157px;
+    height: 157px;
+    left: 4px;
+    top: 6px;
+    z-index: -2; }
+.typography .typography__color-name1::before {
+    background: #2fa37a; }
+.typography .typography__color-name2::before {
+    background: #f4b143; }
+.typography .typography__color-name3::before {
+    background: #dc4343; }
+.typography .typography__fonts {
+    position: relative; }
+.typography .typography__fonts .typography__fonts-title {
+    text-align: left;
+    position: relative;
+    padding: 25px 85px;
+    margin-bottom: 70px; }
+.typography .typography__fonts .typography__fonts-title::before {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background: url("/img/portfolio/cappi/numeration-03.png") no-repeat center/contain;
+    width: 181px;
+    height: 103px; }
+.typography .typography__fonts .typography__fonts-inner {
+    display: flex;
+    justify-content: space-between;
+    max-width: 650px; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner .typography__fonts-name {
+    color: #222222;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    margin-bottom: 20px; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner .typography__fonts-name1 {
+    font-family: "Rotonda C"; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner .typography__fonts-name2 {
+    font-family: 'Geometria Regular'; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner .typography__fonts-letters {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 1.05px;
+    line-height: 18px; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner .typography__fonts-letters1 {
+    font-family: "Rotonda C"; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner .typography__fonts-letters2 {
+    font-family: 'Geometria Regular'; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner_1 {
+    max-width: 226px; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner_2 {
+    max-width: 242px; }
+.typography .typography__fonts .typography__fonts-inner .typography__fonts-image {
+    position: absolute;
+    top: 25px;
+    right: -18%; }
+
+@media screen and (max-width: 1600px) {
+    .typography .typography__fonts .typography__fonts-inner .typography__fonts-image {
+        right: -12%; } }
+
+@media screen and (max-width: 1500px) {
+    .typography .typography__fonts .typography__fonts-inner {
+        max-width: 100%;
+        margin: 0 auto; }
+    .typography .typography__fonts .typography__fonts-inner .typography__fonts-image {
+        display: none; } }
+
+@media screen and (max-width: 991px) {
+    .typography .typography__colors-inner {
+        max-width: 720px; } }
+
+@media screen and (max-width: 767px) {
+    .typography {
+        margin-bottom: 50px; }
+    .typography .typography .typography__inner::before {
+        width: 100px; }
+    .typography .typography__colors-title {
+        padding: 32px 0 15px;
+        font-size: 36px; }
+    .typography .typography__fonts .typography__fonts-inner {
+        display: block; }
+    .typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner_1 {
+        margin-bottom: 25px;
+        max-width: 100%; }
+    .typography .typography__inner::before {
+        left: 0;
+        width: 100px; }
+    .typography .typography__title-inner {
+        margin-bottom: 30px; }
+    .typography .typography__colors-inner {
+        display: block; }
+    .typography .typography__colors-inner {
+        width: 157px;
+        margin: 0 auto; }
+    .typography .typography__fonts {
+        margin-top: 50px; }
+    .typography .typography__color-name:not(:last-child) {
+        margin-bottom: 75px; }
+    .typography .typography__color-name {
+        width: 157px;
+        margin: 0 auto; }
+    .typography .typography__colors-inner::after,
+    .typography .typography__colors-inner::before {
+        transform: rotate(90deg); }
+    .typography .typography__colors-inner::before {
+        top: 260px;
+        left: -33px; }
+    .typography .typography__colors-inner::after {
+        top: inherit;
+        bottom: 260px;
+        right: -42px; }
+    .typography .typography__colors-inner {
+        max-width: 720px;
+        margin-top: 50px; }
+    .typography__fonts .typography__fonts-inner .typography__fonts-image {
+        width: 50%;
+        margin: 0 auto; } }
+
+@media screen and (max-width: 495px) {
+    .typography .typography__fonts .typography__fonts-title {
+        padding: 25px 0;
+        font-size: 30px;
+        margin-bottom: 15px; }
+    .typography .typography__inner::before {
+        display: none; }
+    .typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner_1,
+    .typography .typography__fonts .typography__fonts-inner .typography__fonts-name-inner_2 {
+        margin-bottom: 20px; }
+    .typography .typography__title-inner {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-top: 0; } }
+
+.categories {
+    position: relative; }
+.categories .categories-bg {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: -2;
+    width: 43%; }
+.categories::after {
+    content: "";
+    display: block;
+    width: 203px;
+    height: 198px;
+    right: 9%;
+    top: 50%;
+    background: url("/img/portfolio/cappi/categories-right(img).png") no-repeat center/contain;
+    position: absolute;
+    z-index: -2; }
+.categories .categories__title-inner {
+    text-align: right; }
+.categories .categories__title {
+    text-align: right;
+    padding: 17px 80px;
+    position: relative;
+    margin-bottom: 55px; }
+.categories .categories__title::before {
+    content: "";
+    display: block;
+    width: 191px;
+    height: 103px;
+    right: 0;
+    top: 0;
+    background: url("/img/portfolio/cappi/numeration-04.png") no-repeat center/contain;
+    position: absolute; }
+.categories .categories__main-img {
+    z-index: 2; }
+
+@media screen and (max-width: 768px) {
+    .categories .categories__title {
+        font-size: 36px;
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+}
+
+@media screen and (max-width: 495px) {
+    .categories .categories__title {
+        font-size: 36px; }
+    .categories .categories-bg {
+        width: 60%; } }
+
+.product-page {
+    margin: 80px 0;
+    position: relative; }
+.product-page .product-page__bg-img {
+    position: absolute;
+    top: 99px;
+    left: 175px; }
+.product-page .product-page__bg-2 {
+    position: absolute;
+    right: 0;
+    bottom: -150px;
+    width: 45%;
+    height: 70%;
+    z-index: -2; }
+.product-page .product-page__inner {
+    position: relative; }
+.product-page .product-page__inner::after {
+    content: "";
+    display: block;
+    width: 81px;
+    height: 84px;
+    right: 100px;
+    top: 50px;
+    background: url("/img/portfolio/cappi/product-right-img.png") no-repeat center/contain;
+    position: absolute; }
+.product-page .product-page__title-inner {
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+    padding: 20px 0 0;
+    position: relative; }
+.product-page .product-page__title-inner .product-page__title {
+    position: relative;
+    padding: 30px 0;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 50px; }
+.product-page .product-page__title-inner .product-page__title::before {
+    content: "";
+    display: block;
+    width: 179px;
+    height: 103px;
+    left: 50%;
+    top: 9px;
+    background: url("/img/portfolio/cappi/numeration-05.png") no-repeat center/contain;
+    position: absolute;
+    transform: translateX(-50%); }
+
+@media screen and (max-width: 1200px) {
+    .product-page {
+        margin: 50px 0 50px; }
+    .product-page .product-page__bg-2 {
+        width: 60%; }
+    .product-page .product-page__bg-img {
+        width: 50%;
+        left: 8px;
+        top: 90px; } }
+
+@media screen and (max-width: 768px) {
+    .product-page .product-page__bg-img {
+        width: 50%;
+        left: 15px;
+        top: 100px; }
+    .product-page .product-page__inner::after {
+        display: none; } }
+
+@media screen and (max-width: 495px) {
+    .product-page {
+        margin: 0 auto 30px; }
+    .product-page .product-page__bg-img {
+        top: 150px;
+        left: 11px; }
+    .product-page .product-page__title-inner {
+        margin-bottom: 0; }
+    .product-page .product-page__title-inner .product-page__title {
+        font-size: 36px; } }
+
+.other-pages {
+    position: relative; }
+.other-pages__inner {
+    position: relative; }
+.other-pages__title {
+    text-align: left;
+    padding: 35px 80px;
+    margin-bottom: 40px;
+    position: relative; }
+.other-pages__title::before {
+    content: "";
+    display: block;
+    width: 186px;
+    height: 103px;
+    left: 0;
+    top: 11px;
+    background: url("/img/portfolio/cappi/numeration-06.png") no-repeat center/contain;
+    position: absolute; }
+.other-pages__img-inner {
+    position: relative; }
+.other-pages__card1 {
+    z-index: -1; }
+.other-pages__card2 {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    z-index: 2; }
+.other-pages__card3 {
+    position: relative;
+    z-index: 5;
+    margin-left: 90px;
+    margin-top: -55px; }
+
+@media screen and (max-width: 1170px) {
+    .other-pages__card2, .other-pages__card1,
+    .other-pages__card3 {
+        position: static;
+        margin: 30px auto; } }
+
+@media screen and (max-width: 495px) {
+    .other-pages .other-pages__title {
+        font-size: 36px;
+        margin-bottom: 0;
+        padding-left: 30px;
+        padding-right: 30px;
+    } }
+
+main .footer {
+    background-color: #ffffff;
+    position: relative;
+    margin-top: 215px; }
+main .footer__description {
+    max-width: 600px;
+    text-align: right;
+    margin-bottom: 165px; }
+main .footer__footer-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 45%; }
+main .footer__title {
+    color: #272727;
+    font-family: "Geometria Heavy";
+    font-size: 84px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 5.04px;
+    line-height: 70px;
+    margin-bottom: 0;
+    padding-left: 90px; }
+main .footer__subtitle {
+    color: #272727;
+    font-family: "Rotonda C";
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.68px; }
+
+@media screen and (max-width: 991px) {
+    main .footer .footer__footer-img {
+        width: 40%;
+        bottom: 0;
+    } }
+
+@media screen and (max-width: 768px) {
+    main .footer {
+        margin-top: 100px; }
+    main .footer .footer__title {
+        font-size: 70px; }
+    main .footer .footer__subtitle {
+        font-size: 25px; } }
+
+@media screen and (max-width: 495px) {
+    main .footer .footer__title {
+        font-size: 50px;
+        padding: 0; }
+    main .footer .footer__subtitle {
+        font-size: 20px; }
+    main .footer .footer__description {
+        max-width: 100%; } }
+
+@media screen and (max-width: 320px) {
+    .footer .footer__footer-img {
+        width: 80%; } }
+
+.container {
+    width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px; }
+
+@media screen and (max-width: 1170px) {
+    .container {
+        width: 100%; } }
+
+.title {
+    color: #272727;
+    font-family: "Rotonda C";
+    font-size: 48px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.88px; }
+
+.img-shadow {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.2); }
+
+.img-fluid {
+    max-width: 100%;
+    display: block;
+    height: auto; }
+
+@media screen and (max-width: 991px) {
+    main .header__inner {
+        margin-top: 125px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header .container {
+        width: 85%;
+    }
+    footer .container {
+        width: 85%;
+    }
+}

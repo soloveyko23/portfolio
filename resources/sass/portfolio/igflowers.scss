@@ -1,0 +1,485 @@
+@import 'portfolioParts';
+@import "../bootstrap3";
+@font-face {
+    font-family: Geometria;
+    src: url(/fonts/portfolio/baybay/Geometria-Bold.eot);
+    src: url(/fonts/portfolio/baybay/Geometria-Bold.eot) format("embedded-opentype"), url(/fonts/portfolio/baybay/Geometria-Bold.woff) format("woff"), url(/fonts/portfolio/baybay/Geometria-Bold.ttf) format("truetype");
+    font-weight: 700
+}
+
+@font-face {
+    font-family: TTHoves;
+    src: url(/fonts/portfolio/ecommerce/TTHoves-Bold.eot);
+    src: url(/fonts/portfolio/ecommerce/TTHoves-Bold.eot) format("embedded-opentype"), url(/fonts/portfolio/ecommerce/TTHoves-Bold.woff) format("woff"), url(/fonts/portfolio/ecommerce/TTHoves-Bold.ttf) format("truetype");
+    font-display: swap;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: TTHoves;
+    src: url(/fonts/portfolio/ecommerce/TTHoves-Regular.eot);
+    src: url(/fonts/portfolio/ecommerce/TTHoves-Regular.eot) format("embedded-opentype"), url(/fonts/portfolio/ecommerce/TTHoves-Regular.woff) format("woff"), url(/fonts/portfolio/ecommerce/TTHoves-Regular.ttf) format("truetype");
+    font-display: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: TTHoves;
+    src: url(/fonts/portfolio/ecommerce/TTHoves-Medium.eot);
+    src: url(/fonts/portfolio/ecommerce/TTHoves-Medium.eot) format("embedded-opentype"), url(/fonts/portfolio/ecommerce/TTHoves-Medium.woff) format("woff"), url(/fonts/portfolio/ecommerce/TTHoves-Medium.ttf) format("truetype");
+    font-display: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Anjhay;
+    src: url(/fonts/portfolio/Anjhay/Anjhay.eot);
+    src: url(/fonts/portfolio/Anjhay/Anjhay.eot) format("embedded-opentype"), url(/fonts/portfolio/Anjhay/Anjhay.woff) format("woff"), url(/fonts/portfolio/Anjhay/Anjhay.ttf) format("truetype");
+    font-display: normal;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Neothic;
+    src: url(/fonts/portfolio/Neothic/Neothic.ttf);
+    src: url(/fonts/portfolio/Neothic/Neothic.ttf) format("truetype");
+    font-display: normal;
+}
+
+.container {
+    @media screen and (min-width: 1800px) {
+        width: 1780px;
+        max-width: 100%;
+    }
+}
+
+.TTHOVES {
+    font-family: TTHoves;
+}
+
+.Anjhay {
+    font-family: Anjhay;
+}
+
+.Neothic {
+    font-family: Neothic;
+}
+
+.Black {
+    font-weight: 900;
+}
+
+.Bold {
+    font-weight: 700;
+}
+
+.Medium {
+    font-weight: 500;
+}
+
+.Regular {
+    font-weight: 400;
+}
+
+.h1 {
+    font-family: Geometria;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #555555;
+    font-weight: 700;
+    @media screen and (max-width: 1200px) {
+        font-size: 21px;
+    }
+}
+
+.igflowers {
+    position: relative;
+    &_decor {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        // top: 1070px;
+        top: 6.2%;
+        .decor {
+            width: 50%;
+            background-color: #F8F3EE;
+            margin-right: 50%;
+            &:nth-child(2n) {
+                margin-left: 50%;
+            }
+            &:nth-child(1) {
+                height: 1786px;
+            }
+            &:nth-child(2) {
+                height: 1786px;
+            }
+            &:nth-child(3) {
+                height: 1786px;
+            }
+            &:nth-child(4) {
+                height: 1618px;
+                background-image: url(/img/portfolio/igflowers/decor_flower.png);
+            }
+            &:nth-child(5) {
+                height: 1644px;
+                margin-top: 168px;
+            }
+            &:nth-child(6) {
+                height: 1714px;
+            }
+            &:nth-child(7) {
+                height: 1826px;
+            }
+            &:nth-child(8) {
+                height: 1786px;
+            }
+            &:nth-child(9) {
+                height: 1038px;
+            }
+        }
+    }
+}
+
+.h1_decor {
+    font-family: Anjhay;
+    font-weight: 500;
+    font-size: 84px;
+    line-height: 1.1;
+    letter-spacing: 0.215em;
+    color: #333333;
+    //margin-bottom: 90px;
+    margin-bottom: 1.08em;
+    position: relative;
+    text-transform: uppercase;
+    img {
+        position: absolute;
+        top: -100%;
+        bottom: -100%;
+        right: 100%;
+        margin: auto;
+        margin-right: 0.357em;
+        width: 2.309em;
+    }
+    &.text-right img {
+        right: unset;
+        left: 100%;
+        transform: scale(-1, 1);
+    }
+    @include respond-max-to('max') {
+        font-size: 64px;
+    }
+    @include respond-max-to('lg') {
+        font-size: 54px;
+    }
+    @include respond-max-to('sm') {
+        text-align: center;
+        img {
+            display: none;
+        }
+    }
+    @include respond-max-to('esm') {
+        font-size: 34px;
+    }
+}
+
+section {
+    padding: 30px 0;
+    &.main {
+        padding-top: 106px;
+        padding-bottom: 60px;
+    }
+    @include respond-max-to('md') {
+        padding: 30px 0;
+        &.main {
+            padding-top: 50px;
+            padding-bottom: 30px;
+        }
+        &.fonts {
+            padding-bottom: 0;
+        }
+        &.icons {
+            padding-top: 0;
+        }
+    }
+    @include respond-max-to('sm') {
+        padding: 15px 0;
+        &.main {
+            padding-top: 15px;
+        }
+        &.fonts {
+            padding-bottom: 0;
+        }
+        &.icons {
+            padding-top: 0;
+        }
+    }
+  
+}
+
+.portfolio main .button {
+    $btnColor: #B2D550;
+    $hoverBtnColor: transparent;
+    $color: #222222;
+    font-family: Stolzl;
+    line-height: 1;
+    font-size: 18px;
+    color: $color;
+    background: $btnColor;
+    border-color: $btnColor;
+    text-decoration: none!important;
+    position: relative;
+    &:hover {
+        background-color: #667E20;
+        border-color: #667E20;
+        color: #fff;
+    }
+}
+
+img {
+    max-width: 100%;
+    &.shadow {
+        box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.15);
+    }
+    &.brad {
+        border-radius: 20px
+    }
+    @include respond-max-to('sm') {
+        &.mobile {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+    }
+}
+
+.header {
+    margin-top: 82px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(/img/portfolio/igflowers/header-bg.jpg) no-repeat top / cover;
+    padding-top: 15.6%;
+    padding-bottom: 30px;
+    position: relative;
+    &__logo {
+        margin-bottom: 50px;
+    }
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+        @media screen and (max-width: 991px) {
+            // display: block;
+            margin: 50px auto;
+        }
+    }
+    &__descr {
+        flex: 0 0 45%;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: auto;
+        //margin-top: 186px;
+        @media screen and (max-width: 1499px) {
+            flex-basis: 40%;
+            // margin-top: 405px;
+        }
+        @media screen and (max-width: 1199px) {
+            // margin-top: 400px;
+        }
+        @media screen and (max-width: 991px) {
+            // margin-top: 140px;
+        }
+    }
+    &__img {
+        position: relative;
+        margin-right: -70px;
+        margin-left: -56px;
+        @media screen and (max-width: 768px) {
+            margin-left: 0;
+            margin-right: 0;
+            margin-top: 50px;
+        }
+        img {
+            max-width: 100%;
+        }
+        &-phone {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    }
+    &__icons {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 0 auto;
+        width: 184px;
+        margin-bottom: 50px;
+        max-width: 100%;
+        margin: 40px 0;
+        &-icon {
+            width: 36px;
+            height: 36px;
+            img {
+                display: inline-block;
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+    &__button {
+        margin-top: 18px;
+    }
+    &__lamp {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-bottom: 10px;
+        bottom: 100%;
+    }
+    @include respond-max-to('md') {
+        padding-top: 30px;
+    }
+}
+
+.main {
+    img.mobile {
+        margin-top: 106px;
+        @include respond-max-to('md') {
+            margin-top: 50px;
+        }
+    }
+}
+
+.fonts {
+    &_list {
+        font-size: 20px;
+        line-height: 1.2;
+        display: flex;
+        margin-top: 75px;
+        li {
+            flex: 1 1 25%;
+        }
+    }
+    ol>li {
+        margin-bottom: 90px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &_name {
+        font-weight: normal;
+        font-size: 70px;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: #333333;
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        margin-left: -1.09em;
+        &.Anjhay {
+            font-weight: 500;
+        }
+        &::before {
+            width: 0.81em;
+            height: 0.81em;
+            background: #ABBB5F;
+            color: #fff;
+            font-family: Anjhay;
+            font-size: 0.88em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: .5em;
+        }
+    }
+    svg {
+        max-width: 100%;
+        height: auto;
+    }
+    @for $i from 1 through 3 {
+        ol li:nth-child(#{$i}) &_name:before {
+            content: '#{$i}';
+        }
+    }
+    @include respond-max-to('max') {
+        &_name {
+            font-size: 50px;
+        }
+        &_list {
+            margin-top: 70px;
+        }
+        ol>li {
+            margin-bottom: 85px;
+        }
+    }
+    @include respond-max-to('lg') {
+        &_name {
+            font-size: 40px;
+        }
+    }
+    @include respond-max-to('sm') {
+        &_name {
+            font-size: 30px;
+        }
+        &_list {
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        ol {
+            padding-left: 30px;
+            li {
+                min-width: 100px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+    @include respond-max-to('esm') {
+        .colors {
+            margin-top: 30px;
+        }
+    }
+}
+
+.thanks {
+    padding-bottom: 0;
+    &_p {
+        font-family: Anjhay;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 84px;
+        line-height: 1.1;
+        text-align: center;
+        letter-spacing: 0.215em;
+        color: #333333;
+    }
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include respond-max-to('md') {
+        &_p {
+            font-size: 74px;
+        }
+    }
+    @include respond-max-to('esm') {
+        &_p {
+            font-size: 50px;
+        }
+    }
+}

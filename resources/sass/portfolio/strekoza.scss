@@ -1,0 +1,552 @@
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+
+@font-face {
+  font-family: 'POIRET_ONE_REGULAR';
+  src: url("/fonts/portfolio/poiret_one/poiret_one.eot");
+  src: url("/fonts/portfolio/poiret_one/poiret_one.eot") format("embedded-opentype"),
+      url("/fonts/portfolio/poiret_one/poiret_one.woff") format("woff"),
+      url("/fonts/portfolio/poiret_one/poiret_one.woff2") format("woff2"),
+      url("/fonts/portfolio/poiret_one/poiret_one.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: RobotoLight_3;
+  src: url("/fonts/portfolio/Roboto-Regular.ttf") format("truetype");
+}
+
+// _responsive-txt.scss
+@function strip-unit($number) {
+  @if type-of($number)=='number'and not unitless($number) { 
+      @return $number / ($number * 0 + 1);
+  }
+
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+
+  $b: $b + $units;
+
+  @return calc(#{$k} * 100vw + #{$b});
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+
+  font-size: $f-min;
+
+  @media (min-width: $w-min) {
+      @if ($fallback) {
+          font-size: $fallback;
+      }
+
+      font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+
+  @media (min-width: $w-max) {
+      font-size: $f-max;
+  }
+}
+
+//end _responsive-txt.scss
+
+// _var.scss
+@mixin classic-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+//end _var.scss
+
+a {
+  text-decoration: none !important;
+}
+
+.header {
+  @include classic-flex;
+  align-items: center;
+  background: url('/img/portfolio/strekoza/header-bg.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria-Bold';
+
+  &__container {
+      max-width: 1780px;
+      padding: 0 15px;
+      margin: auto;
+      width: 100%;
+  }
+
+  &__inner {
+      @include classic-flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      position: relative;
+
+      @media screen and (max-width: 991px) {
+          display: block;
+          margin: 50px auto;
+      }
+  }
+
+  &__description {
+      flex-basis: 45%;
+      margin-top: 186px;
+
+      @media screen and (max-width: 1499px) {
+          flex-basis: 40%;
+          margin-top: 405px;
+      }
+
+      @media screen and (max-width: 1199px) {
+          margin-top: 592px;
+      }
+
+      @media screen and (max-width: 991px) {
+          margin-top: 80px;
+      }
+  }
+
+  &__logo {
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+  }
+
+  &__phone-laptop {
+      position: absolute;
+      right: 0;
+      bottom: 30px;
+      width: 64%;
+
+      @media screen and (min-width: 1920px) {
+          width: 1197px;
+      }
+
+      @media screen and (max-width: 991px) {
+          margin-top: 28px;
+          position: relative;
+          width: 100%;
+      }
+  }
+
+  &__img-phone {
+      position: absolute;
+      width: 23%;
+      left: 50px;
+      bottom: -20px;
+      z-index: 1;
+
+      @media screen and (max-width: 1367px) {
+          left: 34px;
+      }
+
+      @media screen and (max-width: 575px) {
+          left: 18px;
+      }
+  }
+
+  &__img-laptop {
+      max-width: 100%;
+  }
+
+  &__txt {
+      @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+      text-align: center;
+      color: #5e5e5e;
+      max-width: 295px;
+      margin: 20px auto 30px auto;
+
+      @media screen and (max-width: 991px) {
+          margin-bottom: 35px;
+          margin-top: 25px;
+      }
+  }
+
+  &__icons {
+      @include classic-flex;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 184px;
+      margin-bottom: 50px;
+  }
+
+  &__img-area {
+      width: 36px;
+      height: 36px;
+  }
+
+  &__icon-img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+  }
+
+  &__button {
+      display: block;
+      color: #555555;
+      text-transform: uppercase;
+      border: 2px solid #00b4db;
+      padding: 17px 23px;
+      text-align: center;
+      max-width: 226px;
+      margin: 0 auto;
+      @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+      transition-duration: 0.5s;
+
+      &:hover {
+          background-color: #00b4db;
+          color: #fff;
+      }
+
+      @media screen and (max-width: 991px) {
+          padding: 14px;
+      }
+  }
+
+  @media screen and (max-width: 991px) {
+      height: 100%;
+  }
+}
+
+body.strecoza {
+  overflow-x: hidden;
+}
+
+.strecoza img {
+  max-width: 100%;
+}
+
+.strecoza .text {
+  font-family: 'comfortaalight_0', Verdana, Geneva, Helvetica, sans-serif;
+}
+
+.strecoza .center {
+  text-align: center;
+}
+
+.strecoza .name {
+  font-size: 160%;
+  line-height: 1.5em;
+}
+
+.strecoza .sub {
+  font-size: 100%;
+  margin: 20px 0;
+  line-height: 1.5em;
+}
+
+.strecoza #btn {
+  display: block;
+  margin: 20px auto;
+  background-color: #f57841;
+  text-shadow: none;
+  -webkit-text-shadow: none;
+  -moz-text-shadow: none;
+  -o-text-shadow: none;
+  color: white;
+  max-width: 260px;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px 39px;
+}
+
+.strecoza #btn:hover {
+  -webkit-box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+}
+
+.strecoza .strecoza-logo {
+  width: 254px;
+  height: auto;
+  margin-top: 5% !important;
+}
+
+.strecoza #mockup {
+  width: 100%;
+}
+
+.strecoza blockquote {
+  font-size: 14px;
+  line-height: 17px;
+  position: relative;
+  font-style: normal;
+  padding: 34px 47px;
+  border: 2px solid #babbbc;
+  border-radius: 4px;
+  margin-top: 0;
+  min-height: 168px;
+  font-family: comfortaalight_0;
+}
+
+.strecoza blockquote:after {
+  content: '';
+  background: url(/img/portfolio/strekoza/arrow1.png) no-repeat;
+  width: 9px;
+  height: 17px;
+  position: absolute;
+  top: 50%;
+  left: -9px;
+  margin: -8px 0 0;
+}
+
+.strecoza .photo {
+  width: 168px;
+  height: 168px;
+  background-color: transparent;
+  border: 1px solid #c2c2c2;
+  padding: 20px;
+  border-radius: 84px;
+  margin: 0 auto;
+}
+
+.strecoza .parent {
+  margin-bottom: 10px;
+}
+
+.strecoza .middle-pic {
+  display: block;
+  margin: 0 auto;
+}
+
+.strecoza .icon {
+  height: 50px;
+  width: auto;
+  position: absolute;
+  top: -30px;
+  left: 33%;
+  right: 33%;
+}
+
+.strecoza .icon_2 {
+  height: 50px;
+  width: auto;
+}
+
+.strecoza .for_icon {
+  position: relative;
+  height: auto;
+  border: 2px solid lightgrey;
+  margin: 10px 10px;
+  padding: 15px;
+}
+
+.strecoza .for_icon_2 {
+  width: 100%;
+  height: auto;
+  border: 2px solid rgba(250, 250, 250, 0.2);
+  margin: 20px auto;
+  padding: 15px;
+  background: rgba(250, 250, 250, 0.2);
+}
+
+.strecoza .for_icon_2:hover {
+  background: rgba(250, 250, 250, 0.5);
+  border: 2px solid rgba(250, 250, 250, 0.5);
+}
+
+.strecoza .page {
+  -webkit-box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  margin: 1% 1%;
+  display: inline-block;
+  margin-left: -4px !important;
+  width: 100%;
+}
+
+.strecoza #main-page {
+  -webkit-box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+  box-shadow: -11px 10px 11px -6px rgba(0, 0, 0, 0.75);
+}
+
+.strecoza .strecoza_icons {
+  background: #b2c150;
+}
+
+.strecoza .strecoza_adminpanel {
+  position: relative;
+  margin-bottom: 50%;
+}
+
+.strecoza .strecoza_laravel {
+  background: url(/img/portfolio/strekoza/back_2.png) no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
+.strecoza .admin {
+  position: absolute;
+}
+
+.strecoza .side {
+  width: 55%;
+  left: 0;
+  top: 5%;
+  z-index: 10;
+}
+
+.strecoza .board {
+  width: 57%;
+  right: 0;
+  top: 5%;
+  z-index: 15;
+}
+
+.strecoza .panel {
+  width: 90%;
+  top: 5%;
+}
+
+.strecoza .white {
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  padding-top: 5px;
+  background: rgba(237, 237, 237, 0.8) !important;
+  color: #293427;
+}
+
+.strecoza .no-margin {
+  margin: 0;
+}
+
+.strecoza .border {
+  width: 220px;
+  border-bottom: 2px solid lightgrey;
+  margin: 25px auto;
+}
+
+.strecoza .white_text {
+  color: white;
+}
+
+.strecoza .target {
+  margin-top: 50px;
+  text-shadow: -2px 2px 4px rgba(0, 0, 0, 1);
+  -moz-text-shadow: -2px 2px 4px rgba(0, 0, 0, 1);
+  -o-text-shadow: -2px 2px 4px rgba(0, 0, 0, 1);
+  -webkit-text-shadow: -2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.strecoza .main_text {
+  font-size: 228%;
+  line-height: 113%;
+}
+
+.strecoza .slide_8 {
+  margin-bottom: 60px;
+  font-family: comfortaalight_0;
+}
+
+.strecoza .btn {
+  padding: 23px 39px;
+  margin-top: 20px;
+  font-size: 18px;
+  background: #fd727d;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 400;
+  line-height: 6px;
+  border: 1px solid #fd5b68;
+  text-shadow: 1px 1px 1px #7e3d3b;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.1s ease;
+
+  &:hover {
+      transform: scale(1.1);
+
+      @media screen and (max-width: 767px) {
+          transform: none;
+      }
+  }
+}
+
+.strecoza h2 {
+  font-family: 'POIRET_ONE_REGULAR', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  padding: 20px 0 0 0;
+
+}
+
+.strecoza p.subheader {
+  font-family: RobotoLight_3;
+  font-size: 32px;
+  padding-bottom: 20px;
+  font-weight: 300;
+}
+
+.strecoza .aligncenter img {
+  padding-top: 20px;
+}
+
+.strecoza .wrap {
+  padding-top: 40px;
+}
+
+@media only screen and (min-width: 994px) {
+  .strecoza .for_icon {
+      min-height: 195px;
+  }
+}
+
+@media (max-width: 767px) {
+  .strecoza .main_text {
+      font-size: 19px;
+      line-height: 1;
+  }
+
+  .strecoza .strecoza_head {
+      height: auto;
+  }
+}
+
+.main_page_title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 40px;
+  position: relative;
+  z-index: 1;
+  font-weight: normal;
+  line-height: 1;
+  font-family: 'Gotham Pro';
+  color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .main_page_title {
+      font-size: 32px;
+      padding-top: 50px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .main_page_title {
+      font-size: 24px;
+      padding-top: 50px;
+  }
+}

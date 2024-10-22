@@ -1,0 +1,70 @@
+@import 'var';
+@import '../fonts';
+
+.discuss-project {
+    padding: 50px;
+    border-radius: 10px;
+    background-color: $color-main;
+    max-width: 604px;
+    position: relative;
+    margin: 0 auto;
+    &__input-field {
+        &_email {
+            width: 100%;
+            margin: 20px 0;
+        }
+        &_text-area {
+            width: 100%;
+        }
+        &_phone {
+            width: 45%;
+        }
+        &_name {
+            width: 45%;
+        }
+    }
+    &__input-desc {
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        font-size: 16px;
+        color: $color-secondary;
+        display: block;
+        margin-bottom: 12px;
+    }
+    &__title {
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        font-size: 32px;
+        color: $color-secondary;
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+    }
+    &__inputs {
+        @include classic-flex;
+        margin-bottom: 20px;
+    }
+    &__input {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: 12px 24px;
+        width: 100%;
+        &_email {
+            width: 100%;
+        }
+    }
+    &__text-area {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-sizing: border-box;
+        border-radius: 8px;
+        width: 100%;
+        height: 100px;
+        padding: 12px 24px;
+    }
+}
+
+.discuss-project .button {
+    max-width: 200px;
+    margin: 0 auto;
+}

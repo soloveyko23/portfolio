@@ -1,0 +1,88 @@
+@import 'var';
+@import '../fonts';
+
+.steps-smm {
+    padding: 120px 0 60px 0;
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: url('../img/steps-smm/points.png') no-repeat center / cover;
+        right: 0;
+        bottom: 200px;
+        width: 443px;
+        height: 180px;
+    }
+    &__cards {
+        @include classic-flex;
+    }
+    &__card {
+        position: relative;
+        flex-basis: 21%;
+        margin-bottom: 60px;
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            width: 70%;
+            border-top: dashed 1px #C4C4C4;
+            border-image-source: url(../img/steps-smm/border.png);
+            border-image-repeat: round;
+            border-image-slice: 1;
+            top: 45px;
+            left: calc(50% + 80px);
+        }
+        &_border-none {
+            &::after {
+                border-image-source: none;
+                width: 0;
+            }
+        }
+    }
+    &__card-title {
+        margin-bottom: 24px;
+    }
+    &__card-desc {
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+    }
+}
+
+.steps-smm .title__primary {
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1280px) {
+    .steps-smm__card {
+        flex-basis: 30%;
+        &::after {
+            display: none;
+        }
+    } 
+}
+
+@media screen and (max-width: 991px) {
+    .steps-smm {
+        padding-top: 50px;
+        &::after {
+            content: unset;
+        }
+    }
+    .steps-smm__card {
+        flex-basis: 100%;
+    }
+    .steps-smm__card-desc {
+        font-size: 16px;    
+    }
+    .steps-smm .title__primary {
+        text-align: center;
+        &::before {
+            left: 50%;
+            transform: translateX(-50%);
+        } 
+    }
+}

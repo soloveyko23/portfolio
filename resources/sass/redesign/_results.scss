@@ -1,0 +1,157 @@
+@mixin res-item{
+  .item{
+    background: unset;
+    background-image: unset;
+    overflow: hidden;
+    padding-top: 0;
+    &-popup{
+      .item{
+        background-color: #fff;
+        padding-top: 50px;
+      }
+    }
+    &__footer{
+      padding-left: 0;
+      padding-right: 0;
+      text-align: center;
+      padding-bottom: 0;
+      .btn{
+        font-weight: 500;
+      }
+
+    }
+    &__text{
+      padding-left: 0;
+    }
+    &__name{
+      display: inline-block;
+      width: auto;
+
+      font-family: "Stolzl";
+      font-weight: 500;
+      line-height: 125%;
+
+      &--phone{
+        display: none;
+      }
+      &::after{
+        left: -130%;
+        right: -20px;
+      }
+    }
+    &__services{
+      margin-bottom: 44px;
+      li{
+        font-size: 16px;
+        &::before{
+          background: #EE4042;
+          margin-right: 13px;
+        }
+      }
+    }
+    &__poster{
+      padding-left: 2px;
+      padding-top: 0;
+    }
+    &__results{
+      li{
+        flex: 0 0 25%;
+      }
+      &-digit{
+        font-family: 'Stolzl';
+        font-weight: bold;
+        font-size: 30px;
+        line-height: 132%;
+        /* identical to box height, or 38px */
+        letter-spacing: 0.02em;
+        text-align: left;
+        color: $c-main;
+      }
+      &-descr{
+        font-size: 14px;
+        text-align: left;
+        white-space: unset;
+      }
+    }
+    .text{
+      &__bold{
+        font-family: 'Stolzl';
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 132%;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+    }
+    @include hd_descktop{
+      &__name{
+        display: none;
+        &--phone{
+          display: block;
+          text-align: left;
+          padding-bottom: 5px;
+
+          font-family: 'Stolzl';
+          font-weight: 500;
+          font-size: 18px;
+        }
+      }
+      .text{
+        &__bold{
+          text-align: left;
+          font-size: 18px;
+          line-height: 120%;
+        }
+      }
+      &__results{
+        li{
+          width: 50%;
+          flex: 0 0 50%;
+          min-width: 1px;
+        }
+        &-digits{
+          margin-bottom: 4px;
+          font-size: 28px;
+          line-height: 33px;
+        }
+        &-descr{
+          font-size: 15px;
+          line-height: 19px;
+        }
+      }
+      &__footer{
+
+        .btn{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+.results-redesign{
+  @include res-item;
+  .results{
+    &__slider{
+      margin-top: 50px;
+      box-shadow: unset;
+    }
+    &__buttons{
+      button{
+        text-transform: uppercase;
+        border-radius: 60px;
+        padding: 16px 28px;
+        border: 1px solid #E0E0E0;
+      }
+
+    }
+    @include hd_descktop{
+      &__slider{
+        margin-top: 25px;
+      }
+      &__buttons .button{
+        top: 12%;
+      }
+    }
+  }
+}

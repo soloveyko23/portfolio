@@ -1,0 +1,44 @@
+@import 'bootstrap3';
+@import 'reset';
+@import 'var';
+@import 'fonts';
+@import 'particles';
+@import 'hamburger';
+@import 'partials/common';
+@import 'partials/header';
+@import 'partials/footer';
+@import 'partials/breadcrumbs';
+@import 'partials/contact-us';
+@import 'partials/popup';
+@import 'partials/intlTelInput';
+
+.contacts {
+  padding-top: 83px;
+
+  .bread-crumbs {
+    margin-top: 15px;
+    margin-bottom: -40px;
+    &__link {
+      color: rgb(34, 34, 34, .6);
+      opacity: 1;
+      font-weight: 300;
+    }
+
+    &__current-page {
+      color: #000;
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .contacts {
+    padding-top: 128px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contacts {
+    padding-top: 83px;
+  }
+}
+

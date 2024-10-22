@@ -1,0 +1,1448 @@
+
+@import 'portfolioParts';
+
+@font-face {
+  font-family: 'Geometria';
+  src: url(/fonts/portfolio/Geometria/Geometria-Regular.woff) format("woff"),
+      url(/fonts/portfolio/Geometria/Geometria-Regular.ttf) format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'GoetheTitelCY';
+  src: url(/fonts/portfolio/energy/GoetheTitelCY-Regular.woff) format("woff"),
+      url(/fonts/portfolio/energy/GoetheTitelCY-Regular.woff2) format("woff2");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url(/fonts/portfolio/gilroy/Gilroy-Regular.woff) format("woff"),
+      url(/fonts/portfolio/gilroy/Gilroy-Regular.ttf) format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url(/fonts/portfolio/gilroy/Gilroy-Bold.woff) format("woff"),
+      url(/fonts/portfolio/gilroy/Gilroy-Bold.ttf) format("ttf");
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url(/fonts/portfolio/gilroy/Gilroy-ExtraBold.woff) format("woff"),
+      url(/fonts/portfolio/gilroy/Gilroy-ExtraBold.ttf) format("ttf");
+  font-weight: 800;
+}
+
+$Geometria-stack: 'Geometria',
+sans-serif;
+$GoetheTitelCY-stack: 'GoetheTitelCY',
+sans-serif;
+$Gilroy-stack: 'Gilroy',
+sans-serif;
+
+
+main {
+  overflow: hidden;
+}
+
+.container {
+  @media (min-width: 1650px) {
+      width: 1500px;
+  }
+}
+
+section {
+  position: relative;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  @media screen and (max-width: 1350px) {
+      width: 100%;
+  }
+}
+
+.inner {
+  position: relative;
+}
+
+.section-heading {
+  font-family: $Gilroy-stack;
+  font-weight: 800;
+  font-size: 72px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  color: #222222;
+  display: block;
+
+  span {
+      display: block;
+  }
+
+  @media screen and (max-width: 1500px) {
+      font-size: 60px;
+  }
+
+  @media screen and (max-width: 1200px) {
+      font-size: 54px;
+  }
+
+  @media screen and (max-width: 992px) {
+      font-size: 42px;
+  }
+
+  @media screen and (max-width: 767px) {
+      font-size: 36px;
+  }
+
+  @media screen and (max-width: 576px) {
+      font-size: 24px;
+  }
+
+  @media screen and (max-width: 450px) {
+      font-size: 20px;
+  }
+}
+
+.prefix {
+  display: flex;
+  align-items: center;
+
+  @media screen and (max-width: 576px) {
+      width: 100%;
+      justify-content: center;
+  }
+
+  &__dot {
+      width: 73px;
+      height: 73px;
+      background: #FFA646;
+      border-radius: 50%;
+      position: relative;
+
+      &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 64%;
+          height: 64%;
+          background: #222222;
+          border-radius: 50%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+      }
+
+      @media screen and (max-width: 1500px) {
+          width: 61px;
+          height: 61px;
+      }
+
+      @media screen and (max-width: 1200px) {
+          width: 55px;
+          height: 55px;
+      }
+
+      @media screen and (max-width: 992px) {
+          width: 43px;
+          height: 43px;
+      }
+
+      @media screen and (max-width: 767px) {
+          width: 37px;
+          height: 37px;
+      }
+
+      @media screen and (max-width: 576px) {
+          width: 25px;
+          height: 25px;
+      }
+
+      @media screen and (max-width: 450px) {
+          width: 21px;
+          height: 21px;
+      }
+  }
+
+  &__line {
+      width: 102px;
+      height: 3px;
+      background: #FFA646;
+
+      @media screen and (max-width: 1650px) {
+          width: 78px;
+      }
+
+      @media screen and (max-width: 1500px) {
+          width: 55px;
+      }
+
+      @media screen and (max-width: 1200px) {
+          width: 60px;
+      }
+
+      @media screen and (max-width: 992px) {
+          width: 40px;
+      }
+
+      @media screen and (max-width: 767px) {
+          width: 25px;
+      }
+
+      @media screen and (max-width: 576px) {
+          display: none;
+      }
+  }
+}
+
+.side-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 288px;
+
+  @media screen and (max-width: 1650px) {
+      width: 235px;
+  }
+
+  @media screen and (max-width: 1500px) {
+      width: 180px;
+  }
+
+  @media screen and (max-width: 992px) {
+      width: 130px;
+  }
+
+  @media screen and (max-width: 767px) {
+      width: 90px;
+  }
+
+  @media screen and (max-width: 576px) {
+      width: 55px;
+  }
+
+  &__text {
+      font-family: $GoetheTitelCY-stack;
+      font-weight: normal;
+      font-size: 288px;
+      line-height: 1;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      transform: rotate(-180deg);
+      color: #222222;
+
+      @media screen and (max-width: 1650px) {
+          font-size: 235px;
+      }
+
+      @media screen and (max-width: 1500px) {
+          font-size: 180px;
+      }
+
+      @media screen and (max-width: 992px) {
+          font-size: 130px;
+      }
+
+      @media screen and (max-width: 767px) {
+          font-size: 90px;
+      }
+
+      @media screen and (max-width: 576px) {
+          font-size: 55px;
+      }
+
+      span {
+          color: #FFA646;
+      }
+  }
+
+  &__line {
+      width: 49%;
+      flex-grow: 1;
+      margin: 90px 0;
+
+      @media screen and (max-width: 1500px) {
+          margin: 70px 0;
+      }
+
+      @media screen and (max-width: 992px) {
+          margin: 50px 0;
+      }
+
+      @media screen and (max-width: 767px) {
+          margin: 27px 0;
+      }
+
+      @media screen and (max-width: 576px) {
+          width: 53%;
+      }
+  }
+}
+
+.banner {
+  &__inner-wrapper {
+      background: url('/img/portfolio/energy/banner-background.png') no-repeat center/cover;
+      padding: 190px 0 10px;
+      position: relative;
+  }
+
+  &__image {
+      width: 100%;
+  }
+
+  &__inner {
+      display: flex;
+      max-width: 1780px;
+      margin: 0 auto;
+  }
+
+  &__left {
+      flex-basis: 30.6%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+  }
+
+  &__left-content {
+      //transform: translate(-22%, -15%);
+  }
+
+  &__right {
+      margin-left: auto;
+  }
+
+  &__site-logo {
+      width: 147px;
+      height: 80px;
+      background: url('/img/portfolio/energy/site-logo.png') no-repeat center/contain;
+      margin: 0 auto;
+  }
+
+  &__label {
+      font-family: $Geometria-stack;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 0.9;
+      color: #555555;
+      margin: 50px 0 65px;
+      text-align: center;
+
+      span {
+          display: block;
+          margin-bottom: 5px;
+      }
+  }
+
+  &__icons {
+      display: flex;
+      justify-content: center;
+  }
+
+  &__icon {
+      width: 36px;
+      height: 36px;
+      //background: no-repeat center/contain;
+      margin: 0 15px;
+
+      img {
+          width: 100%;
+      }
+
+      &_laptop {
+          //background-image: url('../img/banner-icon-laptop.png');
+      }
+
+      &_smartphone {
+          //background-image: url('../img/banner-icon-smartphone.png');
+      }
+
+      &_tablet {
+          //background-image: url('../img/tablet.png');
+      }
+  }
+
+  &__visit-site {
+      display: block;
+      text-align: center;
+      font-family: $Geometria-stack;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: #555555;
+      border: 2px solid #00B4DB;
+      padding: 16px 0;
+      max-width: 226px;
+      margin: 60px auto 0;
+      transition: all .5s;
+
+      &:hover {
+          text-decoration: none;
+          color: white;
+          background: #00B4DB;
+      }
+  }
+}
+
+.main-page {
+  margin-top: 150px;
+
+  .section-heading {
+      margin-bottom: 85px;
+  }
+
+  .side-label {
+      bottom: 0;
+      right: 100%;
+      align-items: flex-end;
+
+      &__line {
+          border-left: 4px dashed rgba(0, 0, 0, 0.1);
+      }
+  }
+
+  &__inner {
+      width: 82%;
+      margin-left: auto;
+      padding: 0 0 40px 40px;
+  }
+
+  &__preview {
+      position: relative;
+
+      &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 0px 16px 16px 0px;
+          z-index: -1;
+          left: -40px;
+          bottom: -40px;
+          width: 100%;
+          height: 100%;
+      }
+  }
+}
+
+.color-solution {
+  background: url('/img/portfolio/energy/color-solution-background.png') repeat center;
+  margin-top: 230px;
+
+  .section-heading {
+      text-align: right;
+      margin-top: -100px;
+  }
+
+  &__image {
+      position: absolute;
+      z-index: 3;
+      bottom: 45px;
+      left: -40px;
+  }
+
+  &__inner {
+      display: flex;
+      justify-content: flex-end;
+      margin: 73px 0 0;
+      padding-bottom: 93px;
+  }
+
+  &__colors {
+      display: flex;
+      padding-right: 65px;
+  }
+
+  &__color {
+      width: 20px;
+      height: 188px;
+      position: relative;
+
+      &:after {
+          content: '';
+          position: absolute;
+          font-family: $Gilroy-stack;
+          font-weight: 800;
+          font-size: 24px;
+          line-height: 1.1;
+          text-transform: uppercase;
+          color: #222222;
+          transform: rotate(-180deg);
+          writing-mode: vertical-rl;
+          top: 0;
+          left: 100%;
+          margin-left: 10px;
+      }
+
+      &-1 {
+          background: #FFA646;
+
+          &:after {
+              content: '#FFA646';
+          }
+      }
+
+      &-2 {
+          background: #E2BB53;
+
+          &:after {
+              content: '#E2BB53';
+          }
+      }
+
+      &-3 {
+          background: #555555;
+
+          &:after {
+              content: '#555555';
+          }
+      }
+
+      &:not(:last-child) {
+          margin-right: 280px;
+      }
+  }
+}
+
+.product-page {
+  margin-top: 120px;
+
+  .section-heading {
+      margin-bottom: 130px;
+      text-align: right;
+  }
+
+  .side-label {
+      bottom: 0;
+      left: 100%;
+      align-items: flex-start;
+
+      &__line {
+          border-right: 4px dashed rgba(0, 0, 0, 0.1);
+      }
+  }
+
+  &__preview {
+      position: relative;
+
+      &:before {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 16px 0px 0px 16px;
+          bottom: -40px;
+          right: -40px;
+          z-index: -1;
+      }
+  }
+
+  &__inner {
+      width: 82%;
+      margin-right: auto;
+      padding: 0 40px 460px 0;
+  }
+}
+
+.font-solution {
+  position: relative;
+  z-index: 5;
+  margin-top: -365px;
+
+  .container {
+      display: flex;
+      align-items: flex-end;
+  }
+
+  .section-heading {
+      margin-bottom: 65px;
+  }
+
+  &__inner {
+      margin-right: 45px;
+  }
+
+  &__font {
+      &_gilroy {
+          font-family: $Gilroy-stack;
+          margin-bottom: 45px;
+
+          .font-solution__title {
+              font-weight: 700;
+          }
+      }
+
+      &_goethe {
+          font-family: $GoetheTitelCY-stack;
+      }
+  }
+
+  &__title {
+      font-size: 36px;
+      line-height: 1.2;
+      display: block;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+  }
+
+  &__example {
+      font-size: 16px;
+      line-height: 1.2;
+      display: block;
+      letter-spacing: 0.05em;
+
+      &_caps {
+          text-transform: uppercase;
+      }
+  }
+}
+
+.logo-dev {
+  margin-top: 130px;
+  text-align: center;
+
+  .section-heading-wrapper {
+      display: inline-block;
+      position: relative;
+      margin-bottom: 75px;
+  }
+
+  .prefix {
+      position: absolute;
+      top: 0;
+      right: 100%;
+      margin-right: 40px;
+  }
+
+  &__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateX(7.3%);
+  }
+
+  &__logo {
+      margin-right: 66px;
+  }
+}
+
+.other-pages {
+  margin: 35px 0;
+
+  .section-heading-wrapper {
+      position: relative;
+      margin: 0 300px 135px 0;
+      text-align: right;
+  }
+
+  .prefix {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      margin-left: 40px;
+  }
+
+  &__inner {
+      display: flex;
+
+      &:before {
+          content: '';
+          position: absolute;
+          z-index: -1;
+          background: url('/img/portfolio/energy/other-pages-figure.png') no-repeat center/contain;
+          width: 503px;
+          padding-top: 548px;
+          top: 0;
+          left: 0;
+          transform: translate(-40%, -50%);
+      }
+  }
+
+  &__column {
+      flex-basis: 50%;
+
+      &:first-child {
+          margin-right: 30px;
+      }
+
+      &:last-child {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+      }
+  }
+
+  &__page {
+      margin-bottom: 30px;
+      position: relative;
+
+      &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 0px 16px 16px 0px;
+          left: -10px;
+          bottom: -10px;
+          z-index: -1;
+      }
+  }
+
+  &__thanks {
+      margin-top: 60px;
+      font-family: $GoetheTitelCY-stack;
+      font-weight: normal;
+      font-size: 160px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      color: #222222;
+      text-align: right;
+      display: block;
+
+      &_big {
+          font-size: 288px;
+          color: #FFA646;
+          display: block;
+          line-height: 0.7;
+      }
+  }
+}
+
+@media screen and (max-width:1920px) {
+  .banner {
+      &__inner-wrapper {
+          margin: 0;
+          max-width: unset;
+      }
+  }
+}
+
+@media screen and (max-width:1650px) {
+  .banner {
+      &__left-content {
+          transform: none;
+      }
+
+      &__label span {
+          display: inline;
+          margin-bottom: 0;
+      }
+  }
+
+  .color-solution {
+      &__image {
+          left: -110px;
+      }
+
+      &__color:not(:last-child) {
+          margin-right: 180px;
+      }
+  }
+
+  .font-solution {
+      &__inner {
+          margin-right: 20px;
+      }
+
+      &__image {
+          width: 50%;
+      }
+  }
+
+  .other-pages {
+      .prefix__line {
+          width: 50px;
+      }
+
+      .section-heading-wrapper {
+          margin: 0 170px 75px 0;
+      }
+
+      &__thanks {
+          font-size: 140px;
+
+          &_big {
+              font-size: 250px;
+          }
+      }
+  }
+}
+
+@media screen and (max-width:1500px) {
+  .banner {
+      &__inner-wrapper {
+          padding-top: 100px;
+      }
+
+      &__left {
+          flex-basis: 40%;
+      }
+
+      &__label {
+          margin: 40px 0 50px;
+      }
+
+      &__visit-site {
+          margin-top: 40px;
+      }
+  }
+
+  .main-page {
+      margin-top: 100px;
+
+      .section-heading {
+          margin-bottom: 65px;
+      }
+  }
+
+  .product-page {
+      margin-top: 100px;
+
+      .section-heading {
+          margin-bottom: 110px;
+      }
+  }
+
+  .logo-dev {
+      margin-top: 100px;
+
+      .section-heading-wrapper {
+          margin-bottom: 55px;
+      }
+  }
+
+  .other-pages {
+      &__thanks {
+          font-size: 100px;
+
+          &_big {
+              font-size: 200px;
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .color-solution {
+      margin-top: 130px;
+
+      &__image {
+          width: 49.5%;
+          left: 0;
+          bottom: 60px;
+      }
+
+      .section-heading {
+          margin-top: -85px;
+      }
+  }
+
+  .font-solution {
+      .section-heading {
+          margin-bottom: 55px;
+      }
+
+      &__title {
+          font-size: 32px;
+          margin-bottom: 25px;
+      }
+
+      &__example {
+          font-size: 14px;
+      }
+
+      &__inner {
+          margin-right: 0;
+      }
+
+      &__image {
+          margin-left: auto;
+      }
+  }
+
+  .other-pages {
+      &__inner:before {
+          display: none;
+      }
+
+      &__page:before {
+          bottom: -5px;
+          left: -5px;
+      }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .banner {
+      &__left {
+          flex-basis: 45%;
+      }
+
+      &__right {
+          flex-basis: 100%;
+      }
+  }
+
+  .main-page {
+      &__inner {
+          padding: 0 0 30px 30px;
+      }
+
+      &__preview:before {
+          bottom: -30px;
+          left: -30px;
+      }
+  }
+
+  .color-solution {
+      &__inner {
+          margin-top: 53px;
+          padding-bottom: 73px;
+      }
+
+      .section-heading {
+          margin-top: -75px;
+      }
+
+      &__color:not(:last-child) {
+          margin-right: 140px;
+      }
+  }
+
+  .product-page {
+      &__inner {
+          padding: 0 30px 460px 0;
+      }
+
+      &__preview:before {
+          bottom: -30px;
+          right: -30px;
+      }
+  }
+
+  .font-solution {
+      margin-top: -265px;
+
+      &__example {
+          font-size: 12px;
+      }
+
+      &__title {
+          font-size: 28px;
+      }
+  }
+
+  .logo-dev {
+      .prefix {
+          display: none;
+      }
+
+      &__logo {
+          margin-right: 20px;
+      }
+  }
+
+  .other-pages {
+      .prefix {
+          display: none;
+      }
+
+      .section-heading-wrapper {
+          margin-right: 0;
+      }
+
+      &__thanks {
+          margin-top: 40px;
+          font-size: 80px;
+
+          &_big {
+              font-size: 170px;
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .banner {
+      &__innner-wrapper {
+          padding-top: 75px;
+      }
+
+      &__site-logo {
+          width: 110px;
+          height: 60px;
+      }
+
+      &__label {
+          font-size: 18px;
+          text-align: center;
+          margin: 30px 0 40px;
+      }
+
+      &__visit-site {
+          margin-top: 30px;
+          font-size: 16px;
+          max-width: 190px;
+      }
+  }
+
+  .main-page {
+      margin-top: 70px;
+
+      .section-heading {
+          margin-bottom: 45px;
+      }
+
+      &__inner {
+          padding: 0 0 20px 20px;
+      }
+
+      &__preview:before {
+          left: -20px;
+          bottom: -20px;
+      }
+  }
+
+  .color-solution {
+      margin-top: 100px;
+
+      .section-heading {
+          margin-top: -55px;
+      }
+
+      &__color:not(:last-child) {
+          margin-right: 110px;
+      }
+
+      &__color:after {
+          font-size: 20px;
+      }
+  }
+
+  .product-page {
+      margin-top: 70px;
+
+      .section-heading {
+          margin-bottom: 70px;
+      }
+
+      &__inner {
+          padding: 0 20px 0 0;
+      }
+
+      &__preview:before {
+          bottom: -20px;
+          right: -20px;
+      }
+
+      .side-label {
+          &__text {
+              font-size: 110px;
+          }
+      }
+  }
+
+  .font-solution {
+      margin-top: 55px;
+
+      &__example {
+          font-size: 11px;
+      }
+
+      &__image {
+          width: 49%;
+      }
+  }
+
+  .logo-dev {
+      margin-top: 70px;
+
+      .section-heading-wrapper {
+          margin-bottom: 30px;
+      }
+  }
+
+  .other-pages {
+      .prefix {
+          display: flex;
+
+          &__line {
+              display: none;
+          }
+      }
+
+      .section-heading-wrapper {
+          margin: 0 100px 55px 0;
+      }
+
+      &__thanks {
+          font-size: 65px;
+
+          &_big {
+              font-size: 150px;
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner {
+      &__inner-wrapper {
+          padding-top: 60px;
+      }
+
+      &__label {
+          font-size: 16px;
+          margin: 25px 0 25px;
+          text-align: center;
+      }
+
+      &__visit-site {
+          font-size: 13px;
+          max-width: 160px;
+          padding: 14px 0;
+      }
+
+      &__right {
+          flex-basis: 70%;
+          display: flex;
+          align-items: center;
+      }
+  }
+
+  .main-page {
+      margin-top: 50px;
+
+      .section-heading {
+          margin-bottom: 25px;
+      }
+  }
+
+  .color-solution {
+      margin-top: 50px;
+
+      &__image {
+          display: none;
+      }
+
+      &__inner {
+          justify-content: center;
+          margin-top: 25px;
+          padding-bottom: 45px;
+      }
+
+      &__colors {
+          padding: 0 20%;
+          justify-content: space-between;
+          width: 100%;
+      }
+
+      &__color {
+          margin: 0 !important;
+          height: 175px;
+      }
+
+      .section-heading {
+          margin: 25px 0 0 0;
+          text-align: center;
+
+          span {
+              display: inline;
+          }
+      }
+  }
+
+  .product-page {
+      margin-top: 50px;
+
+      .section-heading {
+          margin-bottom: 25px;
+      }
+
+      .side-label {
+          &__text {
+              font-size: 85px;
+          }
+      }
+  }
+
+  .font-solution {
+      .container {
+          justify-content: center;
+      }
+
+      &__inner {
+          text-align: center;
+      }
+
+      .section-heading {
+          margin-bottom: 30px;
+
+          span {
+              display: inline;
+          }
+      }
+
+      &__image {
+          display: none;
+      }
+
+      &__title {
+          font-size: 24px;
+          margin-bottom: 15px;
+      }
+
+      &__example {
+          font-size: 13px;
+      }
+
+      &__font_gilroy {
+          margin-bottom: 25px;
+      }
+  }
+
+  .logo-dev {
+      margin-top: 50px;
+
+      .section-heading-wrapper {
+          margin-bottom: 25px;
+      }
+  }
+
+  .other-pages {
+      margin-top: 0;
+
+      .prefix {
+          display: none;
+      }
+
+      .section-heading-wrapper {
+          margin: 0 30px 40px 0;
+      }
+
+      &__thanks {
+          margin-top: 10px;
+          text-align: center;
+          font-size: 40px;
+
+          &_big {
+              font-size: 100px;
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .banner {
+      &__inner-wrapper {
+          padding-top: 40px;
+          padding-left: 10px;
+          padding-right: 10px;
+      }
+
+      &__inner {
+          display: block;
+      }
+
+      &__left {
+          justify-content: center;
+      }
+
+      &__label {
+          margin: 15px 0;
+      }
+
+      &__icon {
+          width: 25px;
+          height: 25px;
+      }
+
+      &__visit-site {
+          margin-top: 20px;
+          padding: 8px 0;
+      }
+
+      &__right {
+          margin-top: 20px;
+      }
+  }
+
+  .main-page {
+      margin-top: 30px;
+
+      .side-label__line {
+          border-left: 3px dashed rgba(0, 0, 0, 0.1);
+      }
+
+      &__inner {
+          padding: 0 0 10px 10px;
+      }
+
+      &__preview:before {
+          left: -10px;
+          bottom: -10px;
+      }
+  }
+
+  .color-solution {
+      margin-top: 30px;
+
+      &__color {
+          &:after {
+              font-size: 16px;
+          }
+      }
+  }
+
+  .product-page {
+      margin-top: 30px;
+
+      .side-label__line {
+          border-right: 3px dashed rgba(0, 0, 0, 0.1);
+      }
+
+      &__inner {
+          padding: 0 10px 0 0;
+      }
+
+      &__preview:before {
+          bottom: -10px;
+          right: -10px;
+      }
+
+      .side-label {
+          &__text {
+              font-size: 55px;
+          }
+      }
+  }
+
+  .font-solution {
+      &__example {
+          font-size: 10px;
+      }
+
+      &__title {
+          font-size: 22px;
+          margin-bottom: 20px;
+      }
+
+  }
+
+  .other-pages {
+      .section-heading-wrapper {
+          margin: 0 0 25px 0;
+      }
+
+      .section-heading {
+          text-align: center;
+
+          span {
+              display: inline;
+          }
+      }
+
+      &__inner {
+          flex-wrap: wrap;
+      }
+
+      &__column {
+          flex-basis: 100%;
+
+          &:first-child {
+              margin-right: 0;
+              order: 2;
+          }
+      }
+
+      &__page {
+          margin-bottom: 15px;
+      }
+
+      &__thanks {
+          font-size: 25px;
+
+          &_big {
+              font-size: 40px;
+          }
+      }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .color-solution {
+      &__colors {
+          padding: 0 10%;
+      }
+
+      &__color {
+          &:after {
+              margin-left: 5px;
+          }
+      }
+  }
+
+  .product-page {
+      &__inner {
+          padding: 0 10px 0 0;
+      }
+
+      .side-label {
+          width: 40px;
+
+          &__text {
+              font-size: 40px;
+          }
+      }
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .font-solution {
+      &__example {
+          font-size: 8px;
+      }
+
+      &__title {
+          font-size: 20px;
+      }
+
+      .section-heading {
+          margin-bottom: 25px;
+      }
+  }
+
+  .logo-dev {
+      &__inner {
+          flex-wrap: wrap;
+          transform: none;
+          padding: 0 10px;
+      }
+
+      &__logo,
+      &__image {
+          flex-basis: 100%
+      }
+
+      &__logo {
+          padding: 0 20%;
+          margin: 0;
+      }
+
+      &__image {
+          margin-top: 10px;
+          transform: translateX(7%);
+      }
+  }
+}

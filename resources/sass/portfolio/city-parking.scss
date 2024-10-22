@@ -1,0 +1,690 @@
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+@font-face {
+    font-family: 'OpenSansRegular';
+    src: url('/fonts/portfolio/city-parking/OpenSansRegular.eot');
+    src: url('/fonts/portfolio/city-parking/OpenSansRegular.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/city-parking/OpenSansRegular.woff2') format('woff2'),
+    url('/fonts/portfolio/city-parking/OpenSansRegular.woff') format('woff'),
+    url('/fonts/portfolio/city-parking/OpenSansRegular.ttf') format('truetype'),
+    url('/fonts/portfolio/city-parking/OpenSansRegular.svg#OpenSansRegular') format('svg');
+}
+@font-face {
+    font-family: 'OpenSansBold';
+    src: url('/fonts/portfolio/city-parking/OpenSansBold.eot');
+    src: url('/fonts/portfolio/city-parking/OpenSansBold.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/city-parking/OpenSansBold.woff2') format('woff2'),
+    url('/fonts/portfolio/city-parking/OpenSansBold.woff') format('woff'),
+    url('/fonts/portfolio/city-parking/OpenSansBold.ttf') format('truetype'),
+    url('/fonts/portfolio/city-parking/OpenSansBold.svg#OpenSansRegular') format('svg');
+}
+@font-face {
+    font-family: CyrillicCompressed;
+    src: url('/fonts/portfolio/city-parking/CyrillicCompressed.eot');
+    src: url('/fonts/portfolio/city-parking/CyrillicCompressed.eot') format('embedded-opentype'),
+    url('/fonts/portfolio/city-parking/CyrillicCompressed.woff2') format('woff2'),
+    url('/fonts/portfolio/city-parking/CyrillicCompressed.woff') format('woff'),
+    url('/fonts/portfolio/city-parking/CyrillicCompressed.ttf') format('truetype'),
+    url('/fonts/portfolio/city-parking/CyrillicCompressed.svg') format('svg');
+}
+
+p,h1,h2,h3,h4,ol,ul{
+    padding: 0;
+    margin: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+
+/*SECTION .BANNER*/
+
+.city-parking .banner {
+    background: url("/img/portfolio/city-parking/bg-1.png") center no-repeat;
+    background-size: cover;
+    height: 720px;
+    background-attachment: fixed;
+}
+.city-parking .banner .title-banner {
+    font-size: 100px;
+    color: #323232;
+    font-family: CyrillicCompressed, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+.city-parking .banner .text-banner {
+    color: #323232;
+    font-family: Calibri, sans-serif;
+    text-transform: uppercase;
+    font-size: 23px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-left: 2px;
+}
+.city-parking .banner h1{
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
+    margin-top: 50px;
+}
+.city-parking section{
+    width: 100%;
+}
+.city-parking .banner .read-more {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'robotoregular_3';
+    color: #000;
+    letter-spacing: 1px;
+    padding: 15px 70px 15px 20px;
+    text-transform: lowercase;
+    background: url(/img/portfolio/city-parking/arrowBtnRight-hover.png) left center no-repeat;
+    background-position-x: 93%;
+    border: 2px solid #000;
+    margin: 60px 0 15px 0;
+    position: relative;
+    z-index: 10;
+    left: -7px;
+}
+.city-parking .banner .read-more:hover {
+    background: url(/img/portfolio/city-parking/arrowBtnRight.png) left center no-repeat #dd407a;
+    border: 2px solid transparent;
+    background-position-x: 93%;
+    color: #fff;
+    text-decoration: none;
+    z-index: 10;
+}
+.city-parking .banner .white-block {
+    background-color: #fff;
+    margin-top: 116px;
+    margin-right: 35px;
+    padding: 65px 0 65px 90px;
+}
+.city-parking .banner img{
+    max-width: 100%;
+    position: relative;
+    top: -140px;
+}
+
+/*END OF SECTION .BANNER*/
+
+/*SECTION .PROJECT*/
+
+.city-parking .project {
+    padding-top: 216px;
+    background: url("/img/portfolio/city-parking/bg-2.png") center no-repeat;
+}
+.city-parking .project .block-2 {
+    position: absolute;
+}
+.city-parking .project .block-2 img {
+    width: 126px;
+}
+.city-parking .project .title-project {
+    color: #323232;
+    font-size: 36px;
+    font-family: CyrillicCompressed, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 45px;
+}
+.city-parking .project .text-project {
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    color: #575757;
+}
+.city-parking .project .text-project span {
+    font-weight: bold;
+}
+.city-parking .project .block-1 {
+    border-top: 7px solid #dd407a;
+    margin-right: 41px;
+    height: 505px;
+}
+.city-parking .project .block-2 {
+    text-align: center;
+    padding: 36px 0!important;
+    z-index: 5;
+    bottom: 186px;
+    left: 52px;
+}
+.city-parking .project .block-3 {
+    border-top: 7px solid #a900fa;
+    height: 375px;
+    position: relative;
+    z-index: 4;
+    left: 209px;
+    top: -20px;
+}
+.city-parking .project .block-4 {
+    border-top: 7px solid #3762fb;
+    height: 393px;
+    position: relative;
+    top: -88px;
+    left: 148px;
+    padding-left: 110px!important;
+}
+.city-parking .project [class*=block] {
+    background-color: #fafafa;
+    box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.2);
+    padding: 70px;
+}
+.city-parking .project li {
+    padding-left: 27px;
+}
+.city-parking .project li:after {
+    position: absolute;
+    content: '';
+    top: 30%;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    background-color: #3762fb;
+    border-radius: 50%;
+}
+.city-parking .project .block-5 {
+    padding: 0!important;
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    top: -31px;
+    left: 24px;
+}
+.city-parking .project .block-5 span {
+    width: 12px;
+    height: 12px;
+    background-color: #dd407a;
+    border-radius: 50%;
+    display: block;
+    margin: 28px auto;
+}
+
+/*END OF SECTION .PROJECT*/
+
+/*SECTION .DESIGN*/
+
+.city-parking .design {
+    background: url("/img/portfolio/city-parking/bg-3.png") center no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-bottom: 100px;
+}
+.city-parking .design .img-2 {
+    padding-top: 140px;
+}
+.city-parking .design .img-3 {
+    padding-top: 320px;
+}
+.city-parking .design .title-design {
+    font-size: 36px;
+    font-family: CyrillicCompressed, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 60px 0 50px 0;
+}
+
+/*END OF SECTION DESIGN*/
+
+/*SECTION .INFO*/
+
+.city-parking .info .icon {
+    height: 200px;
+    margin: 35px 0;
+}
+.city-parking .info .title-info {
+    font-size: 22px;
+    color: #323232;
+    font-family: Calibri, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-top: 15px;
+}
+.city-parking .info .text-info {
+    font-size: 16px;
+    font-family: Calibri, sans-serif;
+    color: #323232;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+}
+
+/*END OF SECTION .INFO*/
+
+/*SECTION .GUIDE-LINE*/
+
+.city-parking .guide-line {
+    background: url("/img/portfolio/city-parking/bg-4.png") center no-repeat;
+    background-size: cover;
+    padding-bottom: 278px;
+}
+.city-parking .guide-line [class*=color] {
+    width: 82px;
+    height: 82px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+.city-parking .guide-line [class*=color] p {
+    font-family: "Calibri", sans-serif;
+    font-size: 14px;
+    color: #fff;
+    padding-top: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.city-parking .guide-line .color-1 {
+    background-color: #4caf50;
+}
+.city-parking .guide-line .color-2 {
+    background-color: #dd3d5a;
+}
+.city-parking .guide-line .color-3 {
+    background-color: #ff6f00;
+}
+.city-parking .guide-line .color-4 {
+    background-color: #fafafa;
+}
+.city-parking .guide-line .color-4 p {
+    font-family: "Calibri", sans-serif;
+    font-size: 14px;
+    color: #000;
+    padding-top: 30px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+.city-parking .guide-line .color-5 {
+    background-color: #2962ff;
+}
+.city-parking .guide-line .color-6 {
+    background-color: #aa00ff;
+}
+.city-parking .guide-line .color-7 {
+    background-color: #ec407a;
+}
+.city-parking .guide-line .color-8 {
+    background-color: #323232;
+}
+.city-parking .guide-line .empty {
+    height: 110px;
+}
+.city-parking .guide-line .title-guide {
+    font-family: CyrillicCompressed;
+    font-size: 36px;
+    color: #323232;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    padding: 64px 0 55px 0;
+}
+.city-parking .guide-line .FS-title {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 36px;
+    color: #2e2e2e;
+    font-weight: 700;
+}
+.city-parking .guide-line .FS-text {
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 16px;
+    color: #2e2e2e;
+    letter-spacing: 5px;
+}
+.city-parking .guide-line .OS-title {
+    font-family:  OpenSansBold, sans-serif;
+    font-size: 36px;
+    color: #2e2e2e;
+}
+.city-parking .guide-line .OS-text {
+    font-family: OpenSansRegular, sans-serif;
+    font-size: 16px;
+    color: #2e2e2e;
+    letter-spacing: 5px;
+}
+.city-parking .guide-line .font-2 {
+    padding: 170px 0 0 0px;
+}
+
+/*END OF SECTION GUIDE-LINE*/
+
+/*SECTION .ICONS*/
+
+.city-parking .icons {
+    margin-bottom: -190px;
+}
+.city-parking .icons .block-guide {
+    background-color: #fafafa;
+    box-shadow: 0px 1px 9px 0px rgba(0, 0, 0, 0.2);
+    border-top: 7px solid #dd407a;
+}
+.city-parking .img-guide img {
+    position: relative;
+    top: -268px;
+    left: -226px;
+}
+.city-parking .block-guide {
+    position: relative;
+    top: -200px;
+    padding: 60px 0 125px 0;
+}
+.city-parking .icons .title-icons {
+    font-family: CyrillicCompressed, sans-serif;
+    font-size: 36px;
+    color: #323232;
+    text-transform: uppercase;
+    padding-bottom: 40px;
+}
+.city-parking .icons .read-more {
+    display: inline-block;
+    font-size: 18px;
+    font-family: 'robotoregular_3';
+    color: #000;
+    letter-spacing: 1px;
+    padding: 15px 70px 15px 20px;
+    text-transform: lowercase;
+    background: url(/img/portfolio/city-parking/arrowBtnRight-hover.png) left center no-repeat;
+    background-position-x: 93%;
+    border: 2px solid #000;
+    margin: 60px 0 15px 0;
+    position: relative;
+    top: -282px;
+    z-index: 10;
+    left: -7px;
+}
+.city-parking .icons .read-more:hover {
+    background: url(/img/portfolio/city-parking/arrowBtnRight.png) left center no-repeat #dd407a;
+    border: 2px solid transparent;
+    background-position-x: 93%;
+    color: #fff;
+    text-decoration: none;
+    z-index: 10;
+}
+
+/*END OF SECTION .ICONS*/
+
+/*@MEDIA*/
+
+@media (max-width: 1280px) {
+    .city-parking .project .block-4 {
+        top: -88px;
+        left: 114px;
+    }
+    .city-parking .design .img-3 {
+        padding-top: 320px;
+        position: relative;
+        left: -42px;
+    }
+}
+@media (max-width: 1199px) {
+    .city-parking .banner .read-more {
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'robotoregular_3';
+        color: #000;
+        letter-spacing: 1px;
+        padding: 15px 70px 15px 20px;
+        text-transform: lowercase;
+        background: url(/img/portfolio/city-parking/arrowBtnRight-hover.png) left center no-repeat;
+        background-position-x: 93%;
+        border: 2px solid #000;
+        margin: 60px 0 15px 0;
+        position: relative;
+        z-index: 10;
+        left: -7px;
+    }
+    .city-parking .banner .title-banner {
+        font-size: 86px;
+        color: #323232;
+        font-family: CyrillicCompressed, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1;
+    }
+    .city-parking .banner .text-banner {
+        color: #323232;
+        font-family: Calibri, sans-serif;
+        text-transform: uppercase;
+        font-size: 21px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding-left: 2px;
+    }
+    .city-parking .banner .white-block {
+        background-color: #fff;
+        margin-top: 116px;
+        margin-right: 35px;
+        padding: 57px 0 59px 53px;
+    }
+    .city-parking .banner img {
+        max-width: 100%;
+        position: relative;
+        top: -70px;
+    }
+    .city-parking .project .block-4 {
+        top: -88px;
+        left: 160px;
+    }
+    .city-parking .project .block-2 {
+        text-align: center;
+        padding: 36px 0!important;
+        z-index: 5;
+        bottom: 186px;
+        left: 78px;
+    }
+    .city-parking .block-guide {
+        position: relative;
+        top: -200px;
+        left: 89px;
+        width: 64%;
+        padding: 50px 0 60px 12px;
+    }
+}
+
+@media (max-width: 991px) {
+    .city-parking .banner .white-block {
+        background-color: #fff;
+        margin-top: 76px;
+        margin-right: 35px;
+        padding: 23px 0 27px 53px;
+        width: 74%;
+    }
+    .city-parking .banner img {
+        max-width: 100%;
+        position: relative;
+        top: 0;
+    }
+    .city-parking .project {
+        padding-top: 55px;
+        background: url(/img/portfolio/city-parking/bg-2.png) center no-repeat;
+    }
+    .city-parking .project .block-1 {
+        border-top: 7px solid #dd407a;
+        margin-right: 0;
+        height: 505px;
+    }
+    .city-parking .project .block-3 {
+        border-top: 7px solid #a900fa;
+        height: 375px;
+        position: relative;
+        z-index: 4;
+        left: 0;
+        top: 0;
+        margin: 20px 0;
+    }
+    .city-parking .project .block-2 {
+        display: none;
+    }
+    .city-parking .project .block-4 {
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+    }
+    .city-parking .design .img-2 {
+        padding-top: 0;
+    }
+    .city-parking .design .img-3 {
+        padding-top: 0px;
+        position: relative;
+        left: 0;
+    }
+    .city-parking .guide-line [class*=color] {
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.19);
+    }
+    .city-parking  .guide-line .font-2 {
+        padding-top: 0;
+    }
+    .city-parking .fonts {
+        text-align: center;
+        padding-top: 40px;
+    }
+    .city-parking .img-guide {
+        display: none;
+    }
+    .city-parking .block-guide {
+        position: relative;
+        top: -200px;
+        left: 0;
+        width: 100%;
+        padding: 50px 0 60px 12px;
+        margin-bottom: 50px;
+    }
+    .city-parking .design {
+        text-align: center;
+    }
+}
+@media (max-width: 767px) {
+    .city-parking .banner img {
+        display: none;
+    }
+    .city-parking .banner {
+        height: auto;
+    }
+    .city-parking .banner .read-more {
+        display: inline-block;
+        font-size: 16px;
+        font-family: 'robotoregular_3';
+        color: #000;
+        letter-spacing: 1px;
+        padding: 15px 70px 15px 20px;
+        text-transform: lowercase;
+        background: url(/img/portfolio/eva/arrowBtnRight-hover.png) left center no-repeat;
+        background-position-x: 93%;
+        border: 2px solid #000;
+        margin: 23px 0 15px 0;
+        position: relative;
+        z-index: 10;
+        left: -7px;
+    }
+    .city-parking .banner .text-banner {
+        color: #323232;
+        font-family: Calibri, sans-serif;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding-left: 2px;
+    }
+    .city-parking .banner .title-banner {
+        font-size: 63px;
+        color: #323232;
+        font-family: CyrillicCompressed, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        line-height: 1;
+    }
+    .city-parking .banner .white-block {
+        background-color: rgb(255, 255, 255);
+        margin-top: 76px;
+        margin-right: 35px;
+        padding: 23px 0 27px 53px;
+        width: 96%;
+        margin: 47px 2%;
+    }
+    .city-parking .design  img{
+        max-width: 100%;
+    }
+    .city-parking .icons img {
+        max-width: 100%;
+    }
+    .city-parking .guide-line [class*=color] {
+        width: 82px;
+        height: 82px;
+        border-radius: 50%;
+        margin: 7px 3px;
+    }
+    .city-parking .project [class*=block] {
+        padding: 15px;
+        height: auto;
+    }
+    .city-parking .project .title-project {
+        color: #323232;
+        font-size: 35px;
+        font-family: CyrillicCompressed, sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding-bottom: 4px;
+    }
+    .city-parking .project .text-project {
+        font-family: Calibri, sans-serif;
+        font-size: 16px;
+        color: #575757;
+    }
+    .city-parking .project .block-3 {
+        height: auto;
+    }
+    .city-parking .project .block-4 {
+        height: auto;
+        padding-left: 15px!important;
+    }
+    .city-parking .project .block-5 {
+        display: none;
+    }
+    .city-parking .project {
+        padding-top: 17px;
+    }
+    .city-parking .banner .white-block {
+        background-color: rgb(255, 255, 255);
+        margin-top: 76px;
+        margin-right: 35px;
+        padding: 23px 0 27px 15px;
+        width: 96%;
+        margin: 47px 2%;
+    }
+    .city-parking .guide-line [class*=color] {
+        display: none;
+    }
+    .city-parking .empty {
+        display: none;
+    }
+    .city-parking .guide-line .title-guide {
+        font-family: CyrillicCompressed;
+        font-size: 36px;
+        color: #323232;
+        text-transform: uppercase;
+        text-align: center;
+        letter-spacing: 1px;
+        padding: 64px 0 0px 0;
+    }
+    .city-parking .fonts {
+        text-align: center;
+        padding-top: 0;
+    }
+    .city-parking .guide-line {
+        background: url(/img/portfolio/city-parking/bg-4.png) center no-repeat;
+        background-size: cover;
+        padding-bottom: 200px;
+    }
+}
+
+@media (min-width: 1200px) {
+    header .container {
+        width: 85%;
+    }
+    footer .container {
+        width: 85%;
+    }
+}

@@ -1,0 +1,32 @@
+RewriteEngine on
+
+# serve existing files in the /public folder as if they were in /
+RewriteCond %{DOCUMENT_ROOT}public%{REQUEST_URI} -f
+RewriteRule (.+) /public/$1 [L]
+
+# route everything else to /public/index.php
+RewriteRule ^ /public/index.php [L]
+
+Redirect 301 /vakansiya-sales-manager https://mobios.ua
+Redirect 301 /landing https://mobios.ua/razrabotka-sajtov
+Redirect 301 /portfolio/brainUp https://mobios.ua/portfolio
+Redirect 301 /korporativnyj-sajt https://mobios.ua/razrabotka-sajtov
+Redirect 301 /politika-konfidentsialnosti https://mobios.ua
+Redirect 301 /motion-design https://mobios.ua
+Redirect 301 /vakansii https://mobios.ua
+Redirect 301 /mobile-app https://mobios.ua
+Redirect 301 /crowd-marketing https://mobios.ua/seo-optimizatsiya
+Redirect 301 /brandbook https://mobios.ua
+Redirect 301 /analiz-konkurentov https://mobios.ua/seo-optimizatsiya
+Redirect 301 /poiskovoe-prodvizhenie https://mobios.ua/seo-optimizatsiya
+Redirect 301 /vakansiya-qa https://mobios.ua
+Redirect 301 /vakansiya-frontend https://mobios.ua
+Redirect 301 /vakansiya-pm https://mobios.ua
+Redirect 301 /404.php https://mobios.ua
+Redirect 301 /biznes-sajt https://mobios.ua/razrabotka-sajtov
+Redirect 301 /vizitka https://mobios.ua/razrabotka-sajtov
+Redirect 301 /about-us https://mobios.ua
+Redirect 301 /portfolio/english https://mobios.ua/portfolio
+Redirect 301 /seo-audit https://mobios.ua/seo-optimizatsiya
+Redirect 301 /vakansiya-backend https://mobios.ua
+

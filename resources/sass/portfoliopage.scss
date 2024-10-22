@@ -1,0 +1,30 @@
+@import 'bootstrap3';
+@import 'var';
+@import 'partials/common';
+@import 'partials/ask';
+@import 'partials/intlTelInput';
+@import 'partials/popup'; 
+@import 'partials/portfolio-loop'; 
+@import 'partials/animate';
+
+
+
+
+
+body{
+  background-image: url('../img/noice.png'),url('/img/stuff.png');
+}
+.hidden{
+  display: none;
+} 
+
+.projects__footer{
+  .projects__footer_popup{
+    display: none;
+  }
+  &.last{
+    .projects__footer_popup{
+      display: block;
+    }
+  }
+}  

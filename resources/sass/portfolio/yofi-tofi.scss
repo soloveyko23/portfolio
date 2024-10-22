@@ -1,0 +1,884 @@
+@import 'portfolioParts';
+
+html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    @font-face {
+        font-family: 'Geometria-Bold';
+        src: url('/fonts/portfolio/yofi-tofi/Geometria-Bold.eot');
+        src: url('/fonts/portfolio/yofi-tofi/Geometria-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Bold.woff2') format('woff2'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Bold.woff') format('woff'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Bold.ttf') format('truetype'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Bold.svg#Arial-BoldMT') format('svg');
+    }
+    @font-face {
+        font-family: 'Geometria-Regular';
+        src: url('/fonts/portfolio/yofi-tofi/Geometria-Regular.eot');
+        src: url('/fonts/portfolio/yofi-tofi/Geometria-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Regular.woff2') format('woff2'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Regular.woff') format('woff'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Regular.ttf') format('truetype'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Regular.svg#Arial-BoldMT') format('svg');
+    }
+
+    @font-face {
+        font-family: 'Geometria-Heavy';
+        src: url('/fonts/portfolio/yofi-tofi/Geometria-Heavy.eot');
+        src: url('/fonts/portfolio/yofi-tofi/Geometria-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Heavy.woff2') format('woff2'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Heavy.woff') format('woff'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Heavy.ttf') format('truetype'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Heavy.svg#Arial-BoldMT') format('svg');
+    }
+
+    @font-face {
+        font-family: 'Geometria-Medium';
+        src: url('/fonts/portfolio/yofi-tofi/Geometria-Medium.eot');
+        src: url('/fonts/portfolio/yofi-tofi/Geometria-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Medium.woff2') format('woff2'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Medium.woff') format('woff'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Medium.ttf') format('truetype'),
+        url('/fonts/portfolio/yofi-tofi/Geometria-Medium.svg#Arial-BoldMT') format('svg');
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Medium';
+        src: url('/fonts/portfolio/yofi-tofi/Montserrat-Medium.eot');
+        src: url('/fonts/portfolio/yofi-tofi/Montserrat-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/portfolio/yofi-tofi/Montserrat-Medium.woff2') format('woff2'),
+        url('/fonts/portfolio/yofi-tofi/Montserrat-Medium.woff') format('woff'),
+        url('/fonts/portfolio/yofi-tofi/Montserrat-Medium.ttf') format('truetype'),
+        url('/fonts/portfolio/yofi-tofi/Montserrat-Medium.svg#Montserrat-Bold') format('svg');
+    }
+
+    @font-face {
+        font-family: 'Montserrat-Heavy';
+        src: url('/fonts/portfolio/yofi-tofi/Montserrat-Heavy.eot');
+        src: url('/fonts/portfolio/yofi-tofi/Montserrat-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/portfolio/yofi-tofi/Montserrat-Heavy.woff2') format('woff2'),
+        url('/fonts/portfolio/yofi-tofi/Montserrat-Heavy.woff') format('woff'),
+        url('/fonts/portfolio/yofi-tofi/Montserrat-Heavy.ttf') format('truetype'),
+        url('/fonts/portfolio/yofi-tofi/Montserrat-Heavy.svg#Montserrat-Bold') format('svg');
+    }
+
+    @font-face {
+        font-family: 'Yeseva One Regular';
+        src: url('/fonts/portfolio/yofi-tofi/YesevaOne.eot');
+        src: url('/fonts/portfolio/yofi-tofi/YesevaOne.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/portfolio/yofi-tofi/YesevaOne.woff2') format('woff2'),
+        url('/fonts/portfolio/yofi-tofi/YesevaOne.woff') format('woff'),
+        url('/fonts/portfolio/yofi-tofi/YesevaOne.ttf') format('truetype'),
+        url('/fonts/portfolio/yofi-tofi/YesevaOne.svg#YesevaOne') format('svg');
+    }
+    @mixin classic-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    @mixin content-block-absolute {
+        content: '';
+        display: block;
+        position: absolute;
+    }
+
+    @mixin sphere-outer {
+        @include content-block-absolute;
+        left: -17px;
+        top: 12px;
+        border-radius: 50%;
+        width: 32px;
+        height: 32px;
+        border: 1px solid #aded00;
+        z-index: 5;
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    @mixin sphere-inner {
+        @include content-block-absolute;
+        left: -11px;
+        top: 18px;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: #aded00;
+        z-index: 5;
+        @media screen and (max-width: 991px) {
+            display: none;
+        }
+    }
+
+    @mixin img-area-bgc {
+        @include content-block-absolute;
+        background: url('/img/portfolio/yofi-tofi/home-bgi.png') no-repeat center / contain;
+        top: 1020px;
+        left: -170px;
+        width: calc(100% + 430px);
+        height: 100%;
+        z-index: 0;
+        @media screen and (max-width: 1677px){
+            left: -100px;
+            width: calc(100% + 230px);
+        }
+        @media screen and (max-width: 1437px){
+            display: none;
+        }
+    }
+
+    @mixin bgc-line {
+        @include content-block-absolute;
+        width: calc(100% + 400px);
+        top: 15px;
+        left: -100px;
+        height: 100%;
+        z-index: -1;
+        background: url('/img/portfolio/yofi-tofi/typography-bg.png') no-repeat center / cover;
+        @media screen and (max-width: 1199px) {
+            display: none;
+        }
+    }
+
+    @function strip-unit($number) {
+        @if type-of($number) == 'number' and not unitless($number) {
+            @return $number / ($number * 0 + 1);
+        }
+
+        @return $number;
+    }
+
+    @function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+        $f-min: strip-unit($f-min);
+        $f-max: strip-unit($f-max);
+        $w-min: strip-unit($w-min);
+        $w-max: strip-unit($w-max);
+
+        $k: ($f-max - $f-min)/($w-max - $w-min);
+        $b: $f-min - $k * $w-min;
+
+        $b: $b + $units;
+
+        @return calc( #{$k} * 100vw + #{$b} );
+    }
+
+    @mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+
+        font-size: $f-min;
+
+        @media (min-width: $w-min) {
+            @if ($fallback) {
+                font-size: $fallback;
+            }
+            font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+        }
+        @media (min-width: $w-max) {
+            font-size: $f-max;
+        }
+    }
+    .title {
+        display: block;
+        text-transform: uppercase;
+        position: relative;
+        &__primary {
+            color: #444444;
+            max-width: 445px;
+            padding-left: 70px;
+            font-family: 'Yeseva One Regular';
+            text-align: left;
+            @include fluidFontSize (20px, 64px, 320px, 991px, 64px);
+            &::before {
+                @include sphere-outer;
+                background: none;
+            }
+            &::after {
+                @include sphere-inner;
+                left: -10px;
+                top: 19px;
+            }
+            &_reverse {
+                margin-left: auto;
+                text-align: right;
+                padding-left: 0;
+                padding-right: 70px;
+                &::before {
+                    @include sphere-outer;
+                    left: 480px;
+                }
+                &::after {
+                    @include sphere-inner;
+                    left: 487px;
+                    top: 19px;
+                }
+                @media screen and (max-width: 991px) {
+                    padding-right: 0;
+                    text-align: center;
+                }
+            }
+            @media screen and (max-width: 991px) {
+                max-width: 100%;
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+        &__secondary {
+            font-family: 'Yeseva One Regular';
+            @include fluidFontSize (32px, 120px, 320px, 991px, 120px);
+            color: #444444;
+            @media screen and (max-width: 991px) {
+                text-align: center;
+            }
+        }
+        &__subtitle {
+            font-family: 'Geometria-Regular';
+            @include fluidFontSize (24px, 64px, 320px, 991px, 120px);
+            color: #444444;
+            text-align: right;
+        }
+    }
+
+    .margin {
+        &_mb-85 {
+            margin-bottom: 85px;
+        }
+        background-color: #232323;
+        width: 67px;
+        height: 67px;
+    }
+    html {
+        overflow-x: hidden;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    p,
+    h2,
+    h3{
+        line-height: 1;
+    }
+    //header
+    main .header {
+        @include classic-flex;
+        align-items: center;
+        background: url('/img/portfolio/yofi-tofi/Mockup-bgc.png') no-repeat center / cover;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+        font-family: 'Geometria-Bold';
+        box-shadow: none;
+        .container {
+            max-width: 1780px;
+            padding: 0 15px;
+            margin: auto;
+            width: 100%;
+        }
+        &__inner {
+            @include classic-flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            position: relative;
+            @media screen and (max-width: 991px) {
+                display: block;
+                margin: 50px auto;
+            }
+        }
+        &__description {
+            flex-basis: 45%;
+            margin-top: 186px;
+            @media screen and (max-width: 1499px) {
+                flex-basis: 40%;
+                margin-top: 405px;
+            }
+            @media screen and (max-width: 1199px) {
+                margin-top: 320px;
+            }
+            @media screen and (max-width: 991px) {
+                margin-top: 120px;
+            }
+        }
+        &__logo {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+        }
+        &__img {
+            position:absolute;
+            right: 0;
+            bottom: 0;
+            width: 64%;
+            img{
+                max-width: 100%;
+            }
+            @media screen and (min-width: 1920px) {
+                width: 1197px;
+            }
+            @media screen and (max-width: 991px) {
+                position: relative;
+                width: 100%;
+            }
+        }
+        &__txt {
+            @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+            text-align: center;
+            color: #5e5e5e;
+            max-width: 268px;
+            margin: 47px auto 62px auto;
+            @media screen and (max-width: 991px) {
+                margin-bottom: 35px;
+                margin-top: 25px;
+            }
+        }
+        &__icons {
+            @include classic-flex;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 184px;
+        }
+        &__img-area {
+            width: 36px;
+            height: 36px;
+        }
+        &__icon-img {
+            display: inline-block;
+            max-width: 100%;
+            height: auto;
+            @media screen and (max-width: 991px) {
+                margin-bottom: 50px;
+            }
+        }
+        &__button {
+            display: block;
+            color: #555555;
+            text-transform: uppercase;
+            border: 2px solid#00b4db;
+            padding: 18px 18px;
+            text-align: center;
+            max-width: 270px;
+            margin: 60px auto 0 auto;
+            @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+            transition-duration: 0.5s;
+            &:hover {
+                background-color: #00b4db;
+                color: #fff;
+            }
+            @media screen and (max-width: 991px) {
+                max-width: 195px;
+                padding: 14px;
+            }
+        }
+        @media screen and (max-width: 991px) {
+            height: 100%;
+        }
+    }
+    //end header
+
+    //main
+    .main {
+        &__container {
+            position: relative;
+            max-width: 1145px;
+            padding: 0 25px;
+            margin: auto;
+        }
+    }
+    .main-page {
+        padding: 110px 0;
+        &__inner {
+            max-width: 765px;
+        }
+        &__img-area {
+            position: relative;
+            margin: 0 auto;
+            z-index: -1;
+            &::after {
+                @include img-area-bgc;
+            }
+            &::before {
+                @include content-block-absolute;
+                border-left: 1px solid #dbdbdb;
+                border-bottom: 1px solid #dbdbdb;
+                width: 160px;
+                height: 1472px;
+                bottom: 3728px;
+                left: 0;
+                @media screen and (max-width: 1199px) {
+                    display: none;
+                }
+            }
+        }
+        &__img {
+            position: relative;
+            z-index: 1;
+            display: block;
+            margin-top: 50px;
+            margin-left: auto;
+            background-size: cover;
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+        }
+        &__txt {
+            position: absolute;
+            left: -370px;
+            top: 2222px;
+            z-index: -2;
+            font-family: 'Geometria-Bold';
+            @include fluidFontSize (65px, 159px, 320px, 991px, 18px);
+            transform: rotate(-90deg);
+            color: #f0f0f0;
+            text-transform: uppercase;
+        }
+        @media screen and (max-width: 767px) {
+            padding: 50px 0;
+        }
+    }
+
+
+    .color-font {
+        position: relative;
+        &__img {
+            position: absolute;
+            z-index: -2;
+            display: block;
+            right: 0;
+            bottom: 0;
+            width: 30%;
+            height: auto;
+            @media screen and (max-width: 1199px) {
+                display: none;
+            }
+        }
+    }
+
+    .color-decision {
+        margin-right: auto;
+        &__inner {
+            @include classic-flex;
+            justify-content: space-around;
+            max-width: 800px;
+            position: relative;
+            margin: 150px 0;
+            padding: 10px;
+            &::before {
+                @include bgc-line;
+            }
+            @media screen and (max-width: 1199px) {
+                margin: 0 auto;
+                padding: 50px 0;
+            }
+            @media screen and (max-width: 645px) {
+                flex: none;
+                display: block;
+            }
+        }
+        &__inner-item {
+            position: relative;
+            &:nth-child(1) {
+                top: -56px;
+                left: -45px;
+            }
+            &:nth-child(2) {
+                top: 72px;
+                left: 40px;
+            }
+            &:nth-child(3) {
+                top: -70px;
+                left: 155px;
+            }
+            @media screen and (max-width: 1199px) {
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
+                    top: 0;
+                    left: 0;
+                }
+                &:nth-child(2) {
+                    transform: rotate(180deg);
+                }
+            }
+            @media screen and (max-width: 645px) {
+                margin-bottom: 20px;
+            }
+        }
+        &__txt {
+            display: block;
+            font-family: 'Geometria-bold';
+            text-transform: uppercase;
+            text-align: center;
+            &:nth-child(1) {
+                margin-bottom: 20px;
+            }
+            &:nth-child(2) {
+                margin-top: 20px;
+            }
+            @media screen and (max-width: 1199px) {
+                &:nth-child(2) {
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    .sphere-outer {
+        @include classic-flex;
+        justify-content: center;
+        background-color: #fff;
+        align-items: center;
+        border-radius: 50%;
+        border: 1px solid #ff9c00;
+        width: 85px;
+        height: 85px;
+        &_bd-color-success {
+            border: 1px solid #aded00;
+        }
+        &_bd-color-secondary {
+            border: 1px solid #232323;
+        }
+        @media screen and (max-width: 645px) {
+            margin: 0 auto;
+        }
+    }
+
+    .sphere-inner {
+        border-radius: 50%;
+        background-color: #ff9c00;
+        width: 67px;
+        height: 67px;
+        &_bg-color-success {
+            background-color: #aded00;
+        }
+        &_bg-color-secondary {
+            background-color: #232323;
+        }
+    }
+
+    .font-decision {
+        @include classic-flex;
+        align-items: center;
+        padding-left: 70px;
+        max-width: 905px;
+        margin: 150px 0 265px 0;
+
+        @media screen and (max-width: 1199px) {
+            margin: 70px 0;
+        }
+        @media screen and (max-width: 875px) {
+            margin: 50px 0;
+            padding-left: 0;
+        }
+        &__title {
+            display: block;
+            @include fluidFontSize (36px, 78px, 320px, 991px, 78px);
+            font-family: "Geometria-bold";
+            color: rgb(255, 156, 0);
+            text-transform: uppercase;
+            @media screen and (max-width: 991px) {
+                text-align: center;
+            }
+        }
+        &__item {
+            &:nth-child(1) {
+                flex-basis: 70%;
+            }
+            &:nth-child(2) {
+                flex-basis: 30%;
+                @media screen and (max-width: 991px) {
+                    margin-top: 25px;
+                }
+                @media screen and (max-width: 380px) {
+                    flex-basis: 100%;
+                }
+            }
+            @media screen and (max-width: 991px) {
+                margin: 0 auto;
+            }
+        }
+        &__txt {
+            font-family: "Geometria-Regular";
+            color: #222222;
+            &:first-child {
+                font-family: "Geometria-Heavy";
+                text-transform: uppercase;
+            }
+        }
+        &__item-inner {
+            @include classic-flex;
+            justify-content: flex-start;
+            @media screen and (max-width: 991px) {
+                justify-content: space-around;
+            }
+        }
+        &__crumbs {
+            
+            &:not(:last-child) {
+                padding-right: 90px;
+                position: relative;
+                &::after {
+                    @include content-block-absolute;
+                    border-top: 1px solid #d7d7d7;
+                    width: 53px;
+                    top: 7px;
+                    right: 20px;
+                    @media screen and (max-width: 991px) {
+                        display: none;
+                    }
+                }
+                @media screen and (max-width: 991px) {
+                    padding-right: 0;
+                }
+            }
+            &:nth-child(1) {
+                font-family: "Geometria-Regular";
+            }
+            &:nth-child(2) {
+                font-family: "Geometria-Medium";
+            }
+            &:nth-child(3) {
+                font-family: "Geometria-Bold";
+            }
+            &:nth-child(4) {
+                font-family: "Geometria-Heavy";
+            }
+        }
+    }
+
+    .adaptive {
+        &__bgc {
+            background: url('/img/portfolio/yofi-tofi/adaptive-mobile.png') no-repeat left / contain;
+            padding-bottom: 165px;
+            margin-bottom: 80px;
+            @media screen and (max-width: 1179px) {
+                padding-bottom: 600px;
+            }
+            @media screen and (max-width: 991px) {
+                background: none;
+                padding: 0;
+            }
+        }
+        &__inner-txt {
+            display: block;
+            text-align: right;
+            max-width: 375px;
+            margin: 79px 0 58px auto;
+            font-family: 'Montserrat';
+            @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+            @media screen and (max-width: 991px) {
+                text-align: center;
+                margin: 50px auto;
+            }
+        }
+        &__inner-img {
+            position: relative;
+            display: block;
+            margin-left: auto;
+            right: -140px;
+            @media screen and (max-width: 1478px) {
+                right: -15px;
+            }
+            @media screen and (max-width: 1179px) {
+                display: none;
+            }
+        }
+    }
+
+    .other-pages{
+        position: relative;
+        &__inner {
+            position: relative;
+            padding-right: 140px;
+            @media screen and (max-width: 1199px) {
+                padding-right: 0;
+            }
+        }
+        &__txt {
+            position: absolute;
+            right: -500px;
+            top: 730px;
+            font-family: 'Geometria-Bold';
+            @include fluidFontSize (65px, 159px, 320px, 991px, 18px);
+            transform: rotate(-90deg);
+            color: #f0f0f0;
+            text-transform: uppercase;
+            @media screen and (max-width: 1199px) {
+                display: none;
+            }
+        }
+        &__images {
+            padding: 885px 0;
+            position: relative;
+            margin-top: 86px;
+            @media screen and (max-width: 1199px) {
+                padding: 0;
+                margin-top: 50px;
+            }
+            &::before {
+                @include content-block-absolute;
+                border-left: 1px solid #dbdbdb;
+                height: 300px;
+                top: -185px;
+                left: 0;
+                @media screen and (max-width: 1199px) {
+                    display: none;
+                }
+            }
+        }
+        &__img {
+            box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+            position: absolute;
+            display: block;
+            max-width: 100%;
+            &_1 {
+                z-index: 1;
+                top: 0;
+                left: 0;
+                max-width: 100%;
+            }
+            &_2 {
+                z-index: 2;
+                top: -47px;
+                right: 0;
+            }
+            &_3 {
+                z-index: 3;
+                bottom: 370px;
+                left: 0;
+            }
+            &_4 {
+                z-index: 4;
+                bottom: 220px;
+                right: -1px;
+            }
+            &_5 {
+                z-index: 5;
+                left: 265px;
+                bottom: 58px;
+            }
+            @media screen and (max-width: 1199px) {
+                position: relative;
+                width: 100%;
+                margin-top: 30px;
+                &_1 {
+                    z-index: 1;
+                    top: 0;
+                    left: 0;
+                }
+                &_2 {
+                    z-index: 2;
+                    top: 0;
+                    right: 0;
+                }
+                &_3 {
+                    z-index: 3;
+                    bottom: 0;
+                    left: 0;
+                }
+                &_4 {
+                    z-index: 4;
+                    bottom: 0;
+                    right: 0;
+                }
+                &_5 {
+                    z-index: 5;
+                    left: 0;
+                    bottom: 0;
+                }
+            }
+            img{
+                max-width: 100%;
+            }
+        }
+    }
+
+    .ty {
+        &__img {
+            position: absolute;
+            z-index: -2;
+            display: block;
+            right: 0;
+            bottom: 0;
+            width: 50%;
+            height: auto;
+            transform: translateX(50%);
+            @media screen and (max-width: 1779px) {
+                max-width: 25%;
+                transform: none;
+            }
+            @media screen and (max-width: 1199px) {
+                display: none;
+            }
+        }
+        &__title {
+            max-width: 775px;
+            position: relative;
+            padding: 85px 0;
+            @media screen and (max-width: 1779px) {
+                padding: 0;
+            }
+            @media screen and (max-width: 1199px) {
+                margin: 50px auto;
+            }
+        }
+    }
+
+    .header .container {
+        max-width: 1505px;
+        padding: 0 15px;
+        margin: auto;
+    }
+    
+    .footer .container {
+        max-width: 1505px;
+        padding: 0 15px;
+        margin: auto;
+    }
+
+    @media screen and (min-width: 991px) {
+        .navigation__mobile-menu {
+            display: none;
+        }
+    }
+//end main

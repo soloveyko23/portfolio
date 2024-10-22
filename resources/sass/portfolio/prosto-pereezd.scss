@@ -1,0 +1,795 @@
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+// scss files
+//_reset.scss
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+p,h1,h2,h3,h4{
+  line-height: 1;
+}
+//end _reset.scss
+
+//_responsive-txt.scss
+@function strip-unit($number) {
+  @if type-of($number) == 'number' and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  
+  @return $number;
+}
+
+@function calcFluidFontSize($f-min, $f-max, $w-min, $w-max, $units: px) {
+  $f-min: strip-unit($f-min);
+  $f-max: strip-unit($f-max);
+  $w-min: strip-unit($w-min);
+  $w-max: strip-unit($w-max);
+  
+  $k: ($f-max - $f-min)/($w-max - $w-min);
+  $b: $f-min - $k * $w-min;
+  
+  $b: $b + $units;
+  
+  @return calc( #{$k} * 100vw + #{$b} );
+}
+
+@mixin fluidFontSize($f-min, $f-max, $w-min, $w-max, $fallback: false) {
+  
+  font-size: $f-min;
+  
+  @media (min-width: $w-min) {
+    @if ($fallback) {
+      font-size: $fallback;
+    }
+    font-size: calcFluidFontSize($f-min, $f-max, $w-min, $w-max, px);
+  }
+  @media (min-width: $w-max) {
+    font-size: $f-max;
+  }
+}
+//end _responsive-txt.scss
+
+// _fonts.scss
+@font-face {
+  font-family: 'Geometria Regular';
+  src: url('/fonts/portfolio/prosto-pereezd/Geometria-Regular.eot');
+  src: url('/fonts/portfolio/prosto-pereezd/Geometria-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/prosto-pereezd/Geometria-Regular.woff2') format('woff2'),
+  url('/fonts/portfolio/prosto-pereezd/Geometria-Regular.woff') format('woff'),
+  url('/fonts/portfolio/prosto-pereezd/Geometria-Regular.ttf') format('truetype'),
+  url('/fonts/portfolio/prosto-pereezd/Geometria-Regular.svg#Geometria-Regular') format('svg');
+}
+
+@font-face {
+  font-family: 'Magistral Extra';
+  src: url('/fonts/portfolio/prosto-pereezd/Magistral-ExtraBold.eot');
+  src: url('/fonts/portfolio/prosto-pereezd/Magistral-ExtraBold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/prosto-pereezd/Magistral-ExtraBold.woff2') format('woff2'),
+  url('/fonts/portfolio/prosto-pereezd/Magistral-ExtraBold.woff') format('woff'),
+  url('/fonts/portfolio/prosto-pereezd/Magistral-ExtraBold.ttf') format('truetype'),
+  url('/fonts/portfolio/prosto-pereezd/Magistral-ExtraBold.svg#Magistral-ExtraBold') format('svg');
+}
+
+@font-face {
+  font-family: 'Oswald-Bold';
+  src: url('/fonts/portfolio/prosto-pereezd/Oswald-Bold.eot');
+  src: url('/fonts/portfolio/prosto-pereezd/Oswald-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/prosto-pereezd/Oswald-Bold.woff2') format('woff2'),
+  url('/fonts/portfolio/prosto-pereezd/Oswald-Bold.woff') format('woff'),
+  url('/fonts/portfolio/prosto-pereezd/Oswald-Bold.ttf') format('truetype'),
+  url('/fonts/portfolio/prosto-pereezd/Oswald-Bold.svg#Oswald-Bold') format('svg');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Bold';
+  src: url('/fonts/portfolio/prosto-pereezd/IBMPlexSans-Bold.eot');
+  src: url('/fonts/portfolio/prosto-pereezd/IBMPlexSans-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/prosto-pereezd/IBMPlexSans-Bold.woff2') format('woff2'),
+  url('/fonts/portfolio/prosto-pereezd/IBMPlexSans-Bold.woff') format('woff'),
+  url('/fonts/portfolio/prosto-pereezd/IBMPlexSans-Bold.ttf') format('truetype'),
+  url('/fonts/portfolio/prosto-pereezd/IBMPlexSans-Bold.svg#IBMPlexSans-Bold') format('svg');
+}
+
+@font-face {
+  font-family: 'IBM Plex Sans Regular';
+  src: url('/fonts/portfolio/prosto-pereezd/IBMPlexSans.eot');
+  src: url('/fonts/portfolio/prosto-pereezd/IBMPlexSans.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/portfolio/prosto-pereezd/IBMPlexSans.woff2') format('woff2'),
+  url('/fonts/portfolio/prosto-pereezd/IBMPlexSans.woff') format('woff'),
+  url('/fonts/portfolio/prosto-pereezd/IBMPlexSans.ttf') format('truetype'),
+  url('/fonts/portfolio/prosto-pereezd/IBMPlexSans.svg#IBMPlexSans') format('svg');
+}
+// end _fonts
+
+// _var.scss
+@mixin classic-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@mixin content-block-absolute {
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+@mixin line-bot {
+  @include content-block-absolute;
+  border-bottom: 4px solid #F6A947;
+  width: 65%;
+  left: 0;
+  bottom: 0;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+@mixin home-page-bgc{
+  @include content-block-absolute;
+  background: url('/img/portfolio/prosto-pereezd/home-page-bg.png') no-repeat center / contain;
+  width: 100%;
+  height: 100%;
+  top: 24%;
+}
+
+@mixin vertical-border-right {
+  @include content-block-absolute;
+  border-right: 20px solid #E0181F;
+  bottom: 0;
+  right: 0;
+  height: 138px;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+@mixin vertical-border-left {
+  @include content-block-absolute;
+  border-right: 20px solid #E0181F;
+  bottom: 0;
+  left: 0;
+  height: 138px;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+
+@mixin border-main {
+  @include content-block-absolute;
+  width: 1px;
+  height: 100%;
+  background: #ECECEC;
+  bottom: 0;
+  z-index: -1;
+  @media screen and (max-width: 991px) {
+    display: none;
+  }
+}
+//end _var.scss
+
+//_particles.scss
+.title {
+  display: block;
+  text-transform: uppercase;
+  position: relative;
+  &__primary {
+    color: #222222;
+    @include fluidFontSize (32px, 64px, 320px, 1099px, 64px);
+    max-width: 500px;
+  }
+  &__reverse {
+    position: absolute;
+    top: 50%;
+    left: -100px;
+    transform: translateY(-50%) rotate(-90deg);
+    @media screen and (max-width: 991px) {
+      top: -125px;
+      right: 0;
+      left: 0;
+      transform: translateY(0) rotate(0);
+    }
+  }
+  &__bg {
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    @media screen and (max-width: 599px) {
+      transform: translate(-50%, 10%);
+    }
+  }
+  @media screen and (max-width: 991px) {
+    padding-bottom: 0;
+  }
+}
+
+.margin {
+  &_mr-140 {
+    margin-right: 140px;
+    @media screen and (max-width: 991px) {
+      margin-right: 0
+    }
+  }
+  &_mt-75 {
+    margin-top: 75px !important;
+    @media screen and (max-width: 991px) {
+      margin-top: 50px !important;;
+    }
+  }
+}
+//end _particles.scss
+//end scss files
+
+
+html {
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.container {
+  max-width: 1780px;
+  padding: 0 15px;
+  margin: auto;
+  width: 100%;
+}
+
+//header
+.header {
+  @include classic-flex;
+  align-items: center;
+  background: url('/img/portfolio/prosto-pereezd/header-bgc.jpg') no-repeat center / cover;
+  height: 100vh;
+  position: relative;
+  z-index: 1;
+  font-family: 'Geometria Regular';
+  &__inner {
+    @include classic-flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+    @media screen and (max-width: 991px) {
+      display: block;
+      margin: 50px auto;
+    }
+  }
+  &__description {
+    flex-basis: 45%;
+    margin-top: 186px;
+    @media screen and (max-width: 1499px) {
+      flex-basis: 40%;
+      margin-top: 405px;
+    }
+    @media screen and (max-width: 1199px) {
+      margin-top: 592px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: 50px;
+    }
+  }
+  &__logo {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  &__img {
+    position:absolute;
+    right: 0;
+    bottom: 0;
+    width: 64%;
+    img{
+      max-width: 100%;
+    }
+    @media screen and (min-width: 1920px) {
+      width: 1197px;
+    }
+    @media screen and (max-width: 991px) {
+      position: relative;
+      width: 100%;
+    }
+  }
+  &__txt {
+    @include fluidFontSize (18px, 24px, 320px, 991px, 24px);
+    text-align: center;
+    color: #5e5e5e;
+    max-width: 268px;
+    margin: 26px auto;
+    @media screen and (max-width: 991px) {
+      margin-bottom: 35px;
+      margin-top: 25px;
+    }
+  }
+  &__icons {
+    @include classic-flex;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 184px;
+  }
+  &__img-area {
+    width: 36px;
+    height: 36px;
+  }
+  &__icon-img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    @media screen and (max-width: 991px) {
+      margin-bottom: 50px;
+    }
+  }
+  &__button {
+    display: block;
+    color: #555555;
+    text-transform: uppercase;
+    border: 2px solid#00b4db;
+    padding: 18px 18px;
+    text-align: center;
+    max-width: 270px;
+    margin: 60px auto 0 auto;
+    @include fluidFontSize (14px, 18px, 320px, 991px, 18px);
+    transition-duration: 0.5s;
+    &:hover {
+      background-color: #00b4db;
+      color: #fff;
+    }
+    @media screen and (max-width: 991px) {
+      max-width: 195px;
+      padding: 14px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    height: 100%;
+  }
+}
+
+.logo {
+  max-width: 273px;
+  height: 53px;
+  margin: 0 auto;
+  &__link {
+    display: block;
+  }
+  &__img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  &_pad_b-12 {
+    padding-bottom: 12px;
+  }
+}
+//end header
+
+//main
+.main {
+  font-family: 'Magistral Extra';
+  position: relative;
+  &__border {
+    @include border-main;
+    &_left {
+      left: calc(50% - 450px);
+      transform: translateX(-50%);
+      @media screen and (max-width: 1499px) {
+        left: 20.5%;
+      }
+    }
+    &_center {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &_right {
+      left: calc(50% + 450px);
+      @media screen and (max-width: 1499px) {
+        left: 80%;
+      }
+    }
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+  &__container {
+    max-width: 1465px;
+    padding: 0 15px;
+    margin: auto;
+    position: relative;
+  }
+}
+.home-page {
+  background: url('/img/portfolio/prosto-pereezd/main-page-bgi.jpg') no-repeat top left / contain;
+  background-size: 50% auto;
+  padding-top: 108px;
+  position: relative;
+  &__title {
+    padding: 6px 45px 6px 0;
+    text-align: right;
+    margin: 0 37px 10px auto;
+    &::after {
+      @include vertical-border-right;
+    }
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+      margin-bottom: 25px;
+      margin-right: 0;
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__img-txt {
+    width: 12%;
+    position: absolute;
+    top: 26%;
+    left: 3%;
+  }
+  @media screen and (max-width: 991px) {
+    padding-top: 50px;
+  }
+}
+
+.icon-animation {
+  position: relative;
+  padding-top: 200px;
+  &::after {
+    @include content-block-absolute;
+    background: url('/img/portfolio/prosto-pereezd/main-page-bgi.jpg') no-repeat top right/ cover;
+    z-index: -1;
+    top: -310px;
+    right: 0;
+    width: 50%;
+    height: 200%;
+  }
+  &__title {
+    padding: 6px 60px 6px 0;
+    text-align: right;
+    &::after {
+      @include vertical-border-right;
+    }
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  }
+  &__icons {
+    @include classic-flex;
+    max-width: 65%;
+    margin-left: auto;
+    @media screen and (max-width: 991px) {
+      margin: 0 auto;
+      max-width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__icon-area {
+    flex-basis: 23%;
+  }
+  &__icon {
+    display: block;
+    max-width: 100%;
+    height: 120px;
+    margin: 20px auto;
+    @media screen and (max-width: 991px) {
+      height: 80px;
+    }
+    @media screen and (max-width: 499px) {
+      height: 50px;
+    }
+  }
+}
+
+.colors {
+  padding: 370px 0 170px 0;
+  &__title {
+    padding: 6px 45px 6px 0;
+    text-align: right;
+    margin: 0 37px 150px auto;
+    &::after {
+      @include vertical-border-right;
+    }
+    @media screen and (max-width: 1199px) {
+      margin-bottom: 50px;
+    }
+    @media screen and (max-width: 991px) {
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+      margin: 0 auto 50px auto;
+    }
+  }
+  &__spheres{
+    @include classic-flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px 72px 20px 47px;
+    @media screen and (max-width: 1199px) {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  &__sphere-item {
+    transform: rotate(-45deg);
+    width: 230px;
+    @media screen and (max-width: 1199px) {
+      margin: 0 auto;
+      padding-bottom: 50px;
+    }
+    @media screen and (max-width: 399px) {
+      width: 150px;
+      padding: 15px 0;
+    }
+  }
+  &__sphere-outer {
+    border: 1px solid #C4C4C4;
+    border-radius: 64px;
+    padding: 55px;
+    max-width: 100%;
+    @media screen and (max-width: 399px) {
+      border-radius: 32px;
+      padding: 29px;
+    }
+  }
+  &__sphere-inner{
+    background: #E0181F;
+    border-radius: 32px;
+    padding: 60px;
+    max-width: 100%;
+    &_color-gray {
+      background: #F3F3F3;
+    }
+    &_color-black {
+      background: #222222;
+    }
+    @media screen and (max-width: 399px) {
+      padding: 45px;
+    }
+  }
+  &__spheres-txt{
+    display: block;
+    text-align: center;
+    max-width: 100%;
+    margin-bottom: 14px;
+    font-family: 'Oswald-Bols';
+    @include fluidFontSize (16px, 24px, 320px, 1099px, 24px);
+  }
+  @media screen and (max-width: 1199px) {
+    padding: 270px 0 70px 0;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 100px 0 50px 0;
+  }
+}
+
+.font-solution {
+  position: relative;
+  padding: 92px 0 574px 0;
+  &::after {
+    @include content-block-absolute;
+    background: url('/img/portfolio/prosto-pereezd/main-page-bgi.jpg') no-repeat top left/ cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+  }
+  &__title {
+    padding: 6px 0 6px 45px;
+    text-align: left;
+    margin: 0 auto 150px 25px;
+    &::after {
+      @include vertical-border-left;
+    }
+    @media screen and (max-width: 1199px) {
+      margin: 0 auto 50px auto;
+      text-align: center;
+      max-width: 100%;
+      padding: 0;
+      &::after {
+        display: none;
+      }
+    }
+  }
+  &__subtitle-txt {
+    margin-bottom: 115px;
+    margin-left: 160px;
+    line-height: 1;
+    &_oswald {
+      font-family: 'Oswald-Bold';
+    }
+    &_plex-sans-bold {
+      font-family: 'IBM Plex Sans Bold';
+    }
+    @media screen and (max-width: 1199px) {
+      margin: 0 auto 50px auto;
+      text-align: center;
+    }
+  }
+  &__subtitle {
+    text-transform: uppercase;
+    @include fluidFontSize (24px, 36px, 320px, 1099px, 36px);
+  }
+  &__txt {
+    text-transform: none;
+    margin: 15px 45px 0 0;
+    @include fluidFontSize (14px, 18px, 320px, 1099px, 36px);
+    &_plex-sans-regular {
+      font-family: 'IBM Plex Sans Regular';
+    }
+    @media screen and (max-width: 1199px) {
+      margin: 15px 0 0 0;
+    }
+  }
+  &__img {
+    display: block;
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    img{
+      max-width: 100%;
+    }
+    @media screen and (max-width: 1449px) {
+      width: 35%;
+      right: calc(1.4% + 16px);
+    }
+    @media screen and (max-width: 1199px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 1349px) {
+    padding-bottom: 250px;
+  }
+  @media screen and (max-width: 1199px) {
+    padding: 100px 0 250px 0;
+  }
+  @media screen and (max-width: 991px) {
+    padding-bottom: 350px;
+  }
+  @media screen and (max-width: 767px) {
+    padding-top: 50px;
+  }
+  @media screen and (max-width: 499px) {
+    padding-bottom: 300px;
+  }
+}
+
+.other-pages {
+  position: relative;
+  
+  &__title {
+    padding: 6px 45px 6px 0;
+    text-align: right;
+    position: absolute;
+    right: 15px;
+    top: -165px;
+    z-index: 10;
+    &::after {
+      @include vertical-border-right;
+    }
+    @media screen and (max-width: 991px) {
+      top: -300px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 70%;
+      padding: 0;
+    }
+    @media screen and (max-width: 499px) {
+      top: -265px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 70%;
+      padding: 0;
+    }
+  }
+  &__img {
+    width: 100%;
+    margin-top: -320px;
+    @media screen and (max-width: 1349px) {
+      margin-top: -220px;
+    }
+    @media screen and (max-width: 991px) {
+      margin-top: -150px;
+    }
+  }
+}
+
+.ty {
+  &__title {
+    position: relative;
+    top:-150px;
+    text-transform: uppercase;
+    max-width: 783px;
+    text-align: right;
+    font-family: 'Magistral Extra';
+    margin-right: auto;
+    @include fluidFontSize (32px, 144px, 320px, 1499px, 144px);
+    color: #DF191F;
+    @media screen and (max-width: 1299px) {
+      max-width: 670px;
+    }
+    @media screen and (max-width: 1099px) {
+      max-width: 570px;
+    }
+    @media screen and (max-width: 991px) {
+      top: -50px;
+      max-width: 517px;
+    }
+    @media screen and (max-width: 699px) {
+      top: -50px;
+      max-width: 370px;
+    }
+    @media screen and (max-width: 599px) {
+      max-width: 315px;
+    }
+    @media screen and (max-width: 499px) {
+      max-width: 270px;
+    }
+    @media screen and (max-width: 449px) {
+      max-width: 238px;
+    }
+    @media screen and (max-width: 380px) {
+      max-width: 203px;
+    }
+    @media screen and (max-width: 320px) {
+      max-width: 173px;
+    }
+  }
+  &__subtitle {
+    display: block;
+    font-family: 'Oswald-Bold';
+    @include fluidFontSize (24px, 64px, 320px, 1099px, 144px);
+    color: #222222;
+  }
+}
+//end main

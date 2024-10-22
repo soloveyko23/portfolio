@@ -1,0 +1,192 @@
+.banner-redesign{
+  background-color: $c-main;
+  min-height: 737px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 0;
+  padding-top: 0;
+  padding-left: 17px;
+  padding-right: 17px;
+  margin-bottom: 40px;
+  &-eblock{
+    margin-bottom: 41px;
+  }
+  #banner-three{
+    @include posa;
+    background:transparent ;
+    z-index: 1;
+  }
+  .container{
+    margin-top: 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .row {
+      height: 100%;
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .top{
+      margin-bottom: 0;
+    }
+    .center{
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+    .bottom{
+      margin-top: 0;
+    }
+
+  }
+  h1{
+    font-family: "Stolzl";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 120%;
+    /* or 72px */
+
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 50px;
+    @media screen and (max-width:567px) {
+      br{
+        display: none;
+      }
+    }
+  }
+  p{
+    font-family: 'Stolzl';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 130%;
+    color: #FFFFFF;
+  }
+  &-footer{
+    margin-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    .btn{
+      &-red{
+        margin-right: 20px;
+      }
+      &-transporent,&-transp{
+        color: #fff;
+      }
+      span{
+        display: block;
+        font-size: 14px;
+        line-height:19.6px;
+        font-weight: 400;
+        text-transform: initial;
+      }
+    }
+    @media screen and (max-width:768px) {
+      justify-content: center;
+      .btn{
+        margin-bottom: 14px;
+        margin-left: 0;
+        margin-right: 0;
+        &:last-child{
+          margin-bottom: 0;
+
+        }
+      }
+
+    }
+  }
+  &-eblock{
+    margin-top: 69px;
+  }
+
+  @include hd_descktop{
+    min-height: 568px;
+    h1{
+      font-size: 26px;
+      line-height: 31px;
+      margin-bottom: 40px;
+    }
+    p{
+      font-size: 18px;
+      line-height: 130%;
+    }
+  }
+
+}
+.commerce,.webs {
+  .banner-redesign .center{
+    p{
+      font-size: 20px;
+    }
+    h1{
+      margin-bottom: 30px;
+    }
+  }
+}
+@media screen and (max-width:576px) {
+  .banner-redesign {
+    // height: auto;
+  }
+}
+
+@media screen and (max-width:768px) {
+  .banner-redesign{
+    min-height: 1px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    height: auto;
+  }
+  .commerce,.webs {
+    .banner-redesign {
+      padding-bottom: 50px;
+      padding-top: 0;
+      height: auto;
+    }
+  }
+  .commerce,.webs {
+    .banner-redesign {
+      h1,p{
+        text-align: center;
+      }
+    }
+  }
+}
+@media screen and (max-width:576px) {
+  .banner-redesign{
+    height: auto;
+    min-height: 1px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+  }
+  .commerce,.webs {
+    .banner-redesign {
+      padding-bottom: 50px;
+      padding-top: 0;
+      height: auto;
+      .top{
+        padding-bottom: 72px;
+      }
+      .row{
+        flex-direction: column;
+        height: auto;
+      }
+      h1,p{
+        text-align: center;
+      }
+    }
+  }
+}
+.index-banner {
+  background: url('../img/home-banner.jpg') no-repeat center / cover;
+}

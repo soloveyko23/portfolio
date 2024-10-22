@@ -1,0 +1,27 @@
+.responsive-form {
+    display: none;
+    padding: 50px 0;
+    display: none;
+    &__title {
+      font-size: 18px;
+    }
+  }
+
+  .responsive-form-subtitle {
+      //font-family: 'TTHoves';
+      font-weight: 400;
+  }
+
+  .responsive-form .form {
+    padding: 30px 20px;
+  }
+  .responsive-form .form .button{
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  @media screen and (max-width: 1279px) {
+    .responsive-form {
+        display: block;
+      }
+  }

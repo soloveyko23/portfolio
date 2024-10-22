@@ -1,0 +1,108 @@
+@import 'var';
+@import '../fonts';
+
+.customer-results-smm {
+    padding: 0 0 120px 0;
+    &__section-title {
+        //font-family: 'TTHoves';
+        font-weight: 700;
+    }
+    &__cards {
+        @include classic-flex;
+    }
+    &__card {
+        position: relative;
+        flex-basis: 25%;
+        padding-left: 63px;
+    }
+    &__img-filed {
+        max-width: 326px;
+    }
+    &__img {
+        max-width: 100%;
+        height: auto;
+        line-height: 0;
+        display: block;
+        margin: 0 auto;
+    }
+    &__card-element {
+        position: absolute;
+        left: -140px;
+        bottom: 240px;
+        transform: translateY(-50%) rotate(-90deg);
+        width: auto;
+        @include classic-flex;
+        align-items: center;
+        &_secondary {
+            left: -90px;
+            bottom: 200px;
+        }
+    }
+    &__card-line {
+        position: relative;
+        background-color: $color-sphere-background;
+        width: 72px;
+        height: 1px;
+        &::after {
+            @include bread-circle;
+            left: 0;
+            top: -2px;
+            width: 7px;
+            height: 7px;
+        }
+    }
+    &__title {
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 40px;
+        text-transform: uppercase;
+        display: block;
+        margin-right: 26px;
+    }
+    &__card-link {
+        position: relative;
+        //font-family: 'TTHoves';
+        font-size: 17.192px;
+        line-height: 100%;
+        text-decoration-line: underline;
+        color: $color-dark-4;
+        text-align: center;
+        margin: 30px auto 0 auto;
+        display: block;
+        padding: 6px 0 6px 44px;
+        max-width: 220px;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 0;
+            top: 0;
+            background: url('../img/customer-results-smm/icons/insta-icon.svg') no-repeat center / cover;
+        }
+    }
+}
+
+.customer-results-smm .title {
+    margin-bottom: 60px;
+}
+
+@media screen and (max-width: 1280px) {
+    .customer-results-smm__cards {
+        flex-direction: column;
+    }
+    .customer-results-smm__card {
+        margin: 0 auto;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .customer-results-smm__card-element {
+        left: -165px;
+    }
+    .customer-results-smm__card-element_secondary {
+        left: -110px;
+    }
+}

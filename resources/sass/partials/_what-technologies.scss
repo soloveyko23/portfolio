@@ -1,0 +1,158 @@
+@import 'var';
+@import '../fonts';
+
+a {
+    display: block;
+}
+
+.what-technologies {
+    padding: 120px 0 100px 0;
+    &__section-title {
+        position: relative;
+        //font-family: 'TTHoves';
+        font-weight: 800;
+        font-size: 48px;
+        max-width: 537px;
+        text-transform: uppercase;
+        padding-top: 14px;
+        margin-bottom: 50px;
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 64px;
+            height: 4px;
+            background: linear-gradient(180deg, #DB00FF -62.5%, #6651E7 100%);
+            border-radius: 4px;
+            top: 0;
+            left: 0;
+        }
+    }
+    &__inner {
+        @include classic-flex;
+    }
+    &__txt-column {
+        flex-basis: 60%;
+    }
+    &__txt-field {
+        margin-bottom: 40px;
+    }
+    &__title {
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    &__desc {
+        //font-family: 'TTHoves';
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 26px;
+        &_mt-18 {
+            margin-top: 18px;
+        }
+        &_700 {
+            font-weight: 700;
+        }
+    }
+    &__desc-list-item {
+        padding-left: 31px;
+        font-size: 18px;
+        //font-family: 'TTHoves';
+        font-weight: 400;
+        line-height: 26px;
+        position: relative;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(0deg, #202022, #202022), #C4C4C4;
+            border-radius: 50%;
+        }
+    }
+    &__examples {
+        @include classic-flex;
+        align-items: center;
+        max-width: 95%;
+    }
+    &__example {
+        @include classic-flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-basis: 22%;
+        margin-bottom: 27px;
+    }
+    &__example-title {
+        //font-family: 'TTHoves';
+        font-weight: 400;
+        line-height: 30px;
+        font-size: 16px;
+    }
+    &__example-txt-field {
+        margin-left: 24px;
+    }
+    &__example-link {
+        position: relative;
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        font-size: 18px;
+        display: block;
+        padding-right: 41px;
+        color: #000;
+        max-width: 158px;
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: url('/img/what-technologies/icons/arrow.svg') no-repeat center / cover;
+            width: 23px;
+            height: 14px;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+    &__ankors {
+        position: relative;
+        margin-top: 145px;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 1px;
+            height: 155px;
+            background-color: $color-pink-3;
+        }
+    }
+    &__ankor {
+        //font-family: 'TTHoves';
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 24px;
+        display: block;
+        padding-left: 31px;
+        position: relative;
+        color: #000;
+        &:hover {
+            color: $color-light-gray-2;
+            &::after {
+                background: linear-gradient(180deg, #E6BDFC 0%, #D3C9F8 100%);
+            }
+        }
+        &::after {
+            @include bread-circle ;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 11px;
+            width: 11px;
+        }
+    }
+}

@@ -1,0 +1,130 @@
+@import 'var';
+@import '../fonts';
+
+.how-socials {
+    background-color: $color-dark;
+    padding: 120px 0;
+    &__inner {
+        @include classic-flex;
+        align-items: center;
+    }
+    &__section-subtitle {
+        //font-family: 'TTHoves';
+        font-weight: 500;
+        font-size: 24px;
+        color: $color-main;
+        padding-right: 52px;
+        padding-top: 16px;
+        position: relative;
+        display: block;
+        max-width: 511px;
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            right: 0;
+            top: 0;
+            width: 46px;
+            height: 46px;
+            background: url('../img/smm/icons/how-socials_subtitle-icon.svg') no-repeat center / cover;
+        }
+    }
+    &__txt-field {
+        flex-basis: 64%;
+    }
+    &__txt-field-title {
+        color: $color-main;
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        font-size: 20px;
+        margin-bottom: 30px;
+        &_smm {
+            text-transform: uppercase;
+            color: $color-result-txt;
+            font-size: 24px;
+        }
+    }
+    &__cards {
+        max-width: 86%;
+        padding: 40px 40px 0 40px;
+        background-color: $color-dark-2;
+        border-radius: 10px;
+        @include classic-flex;
+    }
+    &__cards-column {
+        flex-basis: 46%;
+    }
+    &__card {
+        padding-left: 21px;
+        position: relative;
+        margin-bottom: 40px;
+        &_circle-purple {
+            &::before {
+                @include bread-circle;
+                left: 0;
+                right: 0;
+                top: 10px;
+                transform: translateY(-50%);
+            }
+        }
+    }
+    &__img-field {
+        flex-basis: 33%;
+    }
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+        line-height: 0;
+    }
+    &__card-description {
+        color: $color-filter;
+        font-size: 16px;
+    }
+    &__card-subtitle {
+        //font-family: 'TTHoves';
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 18px;
+        color: $color-main;
+        position: relative;
+        margin-bottom: 12px;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .how-socials__inner {
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    .how-socials__inner {
+        flex-direction: column;
+    }
+    .how-socials__img-field {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .how-socials {
+        padding: 50px 0;
+    }
+    .how-socials__section-subtitle {
+        font-size: 18px;
+        max-width: 390px;
+    }
+    .how-socials__card {
+        margin-bottom: 30px;
+    }
+    .how-socials__cards {
+        flex-direction: column;
+        margin-left: -20px;
+        margin-right: -20px;
+        border-radius: 0;
+        padding-left: 20px;
+        padding-right: 65px;
+    }
+}

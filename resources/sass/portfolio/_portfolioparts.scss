@@ -1,0 +1,19 @@
+@import "../var";
+@import "../reset";
+@import "../fonts";
+@import '../hamburger';
+@import "../particles";
+@import "../partials/header";
+@import "../partials/footer";
+@import '../partials/intlTelInput';
+@import '../partials/popup';
+$breakpoints: ('esm': 500px, 'sm': 767px, 'md': 992px, 'lg': 1399px, 'elg': 1624px, 'max': 1800px) !default;
+@mixin respond-max-to($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+}

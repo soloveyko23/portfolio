@@ -1,0 +1,705 @@
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+@font-face {
+    font-family: "OpenSans";
+    src: url("/fonts/portfolio/english-school-advanced/OpenSansRegular.eot");
+    src: url("/fonts/portfolio/english-school-advanced/OpenSansRegular.eot") format("embedded-opentype"),
+    url("/fonts/portfolio/english-school-advanced/OpenSansRegular.woff2") format("woff2"),
+    url("/fonts/portfolio/english-school-advanced/OpenSansRegular.ttf") format("truetype"); }
+
+@font-face {
+    font-family: "OpenSansBold";
+    src: url("/fonts/portfolio/english-school-advanced/OpenSansBold.eot");
+    src: url("/fonts/portfolio/english-school-advanced/OpenSansBold.eot") format("embedded-opentype"),
+    url("/fonts/portfolio/english-school-advanced/OpenSansBold.woff2") format("woff2"),
+    url("/fonts/portfolio/english-school-advanced/OpenSansBold.ttf") format("truetype"); }
+
+@font-face {
+    font-family: "BuiltTitlingRg";
+    src: url("/fonts/portfolio/english-school-advanced/BuiltTitlingRg-Regular.eot");
+    src: url("/fonts/portfolio/english-school-advanced/BuiltTitlingRg-Regular.eot") format("embedded-opentype"),
+    url("/fonts/portfolio/english-school-advanced/BuiltTitlingRg-Regular.woff2") format("woff2"); }
+
+    .main_page_title{
+        font-size: 20px;
+    }
+.text-right {
+    text-align: right; }
+
+.text-left {
+    text-align: left; }
+
+.text-center {
+    text-align: center; }
+
+body, html {
+    overflow-x: hidden;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+
+.relative {
+    position: relative; }
+p, h3{
+    margin: 0;
+}
+
+.engl-courses {
+    max-width: 1920px;
+    margin: 0 auto; }
+.engl-courses .home {
+    background: url("/img/portfolio/english-school-advanced/home-bg.png") no-repeat center;
+    position: relative; }
+.engl-courses .home:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1382px;
+    top: -200px;
+    left: 0px;
+    background: url("/img/portfolio/english-school-advanced/bg-line.png") no-repeat left; }
+.engl-courses .home__logo {
+    margin-top: 240px; }
+.engl-courses .home__logo-image {
+    width: auto;
+    height: 76px;
+    display: block;
+    margin-bottom: 70px; }
+.engl-courses .home__title {
+    color: #222222;
+    font: 18px/24px OpenSans;
+    font-weight: 700;
+    letter-spacing: 0.72px; }
+.engl-courses .home__description {
+    color: #222222;
+    font: 14px/18px OpenSans;
+    font-weight: 400;
+    letter-spacing: 0.56px; }
+.engl-courses .home .home__images {
+    margin-top: 100px; }
+.engl-courses .home .home__images img {
+    width: 100%;
+    height: auto;
+    display: block; }
+.engl-courses .functional {
+    background: url("/img/portfolio/english-school-advanced/function-bg.png") no-repeat;
+    background-position: 35% 0%;
+    padding-bottom: 50px; }
+.engl-courses .functional .title {
+    position: relative;
+    margin-top: 80px; }
+.engl-courses .functional .title__bg {
+    color: #565656;
+    opacity: 0.1;
+    font: 190px/52.49px BuiltTitlingRg;
+    font-weight: 700;
+    letter-spacing: 1.45px;
+    text-align: right;
+    display: block; }
+.engl-courses .functional .title__sub {
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    /* bottom: -75px; */
+    right: 20px;
+    color: #151e3a;
+    font: 72px/20px OpenSansBold;
+    font-weight: 400;
+    letter-spacing: 1.44px; }
+.engl-courses .functional__inner:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat; }
+.engl-courses .functional__cms {
+    display: inline-block;
+    margin: 90px 100px 0px 50px; }
+.engl-courses .functional__cms-icon img {
+    height: 32px; }
+.engl-courses .functional__cms-name span {
+    color: #222222;
+    font: 18px/24px "Open Sans", sans-serif;
+    font-weight: 400; }
+.engl-courses .functional__cms-name p {
+    color: #222222;
+    font: 18px/24px "Open Sans", sans-serif;
+    font-weight: 700;
+    margin: 0px; }
+.engl-courses .functional__sub-ul {
+    margin-top: 30px;
+    padding-left: 70px; }
+.engl-courses .functional__sub-ul-li {
+    color: #222222;
+    font: 18px/24px OpenSans;
+    font-weight: 400;
+    letter-spacing: 0.72px; }
+.engl-courses .typography {
+    position: relative;
+    margin-top: 70px; }
+.engl-courses .typography:before {
+    content: '';
+    background: url("/img/portfolio/english-school-advanced/typography-bg.png") no-repeat center;
+    -webkit-background-size: contain;
+    background-size: contain;
+    width: 1160px;
+    position: absolute;
+    height: 1119px;
+    right: 0px;
+    top: -270px;
+    z-index: -1; }
+.engl-courses .typography__color {
+    position: relative; }
+.engl-courses .typography__color .typography-title-fonts {
+    position: absolute;
+    opacity: 0.1;
+    color: #565656;
+    font: 140px/20px BuiltTitlingRg;
+    font-weight: 700;
+    letter-spacing: 1.45px;
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    top: 260px; }
+.engl-courses .typography__color-title {
+    color: #151e3a;
+    font: 48px/48px OpenSansBold;
+    font-weight: 400;
+    letter-spacing: 0.96px;
+    margin-bottom: 100px;
+    display: block;
+    text-align: center; }
+.engl-courses .typography__color-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding-right: 220px; }
+.engl-courses .typography__color-list-hex {
+    color: #222222;
+    font: 18px/24px OpenSans;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.72px;
+    margin: 5px 0px 0px 0px;
+    position: relative;
+    padding-right: 50px; }
+.engl-courses .typography__color-list-hex:before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 125px;
+    top: 24px; }
+.engl-courses .typography__color-list-cube {
+    width: 58px;
+    height: 58px;
+    display: block;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    transform: rotate(225deg);
+    margin-bottom: 40px;
+    position: relative; }
+.engl-courses .typography__color .colo-list-top .typography__color-list-hex:before {
+    background-color: #515d85; }
+.engl-courses .typography__color .colo-list-top .typography__color-list-cube {
+    border: 4px solid #515d85; }
+.engl-courses .typography__color .colo-list-midle .typography__color-list-hex:before {
+    background-color: #e24f4f; }
+.engl-courses .typography__color .colo-list-midle .typography__color-list-cube {
+    border: 4px solid #e24f4f; }
+.engl-courses .typography__color .colo-list-bottom .typography__color-list-hex:before {
+    background-color: #151e3a; }
+.engl-courses .typography__color .colo-list-bottom .typography__color-list-cube {
+    border: 4px solid #151e3a; }
+.engl-courses .typography__fonts-title {
+    color: #fff;
+    font: 48px/48px OpenSansBold;
+    font-weight: 400;
+    letter-spacing: 0.96px;
+    display: block;
+    width: 80%;
+    margin-bottom: 0px auto 80px auto;
+    text-align: right; }
+.engl-courses .typography__fonts-block {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 50px; }
+.engl-courses .typography__fonts-inner {
+    margin-right: 90px; }
+.engl-courses .typography__fonts-inner-text {
+    color: #ffffff;
+    font: 16px/20px OpenSans;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    height: 35%;
+    -webkit-writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    position: relative;
+    margin: 0 auto;
+    display: block; }
+.engl-courses .typography__fonts-inner-text:before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    width: 1px;
+    background-color: #fff;
+    height: 100px;
+    left: -10px;
+    top: 0px; }
+.engl-courses .typography__fonts-inner-name {
+    color: #ffffff;
+    font: 28px/48px OpenSansBold;
+    font-weight: 400;
+    letter-spacing: 0.56px; }
+.engl-courses .typography .text-bg {
+    position: absolute;
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    left: 150px;
+    top: 150px; }
+.engl-courses .typography .text-bg .text-bg-main {
+    color: #fff; }
+.engl-courses .home-page {
+    margin-top: 340px;
+    background: url("/img/portfolio/english-school-advanced/home-page-bg.png") no-repeat 0% 55%;
+    position: relative; }
+.engl-courses .home-page:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    background: url("/img/portfolio/english-school-advanced/bg-line-bt.png") no-repeat;
+    z-index: -1; }
+.engl-courses .home-page__title-main {
+    color: #151e3a;
+    font: 72px/120% OpenSansBold;
+    font-weight: 400;
+    letter-spacing: 1.44px;
+    text-align: center;
+    display: block; }
+.engl-courses .home-page__title-sub {
+    display: inline;
+    margin: 0px;
+    color: #222222;
+    font: 18px/24px OpenSans;
+    font-weight: 400;
+    letter-spacing: 0.72px;
+    text-align: center;
+    display: block; }
+.engl-courses .home-page__title-sub span {
+    display: inline;
+    font-weight: 700; }
+.engl-courses .home-page .home__image {
+    margin-top: 40px;
+    -webkit-box-shadow: 0 0 43px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 43px rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    position: relative; }
+.engl-courses .home-page .home__image:before {
+    content: '';
+    position: absolute;
+    right: -300px;
+    top: 500px;
+    width: 541px;
+    height: 460px;
+    background: url("/img/portfolio/english-school-advanced/home-page-textbg.png") no-repeat; }
+.engl-courses .home-page .home__image-layer {
+    width: 100%;
+    height: auto;
+    display: block;
+    z-index: 2;
+    position: relative; }
+.engl-courses .home-page .text-bg-left,
+.engl-courses .home-page .text-bg-right {
+    position: absolute;
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    z-index: 1; }
+.engl-courses .home-page .text-bg-left {
+    left: 30px;
+    top: 2080px; }
+.engl-courses .home-page .text-bg-left .text-bg-main {
+    color: #fff; }
+.engl-courses .home-page .text-bg-right {
+    right: 120px;
+    bottom: 150px; }
+.engl-courses .adaptive {
+    position: relative;
+    margin-top: 50px; }
+.engl-courses .adaptive:before {
+    content: '';
+    width: 100%;
+    height: 1382px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    background: url("/img/portfolio/english-school-advanced/bg-line-bt-adapt.png") no-repeat;
+    display: block; }
+.engl-courses .adaptive:after {
+    content: '';
+    position: absolute;
+    left: 50px;
+    right: 0;
+    top: -150px;
+    bottom: 0;
+    margin: auto;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #f7f7f7;
+    width: 500px;
+    height: 500px;
+    z-index: -1; }
+.engl-courses .adaptive__title-main {
+    color: #151e3a;
+    font: 72px/76px OpenSansBold;
+    font-weight: 400;
+    letter-spacing: 1.44px;
+    margin: 40px 0px;
+    display: block;
+    text-align: right; }
+.engl-courses .adaptive__title-sub {
+    margin: 0px;
+    color: #222222;
+    font: 18px/24px OpenSans;
+    font-weight: 400;
+    letter-spacing: 0.72px;
+    text-align: right; }
+.engl-courses .adaptive__phone {
+    position: relative; }
+.engl-courses .adaptive__phone-image {
+    position: relative;
+    height: 800px;
+    width: auto;
+    top: -150px;
+    left: 50px; }
+.engl-courses .adaptive .text-bg {
+    position: absolute;
+    bottom: 170px;
+    left: 100px; }
+.engl-courses .lastpage {
+    background: url("/img/portfolio/english-school-advanced/other-page-bg.png") no-repeat 100% 30%;
+    position: relative; }
+.engl-courses .lastpage:before {
+    content: '';
+    width: 100%;
+    height: 950px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url("/img/portfolio/english-school-advanced/bg-line-bt.png") no-repeat;
+    z-index: -1; }
+.engl-courses .lastpage__title {
+    margin-bottom: 50px; }
+.engl-courses .lastpage__title-main, .engl-courses .lastpage__title-sub {
+    color: #151e3a;
+    font: 72px/72px OpenSansBold;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.44px;
+    display: block;
+    text-align: right; }
+.engl-courses .lastpage__title-main {
+    padding-right: 130px; }
+.engl-courses .lastpage__image-inner {
+    -webkit-box-shadow: 0 0 43px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 0 43px rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    margin-bottom: 50px; }
+.engl-courses .lastpage__image-main {
+    width: 100%;
+    height: auto;
+    display: block; }
+.engl-courses .lastpage__image-right {
+    width: 1308px;
+    height: auto;
+    display: block;
+    position: relative;
+    right: 650px;
+    margin-top: 450px; }
+.engl-courses .lastpage__image-right-bottom {
+    width: 857px;
+    height: auto;
+    display: block;
+    position: relative;
+    right: 250px; }
+.engl-courses .lastpage .lastpage__footer {
+    position: relative;
+    margin-top: -50px;
+    text-align: center;
+    height: 300px; }
+.engl-courses .lastpage .lastpage__footer-bg {
+    opacity: 0.1;
+    color: #565656;
+    font: 309px/86px BuiltTitlingRg;
+    font-weight: 700;
+    letter-spacing: 1.45px; }
+.engl-courses .lastpage .lastpage__footer-main, .engl-courses .lastpage .lastpage__footer-sub {
+    color: #151e3a;
+    font: 72px/70px OpenSansBold;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.44px;
+    display: block;
+    position: relative;
+    bottom: 60px;
+    text-align: left;
+    padding-left: 140px; }
+.engl-courses .lastpage .lastpage__footer-sub {
+    padding-left: 250px; }
+.engl-courses .lastpage .text-bg {
+    position: absolute;
+    -webkit-transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    transform: rotate(270deg);
+    top: 60px;
+    left: -50px;
+    z-index: -1; }
+.engl-courses .lastpage .text-bg-sub {
+    margin-left: 100px; }
+.engl-courses .text-bg {
+    z-index: -1; }
+.engl-courses .text-bg-main, .engl-courses .text-bg-sub {
+    color: #565656;
+    font: 190px/190px BuiltTitlingRg;
+    font-weight: 700;
+    letter-spacing: 1.45px;
+    opacity: 0.1;
+    display: block; }
+
+@media only screen and (max-width: 1550px) {
+    .engl-courses .typography:before {
+        width: 920px;
+        top: -300px; }
+    .engl-courses .home-page {
+        margin-top: 180px; }
+    .engl-courses .home-page .text-bg-left {
+        left: -350px;
+        top: 1800px; }
+    .engl-courses .home-page .text-bg-right {
+        right: -250px; } }
+
+@media only screen and (max-width: 1024px) {
+    .engl-courses .home__logo {
+        margin-top: 160px; }
+    .engl-courses .home:before {
+        display: none; }
+    .engl-courses .functional__cms {
+        margin: 70px 40px 0px 40px; }
+    .engl-courses .typography:before {
+        width: 720px;
+        top: -330px; }
+    .engl-courses .home-page {
+        margin-top: 80px; }
+    .engl-courses .home-page .home__image:before {
+        display: none; }
+    .engl-courses .home-page .text-bg-left {
+        display: none; }
+    .engl-courses .home-page .text-bg-right {
+        display: none; }
+    .engl-courses .adaptive__phone-image {
+        left: 0px; } }
+
+@media only screen and (max-width: 768px) {
+    .engl-courses .home__logo-image {
+        margin-bottom: 30px; }
+    .engl-courses .home .home__images {
+        margin-top: 150px; }
+    .engl-courses .typography:before {
+        display: none; }
+    .engl-courses .typography__fonts-title,
+    .engl-courses .typography__fonts-inner-name, .engl-courses .typography__fonts-inner-text {
+        color: #151e3a; }
+    .engl-courses .typography .text-bg {
+        display: none; }
+    .engl-courses .typography__fonts-block {
+        -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+        justify-content: space-around; }
+    .engl-courses .typography__fonts-inner {
+        margin-right: 0px; }
+    .engl-courses .adaptive__phone-image {
+        top: -80px;
+        height: auto;
+        width: 100%; }
+    .engl-courses .adaptive .text-bg {
+        display: none; }
+    .engl-courses .lastpage__image-right {
+        position: static;
+        width: 100%;
+        right: 0;
+        margin-top: 0;}
+    .engl-courses .lastpage__image-right-bottom {
+        width: 100%;
+        position: static;
+        width: 100%;
+    }
+    .engl-courses .lastpage .lastpage__footer-bg {
+        font: 209px/86px BuiltTitlingRg; }
+    .engl-courses .lastpage .lastpage__footer-main, .engl-courses .lastpage .lastpage__footer-sub {
+        font: 52px/52px OpenSansBold; }
+    .engl-courses .lastpage .lastpage__footer {
+        height: auto; } }
+
+@media screen and (max-width: 620px){
+    .engl-courses .lastpage__title-sub,
+    .engl-courses .lastpage__title-main,
+    .engl-courses .functional .title__sub{
+        font: 40px/40px OpenSansBold;
+    }
+    .engl-courses .functional .title__bg{
+        font-size: 110px;
+    }
+    .engl-courses .lastpage .lastpage__footer-sub{
+        padding-left: 0;
+    }
+    .engl-courses .lastpage__title-main{
+        padding-right: 0;
+    }
+}
+
+@media only screen and (max-width: 428px) {
+    .engl-courses .home__logo,
+    .engl-courses .home .home__images {
+        margin-top: 50px; }
+    .engl-courses .home .home__images{
+        margin-top: 20px;
+    }
+    .engl-courses .functional .title__bg {
+        font: 110px/52px BuiltTitlingRg;
+        text-align: center;
+    }
+
+    .engl-courses .functional .title__sub {
+        font: 42px/20px OpenSansBold; }
+    .engl-courses .typography {
+        margin-top: 0px; }
+    .engl-courses .typography__color-list {
+        padding-right: 15px; }
+    .engl-courses .home-page__title-main {
+        font: 72px/50px OpenSansBold; }
+    .engl-courses .home-page {
+        margin-top: 0px; }
+    .engl-courses .home-page:before {
+        display: none; }
+    .engl-courses .home-page {
+        background-image: none; }
+    .engl-courses .adaptive__phone-image {
+        top: 0px; }
+    .engl-courses .adaptive {
+        margin-top: 0px; }
+    .engl-courses .adaptive__title-main,
+    .engl-courses .typography__color-title,
+    .engl-courses .typography__fonts-title,
+    .engl-courses .home-page__title-main,
+    .engl-courses .lastpage__title-sub,
+    .engl-courses .lastpage__title-main {
+        font: 42px/42px OpenSansBold; }
+    .engl-courses .lastpage__image-right {
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        right: 25px; }
+    .engl-courses .lastpage .text-bg {
+        display: none; }
+    .engl-courses .lastpage__image-right-bottom {
+        width: 100%;
+        height: auto;
+        right: 0px; }
+    .engl-courses .lastpage .lastpage__footer-bg {
+        font: 109px/86px BuiltTitlingRg; }
+    .engl-courses .lastpage .lastpage__footer-main, .engl-courses .lastpage .lastpage__footer-sub {
+        font: 23px/20px OpenSansBold; }
+    .engl-courses .lastpage .lastpage__footer-sub {
+        padding-left: 200px; }
+    .engl-courses .home-page__title-main{
+        margin: 42px 42px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .engl-courses .functional__cms {
+        margin: 70px 0px 0px 40px; }
+    .engl-courses .functional {
+        padding-bottom: 20px; }
+    .engl-courses .typography__color-title {
+        margin-bottom: 50px; }
+    .engl-courses .typography__color .typography-title-fonts {
+        top: 200px; }
+    .engl-courses .home__logo-image {
+        height: 56px;
+        margin: 0 auto 20px auto; }
+    .engl-courses .lastpage__title{
+        margin-top: 42px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .engl-courses .typography__fonts-inner-name {
+        font: 22px/36px OpenSansBold;
+        margin-bottom: 20px;
+        display: block; }
+    .engl-courses .lastpage .lastpage__footer-sub {
+        padding-left: 100px; }
+    .engl-courses .functional .title__bg {
+        font: 92px/52px BuiltTitlingRg;
+        text-align: center; }
+    .engl-courses .functional .title {
+        margin-top: 50px; } }
+
+.btn-prew-site{
+    text-align: center;
+    margin: 0px 0 80px 0px;
+}
+.prewSite{
+    border: 2px solid #fc5a5c;
+    border-radius: 2px;
+    padding: 10px 25px;
+    color: #162241;
+    transition: .4s all;
+    font: 19px/19px OpenSansBold;
+    text-decoration: none;
+    cursor: pointer;
+    width: 240px;
+    text-align: center;
+}
+.prewSite:hover{
+    letter-spacing: 1px;
+    text-decoration: underline;
+}
+
+@media (min-width: 1200px) {
+    header .container {
+        width: 85%;
+    }
+    footer .container {
+        width: 85%;
+    }
+}

@@ -1,0 +1,1033 @@
+@import 'portfolioParts';
+
+@import "../bootstrap3";
+
+a:focus, a:hover {
+    text-decoration: none !important;
+    &:hover {
+        color: $color-main;
+    }
+}
+
+.navigation__submenu-link {
+    &:hover {
+        color: $color-hover-but !important;
+    }
+}
+
+li {
+    list-style-type: none; /* Убираем маркеры */
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/portfolio/brain-up/Montserrat-Regular.woff') format("woff"),
+        url('/fonts/portfolio/brain-up/Montserrat-Regular.ttf') format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/portfolio/brain-up/Montserrat-Bold.woff') format("woff"),
+        url('/fonts/portfolio/brain-up/Montserrat-Bold.woff2') format("woff2");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('/fonts/portfolio/brain-up/Montserrat-Black.woff') format("woff"),
+        url('/fonts/portfolio/brain-up/Montserrat-Black.ttf') format("ttf");
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('/fonts/portfolio/brain-up/MontserratAlternates-Light.woff') format("woff"),
+        url('/fonts/portfolio/brain-up/MontserratAlternates-Light.woff2') format("woff2");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('/fonts/portfolio/brain-up/MontserratAlternates-Regular.woff') format("woff"),
+        url('/fonts/portfolio/brain-up/MontserratAlternates-Regular.woff2') format("woff2");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Montserrat Alternates';
+    src: url('/fonts/portfolio/brain-up/MontserratAlternates-Bold.woff') format("woff"),
+        url('/fonts/portfolio/brain-up/MontserratAlternates-Bold.woff2') format("woff2");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Geometria';
+    src: url('/fonts/portfolio/brain-up/Geometria-Bold.woff') format("woff"),
+        url('/fonts/portfolio/brain-up/Geometria-Bold.woff2') format("woff2");
+    font-weight: 700;
+}
+
+$Montserrat-stack: Montserrat, sans-serif;
+$Montserrat-Alternates-stack: 'Montserrat Alternates', sans-serif;
+$Geometria-stack: Geometria, sans-serif;
+
+.section-heading {
+    display: block;
+    color: #000026;
+    font-family: $Montserrat-stack;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    position: relative;
+    z-index: 3;
+    letter-spacing: 1.92px;
+    &__font-solution {
+        text-align: right;
+        color: white;
+        margin-bottom: 135px;
+        position: relative;
+        z-index: 5;
+        &:after {
+            right: 0;
+        }
+        &:before {
+            content: 'Typography';
+            color: white;
+        }
+    }
+    &:before {
+        content: '';
+        display: block;
+        color: #bfbfc0;
+        font-family: $Montserrat-Alternates-stack;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 1.2;
+        margin-bottom: 5px;
+        letter-spacing: 0.72px;
+        @media screen and (max-width: 767px) {
+            font-size: 16px;
+        }
+        @media screen and (max-width: 576px) {
+            font-size: 14px;
+        }
+        @media screen and (max-width: 450px) {
+            font-size: 12px;
+        }
+    }
+    &:after {
+        content: '';
+        background-color: #edb62b;
+        display: block;
+        position: absolute;
+        bottom: 0%;
+        transform: translateY(25%);
+        width: 196px;
+        height: 37px;
+        z-index: -1;
+        @media screen and (max-width: 767px) {
+            width: 147px;
+            height: 27px;
+        }
+        @media screen and (max-width: 576px) {
+            width: 110px;
+            height: 20px;
+            left: 50% !important;
+            transform: translateX(-50%) translateY(25%) !important;
+        }
+        @media screen and (max-width: 450px) {
+            width: 88px;
+            height: 16px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 36px;
+    }
+    @media screen and (max-width: 576px) {
+        font-size: 24px;
+        text-align: center !important;
+    }
+    @media screen and (max-width: 450px) {
+        font-size: 20px;
+    }
+}
+
+main {
+    overflow: hidden;
+}
+
+section {
+    position: relative;
+}
+
+img {
+    width: 100%;
+}
+
+.container {
+    @media screen and (max-width: 1350px) {
+        width: 100%;
+    }
+}
+
+.figure {
+    position: absolute;
+    img {
+        width: 100%;
+    }
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
+    &-1 {
+        left: 11.5%;
+        top: 830px;
+    }
+    &-2 {
+        right: 13%;
+        bottom: 210px;
+    }
+    &-3 {
+        bottom: 123px;
+        left: 12%;
+    }
+    &-4 {
+        background: url('/img/portfolio/brain-up/font-solution-dots-background.png') no-repeat center/cover;
+        background-size: 115%;
+        width: 100%;
+        height: 1420px;
+        top: 0;
+    }
+    &-5 {
+        width: 2px;
+        background: white;
+        height: 150px;
+        transform: rotate(-30deg);
+        bottom: 100px;
+        right: 12%;
+    }
+    &-6 {
+        width: 2px;
+        background: white;
+        height: 150px;
+        transform: rotate(-30deg);
+        bottom: 160px;
+        right: 9%;
+    }
+    &-7 {
+        top: 330px;
+        left: 15.5%;
+    }
+    &-8 {
+        top: 495px;
+        right: 12.5%;
+    }
+    &-9 {
+        bottom: 260px;
+        left: 11%;
+    }
+    &-10 {
+        bottom: 840px;
+        left: 12%;
+    }
+    &-11 {
+        bottom: 490px;
+        right: 9%;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 140px;
+            background: white;
+            display: block;
+            right: 140px;
+            top: 50px;
+            transform: rotate(30deg);
+        }
+    }
+    &-12 {
+        bottom: 30px;
+        left: 38%;
+    }
+    &-13 {
+        background: url('/img/portfolio/brain-up/other-pages-dots-background.png') no-repeat center/cover;
+        background-size: 115%;
+        width: 100%;
+        height: 1420px;
+        bottom: 150px;
+    }
+}
+
+.banner {
+    &__inner-wrapper {
+        background: url('/img/portfolio/brain-up/banner-background.png') no-repeat center/cover;
+        padding: 190px 0 10px;
+        position: relative;
+    }
+    &__image {
+        width: 100%;
+    }
+    &__inner {
+        display: flex;
+         max-width: 1780px;
+         margin: 0 auto;
+         @media screen and (max-width: 1500px) {
+            margin-top: 100px;
+         }
+    }
+    &__left {
+        flex-basis: 30.6%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    &__left-content {
+        //transform: translate(-22%, -15%);
+    }
+    &__right {
+        margin-left: auto;
+    }
+    &__site-logo {
+        width: 147px;
+        height: 80px;
+        background: url('/img/portfolio/brain-up/site-logo.png') no-repeat center/contain;
+        margin: 0 auto;
+    }
+    &__label {
+        font-family: $Geometria-stack;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 0.9;
+        color: #555555;
+        margin: 50px 0 65px;
+        text-align: center;
+    }
+    &__icons {
+        display: flex;
+        justify-content: center;
+    }
+    &__icon {
+        width: 36px;
+        height: 36px;
+        //background: no-repeat center/contain;
+        margin: 0 15px;
+        img {
+            width: 100%;
+        }
+        &_laptop {
+            //background-image: url('../img/banner-icon-laptop.png');
+        }
+        &_smartphone {
+            //background-image: url('../img/banner-icon-smartphone.png');
+        }
+        &_tablet {
+            //background-image: url('../img/tablet.png');
+        }
+    }
+    &__visit-site {
+        display: block;
+        text-align: center;
+        font-family: $Geometria-stack;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 1.1;
+        text-transform: uppercase;
+        color: #555555;
+        border: 2px solid #00B4DB;
+        padding: 16px 0;
+        max-width: 226px;
+        margin: 60px auto 0;
+        transition: all .5s;
+        &:hover {
+            text-decoration: none;
+            color: white;
+            background: #00B4DB;
+        }
+    }
+}
+
+.main-page {
+    margin-top: 55px;
+    background: url('/img/portfolio/brain-up/main-page-dots-background.png') no-repeat center top 1020px /contain;
+    background-size: 105%;
+    .section-heading {
+        text-align: right;
+        margin: 0 10px 80px 0;
+        &:before {
+            content: 'Home pages';
+        }
+        &:after {
+            right: 0;
+        }
+    }
+    &__preview img, &__mobile-preview img{
+        width: 100%;
+    }
+    &__inner {
+        position: relative;
+    }
+    &__mobile-preview {
+        width: 42.5%;
+        position: absolute;
+        left: -35px;
+        bottom: 6%;
+        @media screen and (max-width: 1350px) {
+            width: 34%;
+        }
+    }
+}
+
+.color-solution {
+    margin-top: 70px;
+    .section-heading {
+        margin: 0 0 135px 10px;
+        &:before {
+            content: 'Colors';
+        }
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-around;
+    }
+    &__color-wrapper {
+        flex-basis: 25%;
+        display: flex;
+        justify-content: center;
+    }
+    &__color {
+        width: 109px;
+        height: 109px;
+        border-radius: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:after {
+            content: '';
+            position: absolute;
+            color: #222222;
+            font-family: $Montserrat-stack;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.1;
+            bottom: 10px;
+            left: 100%;
+        }
+        &-1 {
+            border: 1px solid #79d6c6;
+            div {
+                background: #79d6c6;
+            }
+            &:after {
+                content: '#79d6c6';
+            }
+        }
+        &-2 {
+            border: 1px solid #edb62b;
+            div {
+                background: #edb62b;
+            }
+            &:after {
+                content: '#edb62b';
+            }
+        }
+        &-3 {
+            border: 1px solid #ff0000;
+            div {
+                background: #ff0000;
+            }
+            &:after {
+                content: '#ff0000';
+            }
+        }
+        &-4 {
+            border: 1px solid #efefef;
+            div {
+                background: #efefef;
+            }
+            &:after {
+                content: '#efefef';
+            }
+        }
+    }
+    &__big-circle {
+        width: 62%;
+        height: 62%;
+        border-radius: 50%;
+    }
+    &__small-circle {
+        position: absolute;
+        width: 15.5%;
+        height: 15.5%;
+        border-radius: 50%;
+        &_t {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,-50%);
+        }
+        &_r {
+            right: 0;
+            top: 50%;
+            transform: translate(50%,-50%);
+        }
+        &_b {
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%,50%);
+        }
+        &_l {
+            top: 50%;
+            left: 0;
+            transform: translate(-50%,-50%);
+        }
+    }
+}
+
+.font-solution {
+    color: white;
+    margin-top: 20px;
+    padding: 235px 0 0;
+    background: url('/img/portfolio/brain-up/font-solution-background.png') no-repeat top/contain;
+    &__inner {
+        display: flex;
+        position: relative;
+        z-index: 5;
+    }
+    &__font-wrapper	{
+        flex-basis: 50%;
+        padding-left: 10px;
+        font-family: $Montserrat-stack;
+        &_MA {
+            font-family: $Montserrat-Alternates-stack;
+        }
+    }
+    &__title {
+        display: block;
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+    &__content {
+        border-left: 1px solid #efefef;
+        margin-left: 60px;
+        padding: 40px 0 0 0;
+    }
+    &__weights {
+        margin-bottom: 50px;
+    }
+    &__weight {
+        font-size: 18px;
+        line-height: 1;
+        padding: 0 30px;
+        &_Black {
+            font-weight: 900;
+        }
+        &_Regular {
+            font-weight: 400;
+        }
+        &_Bold {
+            font-weight: 700;
+        }
+    }
+    &__example {
+        font-size: 18px;
+        line-height: 1;
+        font-weight: 400;
+        padding-left: 30px;
+        display: block;
+        span {
+            display: block;
+        }
+    }
+}
+
+.about-company {
+    margin-bottom: 120px;
+    background: url('/img/portfolio/brain-up/main-page-dots-background.png') no-repeat center 540px /contain;
+    background-size: 115%;
+    .section-heading {
+        text-align: center;
+        margin-bottom: 70px;
+        &:before {
+            content: 'About company';
+        }
+        &:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &_mt {
+        margin-top: 280px;
+    }
+    &__inner {
+        position: relative;
+    }
+}
+
+.other-pages {
+    padding-bottom: 250px;
+    background: url('/img/portfolio/brain-up/other-pages-background.png') no-repeat center bottom -210px /contain;
+    .section-heading {
+        margin: 0 0 90px 6px;
+        &:before {
+            content: 'Other pages';
+        }
+    }
+    &__inner {
+        display: flex;
+        position: relative;
+    }
+    &__column {
+        flex-basis: 50%;
+        &:first-child {
+            margin-right: 20px;
+        }
+    }
+    &__page {
+        margin-bottom: 20px;
+    }
+    &__thanks-wrapper {
+        margin-top: 55px;
+        display: flex;
+        justify-content: center;
+    }
+    &__thanks {
+        font-family: $Montserrat-stack;
+        font-weight: 900;
+        color: white;
+        font-size: 48px;
+        display: block;
+        &:before {
+            content: 'Thanks';
+            text-align: right;
+            display: block;
+            font-size: 18px;
+            font-weight: 300;
+            line-height: 1.2;
+        }
+        &_big {
+            font-size: 78px;
+            display: block;
+        }
+    }
+}
+
+@media screen and (max-width:1920px) {
+    .banner {
+        &__inner-wrapper {
+            margin: 0;
+            max-width: unset;
+        }
+    }
+}
+
+@media screen and (max-width: 1650px) {
+    .font-solution {
+        .figure-4 {
+            background-size: 135%;
+        }
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .banner {
+        &__inner-wrapper {
+            padding-top: 100px;
+        }
+        &__left {
+            flex-basis: 50%;
+        }
+        &__right {
+            flex-basis: 100%;
+        }
+        &__label {
+            margin: 40px 0 50px;
+        }
+        &__visit-site {
+            margin-top: 40px;
+        }
+    }
+}
+
+@media screen and (max-width: 1350px) {
+    .main-page {
+        &__mobile-preview {
+            left: -20px;
+        }
+    }
+
+    .color-solution {
+        margin-top: 50px;
+        .section-heading {
+            margin-bottom: 85px;
+        }
+    }
+
+    .font-solution {
+        padding: 200px 0 275px;
+        .section-heading {
+            margin-bottom: 85px;
+        }
+        .figure-4 {
+            display: none;
+        }
+        &__inner {
+            justify-content: space-around;
+        }
+        &__font-wrapper {
+            flex-basis: unset;
+        }
+        .figure-5, .figure-6 {
+            transform: translateY(50px) rotate(-30deg);
+        }
+    }
+
+    .about-company {
+        margin-bottom: 60px;
+        .section-heading {
+            margin-bottom: 50px;
+        }
+    }
+
+    .other-pages {
+        padding-bottom: 60px;
+        .section-heading {
+            margin-bottom: 50px;
+        }
+        .figure {
+            display: none;
+        }
+        &__thanks-wrapper {
+            margin-top: 35px;
+        }
+        &__thanks {
+            font-size: 40px;
+            &_big {
+                font-size: 70px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .banner {
+        &__label {
+            font-size: 18px;
+        }
+    }
+
+    .color-solution {
+        &__color {
+            width: 95px;
+            height: 95px;
+        }
+    }
+
+    .other-pages {
+        &__thanks {
+            font-size: 30px;
+            &_big {
+                font-size: 65px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .banner {
+        &__innner-wrapper {
+            padding-top: 75px;
+        }
+        &__site-logo {
+            width: 110px;
+            height: 60px;
+        }
+        &__label {
+            font-size: 18px;
+            text-align: center;
+            margin: 30px 0 40px;
+        }
+        &__visit-site {
+            margin-top: 30px;
+            font-size: 16px;
+            max-width: 190px;
+        }
+    }
+
+    .color-solution {
+        &__color {
+            width: 80px;
+            height: 80px;
+            &:after {
+                font-size: 14px;
+                bottom: 5px;
+            }
+        }
+    }
+
+    .font-solution {
+        &__title {
+            font-size: 24px;
+        }
+        &__content {
+            margin-left: 30px;
+        }
+        &__weight, &__example {
+            font-size: 16px;
+        }
+    }
+
+    .other-pages {
+        &__thanks {
+            &_big {
+                font-size: 55px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .banner {
+        &__inner-wrapper {
+            padding-top: 60px;
+        }
+        &__label {
+            font-size: 16px;
+            margin: 25px 0 25px;
+            text-align: center;
+        }
+        &__visit-site {
+            font-size: 13px;
+            max-width: 160px;
+            padding: 14px 0;
+        }
+        &__right {
+            flex-basis: 70%;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .main-page {
+        margin-top: 35px;
+        .section-heading {
+            margin-bottom: 55px;
+        }
+        &__mobile-preview {
+            width: 40%;
+        }
+    }
+    
+    .color-solution {
+        margin-top: 35px;
+        .section-heading {
+            margin-bottom: 40px;
+        }
+        &__color-wrapper {
+            justify-content: flex-start;
+            padding-left: 20px;
+        }
+        &__color {
+            width: 65px;
+            height: 65px;
+            &:after {
+                font-size: 12px;
+                bottom: 0;
+            }
+        }
+    }
+
+    .font-solution {
+        padding: 110px 0 130px;
+        margin-top: 0;
+        .section-heading {
+            margin-bottom: 25px;
+        }
+        &__inner-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+        &__inner {
+            flex-direction: column;
+            justify-content: unset;
+        }
+        &__font-wrapper {
+            flex-basis: 100%;
+            padding: 0;
+        }
+        .figure {
+            display: none;
+        }
+        &__font-wrapper {
+            margin-top: 15px;
+        }
+        &__weights {
+            margin-bottom: 15px;
+        }
+        &__content {
+            padding-top: 15px;
+        }
+        &__title {
+            font-size: 20px;
+        }
+        &__weight, &__example {
+            font-size: 14px;
+        }
+    }
+
+    .other-pages {
+        padding-bottom: 40px;
+        &__thanks-wrapper {
+            margin-top: 0;
+        }
+        &__thanks {
+            font-size: 20px;
+            &_big {
+                font-size: 45px;
+            }
+            &:before {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .banner {
+        &__inner-wrapper {
+            padding-top: 40px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        &__inner {
+            display: block;
+        }
+        &__left {
+            justify-content: center;
+        }
+        &__label {
+            margin: 15px 0;
+        }
+        &__icon {
+            width: 25px;
+            height: 25px;
+        }
+        &__visit-site {
+            margin-top: 20px;
+            padding: 8px 0;
+        }
+        &__right {
+            margin-top: 20px;
+        }
+    }
+
+    .main-page {
+        margin-top: 25px;
+        .section-heading {
+            margin-bottom: 35px;
+        }
+        &__mobile-preview {
+            left: -20px;
+        }
+    }
+
+    .color-solution {
+        .section-heading {
+            margin-bottom: 0;
+        }
+        &__inner {
+            flex-wrap: wrap;
+        }
+        &__color-wrapper {
+            flex-basis: 50%;
+            padding-left: 0;
+            padding-right: 20px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+    }
+
+    .font-solution {
+        padding: 90px 0 100px;
+        .section-heading {
+            margin-bottom: 10px;
+        }
+        &__title {
+            font-size: 14px;
+        }
+        &__weight {
+            padding: 0 20px;
+        }
+        &__example {
+            padding-left: 20px;
+        }
+        &__weight, &__example {
+            font-size: 12px;
+        }
+        &__inner-wrapper {
+            //justify-content: unset;
+        }
+        &__content {
+            margin-left: 0;
+        }
+    }
+
+    .about-company {
+        margin-bottom: 30px;
+        .section-heading {
+            margin-bottom: 25px;
+        }
+    }
+
+    .other-pages {
+        background: url('/img/portfolio/brain-up/other-pages-background.png') no-repeat center bottom -70px /contain;
+        .section-heading {
+            margin-bottom: 25px;
+        }
+        &__page {
+            margin-bottom: 10px;
+        }
+        &__inner {
+            flex-wrap: wrap;
+        }
+        &__column {
+            flex-basis: 100%;
+            margin: 0 !important;
+        }
+        &__thanks {
+            font-size: 15px;
+            &_big {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+.figure .figure-4 {
+    background: url('/img/portfolio/brain-up/font-solution-dots-background.png') no-repeat center/cover;
+    background-size: 115%;
+    width: 100%;
+    height: 1420px;
+    top: 0;
+}
+
+.header .container {
+    max-width: 1505px;
+    padding: 0 15px;
+    margin: auto;
+}
+
+.footer .container {
+    max-width: 1505px;
+    padding: 0 15px;
+    margin: auto;
+}
+
+@media screen and (max-width: 450px) {
+    .main-page {
+        &__mobile-preview {
+            left: -15px;
+        }
+    }
+}

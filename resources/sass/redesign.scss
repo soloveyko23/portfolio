@@ -1,0 +1,25 @@
+// base
+@import 'bootstrap3';
+@import 'redesign/mixins';
+@import 'redesign/variables';
+@import 'redesign/main';
+@import 'redesign/banner';
+
+@import 'redesign/propouses';
+@import 'redesign/projects';
+@import 'redesign/results';
+@import 'redesign/contactus';
+
+@import 'redesign/footer';
+@import 'redesign/header';
+@import 'redesign/fix';
+
+
+@import 'redesign/acion';
+@import 'redesign/breadcrumbs';
+@import 'redesign/faq';
+@import 'redesign/navi';
+
+.overlay{
+  z-index: 101;
+}

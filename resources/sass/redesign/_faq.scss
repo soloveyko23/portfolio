@@ -1,0 +1,20 @@
+
+.question-answer-redesign{
+  .question-answer{
+    &__inner{
+      margin-top: 60px;
+    }
+    &__inner-txt__avatar{
+      border: unset;
+      z-index: 1;
+      &::before{
+        background-color: #878787;
+        z-index: -1;
+      }
+    }
+    &__inner-question{
+      background-color: #eee;
+      border-radius: 4px;
+    }
+  }
+}
