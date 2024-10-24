@@ -161,6 +161,7 @@
             
               <div data-wow-delay="0s" data-wow-duration="2s" data-wow-iteration="1" data-wow-offset="0"
                 class="wow fadeInUp landing-page-mockup__image">
+                class="wow fadeInUp landing-page-mockup__image">
                 <img src="/img/portfolio/slavicmeet/web-mockup-landing.png" alt="Image">
               </div>
             </div>
