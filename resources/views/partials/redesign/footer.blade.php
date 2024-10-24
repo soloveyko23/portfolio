@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-2 footer__logo">
                 <a href="{{ getLocaleUrl('/') }}" class="logo-link">
-                    <img class="logo-link__img wow fadeInLeft" src="/img/icons/logo.jpg" alt="logo.svg">
+                    <img class="logo-link__img wow fadeInLeft" src="/img/icons/logo.png" alt="logo.svg">
                 </a>
                 <button data-togle="#footer-popup" class="margin-left-auto btn btn-red tt-upper">
                     {{ trans('index.contact_us') }}

@@ -3643,7 +3643,11 @@ table {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1.25rem;
-  overflow-x: auto;
+}
+@media (max-width: 992px) {
+  .registration__list {
+    overflow-x: auto;
+  }
 }
 @media (min-width: 768px) {
   .registration__item:nth-child(3) {
